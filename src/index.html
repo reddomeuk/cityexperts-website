@@ -300,108 +300,196 @@
     </section>
 
     <!-- Featured Projects Section -->
-    <section id="featured-projects" class="section">
-      <div class="container-custom">
-        <div class="text-center mb-16" data-animate="fade-up">
-          <h2 class="text-3xl md:text-4xl lg:text-5xl font-playfair font-medium mb-6">Featured Projects</h2>
-          <p class="text-xl text-deep-charcoal/80 max-w-3xl mx-auto">
-            Discover our landmark projects that define Dubai's skyline and luxury interiors.
-          </p>
-        </div>
+    <section id="featured-carousel" class="relative container-custom section" aria-label="Featured projects">
+      <div class="text-center mb-16" data-animate="fade-up">
+        <h2 class="text-3xl md:text-4xl lg:text-5xl font-playfair font-medium mb-6">Featured Projects</h2>
+        <p class="text-xl text-deep-charcoal/80 max-w-3xl mx-auto">
+          Discover our landmark projects that define Dubai's skyline and luxury interiors.
+        </p>
+      </div>
 
-        <!-- Projects Carousel -->
-        <div class="relative" data-carousel data-autoplay="true" data-autoplay-delay="5000">
-          <div class="overflow-hidden rounded-2xl" data-carousel-slides>
-            <!-- Project 1 -->
-            <div class="w-full flex-shrink-0 relative group" data-carousel-slide>
-              <div class="aspect-w-16 aspect-h-9 bg-warm-stone rounded-2xl overflow-hidden">
-                <img 
-                  src="/assets/images/project-1.webp" 
-                  alt="Luxury Commercial Tower in Business Bay"
-                  class="w-full h-96 md:h-[500px] object-cover group-hover:scale-105 transition-transform duration-700"
-                  loading="lazy"
-                >
-                <div class="absolute inset-0 bg-gradient-to-t from-deep-charcoal/80 via-transparent to-transparent"></div>
-              </div>
-              <div class="absolute bottom-8 left-8 right-8 text-white">
-                <div class="flex items-center space-x-4 mb-4">
-                  <span class="px-3 py-1 bg-oasis-teal rounded-full text-sm">Commercial</span>
-                  <span class="px-3 py-1 bg-brand-orange text-pure-white rounded-full text-sm">Dubai</span>
+      <!-- Carousel Track -->
+      <div class="carousel-viewport overflow-hidden relative">
+        <div class="carousel-track flex transition-transform duration-500 ease-in-out" data-carousel-track>
+          
+          <!-- Slide 1 -->
+          <div class="carousel-slide w-full flex-shrink-0" data-carousel-slide>
+            <div class="cards-column space-y-8 px-4">
+              <!-- Card 1 -->
+              <article class="project-card w-full relative group bg-white rounded-2xl overflow-hidden shadow-lg hover:shadow-xl transition-shadow duration-300">
+                <div class="relative">
+                  <img src="/assets/images/project-1.webp" alt="Emirates Business Tower – commercial exterior" class="w-full h-96 md:h-[500px] object-cover group-hover:scale-105 transition-transform duration-700" loading="lazy" decoding="async">
+                  <div class="absolute inset-0 bg-gradient-to-t from-deep-charcoal/80 via-transparent to-transparent"></div>
                 </div>
-                <h3 class="text-2xl md:text-3xl font-playfair font-medium mb-2">Emirates Business Tower</h3>
-                <p class="text-white/90 mb-4 max-w-md">45-story mixed-use development featuring premium offices, retail spaces, and luxury amenities in the heart of Business Bay.</p>
-                <a href="/projects.html#emirates-business-tower" class="btn btn-secondary">View Project</a>
-              </div>
-            </div>
-
-            <!-- Project 2 -->
-            <div class="w-full flex-shrink-0 relative group" data-carousel-slide>
-              <div class="aspect-w-16 aspect-h-9 bg-warm-stone rounded-2xl overflow-hidden">
-                <img 
-                  src="/assets/images/project-2.webp" 
-                  alt="Luxury Villa Community in Arabian Ranches"
-                  class="w-full h-96 md:h-[500px] object-cover group-hover:scale-105 transition-transform duration-700"
-                  loading="lazy"
-                >
-                <div class="absolute inset-0 bg-gradient-to-t from-deep-charcoal/80 via-transparent to-transparent"></div>
-              </div>
-              <div class="absolute bottom-8 left-8 right-8 text-white">
-                <div class="flex items-center space-x-4 mb-4">
-                  <span class="px-3 py-1 bg-oasis-teal rounded-full text-sm">Residential</span>
-                  <span class="px-3 py-1 bg-brand-orange text-pure-white rounded-full text-sm">Arabian Ranches</span>
+                <div class="absolute bottom-8 left-8 right-8 text-white">
+                  <div class="flex items-center space-x-4 mb-4">
+                    <span class="px-3 py-1 bg-oasis-teal rounded-full text-sm">Commercial</span>
+                    <span class="px-3 py-1 bg-brand-orange text-pure-white rounded-full text-sm">Dubai</span>
+                  </div>
+                  <h3 class="text-2xl md:text-3xl font-playfair font-medium mb-2">Emirates Business Tower</h3>
+                  <p class="text-white/90 mb-4 max-w-2xl">45-story mixed-use development featuring premium offices, retail spaces, and luxury amenities in the heart of Business Bay.</p>
+                  <a class="btn btn-secondary" href="/projects.html#emirates-business-tower">Learn More</a>
                 </div>
-                <h3 class="text-2xl md:text-3xl font-playfair font-medium mb-2">Desert Bloom Villas</h3>
-                <p class="text-white/90 mb-4 max-w-md">Exclusive collection of 24 luxury villas featuring contemporary Arabian architecture and premium interior finishes.</p>
-                <a href="/projects.html#desert-bloom-villas" class="btn btn-secondary">View Project</a>
-              </div>
-            </div>
-
-            <!-- Project 3 -->
-            <div class="w-full flex-shrink-0 relative group" data-carousel-slide>
-              <div class="aspect-w-16 aspect-h-9 bg-warm-stone rounded-2xl overflow-hidden">
-                <img 
-                  src="/assets/images/project-3.webp" 
-                  alt="Five-Star Hotel Interior Design in Palm Jumeirah"
-                  class="w-full h-96 md:h-[500px] object-cover group-hover:scale-105 transition-transform duration-700"
-                  loading="lazy"
-                >
-                <div class="absolute inset-0 bg-gradient-to-t from-deep-charcoal/80 via-transparent to-transparent"></div>
-              </div>
-              <div class="absolute bottom-8 left-8 right-8 text-white">
-                <div class="flex items-center space-x-4 mb-4">
-                  <span class="px-3 py-1 bg-oasis-teal rounded-full text-sm">Interior Design</span>
-                  <span class="px-3 py-1 bg-brand-orange text-pure-white rounded-full text-sm">Palm Jumeirah</span>
+              </article>
+              <!-- Card 2 -->
+              <article class="project-card w-full relative group bg-white rounded-2xl overflow-hidden shadow-lg hover:shadow-xl transition-shadow duration-300">
+                <div class="relative">
+                  <img src="/assets/images/luxury_interior_5.png" alt="Marina Penthouse Collection – luxury interior" class="w-full h-96 md:h-[500px] object-cover group-hover:scale-105 transition-transform duration-700" loading="lazy" decoding="async">
+                  <div class="absolute inset-0 bg-gradient-to-t from-deep-charcoal/80 via-transparent to-transparent"></div>
                 </div>
-                <h3 class="text-2xl md:text-3xl font-playfair font-medium mb-2">Azure Luxury Resort</h3>
-                <p class="text-white/90 mb-4 max-w-md">Complete interior design and fit-out for a 300-room luxury resort featuring world-class amenities and dining venues.</p>
-                <a href="/projects.html#azure-luxury-resort" class="btn btn-secondary">View Project</a>
-              </div>
+                <div class="absolute bottom-8 left-8 right-8 text-white">
+                  <div class="flex items-center space-x-4 mb-4">
+                    <span class="px-3 py-1 bg-oasis-teal rounded-full text-sm">Interior Design</span>
+                    <span class="px-3 py-1 bg-brand-orange text-pure-white rounded-full text-sm">Dubai Marina</span>
+                  </div>
+                  <h3 class="text-2xl md:text-3xl font-playfair font-medium mb-2">Marina Penthouse Collection</h3>
+                  <p class="text-white/90 mb-4 max-w-2xl">Sophisticated interior design for luxury penthouses featuring modern aesthetics and premium finishes overlooking Dubai Marina.</p>
+                  <a class="btn btn-secondary" href="/projects.html#marina-penthouse">Learn More</a>
+                </div>
+              </article>
+              <!-- Card 3 -->
+              <article class="project-card w-full relative group bg-white rounded-2xl overflow-hidden shadow-lg hover:shadow-xl transition-shadow duration-300">
+                <div class="relative">
+                  <img src="/assets/images/luxury_villa_1.png" alt="Botanical Villa Estates – villa exterior" class="w-full h-96 md:h-[500px] object-cover group-hover:scale-105 transition-transform duration-700" loading="lazy" decoding="async">
+                  <div class="absolute inset-0 bg-gradient-to-t from-deep-charcoal/80 via-transparent to-transparent"></div>
+                </div>
+                <div class="absolute bottom-8 left-8 right-8 text-white">
+                  <div class="flex items-center space-x-4 mb-4">
+                    <span class="px-3 py-1 bg-oasis-teal rounded-full text-sm">Residential</span>
+                    <span class="px-3 py-1 bg-brand-orange text-pure-white rounded-full text-sm">Al Barari</span>
+                  </div>
+                  <h3 class="text-2xl md:text-3xl font-playfair font-medium mb-2">Botanical Villa Estates</h3>
+                  <p class="text-white/90 mb-4 max-w-2xl">Exclusive luxury villas surrounded by botanical gardens, featuring sustainable design and world-class architectural excellence.</p>
+                  <a class="btn btn-secondary" href="/projects.html#botanical-villa-estates">Learn More</a>
+                </div>
+              </article>
             </div>
           </div>
 
-          <!-- Navigation -->
-          <button data-carousel-prev class="absolute left-4 top-1/2 transform -translate-y-1/2 w-12 h-12 bg-white/90 hover:bg-white rounded-full shadow-medium flex items-center justify-center transition-all hover:scale-110" aria-label="Previous project">
-            <svg class="w-6 h-6 text-deep-charcoal" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7"></path>
-            </svg>
-          </button>
-          <button data-carousel-next class="absolute right-4 top-1/2 transform -translate-y-1/2 w-12 h-12 bg-white/90 hover:bg-white rounded-full shadow-medium flex items-center justify-center transition-all hover:scale-110" aria-label="Next project">
-            <svg class="w-6 h-6 text-deep-charcoal" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"></path>
-            </svg>
-          </button>
-
-          <!-- Indicators -->
-          <div class="flex justify-center space-x-2 mt-8">
-            <button data-carousel-indicator="0" class="w-3 h-3 rounded-full bg-warm-stone transition-colors active" aria-label="Go to slide 1"></button>
-            <button data-carousel-indicator="1" class="w-3 h-3 rounded-full bg-warm-stone/50 hover:bg-warm-stone transition-colors" aria-label="Go to slide 2"></button>
-            <button data-carousel-indicator="2" class="w-3 h-3 rounded-full bg-warm-stone/50 hover:bg-warm-stone transition-colors" aria-label="Go to slide 3"></button>
+          <!-- Slide 2 -->
+          <div class="carousel-slide w-full flex-shrink-0" data-carousel-slide>
+            <div class="cards-column space-y-8 px-4">
+              <!-- Card 4 -->
+              <article class="project-card w-full relative group bg-white rounded-2xl overflow-hidden shadow-lg hover:shadow-xl transition-shadow duration-300">
+                <div class="relative">
+                  <img src="/assets/images/project-2.webp" alt="City Walk Retail – street-level retail" class="w-full h-96 md:h-[500px] object-cover group-hover:scale-105 transition-transform duration-700" loading="lazy" decoding="async">
+                  <div class="absolute inset-0 bg-gradient-to-t from-deep-charcoal/80 via-transparent to-transparent"></div>
+                </div>
+                <div class="absolute bottom-8 left-8 right-8 text-white">
+                  <div class="flex items-center space-x-4 mb-4">
+                    <span class="px-3 py-1 bg-oasis-teal rounded-full text-sm">Retail</span>
+                    <span class="px-3 py-1 bg-brand-orange text-pure-white rounded-full text-sm">Dubai</span>
+                  </div>
+                  <h3 class="text-2xl md:text-3xl font-playfair font-medium mb-2">City Walk Retail</h3>
+                  <p class="text-white/90 mb-4 max-w-2xl">Dynamic street-level retail development creating vibrant urban experiences with innovative commercial spaces and pedestrian-friendly design.</p>
+                  <a class="btn btn-secondary" href="/projects.html#city-walk-retail">Learn More</a>
+                </div>
+              </article>
+              <!-- Card 5 -->
+              <article class="project-card w-full relative group bg-white rounded-2xl overflow-hidden shadow-lg hover:shadow-xl transition-shadow duration-300">
+                <div class="relative">
+                  <img src="/assets/images/project-3.webp" alt="Harbor Hotel & Residences – hospitality" class="w-full h-96 md:h-[500px] object-cover group-hover:scale-105 transition-transform duration-700" loading="lazy" decoding="async">
+                  <div class="absolute inset-0 bg-gradient-to-t from-deep-charcoal/80 via-transparent to-transparent"></div>
+                </div>
+                <div class="absolute bottom-8 left-8 right-8 text-white">
+                  <div class="flex items-center space-x-4 mb-4">
+                    <span class="px-3 py-1 bg-oasis-teal rounded-full text-sm">Hospitality</span>
+                    <span class="px-3 py-1 bg-brand-orange text-pure-white rounded-full text-sm">Dubai Creek</span>
+                  </div>
+                  <h3 class="text-2xl md:text-3xl font-playfair font-medium mb-2">Harbor Hotel & Residences</h3>
+                  <p class="text-white/90 mb-4 max-w-2xl">Luxury mixed-use development combining world-class hospitality with premium residential offerings in the prestigious Dubai Creek area.</p>
+                  <a class="btn btn-secondary" href="/projects.html#harbor-hotel">Learn More</a>
+                </div>
+              </article>
+              <!-- Card 6 -->
+              <article class="project-card w-full relative group bg-white rounded-2xl overflow-hidden shadow-lg hover:shadow-xl transition-shadow duration-300">
+                <div class="relative">
+                  <img src="/assets/images/projects/dubai-tower-commercial.webp" alt="Innovation Park – corporate campus" class="w-full h-96 md:h-[500px] object-cover group-hover:scale-105 transition-transform duration-700" loading="lazy" decoding="async">
+                  <div class="absolute inset-0 bg-gradient-to-t from-deep-charcoal/80 via-transparent to-transparent"></div>
+                </div>
+                <div class="absolute bottom-8 left-8 right-8 text-white">
+                  <div class="flex items-center space-x-4 mb-4">
+                    <span class="px-3 py-1 bg-oasis-teal rounded-full text-sm">Corporate</span>
+                    <span class="px-3 py-1 bg-brand-orange text-pure-white rounded-full text-sm">Dubai South</span>
+                  </div>
+                  <h3 class="text-2xl md:text-3xl font-playfair font-medium mb-2">Innovation Park</h3>
+                  <p class="text-white/90 mb-4 max-w-2xl">State-of-the-art corporate campus designed to foster innovation and collaboration in Dubai's emerging business district.</p>
+                  <a class="btn btn-secondary" href="/projects.html#innovation-park">Learn More</a>
+                </div>
+              </article>
+            </div>
           </div>
-        </div>
 
-        <div class="text-center mt-12" data-animate="fade-up">
-          <a href="/projects.html" class="btn btn-primary btn-large">Explore All Projects</a>
+          <!-- Slide 3 -->
+          <div class="carousel-slide w-full flex-shrink-0" data-carousel-slide>
+            <div class="cards-column space-y-8 px-4">
+              <!-- Card 7 -->
+              <article class="project-card w-full relative group bg-white rounded-2xl overflow-hidden shadow-lg hover:shadow-xl transition-shadow duration-300">
+                <div class="relative">
+                  <img src="/assets/images/projects/palm-residences.webp" alt="Pearl Residences – residential tower" class="w-full h-96 md:h-[500px] object-cover group-hover:scale-105 transition-transform duration-700" loading="lazy" decoding="async">
+                  <div class="absolute inset-0 bg-gradient-to-t from-deep-charcoal/80 via-transparent to-transparent"></div>
+                </div>
+                <div class="absolute bottom-8 left-8 right-8 text-white">
+                  <div class="flex items-center space-x-4 mb-4">
+                    <span class="px-3 py-1 bg-oasis-teal rounded-full text-sm">Residential</span>
+                    <span class="px-3 py-1 bg-brand-orange text-pure-white rounded-full text-sm">JBR</span>
+                  </div>
+                  <h3 class="text-2xl md:text-3xl font-playfair font-medium mb-2">Pearl Residences</h3>
+                  <p class="text-white/90 mb-4 max-w-2xl">Premium residential tower offering luxury living with stunning marina views and world-class amenities in Jumeirah Beach Residence.</p>
+                  <a class="btn btn-secondary" href="/projects.html#pearl-residences">Learn More</a>
+                </div>
+              </article>
+              <!-- Card 8 -->
+              <article class="project-card w-full relative group bg-white rounded-2xl overflow-hidden shadow-lg hover:shadow-xl transition-shadow duration-300">
+                <div class="relative">
+                  <img src="/assets/images/projects/executive-offices.webp" alt="Tech District – office interiors" class="w-full h-96 md:h-[500px] object-cover group-hover:scale-105 transition-transform duration-700" loading="lazy" decoding="async">
+                  <div class="absolute inset-0 bg-gradient-to-t from-deep-charcoal/80 via-transparent to-transparent"></div>
+                </div>
+                <div class="absolute bottom-8 left-8 right-8 text-white">
+                  <div class="flex items-center space-x-4 mb-4">
+                    <span class="px-3 py-1 bg-oasis-teal rounded-full text-sm">Interiors</span>
+                    <span class="px-3 py-1 bg-brand-orange text-pure-white rounded-full text-sm">Internet City</span>
+                  </div>
+                  <h3 class="text-2xl md:text-3xl font-playfair font-medium mb-2">Tech District</h3>
+                  <p class="text-white/90 mb-4 max-w-2xl">Modern office interior solutions designed for Dubai's leading technology companies, combining functionality with cutting-edge design.</p>
+                  <a class="btn btn-secondary" href="/projects.html#tech-district">Learn More</a>
+                </div>
+              </article>
+              <!-- Card 9 -->
+              <article class="project-card w-full relative group bg-white rounded-2xl overflow-hidden shadow-lg hover:shadow-xl transition-shadow duration-300">
+                <div class="relative">
+                  <img src="/assets/images/projects/marina-mall.webp" alt="Harbor Promenade – mixed-use" class="w-full h-96 md:h-[500px] object-cover group-hover:scale-105 transition-transform duration-700" loading="lazy" decoding="async">
+                  <div class="absolute inset-0 bg-gradient-to-t from-deep-charcoal/80 via-transparent to-transparent"></div>
+                </div>
+                <div class="absolute bottom-8 left-8 right-8 text-white">
+                  <div class="flex items-center space-x-4 mb-4">
+                    <span class="px-3 py-1 bg-oasis-teal rounded-full text-sm">Mixed-use</span>
+                    <span class="px-3 py-1 bg-brand-orange text-pure-white rounded-full text-sm">Dubai Creek</span>
+                  </div>
+                  <h3 class="text-2xl md:text-3xl font-playfair font-medium mb-2">Harbor Promenade</h3>
+                  <p class="text-white/90 mb-4 max-w-2xl">Waterfront mixed-use development blending residential, commercial, and recreational spaces along Dubai's historic creek waterfront.</p>
+                  <a class="btn btn-secondary" href="/projects.html#harbor-promenade">Learn More</a>
+                </div>
+              </article>
+            </div>
+          </div>
+
         </div>
+      </div>
+
+      <!-- Controls -->
+      <button class="carousel-prev" aria-label="Previous" data-carousel-prev>‹</button>
+      <button class="carousel-next" aria-label="Next" data-carousel-next>›</button>
+
+      <!-- Indicators -->
+      <div class="carousel-indicators" aria-label="Slide indicators">
+        <button data-carousel-to="0" aria-label="Go to slide 1" aria-current="true"></button>
+        <button data-carousel-to="1" aria-label="Go to slide 2"></button>
+        <button data-carousel-to="2" aria-label="Go to slide 3"></button>
+      </div>
+
+      <div class="text-center mt-12" data-animate="fade-up">
+        <a href="/projects.html" class="btn btn-primary btn-large">Explore All Projects</a>
       </div>
     </section>
 
@@ -535,68 +623,150 @@
 
         <!-- Testimonials Slider -->
         <div class="relative max-w-4xl mx-auto" data-carousel data-autoplay="true" data-autoplay-delay="6000">
-          <div class="overflow-hidden" data-carousel-slides>
-            <!-- Testimonial 1 -->
-            <div class="w-full flex-shrink-0 text-center px-8" data-carousel-slide>
-              <div class="mb-8">
-                <svg class="w-12 h-12 text-oasis-teal/30 mx-auto mb-6" fill="currentColor" viewBox="0 0 24 24">
-                  <path d="M14.017 21v-7.391c0-5.704 3.731-9.57 8.983-10.609l.995 2.151c-2.432.917-3.995 3.638-3.995 5.849h4v10h-9.983zm-14.017 0v-7.391c0-5.704 3.748-9.57 9-10.609l.996 2.151c-2.433.917-3.996 3.638-3.996 5.849h4v10h-10z"/>
-                </svg>
-                <blockquote class="text-xl md:text-2xl text-deep-charcoal/90 font-medium leading-relaxed mb-6">
-                  "City Experts delivered our 40-story mixed-use development ahead of schedule and within budget. Their attention to detail and commitment to quality is unmatched in the UAE market."
-                </blockquote>
-              </div>
-              <div class="flex items-center justify-center space-x-4">
-                <div class="w-12 h-12 bg-warm-stone rounded-full flex items-center justify-center">
-                  <span class="text-deep-charcoal font-semibold">AH</span>
+          <div class="tc-viewport overflow-hidden">
+            <div
+              class="testimonials-carousel-container flex flex-nowrap justify-start transition-transform duration-500 ease-in-out"
+              data-carousel-slides
+              data-carousel-track>
+            <!-- Carousel Slide 1 - Contains 3 testimonials vertically -->
+            <div class="testimonial-slide basis-full w-full flex-shrink-0 flex flex-col space-y-8 text-center">
+              <div class="px-6 md:px-8">
+                <!-- Testimonial 1 -->
+                <div class="text-center py-6 border-b border-warm-stone/20 last:border-b-0">
+                  <div class="mb-6">
+                    <svg class="w-8 h-8 text-oasis-teal/30 mx-auto mb-4" fill="currentColor" viewBox="0 0 24 24">
+                      <path d="M14.017 21v-7.391c0-5.704 3.731-9.57 8.983-10.609l.995 2.151c-2.432.917-3.995 3.638-3.995 5.849h4v10h-9.983zm-14.017 0v-7.391c0-5.704 3.748-9.57 9-10.609l.996 2.151c-2.433.917-3.996 3.638-3.996 5.849h4v10h-10z"/>
+                    </svg>
+                    <blockquote class="text-lg md:text-xl text-deep-charcoal/90 font-medium leading-relaxed mb-4 max-w-3xl mx-auto">
+                      "City Experts delivered our 40-story mixed-use development ahead of schedule and within budget. Their attention to detail and commitment to quality is unmatched in the UAE market."
+                    </blockquote>
+                  </div>
+                  <div class="flex items-center justify-center space-x-3">
+                    <div class="w-10 h-10 bg-warm-stone rounded-full flex items-center justify-center">
+                      <span class="text-deep-charcoal font-semibold text-sm">AH</span>
+                    </div>
+                    <div class="text-left">
+                      <div class="font-semibold text-deep-charcoal">Ahmed Hassan</div>
+                      <div class="text-deep-charcoal/70 text-sm">CEO, Emirates Development Group</div>
+                    </div>
+                  </div>
                 </div>
-                <div class="text-left">
-                  <div class="font-semibold text-deep-charcoal">Ahmed Hassan</div>
-                  <div class="text-deep-charcoal/70">CEO, Emirates Development Group</div>
+              </div>
+              <div class="px-6 md:px-8">
+                <!-- Testimonial 2 -->
+                <div class="text-center py-6 border-b border-warm-stone/20 last:border-b-0">
+                  <div class="mb-6">
+                    <svg class="w-8 h-8 text-oasis-teal/30 mx-auto mb-4" fill="currentColor" viewBox="0 0 24 24">
+                      <path d="M14.017 21v-7.391c0-5.704 3.731-9.57 8.983-10.609l.995 2.151c-2.432.917-3.995 3.638-3.995 5.849h4v10h-9.983zm-14.017 0v-7.391c0-5.704 3.748-9.57 9-10.609l.996 2.151c-2.433.917-3.996 3.638-3.996 5.849h4v10h-10z"/>
+                    </svg>
+                    <blockquote class="text-lg md:text-xl text-deep-charcoal/90 font-medium leading-relaxed mb-4 max-w-3xl mx-auto">
+                      "The interior design and fit-out work for our luxury hotel exceeded all expectations. City Experts understood our vision and brought it to life with exceptional craftsmanship."
+                    </blockquote>
+                  </div>
+                  <div class="flex items-center justify-center space-x-3">
+                    <div class="w-10 h-10 bg-warm-stone rounded-full flex items-center justify-center">
+                      <span class="text-deep-charcoal font-semibold text-sm">SM</span>
+                    </div>
+                    <div class="text-left">
+                      <div class="font-semibold text-deep-charcoal">Sarah Mitchell</div>
+                      <div class="text-deep-charcoal/70 text-sm">Director of Operations, Luxury Hospitality International</div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="px-6 md:px-8">
+                <!-- Testimonial 3 -->
+                <div class="text-center py-6 border-b border-warm-stone/20 last:border-b-0">
+                  <div class="mb-6">
+                    <svg class="w-8 h-8 text-oasis-teal/30 mx-auto mb-4" fill="currentColor" viewBox="0 0 24 24">
+                      <path d="M14.017 21v-7.391c0-5.704 3.731-9.57 8.983-10.609l.995 2.151c-2.432.917-3.995 3.638-3.995 5.849h4v10h-9.983zm-14.017 0v-7.391c0-5.704 3.748-9.57 9-10.609l.996 2.151c-2.433.917-3.996 3.638-3.996 5.849h4v10h-10z"/>
+                    </svg>
+                    <blockquote class="text-lg md:text-xl text-deep-charcoal/90 font-medium leading-relaxed mb-4 max-w-3xl mx-auto">
+                      "Working with City Experts on our flagship retail complex was exceptional. They delivered innovative solutions that perfectly balanced aesthetics with functionality, creating spaces that truly enhance the customer experience."
+                    </blockquote>
+                  </div>
+                  <div class="flex items-center justify-center space-x-3">
+                    <div class="w-10 h-10 bg-warm-stone rounded-full flex items-center justify-center">
+                      <span class="text-deep-charcoal font-semibold text-sm">MR</span>
+                    </div>
+                    <div class="text-left">
+                      <div class="font-semibold text-deep-charcoal">Mariam Rahman</div>
+                      <div class="text-deep-charcoal/70 text-sm">Development Director, Dubai Retail Ventures</div>
+                    </div>
+                  </div>
                 </div>
               </div>
             </div>
 
-            <!-- Testimonial 2 -->
-            <div class="w-full flex-shrink-0 text-center px-8" data-carousel-slide>
-              <div class="mb-8">
-                <svg class="w-12 h-12 text-oasis-teal/30 mx-auto mb-6" fill="currentColor" viewBox="0 0 24 24">
-                  <path d="M14.017 21v-7.391c0-5.704 3.731-9.57 8.983-10.609l.995 2.151c-2.432.917-3.995 3.638-3.995 5.849h4v10h-9.983zm-14.017 0v-7.391c0-5.704 3.748-9.57 9-10.609l.996 2.151c-2.433.917-3.996 3.638-3.996 5.849h4v10h-10z"/>
-                </svg>
-                <blockquote class="text-xl md:text-2xl text-deep-charcoal/90 font-medium leading-relaxed mb-6">
-                  "The interior design and fit-out work for our luxury hotel exceeded all expectations. City Experts understood our vision and brought it to life with exceptional craftsmanship."
-                </blockquote>
-              </div>
-              <div class="flex items-center justify-center space-x-4">
-                <div class="w-12 h-12 bg-warm-stone rounded-full flex items-center justify-center">
-                  <span class="text-deep-charcoal font-semibold">SM</span>
+            <!-- Carousel Slide 2 - Contains 3 testimonials vertically -->
+            <div class="testimonial-slide basis-full w-full flex-shrink-0 flex flex-col space-y-8 text-center">
+              <div class="px-6 md:px-8">
+                <!-- Testimonial 4 -->
+                <div class="text-center py-6 border-b border-warm-stone/20 last:border-b-0">
+                  <div class="mb-6">
+                    <svg class="w-8 h-8 text-oasis-teal/30 mx-auto mb-4" fill="currentColor" viewBox="0 0 24 24">
+                      <path d="M14.017 21v-7.391c0-5.704 3.731-9.57 8.983-10.609l.995 2.151c-2.432.917-3.995 3.638-3.995 5.849h4v10h-9.983zm-14.017 0v-7.391c0-5.704 3.748-9.57 9-10.609l.996 2.151c-2.433.917-3.996 3.638-3.996 5.849h4v10h-10z"/>
+                    </svg>
+                    <blockquote class="text-lg md:text-xl text-deep-charcoal/90 font-medium leading-relaxed mb-4 max-w-3xl mx-auto">
+                      "Exceptional HSE standards and site coordination across all phases. City Experts set the benchmark for safe, efficient delivery."
+                    </blockquote>
+                  </div>
+                  <div class="flex items-center justify-center space-x-3">
+                    <div class="w-10 h-10 bg-warm-stone rounded-full flex items-center justify-center">
+                      <span class="text-deep-charcoal font-semibold text-sm">ON</span>
+                    </div>
+                    <div class="text-left">
+                      <div class="font-semibold text-deep-charcoal">Omar Al Nuaimi</div>
+                      <div class="text-deep-charcoal/70 text-sm">Head of Construction, Gulf Properties</div>
+                    </div>
+                  </div>
                 </div>
-                <div class="text-left">
-                  <div class="font-semibold text-deep-charcoal">Sarah Mitchell</div>
-                  <div class="text-deep-charcoal/70">Director of Operations, Luxury Hospitality International</div>
+              </div>
+              <div class="px-6 md:px-8">
+                <!-- Testimonial 5 -->
+                <div class="text-center py-6 border-b border-warm-stone/20 last:border-b-0">
+                  <div class="mb-6">
+                    <svg class="w-8 h-8 text-oasis-teal/30 mx-auto mb-4" fill="currentColor" viewBox="0 0 24 24">
+                      <path d="M14.017 21v-7.391c0-5.704 3.731-9.57 8.983-10.609l.995 2.151c-2.432.917-3.995 3.638-3.995 5.849h4v10h-9.983zm-14.017 0v-7.391c0-5.704 3.748-9.57 9-10.609l.996 2.151c-2.433.917-3.996 3.638-3.996 5.849h4v10h-10z"/>
+                    </svg>
+                    <blockquote class="text-lg md:text-xl text-deep-charcoal/90 font-medium leading-relaxed mb-4 max-w-3xl mx-auto">
+                      "From concept to handover, communication was seamless. Decisions were transparent and timelines were consistently met."
+                    </blockquote>
+                  </div>
+                  <div class="flex items-center justify-center space-x-3">
+                    <div class="w-10 h-10 bg-warm-stone rounded-full flex items-center justify-center">
+                      <span class="text-deep-charcoal font-semibold text-sm">PM</span>
+                    </div>
+                    <div class="text-left">
+                      <div class="font-semibold text-deep-charcoal">Priya Menon</div>
+                      <div class="text-deep-charcoal/70 text-sm">Development Manager, Marina Holdings</div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="px-6 md:px-8">
+                <!-- Testimonial 6 -->
+                <div class="text-center py-6 border-b border-warm-stone/20 last:border-b-0">
+                  <div class="mb-6">
+                    <svg class="w-8 h-8 text-oasis-teal/30 mx-auto mb-4" fill="currentColor" viewBox="0 0 24 24">
+                      <path d="M14.017 21v-7.391c0-5.704 3.731-9.57 8.983-10.609l.995 2.151c-2.432.917-3.995 3.638-3.995 5.849h4v10h-9.983zm-14.017 0v-7.391c0-5.704 3.748-9.57 9-10.609l.996 2.151c-2.433.917-3.996 3.638-3.996 5.849h4v10h-10z"/>
+                    </svg>
+                    <blockquote class="text-lg md:text-xl text-deep-charcoal/90 font-medium leading-relaxed mb-4 max-w-3xl mx-auto">
+                      "Fit-out quality exceeded brand standards across all outlets. The attention to detail was outstanding."
+                    </blockquote>
+                  </div>
+                  <div class="flex items-center justify-center space-x-3">
+                    <div class="w-10 h-10 bg-warm-stone rounded-full flex items-center justify-center">
+                      <span class="text-deep-charcoal font-semibold text-sm">JC</span>
+                    </div>
+                    <div class="text-left">
+                      <div class="font-semibold text-deep-charcoal">James Carter</div>
+                      <div class="text-deep-charcoal/70 text-sm">Regional Director, Horizon Retail</div>
+                    </div>
+                  </div>
                 </div>
               </div>
             </div>
-
-            <!-- Testimonial 3 -->
-            <div class="w-full flex-shrink-0 text-center px-8" data-carousel-slide>
-              <div class="mb-8">
-                <svg class="w-12 h-12 text-oasis-teal/30 mx-auto mb-6" fill="currentColor" viewBox="0 0 24 24">
-                  <path d="M14.017 21v-7.391c0-5.704 3.731-9.57 8.983-10.609l.995 2.151c-2.432.917-3.995 3.638-3.995 5.849h4v10h-9.983zm-14.017 0v-7.391c0-5.704 3.748-9.57 9-10.609l.996 2.151c-2.433.917-3.996 3.638-3.996 5.849h4v10h-10z"/>
-                </svg>
-                <blockquote class="text-xl md:text-2xl text-deep-charcoal/90 font-medium leading-relaxed mb-6">
-                  "From design to handover, City Experts managed our residential community project with complete professionalism. The quality of construction and finishing is outstanding."
-                </blockquote>
-              </div>
-              <div class="flex items-center justify-center space-x-4">
-                <div class="w-12 h-12 bg-warm-stone rounded-full flex items-center justify-center">
-                  <span class="text-deep-charcoal font-semibold">KA</span>
-                </div>
-                <div class="text-left">
-                  <div class="font-semibold text-deep-charcoal">Khalid Al Mansoori</div>
-                  <div class="text-deep-charcoal/70">Managing Partner, Al Mansoori Properties</div>
-                </div>
-              </div>
             </div>
           </div>
 
@@ -614,9 +784,8 @@
 
           <!-- Indicators -->
           <div class="flex justify-center space-x-2 mt-12">
-            <button data-carousel-indicator="0" class="w-3 h-3 rounded-full bg-oasis-teal transition-colors" aria-label="Go to testimonial 1"></button>
-            <button data-carousel-indicator="1" class="w-3 h-3 rounded-full bg-warm-stone hover:bg-oasis-teal transition-colors" aria-label="Go to testimonial 2"></button>
-            <button data-carousel-indicator="2" class="w-3 h-3 rounded-full bg-warm-stone hover:bg-oasis-teal transition-colors" aria-label="Go to testimonial 3"></button>
+            <button data-carousel-indicator="0" class="w-3 h-3 rounded-full bg-oasis-teal transition-colors" aria-label="Go to testimonials slide 1" aria-current="true"></button>
+            <button data-carousel-indicator="1" class="w-3 h-3 rounded-full bg-warm-stone hover:bg-oasis-teal transition-colors" aria-label="Go to testimonials slide 2"></button>
           </div>
         </div>
       </div>

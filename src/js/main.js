@@ -7,8 +7,48 @@ import { initializeLanguageToggle } from './language.js';
 document.addEventListener('DOMContentLoaded', () => {
   initializeComponents();
   initializeLanguageToggle();
+  initializeFeaturedCarousel();
   console.log('✅ City Experts Website Ready');
 });
+
+// FEATURED CAROUSEL INIT
+function initializeFeaturedCarousel(){
+  const root = document.getElementById("featured-carousel");
+  if (!root) return;
+
+  const track = root.querySelector("[data-carousel-track]");
+  const slides = Array.from(root.querySelectorAll("[data-carousel-slide]"));
+  const prev = root.querySelector("[data-carousel-prev]");
+  const next = root.querySelector("[data-carousel-next]");
+  const dots = Array.from(root.querySelectorAll("[data-carousel-to]"));
+
+  if (!track || slides.length === 0) return;
+
+  let index = 0;
+
+  function go(i){
+    index = (i + slides.length) % slides.length;
+    const viewport = root.querySelector(".carousel-viewport");
+    const offset = -index * viewport.clientWidth;
+    track.style.transform = `translateX(${offset}px)`;
+    dots.forEach((d, n) => d.setAttribute("aria-current", n === index ? "true" : "false"));
+  }
+
+  // Recompute on resize so widths stay correct
+  const ro = new ResizeObserver(() => go(index));
+  ro.observe(root.querySelector(".carousel-viewport"));
+
+  prev?.addEventListener("click", () => go(index - 1));
+  next?.addEventListener("click", () => go(index + 1));
+  dots.forEach(d => d.addEventListener("click", () => go(Number(d.dataset.carouselTo || 0))));
+
+  // Autoplay (optional)
+  let timer = setInterval(() => go(index + 1), 5000);
+  root.addEventListener("pointerenter", () => clearInterval(timer));
+  root.addEventListener("pointerleave", () => timer = setInterval(() => go(index + 1), 5000));
+
+  go(0);
+}
 
 // Handle smooth scrolling for anchor links
 document.addEventListener('click', (e) => {

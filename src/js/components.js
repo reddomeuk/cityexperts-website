@@ -2,6 +2,7 @@
 export function initializeComponents() {
   initializeCounters();
   initializeCarousels();
+  initializeTestimonialsCarousel(); // Specialized testimonials carousel
   initializeModalSystem();
   initializeForms();
   initializeFilterSystem();
@@ -522,4 +523,73 @@ export function initializeFilterSystem() {
       });
     });
   });
+}
+
+// Specialized testimonials carousel with viewport-based calculations
+export function initializeTestimonialsCarousel() {
+  const root = document.querySelector('#testimonials [data-carousel]');
+  if (!root) return;
+
+  const viewport = root.querySelector('.tc-viewport');
+  const track = root.querySelector('[data-carousel-track]');
+  const slides = [...root.querySelectorAll('.testimonial-slide')];
+  const dots = [...root.querySelectorAll('[data-carousel-indicator]')];
+  const prev = root.querySelector('[data-carousel-prev]');
+  const next = root.querySelector('[data-carousel-next]');
+
+  let i = 0;
+  
+  function width() { 
+    return Math.round(viewport.getBoundingClientRect().width); 
+  }
+  
+  function go(n) {
+    i = (n + slides.length) % slides.length;
+    track.style.transform = `translateX(${-i * width()}px)`;
+    dots.forEach((d, k) => {
+      d.setAttribute('aria-current', k === i ? 'true' : 'false');
+      d.classList.toggle('bg-oasis-teal', k === i);
+      d.classList.toggle('bg-warm-stone', k !== i);
+    });
+  }
+
+  // Event listeners
+  prev?.addEventListener('click', () => go(i - 1));
+  next?.addEventListener('click', () => go(i + 1));
+  
+  // Dots navigation
+  dots.forEach((dot, index) => {
+    dot.addEventListener('click', () => go(index));
+  });
+
+  // Recompute on resize so the transform stays perfect
+  new ResizeObserver(() => go(i)).observe(viewport);
+
+  // Auto-play functionality
+  const autoPlay = root.getAttribute('data-autoplay') === 'true';
+  const autoPlayDelay = parseInt(root.getAttribute('data-autoplay-delay')) || 6000;
+  
+  let autoPlayInterval;
+  
+  function startAutoPlay() {
+    if (autoPlay) {
+      autoPlayInterval = setInterval(() => go(i + 1), autoPlayDelay);
+    }
+  }
+  
+  function stopAutoPlay() {
+    if (autoPlayInterval) {
+      clearInterval(autoPlayInterval);
+      autoPlayInterval = null;
+    }
+  }
+  
+  // Stop autoplay on user interaction
+  prev?.addEventListener('click', stopAutoPlay);
+  next?.addEventListener('click', stopAutoPlay);
+  dots.forEach(dot => dot.addEventListener('click', stopAutoPlay));
+
+  // Initialize
+  go(0);
+  startAutoPlay();
 }
