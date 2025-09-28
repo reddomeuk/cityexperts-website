@@ -1,0 +1,18 @@
+name = "cityexperts-website"
+compatibility_date = "2024-09-01"
+compatibility_flags = ["nodejs_compat"]
+
+# Pages configuration
+pages_build_output_dir = "dist"
+
+# Environment variables for production
+[env.production.vars]
+ENVIRONMENT = "production"
+CONTACT_EMAIL = "info@cityexperts.ae"
+FROM_EMAIL = "noreply@cityexperts.ae"
+
+# Environment variables for preview/staging
+[env.preview.vars]
+ENVIRONMENT = "preview"
+CONTACT_EMAIL = "info@cityexperts.ae"
+FROM_EMAIL = "noreply@cityexperts.ae"
