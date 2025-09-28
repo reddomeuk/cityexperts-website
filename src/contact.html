@@ -125,8 +125,49 @@
     .nav-link:hover {
       color: #FF8000;
     }
-    .nav-link.active {
-      color: #FF8000;
+        .nav-link.active {
+      color: #EC6726;
+    }
+    
+    /* Language toggle buttons */
+    .lang-btn {
+      background-color: #f3f4f6;
+      color: #6b7280;
+      border: none;
+      cursor: pointer;
+      transition: all 0.2s ease;
+    }
+    
+    .lang-btn:hover {
+      background-color: #e5e7eb;
+      color: #374151;
+    }
+    
+    .lang-btn.active {
+      background-color: #EC6726;
+      color: white;
+    }
+    
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      padding: 0.75rem 1.5rem;
+      border-radius: 0.5rem;
+      font-weight: 500;
+      text-decoration: none;
+      transition: all 0.2s ease;
+      border: none;
+      cursor: pointer;
+    }
+    
+    .btn-primary {
+      background-color: #EC6726;
+      color: white;
+    }
+    
+    .btn-primary:hover {
+      background-color: #d55a1f;
     }
     
     /* Form specific styles */
@@ -172,10 +213,18 @@
         
         <!-- Desktop Navigation -->
         <div class="hidden lg:flex items-center space-x-8">
-          <a href="/" class="nav-link">Home</a>
-          <a href="/about.html" class="nav-link">About</a>
-          <a href="/projects.html" class="nav-link">Projects</a>
-          <a href="/contact.html" class="nav-link active">Contact</a>
+          <a href="/" class="nav-link" data-translate="nav.home">Home</a>
+          <a href="/about.html" class="nav-link" data-translate="nav.about">About</a>
+          <a href="/projects.html" class="nav-link" data-translate="nav.projects">Projects</a>
+          <a href="/contact.html" class="nav-link active" data-translate="nav.contact">Contact</a>
+          
+          <!-- Language Toggle -->
+          <div class="flex items-center space-x-2">
+            <button id="lang-en" class="lang-btn active text-sm font-medium px-3 py-1 rounded-full transition-colors">EN</button>
+            <button id="lang-ar" class="lang-btn text-sm font-medium px-3 py-1 rounded-full transition-colors">ع</button>
+          </div>
+          
+          <a href="/contact.html" class="btn btn-primary" data-translate="nav.get-quote">Get Quote</a>
         </div>
       </div>
     </div>

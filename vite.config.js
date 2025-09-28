@@ -9,7 +9,6 @@ export default defineConfig({
       input: {
         main: 'src/index.html',
         about: 'src/about.html',
-        services: 'src/services.html',
         projects: 'src/projects.html',
         contact: 'src/contact.html',
         admin: 'src/admin.html'

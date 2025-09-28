@@ -1,10 +1,12 @@
 // City Experts Website - Main JavaScript Module
 import '../styles/main.css';
 import { initializeComponents } from './components.js';
+import { initializeLanguageToggle } from './language.js';
 
 // Initialize everything when DOM is loaded
 document.addEventListener('DOMContentLoaded', () => {
   initializeComponents();
+  initializeLanguageToggle();
   console.log('✅ City Experts Website Ready');
 });
 

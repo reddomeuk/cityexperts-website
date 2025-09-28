@@ -5,8 +5,15 @@
   "type": "module",
   "scripts": {
     "dev": "vite",
-    "build": "vite build",
+    "build": "vite build && npm run copy-routes",
+    "build:cf": "vite build && npm run copy-routes && npm run copy-functions",
+    "copy-routes": "cp _routes.json dist/",
+    "copy-functions": "cp -r functions dist/ 2>/dev/null || true",
     "preview": "vite preview",
+    "preview:cf": "wrangler pages dev dist --compatibility-date=2024-09-01",
+    "deploy:cf": "wrangler pages deploy dist --project-name=cityexperts-website",
+    "cf:login": "wrangler login",
+    "cf:dev": "wrangler pages dev dist --live-reload",
     "lint": "eslint . --ext js,ts,jsx,tsx --report-unused-disable-directives --max-warnings 0"
   },
   "dependencies": {
@@ -29,7 +36,8 @@
     "postcss": "^8.4.39",
     "prettier": "^3.3.2",
     "tailwindcss": "^3.4.6",
-    "vite": "^5.3.4"
+    "vite": "^5.3.4",
+    "wrangler": "^3.72.0"
   },
   "keywords": [
     "construction",

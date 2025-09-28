@@ -1,0 +1,62 @@
+name = "cityexperts-website"
+compatibility_date = "2024-09-01"
+compatibility_flags = ["nodejs_compat"]
+
+# Pages configuration
+pages_build_output_dir = "dist"
+
+# Environment variables (for local development)
+[vars]
+ENVIRONMENT = "development"
+CONTACT_EMAIL = "info@cityexperts.ae"
+FROM_EMAIL = "noreply@cityexperts.ae"
+
+# KV Namespaces (for storing data)
+[[kv_namespaces]]
+binding = "PROJECTS_KV"
+id = "your-kv-namespace-id"
+preview_id = "your-preview-kv-namespace-id"
+
+[[kv_namespaces]]
+binding = "ANALYTICS_KV"
+id = "your-analytics-kv-namespace-id"
+preview_id = "your-preview-analytics-kv-namespace-id"
+
+# D1 Database (if needed for storing contact forms, projects, etc.)
+[[d1_databases]]
+binding = "DB"
+database_name = "cityexperts-db"
+database_id = "your-d1-database-id"
+
+# R2 Storage (for file uploads if needed)
+[[r2_buckets]]
+binding = "UPLOADS"
+bucket_name = "cityexperts-uploads"
+
+# Analytics Engine (for tracking)
+[[analytics_engine_datasets]]
+binding = "ANALYTICS"
+dataset = "cityexperts-analytics"
+
+# Environment-specific configurations
+[env.production]
+vars = { ENVIRONMENT = "production" }
+
+[env.staging]
+vars = { ENVIRONMENT = "staging" }
+
+# Build configuration
+[build]
+command = "npm run build"
+cwd = "."
+watch_dir = ["src", "public", "functions"]
+
+# Development configuration
+[dev]
+ip = "127.0.0.1"
+port = 8787
+local_protocol = "http"
+upstream_protocol = "https"
+
+# Local development persistence (handled automatically by Wrangler v3+)
+# Note: Persistence is now managed automatically

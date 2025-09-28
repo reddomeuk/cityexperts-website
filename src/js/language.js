@@ -2,8 +2,13 @@
 export function initializeLanguageToggle() {
   const languageToggle = document.querySelector('#language-toggle');
   const currentLangDisplay = document.querySelector('#current-language');
+  const langEnBtn = document.querySelector('#lang-en');
+  const langArBtn = document.querySelector('#lang-ar');
+  const mobileLanguageToggle = document.querySelector('#mobile-language-toggle');
+  const mobileCurrentLang = document.querySelector('#mobile-current-language');
   
-  if (!languageToggle) return;
+  // Check if any language toggle exists
+  if (!languageToggle && !langEnBtn && !langArBtn && !mobileLanguageToggle) return;
   
   // Get current language from localStorage or default to 'en'
   let currentLanguage = localStorage.getItem('preferred-language') || 'en';
@@ -147,6 +152,17 @@ export function initializeLanguageToggle() {
       currentLangDisplay.textContent = lang.toUpperCase();
     }
     
+    // Update mobile language display
+    if (mobileCurrentLang) {
+      mobileCurrentLang.textContent = lang === 'en' ? 'English' : 'العربية';
+    }
+    
+    // Update language button states
+    if (langEnBtn && langArBtn) {
+      langEnBtn.classList.toggle('active', lang === 'en');
+      langArBtn.classList.toggle('active', lang === 'ar');
+    }
+    
     // Save preference
     localStorage.setItem('preferred-language', lang);
     
@@ -161,21 +177,47 @@ export function initializeLanguageToggle() {
   // Initialize with saved or default language
   applyLanguage(currentLanguage);
   
-  // Language toggle functionality
-  languageToggle.addEventListener('click', (e) => {
-    e.preventDefault();
-    const newLanguage = currentLanguage === 'en' ? 'ar' : 'en';
-    applyLanguage(newLanguage);
-  });
-  
-  // Keyboard support for language toggle
-  languageToggle.addEventListener('keydown', (e) => {
-    if (e.key === 'Enter' || e.key === ' ') {
+  // Language toggle functionality - Main toggle button (index.html)
+  if (languageToggle) {
+    languageToggle.addEventListener('click', (e) => {
       e.preventDefault();
       const newLanguage = currentLanguage === 'en' ? 'ar' : 'en';
       applyLanguage(newLanguage);
-    }
-  });
+    });
+    
+    // Keyboard support for language toggle
+    languageToggle.addEventListener('keydown', (e) => {
+      if (e.key === 'Enter' || e.key === ' ') {
+        e.preventDefault();
+        const newLanguage = currentLanguage === 'en' ? 'ar' : 'en';
+        applyLanguage(newLanguage);
+      }
+    });
+  }
+  
+  // Individual language buttons (about.html, projects.html)
+  if (langEnBtn) {
+    langEnBtn.addEventListener('click', (e) => {
+      e.preventDefault();
+      applyLanguage('en');
+    });
+  }
+  
+  if (langArBtn) {
+    langArBtn.addEventListener('click', (e) => {
+      e.preventDefault();
+      applyLanguage('ar');
+    });
+  }
+  
+  // Mobile language toggle
+  if (mobileLanguageToggle) {
+    mobileLanguageToggle.addEventListener('click', (e) => {
+      e.preventDefault();
+      const newLanguage = currentLanguage === 'en' ? 'ar' : 'en';
+      applyLanguage(newLanguage);
+    });
+  }
   
   console.log('🌐 Language toggle initialized');
 }
