@@ -2,23 +2,10 @@ name = "cityexperts-website"
 compatibility_date = "2024-09-01"
 compatibility_flags = ["nodejs_compat"]
 
-# Pages configuration
+# Pages configuration - minimal and clean
 pages_build_output_dir = "dist"
 
-# Environment variables for development
+# Only basic environment variables
 [vars]
 ENVIRONMENT = "development"
 CONTACT_EMAIL = "info@cityexperts.ae"
-FROM_EMAIL = "noreply@cityexperts.ae"
-
-# Production environment (Pages-compatible)
-[env.production.vars]
-ENVIRONMENT = "production"
-CONTACT_EMAIL = "info@cityexperts.ae"
-FROM_EMAIL = "noreply@cityexperts.ae"
-
-# Preview environment (Pages-compatible)  
-[env.preview.vars]
-ENVIRONMENT = "preview"
-CONTACT_EMAIL = "info@cityexperts.ae"
-FROM_EMAIL = "noreply@cityexperts.ae"
