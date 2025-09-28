@@ -5,7 +5,7 @@
   "type": "module",
   "scripts": {
     "dev": "vite",
-    "build": "vite build && npm run copy-routes",
+    "build": "vite build && npm run copy-routes && npm run copy-functions",
     "build:cf": "vite build && npm run copy-routes && npm run copy-functions",
     "copy-routes": "cp _routes.json dist/",
     "copy-functions": "cp -r functions dist/ 2>/dev/null || true",

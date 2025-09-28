@@ -1,0 +1,19 @@
+# Cloudflare Pages Build Configuration
+build:
+  command: npm run build
+  output: dist
+  
+# Environment variables
+env:
+  NODE_VERSION: "18"
+  NPM_FLAGS: "--legacy-peer-deps"
+  
+# Preview environment
+preview:
+  env:
+    ENVIRONMENT: preview
+    
+# Production environment  
+production:
+  env:
+    ENVIRONMENT: production
