@@ -1,0 +1,633 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Our Projects - City Experts Construction Portfolio | UAE</title>
+  <meta name="description" content="Explore City Experts' portfolio of landmark commercial buildings, luxury residential projects, and award-winning interior designs across the UAE.">
+  <meta name="robots" content="index,follow">
+  
+  <!-- Open Graph -->
+  <meta property="og:title" content="Our Projects - City Experts Construction Portfolio">
+  <meta property="og:description" content="Browse our comprehensive portfolio of completed projects including commercial construction, residential developments, and interior design.">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://cityexperts.ae/projects">
+  <meta property="og:image" content="/assets/images/projects-hero.webp">
+  
+  <!-- Twitter Card -->
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="City Experts Project Portfolio">
+  <meta name="twitter:description" content="300+ completed projects across UAE - commercial, residential, and interior design excellence.">
+  <meta name="twitter:image" content="/assets/images/projects-hero.webp">
+  
+  <!-- JSON-LD Structured Data -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "CollectionPage",
+    "name": "City Experts Projects Portfolio",
+    "description": "Showcase of City Experts' completed construction and interior design projects across the UAE.",
+    "mainEntity": {
+      "@type": "ItemList",
+      "numberOfItems": "300+",
+      "itemListElement": [
+        {
+          "@type": "ConstructionProject",
+          "name": "Commercial Construction Projects"
+        },
+        {
+          "@type": "ConstructionProject", 
+          "name": "Residential Development Projects"
+        },
+        {
+          "@type": "ConstructionProject",
+          "name": "Interior Design Projects"
+        }
+      ]
+    }
+  }
+  </script>
+  
+  <!-- Favicons -->
+  <link rel="icon" type="image/x-icon" href="/favicon.ico">
+  <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+  <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+  
+  <!-- Preload critical resources -->
+  <link rel="preload" href="/assets/images/projects-hero.webp" as="image">
+  
+  <!-- Skip link for accessibility -->
+  <a href="#main-content" class="skip-link sr-only focus:not-sr-only focus:absolute focus:top-4 focus:left-4 bg-oasis-teal text-white px-4 py-2 rounded-md z-50">Skip to main content</a>
+  
+
+</head>
+
+<body class="antialiased">
+  <!-- Navigation -->
+  <nav id="main-nav" class="fixed top-0 w-full z-40 transition-all duration-300 bg-white shadow-md">
+    <div class="container-custom">
+      <div class="flex items-center justify-between h-20">
+        <!-- Logo -->
+        <div class="flex items-center">
+          <a href="/" class="flex items-center space-x-3" aria-label="City Experts Home">
+            <img src="/assets/images/city-experts-logo.svg" alt="City Experts" class="h-10 w-auto">
+            <span class="font-playfair text-xl font-semibold text-deep-charcoal">City Experts</span>
+          </a>
+        </div>
+        
+        <!-- Desktop Navigation -->
+        <div class="hidden lg:flex items-center space-x-8">
+          <a href="/" class="nav-link" data-translate="nav.home">Home</a>
+          <a href="/about.html" class="nav-link" data-translate="nav.about">About</a>
+          <a href="/projects.html" class="nav-link active" data-translate="nav.projects">Projects</a>
+          <a href="/contact.html" class="nav-link" data-translate="nav.contact">Contact</a>
+          
+          <!-- Language Toggle -->
+          <div class="flex items-center space-x-2">
+            <button id="lang-en" class="lang-btn active text-sm font-medium px-3 py-1 rounded-full transition-colors">EN</button>
+            <button id="lang-ar" class="lang-btn text-sm font-medium px-3 py-1 rounded-full transition-colors">ع</button>
+          </div>
+          
+          <a href="/contact.html" class="btn btn-primary" data-translate="nav.get-quote">Get Quote</a>
+        </div>
+        
+        <!-- Mobile Menu Button -->
+        <button id="mobile-menu-btn" class="lg:hidden p-2 text-deep-charcoal hover:text-oasis-teal transition-colors" aria-label="Open Menu">
+          <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path>
+          </svg>
+        </button>
+      </div>
+    </div>
+    
+    <!-- Mobile Menu -->
+    <div id="mobile-menu" class="lg:hidden fixed inset-0 z-50 transform translate-x-full transition-transform duration-300 ease-in-out">
+      <div class="absolute inset-0 bg-deep-charcoal/80 backdrop-blur-sm"></div>
+      <div class="relative h-full w-80 max-w-sm bg-white shadow-strong">
+        <div class="flex items-center justify-between p-6 border-b border-warm-stone/20">
+          <img src="/assets/images/city-experts-logo.svg" alt="City Experts" class="h-8 w-auto">
+          <button id="mobile-menu-close" class="p-2 text-deep-charcoal hover:text-oasis-teal transition-colors" aria-label="Close Menu">
+            <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"></path>
+            </svg>
+          </button>
+        </div>
+        
+        <nav class="p-6">
+          <a href="/" class="block py-3 text-deep-charcoal hover:text-oasis-teal transition-colors border-b border-warm-stone/20">Home</a>
+          <a href="/about.html" class="block py-3 text-deep-charcoal hover:text-oasis-teal transition-colors border-b border-warm-stone/20">About</a>
+          <a href="/projects.html" class="block py-3 text-oasis-teal font-medium border-b border-warm-stone/20">Projects</a>
+          <a href="/contact.html" class="block py-3 text-deep-charcoal hover:text-oasis-teal transition-colors border-b border-warm-stone/20">Contact</a>
+        </nav>
+        
+        <div class="absolute bottom-6 left-6 right-6">
+          <a href="/contact.html" class="btn btn-primary w-full justify-center">Get Quote</a>
+        </div>
+      </div>
+    </div>
+  </nav>
+  
+  <!-- Main Content -->
+  <main id="main-content">
+    <!-- Hero Section -->
+    <section class="relative min-h-screen flex items-center justify-center overflow-hidden">
+      <!-- Background Image -->
+      <div class="absolute inset-0">
+        <img 
+          src="/assets/images/projects-hero.webp"
+          alt="City Experts project showcase with modern buildings"
+          class="w-full h-full object-cover"
+          data-critical
+        >
+        <div class="absolute inset-0 bg-gradient-hero"></div>
+      </div>
+      
+      <!-- Hero Content -->
+      <div class="relative z-10 container-custom text-white">
+        <div class="max-w-3xl" data-animate="fade-up">
+          <div class="flex items-center space-x-4 mb-6">
+            <div class="w-12 h-px bg-brand-orange"></div>
+            <span class="text-brand-orange font-medium uppercase tracking-wider">Our Portfolio</span>
+          </div>
+          
+          <h1 class="hero-title font-playfair font-semibold mb-6 text-shadow-lg" data-translate="projects.hero.headline">
+            Landmark Projects Across the UAE
+          </h1>
+          
+          <p class="hero-sub mb-8 text-white" data-translate="projects.hero.subheadline">
+            From iconic commercial towers to luxury residential developments, explore 300+ completed projects that define architectural excellence.
+          </p>
+        </div>
+      </div>
+      
+      <!-- Scroll Indicator -->
+      <div class="scroll-indicator" aria-hidden="true"><span></span></div>
+    </section>
+
+    <!-- Project Stats Section -->
+    <section class="relative -mt-20 z-20">
+      <div class="container-custom">
+        <div class="max-w-6xl mx-auto" data-animate="fade-up" data-animate-delay="800">
+          <div class="grid grid-cols-2 md:grid-cols-4 gap-6 bg-white shadow-strong rounded-2xl p-8 text-center">
+            <div class="stat-item">
+              <div class="text-3xl md:text-4xl font-bold text-brand-orange mb-2" data-counter="300" data-suffix="+" data-translate="stats.projects-value">300+</div>
+              <div class="text-sm text-deep-charcoal/70" data-translate="stats.projects">Completed Projects</div>
+            </div>
+            <div class="stat-item">
+              <div class="text-3xl md:text-4xl font-bold text-brand-orange mb-2" data-counter="45" data-suffix="+" data-translate="stats.commercial-value">45+</div>
+              <div class="text-sm text-deep-charcoal/70" data-translate="stats.commercial">Commercial Buildings</div>
+            </div>
+            <div class="stat-item">
+              <div class="text-3xl md:text-4xl font-bold text-brand-orange mb-2" data-counter="180" data-suffix="+" data-translate="stats.residential-value">180+</div>
+              <div class="text-sm text-deep-charcoal/70" data-translate="stats.residential">Residential Units</div>
+            </div>
+            <div class="stat-item">
+              <div class="text-3xl md:text-4xl font-bold text-brand-orange mb-2" data-counter="75" data-suffix="+" data-translate="stats.interiors-value">75+</div>
+              <div class="text-sm text-deep-charcoal/70" data-translate="stats.interiors">Interior Projects</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Project Filter Section -->
+    <section class="section bg-warm-stone/30">
+      <div class="container-custom">
+        <div class="text-center mb-12" data-animate="fade-up">
+          <h2 class="text-3xl md:text-4xl lg:text-5xl font-playfair font-medium mb-6">
+            Explore Our Work
+          </h2>
+          <p class="text-xl text-deep-charcoal/80 max-w-3xl mx-auto mb-8">
+            Filter through our diverse portfolio of construction and design excellence.
+          </p>
+          
+          <!-- Filter Buttons -->
+          <div class="flex flex-wrap justify-center gap-4" data-animate="fade-up" data-animate-delay="200">
+            <button class="filter-chip active" data-filter="all" aria-pressed="true">All Projects</button>
+            <button class="filter-chip" data-filter="commercial" aria-pressed="false">Commercial</button>
+            <button class="filter-chip" data-filter="residential" aria-pressed="false">Residential</button>
+            <button class="filter-chip" data-filter="interior" aria-pressed="false">Interior Design</button>
+            <button class="filter-chip" data-filter="mixed-use" aria-pressed="false">Mixed Use</button>
+          </div>
+        </div>
+        
+        <!-- Projects Grid -->
+        <div id="projects-grid" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+          <!-- Commercial Project 1 -->
+          <div class="project-card" data-category="commercial" data-animate="fade-up" data-animate-delay="100">
+            <div class="card card-hover overflow-hidden group">
+              <div class="ratio-16x9">
+                <img 
+                  src="/assets/images/projects/dubai-tower-commercial.webp" 
+                  alt="Dubai Tower - Modern commercial building by City Experts"
+                  class="group-hover:scale-105 transition-transform duration-500"
+                  loading="lazy"
+                >
+                <div class="absolute inset-0 bg-gradient-to-t from-deep-charcoal/80 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+                <div class="absolute top-4 left-4">
+                  <span class="badge">Commercial</span>
+                </div>
+                <div class="absolute bottom-4 left-4 right-4 text-white opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+                  <div class="flex items-center justify-between">
+                    <div>
+                      <h3 class="text-lg font-semibold">Dubai Tower</h3>
+                      <p class="text-sm text-white/80">Business Bay</p>
+                    </div>
+                    <svg class="w-6 h-6 icon-ui" viewBox="0 0 24 24" aria-hidden="true">
+                      <path stroke-linecap="round" stroke-linejoin="round" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"/>
+                    </svg>
+                  </div>
+                </div>
+              </div>
+              <div class="p-6">
+                <h3 class="text-xl font-semibold mb-2">Dubai Tower</h3>
+                <p class="text-deep-charcoal/70 mb-4">
+                  A 25-story mixed-use commercial tower featuring modern office spaces, retail outlets, and premium amenities in the heart of Business Bay.
+                </p>
+                <div class="flex items-center justify-between text-sm">
+                  <span class="text-deep-charcoal/60">Completed: 2023</span>
+                  <a href="/projects/dubai-tower.html" class="text-brand-orange hover:text-oasis-teal font-medium transition-colors">View Details →</a>
+                </div>
+              </div>
+            </div>
+          </div>
+          
+          <!-- Residential Project 1 -->
+          <div class="project-card" data-category="residential" data-animate="fade-up" data-animate-delay="200">
+            <div class="card card-hover overflow-hidden group">
+              <div class="ratio-16x9">
+                <img 
+                  src="/assets/images/projects/palm-residences.webp" 
+                  alt="Palm Residences - Luxury residential development"
+                  class="group-hover:scale-105 transition-transform duration-500"
+                  loading="lazy"
+                >
+                <div class="absolute inset-0 bg-gradient-to-t from-deep-charcoal/80 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+                <div class="absolute top-4 left-4">
+                  <span class="badge">Residential</span>
+                </div>
+                <div class="absolute bottom-4 left-4 right-4 text-white opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+                  <div class="flex items-center justify-between">
+                    <div>
+                      <h3 class="text-lg font-semibold">Palm Residences</h3>
+                      <p class="text-sm text-white/80">Palm Jumeirah</p>
+                    </div>
+                    <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                      <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"></path>
+                    </svg>
+                  </div>
+                </div>
+              </div>
+              <div class="p-6">
+                <h3 class="text-xl font-semibold mb-2">Palm Residences</h3>
+                <p class="text-deep-charcoal/70 mb-4">
+                  Exclusive waterfront villas with contemporary design, private beaches, and world-class amenities on the prestigious Palm Jumeirah.
+                </p>
+                <div class="flex items-center justify-between text-sm">
+                  <span class="text-deep-charcoal/60">Completed: 2022</span>
+                  <a href="/projects/palm-residences.html" class="text-brand-orange hover:text-oasis-teal font-medium transition-colors">View Details →</a>
+                </div>
+              </div>
+            </div>
+          </div>
+          
+          <!-- Interior Project 1 -->
+          <div class="project-card" data-category="interior" data-animate="fade-up" data-animate-delay="300">
+            <div class="card card-hover overflow-hidden group">
+              <div class="relative overflow-hidden">
+                <img 
+                  src="/assets/images/projects/executive-offices.webp" 
+                  alt="Executive Office Interior Design by City Experts"
+                  class="w-full h-64 object-cover group-hover:scale-105 transition-transform duration-500"
+                  loading="lazy"
+                >
+                <div class="absolute inset-0 bg-gradient-to-t from-deep-charcoal/80 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+                <div class="absolute top-4 left-4">
+                  <span class="bg-purple-600 text-white px-3 py-1 rounded-full text-sm font-medium">Interior Design</span>
+                </div>
+                <div class="absolute bottom-4 left-4 right-4 text-white opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+                  <div class="flex items-center justify-between">
+                    <div>
+                      <h3 class="text-lg font-semibold">Executive Offices</h3>
+                      <p class="text-sm text-white/80">DIFC</p>
+                    </div>
+                    <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                      <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"></path>
+                    </svg>
+                  </div>
+                </div>
+              </div>
+              <div class="p-6">
+                <h3 class="text-xl font-semibold mb-2">Executive Offices</h3>
+                <p class="text-deep-charcoal/70 mb-4">
+                  Sophisticated interior design for a leading financial firm featuring premium materials, ergonomic workspaces, and cutting-edge technology integration.
+                </p>
+                <div class="flex items-center justify-between text-sm">
+                  <span class="text-deep-charcoal/60">Completed: 2023</span>
+                  <a href="/projects/executive-offices.html" class="text-brand-orange hover:text-oasis-teal font-medium transition-colors">View Details →</a>
+                </div>
+              </div>
+            </div>
+          </div>
+          
+          <!-- Commercial Project 2 -->
+          <div class="project-card" data-category="commercial" data-animate="fade-up" data-animate-delay="400">
+            <div class="card card-hover overflow-hidden group">
+              <div class="relative overflow-hidden">
+                <img 
+                  src="/assets/images/projects/marina-mall.webp" 
+                  alt="Marina Mall - Retail complex by City Experts"
+                  class="w-full h-64 object-cover group-hover:scale-105 transition-transform duration-500"
+                  loading="lazy"
+                >
+                <div class="absolute inset-0 bg-gradient-to-t from-deep-charcoal/80 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+                <div class="absolute top-4 left-4">
+                  <span class="bg-brand-orange text-white px-3 py-1 rounded-full text-sm font-medium">Commercial</span>
+                </div>
+                <div class="absolute bottom-4 left-4 right-4 text-white opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+                  <div class="flex items-center justify-between">
+                    <div>
+                      <h3 class="text-lg font-semibold">Marina Mall</h3>
+                      <p class="text-sm text-white/80">Dubai Marina</p>
+                    </div>
+                    <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                      <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"></path>
+                    </svg>
+                  </div>
+                </div>
+              </div>
+              <div class="p-6">
+                <h3 class="text-xl font-semibold mb-2">Marina Mall</h3>
+                <p class="text-deep-charcoal/70 mb-4">
+                  A vibrant retail destination featuring international brands, dining experiences, and entertainment facilities overlooking Dubai Marina.
+                </p>
+                <div class="flex items-center justify-between text-sm">
+                  <span class="text-deep-charcoal/60">Completed: 2021</span>
+                  <a href="/projects/marina-mall.html" class="text-brand-orange hover:text-oasis-teal font-medium transition-colors">View Details →</a>
+                </div>
+              </div>
+            </div>
+          </div>
+          
+          <!-- Mixed Use Project -->
+          <div class="project-card" data-category="mixed-use" data-animate="fade-up" data-animate-delay="500">
+            <div class="card card-hover overflow-hidden group">
+              <div class="relative overflow-hidden">
+                <img 
+                  src="/assets/images/projects/downtown-plaza.webp" 
+                  alt="Downtown Plaza - Mixed use development"
+                  class="w-full h-64 object-cover group-hover:scale-105 transition-transform duration-500"
+                  loading="lazy"
+                >
+                <div class="absolute inset-0 bg-gradient-to-t from-deep-charcoal/80 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+                <div class="absolute top-4 left-4">
+                  <span class="bg-green-600 text-white px-3 py-1 rounded-full text-sm font-medium">Mixed Use</span>
+                </div>
+                <div class="absolute bottom-4 left-4 right-4 text-white opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+                  <div class="flex items-center justify-between">
+                    <div>
+                      <h3 class="text-lg font-semibold">Downtown Plaza</h3>
+                      <p class="text-sm text-white/80">Downtown Dubai</p>
+                    </div>
+                    <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                      <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"></path>
+                    </svg>
+                  </div>
+                </div>
+              </div>
+              <div class="p-6">
+                <h3 class="text-xl font-semibold mb-2">Downtown Plaza</h3>
+                <p class="text-deep-charcoal/70 mb-4">
+                  An integrated development combining luxury residential towers, premium office spaces, and ground-floor retail in the heart of Downtown Dubai.
+                </p>
+                <div class="flex items-center justify-between text-sm">
+                  <span class="text-deep-charcoal/60">Completed: 2020</span>
+                  <a href="/projects/downtown-plaza.html" class="text-brand-orange hover:text-oasis-teal font-medium transition-colors">View Details →</a>
+                </div>
+              </div>
+            </div>
+          </div>
+          
+          <!-- Residential Project 2 -->
+          <div class="project-card" data-category="residential" data-animate="fade-up" data-animate-delay="600">
+            <div class="card card-hover overflow-hidden group">
+              <div class="relative overflow-hidden">
+                <img 
+                  src="/assets/images/projects/arabian-gardens.webp" 
+                  alt="Arabian Gardens - Luxury villa community"
+                  class="w-full h-64 object-cover group-hover:scale-105 transition-transform duration-500"
+                  loading="lazy"
+                >
+                <div class="absolute inset-0 bg-gradient-to-t from-deep-charcoal/80 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+                <div class="absolute top-4 left-4">
+                  <span class="bg-oasis-teal text-white px-3 py-1 rounded-full text-sm font-medium">Residential</span>
+                </div>
+                <div class="absolute bottom-4 left-4 right-4 text-white opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+                  <div class="flex items-center justify-between">
+                    <div>
+                      <h3 class="text-lg font-semibold">Arabian Gardens</h3>
+                      <p class="text-sm text-white/80">Emirates Hills</p>
+                    </div>
+                    <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                      <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"></path>
+                    </svg>
+                  </div>
+                </div>
+              </div>
+              <div class="p-6">
+                <h3 class="text-xl font-semibold mb-2">Arabian Gardens</h3>
+                <p class="text-deep-charcoal/70 mb-4">
+                  An exclusive gated community of custom-designed villas featuring traditional Arabian architecture with modern luxury amenities.
+                </p>
+                <div class="flex items-center justify-between text-sm">
+                  <span class="text-deep-charcoal/60">Completed: 2019</span>
+                  <a href="/projects/arabian-gardens.html" class="text-brand-orange hover:text-oasis-teal font-medium transition-colors">View Details →</a>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        
+        <!-- Load More Button -->
+        <div class="text-center mt-12" data-animate="fade-up">
+          <button id="load-more-btn" class="btn btn-secondary btn-large">
+            Load More Projects
+            <svg class="w-5 h-5 ml-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 14l-7 7m0 0l-7-7m7 7V3"></path>
+            </svg>
+          </button>
+        </div>
+      </div>
+    </section>
+
+    <!-- Featured Project Spotlight -->
+    <section class="section bg-white">
+      <div class="container-custom">
+        <div class="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
+          <div data-animate="fade-up">
+            <div class="flex items-center space-x-4 mb-6">
+              <div class="w-12 h-px bg-brand-orange"></div>
+              <span class="text-brand-orange font-medium uppercase tracking-wider">Featured Project</span>
+            </div>
+            
+            <h2 class="text-3xl md:text-4xl lg:text-5xl font-playfair font-medium mb-8">
+              Burj Al-Noor: Redefining Luxury Living
+            </h2>
+            
+            <div class="space-y-6 text-lg text-deep-charcoal/80 leading-relaxed">
+              <p>
+                Our latest masterpiece, Burj Al-Noor, stands as a testament to architectural innovation and luxury living in the heart of Dubai's skyline.
+              </p>
+              <p>
+                This 40-story residential tower features 120 premium apartments, each designed with floor-to-ceiling windows, smart home technology, and unparalleled views of the city and sea.
+              </p>
+              
+              <div class="grid grid-cols-2 gap-6 py-6">
+                <div class="text-center">
+                  <div class="text-2xl font-bold text-brand-orange mb-1">40</div>
+                  <div class="text-sm text-deep-charcoal/70">Floors</div>
+                </div>
+                <div class="text-center">
+                  <div class="text-2xl font-bold text-brand-orange mb-1">120</div>
+                  <div class="text-sm text-deep-charcoal/70">Apartments</div>
+                </div>
+                <div class="text-center">
+                  <div class="text-2xl font-bold text-brand-orange mb-1">24</div>
+                  <div class="text-sm text-deep-charcoal/70">Months</div>
+                </div>
+                <div class="text-center">
+                  <div class="text-2xl font-bold text-brand-orange mb-1">2024</div>
+                  <div class="text-sm text-deep-charcoal/70">Completion</div>
+                </div>
+              </div>
+            </div>
+            
+            <a href="/projects/burj-al-noor.html" class="btn btn-primary btn-large">
+              Explore This Project
+            </a>
+          </div>
+          
+          <div class="relative" data-animate="fade-up" data-animate-delay="200">
+            <img 
+              src="/assets/images/projects/burj-al-noor-featured.webp" 
+              alt="Burj Al-Noor luxury residential tower"
+              class="w-full h-auto rounded-2xl shadow-strong"
+              loading="lazy"
+            >
+            <div class="absolute -bottom-6 -right-6 bg-brand-orange text-white p-6 rounded-2xl shadow-strong">
+              <div class="text-2xl font-bold mb-1">Featured</div>
+              <div class="text-sm uppercase tracking-wider">Project</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Call to Action Section -->
+    <section class="section bg-deep-charcoal text-white">
+      <div class="container-custom text-center">
+        <div class="max-w-4xl mx-auto" data-animate="fade-up">
+          <h2 class="text-3xl md:text-4xl lg:text-5xl font-playfair font-medium mb-6">
+            Ready to Create Your Landmark Project?
+          </h2>
+          <p class="text-xl text-white/80 mb-8 leading-relaxed">
+            Join the 300+ satisfied clients who have trusted City Experts to bring their vision to life through exceptional construction and design.
+          </p>
+          <div class="flex flex-col sm:flex-row gap-4 justify-center items-center">
+            <a href="/contact.html" class="btn btn-primary btn-large" data-translate="projects.cta-primary">
+              Start Your Project
+            </a>
+            <a href="/about.html" class="btn btn-secondary btn-large" data-translate="projects.cta-secondary">
+              Learn About Us
+            </a>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- Footer -->
+  <footer class="bg-deep-charcoal text-white">
+    <div class="container-custom py-16">
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 mb-12">
+        <!-- Company Info -->
+        <div class="lg:col-span-2">
+          <div class="flex items-center space-x-3 mb-6">
+            <img src="/assets/images/city-experts-logo.svg" alt="City Experts" class="h-8 w-auto">
+            <span class="font-playfair text-xl font-semibold">City Experts</span>
+          </div>
+          <p class="text-white/80 mb-6 max-w-md" data-translate="footer.about-text">
+            City Experts is a UAE-born construction and interiors company delivering complex commercial landmarks and elegant residential spaces.
+          </p>
+          <div class="flex space-x-4">
+            <a href="https://linkedin.com/company/cityexperts" class="w-10 h-10 bg-white/10 hover:bg-oasis-teal rounded-full flex items-center justify-center transition-colors" aria-label="LinkedIn">
+              <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24">
+                <path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/>
+              </svg>
+            </a>
+            <a href="https://instagram.com/cityexperts" class="w-10 h-10 bg-white/10 hover:bg-oasis-teal rounded-full flex items-center justify-center transition-colors" aria-label="Instagram">
+              <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24">
+                <path d="M12.017 0C5.396 0 .029 5.367.029 11.987c0 6.62 5.367 11.987 11.988 11.987s11.987-5.367 11.987-11.987C24.014 5.367 18.647.001 12.017.001zM8.449 16.988c-1.297 0-2.448-.49-3.323-1.291C3.85 14.81 3.29 13.549 3.29 12.017c0-1.532.56-2.793 1.836-3.68.875-.801 2.026-1.291 3.323-1.291s2.448.49 3.323 1.291c1.276.887 1.836 2.148 1.836 3.68 0 1.532-.56 2.793-1.836 3.68-.875.801-2.026 1.291-3.323 1.291z"/>
+              </svg>
+            </a>
+          </div>
+        </div>
+        
+        <!-- Quick Links -->
+        <div>
+          <h3 class="font-semibold text-lg mb-6" data-translate="footer.quick-links">Quick Links</h3>
+          <ul class="space-y-3">
+            <li><a href="/" class="text-white/80 hover:text-brand-orange transition-colors" data-translate="footer.home">Home</a></li>
+            <li><a href="/about.html" class="text-white/80 hover:text-brand-orange transition-colors" data-translate="footer.about">About</a></li>
+            <li><a href="/projects.html" class="text-brand-orange" data-translate="footer.projects">Projects</a></li>
+            <li><a href="/contact.html" class="text-white/80 hover:text-brand-orange transition-colors" data-translate="footer.contact">Contact</a></li>
+          </ul>
+        </div>
+        
+        <!-- Services -->
+        <div>
+          <h3 class="font-semibold text-lg mb-6" data-translate="footer.services">Services</h3>
+          <ul class="space-y-3">
+            <li><a href="/services/commercial.html" class="text-white/80 hover:text-brand-orange transition-colors">Commercial Construction</a></li>
+            <li><a href="/services/residential.html" class="text-white/80 hover:text-brand-orange transition-colors">Residential Projects</a></li>
+            <li><a href="/services/interior.html" class="text-white/80 hover:text-brand-orange transition-colors">Interior Design</a></li>
+            <li><a href="/services/design-build.html" class="text-white/80 hover:text-brand-orange transition-colors">Design & Build</a></li>
+          </ul>
+        </div>
+      </div>
+      
+      <!-- Contact Info -->
+      <div class="border-t border-white/20 pt-8">
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-8 text-center md:text-left">
+          <div>
+            <h4 class="font-semibold mb-2" data-translate="footer.address-title">Address</h4>
+            <p class="text-white/80" data-translate="footer.address">
+              Business Bay, Dubai<br>
+              United Arab Emirates
+            </p>
+          </div>
+          <div>
+            <h4 class="font-semibold mb-2" data-translate="footer.phone-title">Phone</h4>
+            <a href="tel:+97141234567" class="text-white/80 hover:text-brand-orange transition-colors">+971 4 123 4567</a>
+          </div>
+          <div>
+            <h4 class="font-semibold mb-2" data-translate="footer.email-title">Email</h4>
+            <a href="mailto:info@cityexperts.ae" class="text-white/80 hover:text-brand-orange transition-colors">info@cityexperts.ae</a>
+          </div>
+        </div>
+      </div>
+      
+      <!-- Copyright -->
+      <div class="border-t border-white/20 pt-8 mt-8 text-center">
+        <p class="text-white/60" data-translate="footer.copyright">
+          © 2024 City Experts. All rights reserved.
+        </p>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Load JavaScript -->
+  <script type="module" src="/js/main.js"></script>
+</body>
+</html>

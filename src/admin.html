@@ -1,0 +1,81 @@
+<!doctype html>
+<html lang="en" class="auth-pending">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Admin · City Experts</title>
+  <meta name="robots" content="noindex, nofollow">
+  <script>document.documentElement.classList.add('auth-pending');</script>
+  <script type="module" src="/js/main.js"></script>
+  <style>
+    /* Hide dashboard by default until session confirmed */
+    .auth-pending #dashView { display: none !important; }
+    .auth-pending #loginView { display: block !important; }
+    /* When authed: inverse */
+    .authed #dashView { display: block !important; }
+    .authed #loginView { display: none !important; }
+  </style>
+  <script type="module" src="/js/admin.js"></script>
+</head>
+<body>
+  <header class="container" style="padding-block:24px">
+    <h1 class="hero-title text-charcoal">Admin</h1>
+  </header>
+
+  <!-- LOGIN -->
+  <section id="loginView" class="container project-card" style="max-width:520px;padding:24px">
+    <h2 class="text-charcoal" style="font-size:22px;font-weight:700;margin-bottom:8px">Sign in</h2>
+    <form id="loginForm" novalidate>
+      <label class="text-charcoal" for="email">Email</label>
+      <input id="email" name="email" type="email" required class="input" />
+      <label class="text-charcoal" for="password" style="margin-top:12px;display:block">Password</label>
+      <input id="password" name="password" type="password" required class="input" />
+      <div style="display:flex;gap:12px;align-items:center;margin-top:16px">
+        <button class="btn-primary" type="submit">Sign in</button>
+        <span id="loginStatus" class="hero-sub" aria-live="polite"></span>
+      </div>
+    </form>
+  </section>
+
+  <!-- DASHBOARD -->
+  <section id="dashView" class="container" hidden>
+    <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:16px">
+      <h2 class="text-charcoal" style="font-size:22px;font-weight:700">Images</h2>
+      <button id="logoutBtn" class="btn-secondary">Log out</button>
+    </div>
+
+    <form id="uploadForm" class="project-card" style="padding:24px">
+      <div style="display:grid;grid-template-columns:1fr 1fr;gap:16px">
+        <div>
+          <label class="text-charcoal" style="font-weight:600">Category*</label>
+          <select id="category" name="category" required class="input">
+            <option value="" disabled selected>Select…</option>
+            <option value="hero">Hero</option>
+            <option value="gallery">Project Gallery</option>
+            <option value="thumb">Thumbnail</option>
+            <option value="team">Team</option>
+            <option value="logo">Logo</option>
+          </select>
+          <p id="reqs" class="hero-sub" style="margin-top:6px"></p>
+        </div>
+        <div>
+          <label class="text-charcoal" style="font-weight:600">Project (optional for gallery/thumb)</label>
+          <input id="projectId" name="projectId" class="input" placeholder="e.g., marina-tower" />
+        </div>
+      </div>
+
+      <div style="margin-top:16px">
+        <label class="text-charcoal" style="font-weight:600">Select Image*</label>
+        <input id="file" name="file" type="file" accept=".jpg,.jpeg,.png,.webp,.svg" required />
+      </div>
+
+      <div style="display:flex;gap:12px;align-items:center;margin-top:16px">
+        <button id="uploadBtn" class="btn-primary" type="submit">Upload</button>
+        <span id="uploadStatus" class="hero-sub" aria-live="polite"></span>
+      </div>
+
+      <figure id="preview" style="margin-top:16px"></figure>
+    </form>
+  </section>
+</body>
+</html>

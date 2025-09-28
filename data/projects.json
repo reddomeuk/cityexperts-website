@@ -1,0 +1,23 @@
+[
+  {
+    "id": "marina-tower",
+    "name": "Marina Tower",
+    "hero": { "url": "", "public_id": "", "alt": "" },
+    "thumb": { "url": "", "public_id": "", "alt": "" },
+    "gallery": []
+  },
+  {
+    "id": "downtown-plaza",
+    "name": "Downtown Plaza",
+    "hero": { "url": "", "public_id": "", "alt": "" },
+    "thumb": { "url": "", "public_id": "", "alt": "" },
+    "gallery": []
+  },
+  {
+    "id": "waterfront-residences",
+    "name": "Waterfront Residences",
+    "hero": { "url": "", "public_id": "", "alt": "" },
+    "thumb": { "url": "", "public_id": "", "alt": "" },
+    "gallery": []
+  }
+]

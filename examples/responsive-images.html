@@ -1,0 +1,185 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Cloudinary Responsive Images - Examples</title>
+  <style>
+    body { font-family: system-ui, sans-serif; max-width: 1200px; margin: 0 auto; padding: 2rem; }
+    .grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 2rem; margin: 2rem 0; }
+    .card { border: 1px solid #e5e7eb; border-radius: 8px; overflow: hidden; }
+    .card img { width: 100%; height: auto; display: block; }
+    .card-content { padding: 1rem; }
+    h1, h2 { color: #1f2937; }
+    code { background: #f3f4f6; padding: 0.125rem 0.25rem; border-radius: 4px; font-size: 0.875rem; }
+    .hero { width: 100%; height: 400px; object-fit: cover; margin: 2rem 0; }
+    .lazy-loading { margin: 2rem 0; }
+    .lazy-loading img { margin: 1rem 0; }
+    .spacer { height: 800px; background: linear-gradient(to bottom, #f9fafb, #e5e7eb); display: flex; align-items: center; justify-content: center; margin: 2rem 0; }
+    .spacer p { font-size: 1.5rem; color: #6b7280; }
+    .lazy-image { width: 100%; height: auto; border-radius: 8px; }
+    .lazy-image + .lazy-image { margin-top: 2rem; }
+  </style>
+</head>
+<body>
+  <h1>Cloudinary Responsive Images - Production Template</h1>
+  <p>Examples of responsive, optimized image delivery using Cloudinary transformations with lazy loading and WebP support.</p>
+  
+  <h2>1. Hero Image (Full Width, Above Fold)</h2>
+  <p>Large hero images should NOT use <code>loading="lazy"</code> as they're immediately visible.</p>
+  
+  <!-- Hero Image Example -->
+  <img
+    class="hero"
+    src="https://res.cloudinary.com/demo/image/upload/c_fill,w_1200,h_400,q_auto,f_auto/sample"
+    srcset="
+      https://res.cloudinary.com/demo/image/upload/c_fill,w_800,h_267,q_auto,f_auto/sample 800w,
+      https://res.cloudinary.com/demo/image/upload/c_fill,w_1200,h_400,q_auto,f_auto/sample 1200w,
+      https://res.cloudinary.com/demo/image/upload/c_fill,w_1600,h_533,q_auto,f_auto/sample 1600w"
+    sizes="100vw"
+    width="1200" height="400" 
+    alt="Hero project showcase"
+    decoding="async"
+  />
+
+  <h2>2. Project Cards (Grid Layout)</h2>
+  <p>Grid cards with responsive sizing and lazy loading for better performance.</p>
+  
+  <div class="grid">
+    <div class="card">
+      <img
+        src="https://res.cloudinary.com/demo/image/upload/c_fill,w_400,h_300,q_auto,f_auto/sample"
+        srcset="
+          https://res.cloudinary.com/demo/image/upload/c_fill,w_300,h_225,q_auto,f_auto/sample 300w,
+          https://res.cloudinary.com/demo/image/upload/c_fill,w_400,h_300,q_auto,f_auto/sample 400w,
+          https://res.cloudinary.com/demo/image/upload/c_fill,w_600,h_450,q_auto,f_auto/sample 600w"
+        sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
+        width="400" height="300" 
+        alt="Project thumbnail"
+        loading="lazy" 
+        decoding="async"
+      />
+      <div class="card-content">
+        <h3>Marina Tower</h3>
+        <p>Luxury residential complex with waterfront views.</p>
+      </div>
+    </div>
+    
+    <div class="card">
+      <img
+        src="https://res.cloudinary.com/demo/image/upload/c_fill,w_400,h_300,q_auto,f_auto/architecture"
+        srcset="
+          https://res.cloudinary.com/demo/image/upload/c_fill,w_300,h_225,q_auto,f_auto/architecture 300w,
+          https://res.cloudinary.com/demo/image/upload/c_fill,w_400,h_300,q_auto,f_auto/architecture 400w,
+          https://res.cloudinary.com/demo/image/upload/c_fill,w_600,h_450,q_auto,f_auto/architecture 600w"
+        sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
+        width="400" height="300" 
+        alt="Project thumbnail"
+        loading="lazy" 
+        decoding="async"
+      />
+      <div class="card-content">
+        <h3>Downtown Plaza</h3>
+        <p>Modern commercial and retail space in city center.</p>
+      </div>
+    </div>
+    
+    <div class="card">
+      <img
+        src="https://res.cloudinary.com/demo/image/upload/c_fill,w_400,h_300,q_auto,f_auto/building"
+        srcset="
+          https://res.cloudinary.com/demo/image/upload/c_fill,w_300,h_225,q_auto,f_auto/building 300w,
+          https://res.cloudinary.com/demo/image/upload/c_fill,w_400,h_300,q_auto,f_auto/building 400w,
+          https://res.cloudinary.com/demo/image/upload/c_fill,w_600,h_450,q_auto,f_auto/building 600w"
+        sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
+        width="400" height="300" 
+        alt="Project thumbnail"
+        loading="lazy" 
+        decoding="async"
+      />
+      <div class="card-content">
+        <h3>Waterfront Residences</h3>
+        <p>Sustainable housing development with green spaces.</p>
+      </div>
+    </div>
+  </div>
+
+  <h2>3. Template Code for Your Projects</h2>
+  <p>Copy and adapt these patterns for your actual Cloudinary URLs:</p>
+  
+  <h3>Hero Image Template</h3>
+  <pre><code>&lt;img
+  src="https://res.cloudinary.com/&lt;YOUR_CLOUD&gt;/image/upload/c_fill,w_1200,h_400,q_auto,f_auto/&lt;PUBLIC_ID&gt;"
+  srcset="
+    https://res.cloudinary.com/&lt;YOUR_CLOUD&gt;/image/upload/c_fill,w_800,h_267,q_auto,f_auto/&lt;PUBLIC_ID&gt; 800w,
+    https://res.cloudinary.com/&lt;YOUR_CLOUD&gt;/image/upload/c_fill,w_1200,h_400,q_auto,f_auto/&lt;PUBLIC_ID&gt; 1200w,
+    https://res.cloudinary.com/&lt;YOUR_CLOUD&gt;/image/upload/c_fill,w_1600,h_533,q_auto,f_auto/&lt;PUBLIC_ID&gt; 1600w"
+  sizes="100vw"
+  width="1200" height="400" 
+  alt="Project hero image"
+  decoding="async"
+/&gt;</code></pre>
+
+  <h3>Card/Thumbnail Template</h3>
+  <pre><code>&lt;img
+  src="https://res.cloudinary.com/&lt;YOUR_CLOUD&gt;/image/upload/c_fill,w_400,h_300,q_auto,f_auto/&lt;PUBLIC_ID&gt;"
+  srcset="
+    https://res.cloudinary.com/&lt;YOUR_CLOUD&gt;/image/upload/c_fill,w_300,h_225,q_auto,f_auto/&lt;PUBLIC_ID&gt; 300w,
+    https://res.cloudinary.com/&lt;YOUR_CLOUD&gt;/image/upload/c_fill,w_400,h_300,q_auto,f_auto/&lt;PUBLIC_ID&gt; 400w,
+    https://res.cloudinary.com/&lt;YOUR_CLOUD&gt;/image/upload/c_fill,w_600,h_450,q_auto,f_auto/&lt;PUBLIC_ID&gt; 600w"
+  sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
+  width="400" height="300" 
+  alt="Project thumbnail"
+  loading="lazy" 
+  decoding="async"
+/&gt;</code></pre>
+
+  <h2>4. Key Optimization Features</h2>
+  <ul>
+    <li><strong>q_auto</strong> - Automatic quality optimization</li>
+    <li><strong>f_auto</strong> - Automatic format selection (WebP, AVIF when supported)</li>
+    <li><strong>c_fill</strong> - Smart cropping to exact dimensions</li>
+    <li><strong>loading="lazy"</strong> - Defers loading for below-fold images</li>
+    <li><strong>decoding="async"</strong> - Non-blocking image decode</li>
+    <li><strong>srcset</strong> - Multiple resolutions for different screen sizes</li>
+    <li><strong>sizes</strong> - Tells browser which srcset to use based on viewport</li>
+  </ul>
+
+  <div class="lazy-loading">
+    <h2>5. Lazy Loading Demo</h2>
+    <p>Scroll down to see lazy-loaded images in action:</p>
+    
+    <div class="spacer">
+      <p>Scroll down for lazy-loaded images ↓</p>
+    </div>
+    
+    <img
+      src="https://res.cloudinary.com/demo/image/upload/c_fill,w_800,h_600,q_auto,f_auto/nature"
+      srcset="
+        https://res.cloudinary.com/demo/image/upload/c_fill,w_600,h_450,q_auto,f_auto/nature 600w,
+        https://res.cloudinary.com/demo/image/upload/c_fill,w_800,h_600,q_auto,f_auto/nature 800w,
+        https://res.cloudinary.com/demo/image/upload/c_fill,w_1200,h_900,q_auto,f_auto/nature 1200w"
+      sizes="(max-width: 768px) 100vw, 800px"
+      width="800" height="600" 
+      alt="Lazy loaded nature scene"
+      loading="lazy" 
+      decoding="async"
+      class="lazy-image"
+    />
+    
+    <img
+      src="https://res.cloudinary.com/demo/image/upload/c_fill,w_800,h_600,q_auto,f_auto/city"
+      srcset="
+        https://res.cloudinary.com/demo/image/upload/c_fill,w_600,h_450,q_auto,f_auto/city 600w,
+        https://res.cloudinary.com/demo/image/upload/c_fill,w_800,h_600,q_auto,f_auto/city 800w,
+        https://res.cloudinary.com/demo/image/upload/c_fill,w_1200,h_900,q_auto,f_auto/city 1200w"
+      sizes="(max-width: 768px) 100vw, 800px"
+      width="800" height="600" 
+      alt="Lazy loaded city scene"
+      loading="lazy" 
+      decoding="async"
+      class="lazy-image"
+    />
+  </div>
+</body>
+</html>
