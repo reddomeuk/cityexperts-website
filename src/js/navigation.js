@@ -43,8 +43,11 @@ export function initializeNavigation() {
   // Mobile menu functionality
   if (mobileMenuBtn && mobileMenu) {
     mobileMenuBtn.addEventListener('click', () => {
-      mobileMenu.classList.add('mobile-menu-open');
+      // Remove translate-x-full to show menu
+      mobileMenu.classList.remove('translate-x-full');
+      mobileMenu.classList.add('translate-x-0');
       document.body.classList.add('menu-open');
+      mobileMenuBtn.setAttribute('aria-expanded', 'true');
       
       // Focus first menu item for accessibility
       const firstMenuItem = mobileMenu.querySelector('a');
@@ -56,8 +59,11 @@ export function initializeNavigation() {
   
   if (mobileMenuClose && mobileMenu) {
     mobileMenuClose.addEventListener('click', () => {
-      mobileMenu.classList.remove('mobile-menu-open');
+      // Add translate-x-full to hide menu
+      mobileMenu.classList.add('translate-x-full');
+      mobileMenu.classList.remove('translate-x-0');
       document.body.classList.remove('menu-open');
+      mobileMenuBtn.setAttribute('aria-expanded', 'false');
       
       // Return focus to menu button
       if (mobileMenuBtn) {
@@ -68,9 +74,11 @@ export function initializeNavigation() {
   
   // Close mobile menu on escape key
   document.addEventListener('keydown', (e) => {
-    if (e.key === 'Escape' && mobileMenu?.classList.contains('mobile-menu-open')) {
-      mobileMenu.classList.remove('mobile-menu-open');
+    if (e.key === 'Escape' && mobileMenu && !mobileMenu.classList.contains('translate-x-full')) {
+      mobileMenu.classList.add('translate-x-full');
+      mobileMenu.classList.remove('translate-x-0');
       document.body.classList.remove('menu-open');
+      mobileMenuBtn.setAttribute('aria-expanded', 'false');
       if (mobileMenuBtn) {
         mobileMenuBtn.focus();
       }
@@ -79,10 +87,12 @@ export function initializeNavigation() {
   
   // Close mobile menu when clicking outside
   document.addEventListener('click', (e) => {
-    if (mobileMenu?.classList.contains('mobile-menu-open')) {
+    if (mobileMenu && !mobileMenu.classList.contains('translate-x-full')) {
       if (!mobileMenu.contains(e.target) && !mobileMenuBtn?.contains(e.target)) {
-        mobileMenu.classList.remove('mobile-menu-open');
+        mobileMenu.classList.add('translate-x-full');
+        mobileMenu.classList.remove('translate-x-0');
         document.body.classList.remove('menu-open');
+        mobileMenuBtn.setAttribute('aria-expanded', 'false');
       }
     }
   });

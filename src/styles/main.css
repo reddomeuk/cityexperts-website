@@ -676,6 +676,116 @@
   background-color: var(--color-oasis-teal);
 }
 
+/* RTL-specific styles for Arabic support */
+:root[dir="rtl"] [data-carousel-prev] svg,
+:root[dir="rtl"] .carousel-prev svg { 
+  transform: scaleX(-1); 
+}
+
+:root[dir="rtl"] [data-carousel-next] svg,
+:root[dir="rtl"] .carousel-next svg { 
+  transform: scaleX(-1); 
+}
+
+/* Force carousel tracks to maintain LTR flow to prevent slide reordering */
+[dir="rtl"] #testimonials [data-carousel-track],
+[dir="rtl"] #featured-carousel [data-carousel-track],
+[dir="rtl"] .carousel-track {
+  direction: ltr;
+}
+
+/* Ensure proper slide sizing in both LTR and RTL */
+#testimonials .testimonial-slide,
+#featured-carousel .carousel-slide,
+.carousel-slide {
+  flex: 0 0 100%;
+  width: 100%;
+  box-sizing: border-box;
+}
+
+/* Mobile offcanvas: keep same transform classes, only swap sides */
+:root[dir="rtl"] #mobile-menu { 
+  left: auto; 
+  right: 0; 
+}
+
+:root[dir="rtl"] #mobile-menu.translate-x-full { 
+  transform: translateX(-100%); 
+}
+
+/* Swap horizontal spacing utilities when dir=rtl */
+:root[dir="rtl"] .space-x-4 > :not([hidden]) ~ :not([hidden]) { 
+  margin-left: 0; 
+  margin-right: 1rem; 
+}
+
+:root[dir="rtl"] .space-x-2 > :not([hidden]) ~ :not([hidden]) { 
+  margin-left: 0; 
+  margin-right: 0.5rem; 
+}
+
+/* Ensure absolute left/right badges align in RTL cards */
+:root[dir="rtl"] .left-8 { 
+  left: auto; 
+  right: 2rem; 
+}
+
+:root[dir="rtl"] .right-8 { 
+  right: auto; 
+  left: 2rem; 
+}
+
+/* Testimonials text alignment and width in RTL */
+#testimonials blockquote { 
+  max-width: 64ch; 
+  margin-inline: auto; 
+}
+
+:root[dir="rtl"] #testimonials blockquote,
+:root[dir="rtl"] #testimonials .text-left { 
+  text-align: right; 
+}
+
+/* Inline chips/badges direction-safe spacing */
+.badge, 
+.px-3 { 
+  unicode-bidi: plaintext; 
+}
+
+/* RTL text alignment for project cards */
+:root[dir="rtl"] .project-card h3,
+:root[dir="rtl"] .project-card p {
+  text-align: right;
+}
+
+/* RTL spacing adjustments for chip containers */
+:root[dir="rtl"] .flex.items-center.space-x-4 {
+  flex-direction: row-reverse;
+}
+
+:root[dir="rtl"] .flex.items-center.space-x-4 > * + * {
+  margin-left: 0;
+  margin-right: 1rem;
+}
+
+/* Mobile menu styles */
+.menu-open {
+  overflow: hidden;
+}
+
+.mobile-nav-link {
+  @apply block py-3 px-4 text-lg font-medium text-deep-charcoal hover:text-oasis-teal hover:bg-warm-stone/10 rounded-lg transition-all duration-200;
+}
+
+.mobile-nav-link.active {
+  @apply text-oasis-teal bg-oasis-teal/10;
+}
+
+/* Mobile menu z-index fix */
+#mobile-menu {
+  z-index: 9999;
+}
+
 /* CANARY — remove at end when verified */
 html.canary-loaded::before{
   content:"CSS LOADED";

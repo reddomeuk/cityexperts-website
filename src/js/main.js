@@ -2,12 +2,20 @@
 import '../styles/main.css';
 import { initializeComponents } from './components.js';
 import { initializeLanguageToggle } from './language.js';
+import { initializeNavigation } from './navigation.js';
+import { initLanguageFromStorage, applyLanguage } from './i18n-dir.js';
 
 // Initialize everything when DOM is loaded
 document.addEventListener('DOMContentLoaded', () => {
+  // Initialize language/direction first
+  const bootLang = initLanguageFromStorage();
+  
   initializeComponents();
   initializeLanguageToggle();
+  initializeNavigation();
   initializeFeaturedCarousel();
+  initializeLanguageToggles();
+  
   console.log('✅ City Experts Website Ready');
 });
 
@@ -26,17 +34,36 @@ function initializeFeaturedCarousel(){
 
   let index = 0;
 
+  function getDir() { 
+    return document.documentElement.getAttribute('dir') || 'ltr'; 
+  }
+
+  function translateForIndex(viewport, index) {
+    const w = viewport.clientWidth;
+    const isRTL = getDir() === 'rtl';
+    // Flip direction in RTL
+    const offset = isRTL ? index * w : -index * w;
+    return `translateX(${offset}px)`;
+  }
+
   function go(i){
     index = (i + slides.length) % slides.length;
     const viewport = root.querySelector(".carousel-viewport");
-    const offset = -index * viewport.clientWidth;
-    track.style.transform = `translateX(${offset}px)`;
+    
+    track.style.transform = translateForIndex(viewport, index);
+    
     dots.forEach((d, n) => d.setAttribute("aria-current", n === index ? "true" : "false"));
   }
 
   // Recompute on resize so widths stay correct
   const ro = new ResizeObserver(() => go(index));
   ro.observe(root.querySelector(".carousel-viewport"));
+  
+  // Re-calculate on language change (RTL/LTR switch)
+  window.addEventListener('i18n:dir-changed', () => go(index));
+  document.addEventListener('i18n:updated', () => {
+    setTimeout(() => go(index), 10);
+  });
 
   prev?.addEventListener("click", () => go(index - 1));
   next?.addEventListener("click", () => go(index + 1));
@@ -48,6 +75,26 @@ function initializeFeaturedCarousel(){
   root.addEventListener("pointerleave", () => timer = setInterval(() => go(index + 1), 5000));
 
   go(0);
+}
+
+// Initialize language toggles for both desktop and mobile
+function initializeLanguageToggles() {
+  const desktopToggle = document.getElementById('language-toggle');
+  const mobileToggle = document.getElementById('mobile-language-toggle');
+
+  function toggleLang() {
+    const currentLang = document.documentElement.getAttribute('lang') || 'en';
+    const nextLang = currentLang === 'ar' ? 'en' : 'ar';
+    
+    localStorage.setItem('lang', nextLang);
+    applyLanguage(nextLang);
+    
+    // Re-translate existing DOM if using i18n system
+    window.dispatchEvent(new Event('i18n:updated'));
+  }
+
+  desktopToggle?.addEventListener('click', toggleLang);
+  mobileToggle?.addEventListener('click', toggleLang);
 }
 
 // Handle smooth scrolling for anchor links

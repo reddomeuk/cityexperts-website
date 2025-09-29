@@ -1,0 +1,172 @@
+{
+  "nav": {
+    "home": "Home",
+    "about": "About",
+    "projects": "Projects",
+    "contact": "Contact",
+    "prev": "Previous",
+    "next": "Next"
+  },
+  "hero": {
+    "headline": "Engineering Excellence. Interior Elegance.",
+    "subheadline": "Transforming spaces across the UAE with precision construction and innovative interior design since 1995.",
+    "ctaPrimary": "Request a Proposal",
+    "ctaSecondary": "Call Us Now"
+  },
+  "testimonials": {
+    "title": "What Our Clients Say",
+    "subtitle": "Trusted by leading developers, corporations, and property owners across the UAE.",
+    "t1": {
+      "quote": "City Experts delivered our 40-story mixed-use development ahead of schedule and within budget. Their attention to detail and commitment to quality is unmatched in the UAE market.",
+      "name": "Ahmed Hassan",
+      "role": "CEO, Emirates Development Group"
+    },
+    "t2": {
+      "quote": "The interior design and fit-out work for our luxury hotel exceeded all expectations. City Experts understood our vision and brought it to life with exceptional craftsmanship.",
+      "name": "Sarah Mitchell",
+      "role": "Director of Operations, Luxury Hospitality International"
+    },
+    "t3": {
+      "quote": "Working with City Experts on our flagship retail complex was exceptional. They delivered innovative solutions that perfectly balanced aesthetics with functionality, creating spaces that truly enhance the customer experience.",
+      "name": "Mariam Rahman",
+      "role": "Development Director, Dubai Retail Ventures"
+    },
+    "t4": {
+      "quote": "Exceptional HSE standards and site coordination across all phases. City Experts set the benchmark for safe, efficient delivery.",
+      "name": "Omar Al Nuaimi",
+      "role": "Head of Construction, Gulf Properties"
+    },
+    "t5": {
+      "quote": "From concept to handover, communication was seamless. Decisions were transparent and timelines were consistently met.",
+      "name": "Priya Menon",
+      "role": "Development Manager, Marina Holdings"
+    },
+    "t6": {
+      "quote": "Fit-out quality exceeded brand standards across all outlets. The attention to detail was outstanding.",
+      "name": "James Carter",
+      "role": "Regional Director, Horizon Retail"
+    },
+    "ariaSlide1": "Go to testimonials slide 1",
+    "ariaSlide2": "Go to testimonials slide 2",
+    "ariaPrev": "Previous testimonial",
+    "ariaNext": "Next testimonial"
+  },
+  "stats": {
+    "projects": "Projects Completed",
+    "years": "Years in UAE",
+    "staff": "Professional Staff",
+    "sqft": "Sq.Ft. Delivered"
+  },
+  "services": {
+    "title": "Our Services",
+    "construction": "Construction",
+    "interior": "Interior Design",
+    "fitout": "Fit-Out"
+  },
+  "cta": {
+    "title": "Have a deadline? We deliver certainty.",
+    "subtitle": "Ready to start your next construction or interior design project? Let's discuss how we can bring your vision to life with precision and elegance.",
+    "consultation": "Book a Consultation",
+    "callNow": "Call Us Now"
+  },
+  "footer": {
+    "company": "Company",
+    "services": "Services",
+    "contact": "Contact",
+    "aboutUs": "About Us",
+    "ourTeam": "Our Team",
+    "careers": "Careers",
+    "construction": "Construction",
+    "interiorDesign": "Interior Design",
+    "projectManagement": "Project Management",
+    "address": "Dubai, UAE",
+    "phone": "+971-4-XXX-XXXX",
+    "email": "info@cityexperts.ae",
+    "privacy": "Privacy Policy",
+    "terms": "Terms of Service",
+    "copyright": "© 2024 City Experts. All rights reserved."
+  },
+  "common": {
+    "learnMore": "Learn More",
+    "viewAll": "View All",
+    "readMore": "Read More",
+    "getStarted": "Get Started",
+    "close": "Close"
+  },
+  "carousel": {
+    "prev": "Previous",
+    "next": "Next"
+  },
+  "proj": {
+    "emirates": {
+      "category": "Commercial",
+      "city": "Dubai",
+      "title": "Emirates Business Tower",
+      "desc": "45-story mixed-use development featuring premium offices, retail spaces, and luxury amenities in the heart of Business Bay.",
+      "learnAria": "Learn more about Emirates Business Tower"
+    },
+    "marinaPH": {
+      "category": "Interior Design",
+      "city": "Dubai Marina",
+      "title": "Marina Penthouse Collection",
+      "desc": "Sophisticated interior design for luxury penthouses featuring modern aesthetics and premium finishes overlooking Dubai Marina.",
+      "learnAria": "Learn more about Marina Penthouse Collection"
+    },
+    "botanical": {
+      "category": "Residential",
+      "city": "Al Barari",
+      "title": "Botanical Villa Estates",
+      "desc": "Exclusive luxury villas surrounded by botanical gardens, featuring sustainable design and world-class architectural excellence.",
+      "learnAria": "Learn more about Botanical Villa Estates"
+    },
+    "citywalk": {
+      "category": "Retail",
+      "city": "Dubai",
+      "title": "City Walk Retail",
+      "desc": "Dynamic street-level retail development creating vibrant urban experiences with innovative commercial spaces and pedestrian-friendly design.",
+      "learnAria": "Learn more about City Walk Retail"
+    },
+    "harborHotel": {
+      "category": "Hospitality",
+      "city": "Dubai Creek",
+      "title": "Harbor Hotel & Residences",
+      "desc": "Luxury mixed-use development combining world-class hospitality with premium residential offerings in the prestigious Dubai Creek area.",
+      "learnAria": "Learn more about Harbor Hotel & Residences"
+    },
+    "innovation": {
+      "category": "Corporate",
+      "city": "Dubai South",
+      "title": "Innovation Park",
+      "desc": "State-of-the-art corporate campus designed to foster innovation and collaboration in Dubai's emerging business district.",
+      "learnAria": "Learn more about Innovation Park"
+    },
+    "pearl": {
+      "category": "Residential",
+      "city": "JBR",
+      "title": "Pearl Residences",
+      "desc": "Premium residential tower offering luxury living with stunning marina views and world-class amenities in Jumeirah Beach Residence.",
+      "learnAria": "Learn more about Pearl Residences"
+    },
+    "tech": {
+      "category": "Interiors",
+      "city": "Internet City",
+      "title": "Tech District",
+      "desc": "Modern office interior solutions designed for Dubai's leading technology companies, combining functionality with cutting-edge design.",
+      "learnAria": "Learn more about Tech District"
+    },
+    "promenade": {
+      "category": "Mixed-use",
+      "city": "Dubai Creek",
+      "title": "Harbor Promenade",
+      "desc": "Waterfront mixed-use development blending residential, commercial, and recreational spaces along Dubai's historic creek waterfront.",
+      "learnAria": "Learn more about Harbor Promenade"
+    }
+  },
+  "contact": {
+    "title": "Contact Us",
+    "namePlaceholder": "Your Name",
+    "emailPlaceholder": "Your Email",
+    "messagePlaceholder": "Your Message",
+    "send": "Send Message"
+  }
+}

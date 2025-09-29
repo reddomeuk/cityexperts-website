@@ -6,8 +6,20 @@ export function initializeComponents() {
   initializeModalSystem();
   initializeForms();
   initializeFilterSystem();
+  initializei18nUpdates();
   
   console.log('🎛️ Components initialized');
+}
+
+// Listen for i18n updates to re-translate dynamic content
+function initializei18nUpdates() {
+  document.addEventListener('i18n:updated', (event) => {
+    // Import translation functions dynamically to avoid circular dependencies
+    import('./language.js').then(({ applyTranslations }) => {
+      // Re-translate any dynamically created content
+      applyTranslations(document);
+    });
+  });
 }
 
 // Animated counter for statistics
@@ -80,8 +92,10 @@ export function initializeCarousels() {
     
     // Update carousel position
     function updateCarousel() {
-      const translateX = -currentSlide * 100;
-      slides.style.transform = `translateX(${translateX}%)`;
+      // RTL-aware translation
+      const isRTL = document.documentElement.getAttribute('dir') === 'rtl';
+      const translateX = currentSlide * 100;
+      slides.style.transform = `translateX(${isRTL ? translateX : -translateX}%)`;
       
       // Update indicators
       indicators.forEach((indicator, index) => {
@@ -235,6 +249,13 @@ export function initializeCarousels() {
       }
     }
     
+    // Re-calculate on language change (RTL/LTR switch)
+    window.addEventListener('i18n:dir-changed', () => updateCarousel());
+    document.addEventListener('i18n:updated', () => {
+      // Small delay to ensure DOM dir attribute is updated
+      setTimeout(() => updateCarousel(), 10);
+    });
+
     // Initialize
     updateCarousel();
     startAutoPlay();
@@ -543,9 +564,23 @@ export function initializeTestimonialsCarousel() {
     return Math.round(viewport.getBoundingClientRect().width); 
   }
   
+  function getDir() { 
+    return document.documentElement.getAttribute('dir') || 'ltr'; 
+  }
+
+  function translateForIndex(viewport, index) {
+    const w = viewport.getBoundingClientRect().width;
+    const isRTL = getDir() === 'rtl';
+    // Flip direction in RTL
+    const offset = isRTL ? index * w : -index * w;
+    return `translateX(${offset}px)`;
+  }
+
   function go(n) {
     i = (n + slides.length) % slides.length;
-    track.style.transform = `translateX(${-i * width()}px)`;
+    
+    track.style.transform = translateForIndex(viewport, i);
+    
     dots.forEach((d, k) => {
       d.setAttribute('aria-current', k === i ? 'true' : 'false');
       d.classList.toggle('bg-oasis-teal', k === i);
@@ -562,8 +597,15 @@ export function initializeTestimonialsCarousel() {
     dot.addEventListener('click', () => go(index));
   });
 
-  // Recompute on resize so the transform stays perfect
+  // Recompute on resize and language change so the transform stays perfect
   new ResizeObserver(() => go(i)).observe(viewport);
+  
+  // Re-calculate on language change (RTL/LTR switch)
+  window.addEventListener('i18n:dir-changed', () => go(i));
+  document.addEventListener('i18n:updated', () => {
+    // Small delay to ensure DOM dir attribute is updated
+    setTimeout(() => go(i), 10);
+  });
 
   // Auto-play functionality
   const autoPlay = root.getAttribute('data-autoplay') === 'true';
