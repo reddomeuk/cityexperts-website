@@ -1,6 +1,27 @@
 // Projects Page JavaScript
 // Handle project loading from API and filtering
 
+// Cloudinary: safely add a transform without breaking the URL
+function clWithTransform(url, transform) {
+  // Accept only Cloudinary upload URLs
+  const m = url.match(/^https:\/\/res\.cloudinary\.com\/([^/]+)\/image\/upload\/([^?]+)(\?.*)?$/i);
+  if (!m) return url; // not Cloudinary → return as-is (we already validate elsewhere)
+  const cloudName = m[1];
+  let tail = m[2]; // may include version + folders + public_id.ext
+  const q = m[3] || '';
+
+  // If the tail already starts with transforms (e.g., c_fill,w_1200/...), keep only the final public_id part
+  // We do that by dropping the FIRST path segment if it contains commas (typical transform segment)
+  const parts = tail.split('/');
+  if (parts[0] && parts[0].includes(',')) {
+    parts.shift();
+    tail = parts.join('/');
+  }
+
+  // Prepend our transform, preserve version/public_id
+  return `https://res.cloudinary.com/${cloudName}/image/upload/${transform}/${tail}${q}`;
+}
+
 class ProjectsRenderer {
   constructor() {
     this.projects = [];
@@ -151,24 +172,19 @@ class ProjectsRenderer {
       return '';
     }
 
-    // Generate Cloudinary transformations
-    const baseUrl = heroImage.split('/upload/')[0] + '/upload/';
-    const publicId = heroImage.split('/upload/')[1].split('?')[0];
-    
-    const transforms = {
-      small: baseUrl + 'c_fill,w_400,h_300,q_auto,f_auto/',
-      medium: baseUrl + 'c_fill,w_600,h_400,q_auto,f_auto/',
-      large: baseUrl + 'c_fill,w_800,h_600,q_auto,f_auto/'
-    };
+    // Generate safe Cloudinary transformations using clWithTransform helper
+    const imgSmall = clWithTransform(heroImage, 'c_fill,w_400,h_300,q_auto,f_auto');
+    const imgMedium = clWithTransform(heroImage, 'c_fill,w_600,h_400,q_auto,f_auto');
+    const imgLarge = clWithTransform(heroImage, 'c_fill,w_800,h_600,q_auto,f_auto');
 
     return '<article class="project-card group" data-category="' + project.category + '" data-aos="fade-up" data-aos-delay="' + (index * 100) + '">' +
       '<div class="relative overflow-hidden rounded-xl bg-white shadow-lg hover:shadow-xl transition-shadow duration-300">' +
       '<div class="relative aspect-[4/3] overflow-hidden">' +
       '<picture>' +
-      '<source media="(min-width: 768px)" srcset="' + transforms.large + publicId + '">' +
-      '<source media="(min-width: 480px)" srcset="' + transforms.medium + publicId + '">' +
-      '<img src="' + transforms.small + publicId + '" ' +
-      'srcset="' + transforms.small + publicId + ' 400w, ' + transforms.medium + publicId + ' 600w, ' + transforms.large + publicId + ' 800w" ' +
+      '<source media="(min-width: 768px)" srcset="' + imgLarge + '">' +
+      '<source media="(min-width: 480px)" srcset="' + imgMedium + '">' +
+      '<img src="' + imgSmall + '" ' +
+      'srcset="' + imgSmall + ' 400w, ' + imgMedium + ' 600w, ' + imgLarge + ' 800w" ' +
       'sizes="(min-width: 1024px) 350px, (min-width: 768px) 300px, 400px" ' +
       'alt="' + this.escapeHtml(heroAlt) + '" ' +
       'width="800" height="600" ' +
@@ -294,6 +310,15 @@ function renderSpotlightProject(project) {
   const spotlightSection = document.querySelector('[data-spotlight-project]');
   if (!spotlightSection) return;
   
+  // Get hero image safely
+  const rawHeroUrl = project.media?.hero?.url || project.media?.heroWide?.url || project.media?.thumb?.url;
+  const heroImageUrl = clWithTransform(rawHeroUrl, 'c_fill,w_1200,h_800,q_auto,f_auto');
+  const heroAlt = project.media?.hero?.alt?.[currentLang] 
+                || project.media?.hero?.alt?.en 
+                || project.media?.heroWide?.alt?.[currentLang]
+                || project.media?.heroWide?.alt?.en
+                || content.title;
+  
   // Build stats from project data
   const stats = [];
   if (project.floors) stats.push({ value: project.floors, label: 'Floors' });
@@ -334,8 +359,8 @@ function renderSpotlightProject(project) {
         
         <div class="relative" data-animate="fade-up" data-animate-delay="200">
           <img 
-            src="${project.media.hero.url}" 
-            alt="${project.media.hero.alt[currentLang] || project.media.hero.alt.en}"
+            src="${heroImageUrl}" 
+            alt="${heroAlt}"
             class="w-full h-auto rounded-2xl shadow-strong"
             loading="lazy"
           >

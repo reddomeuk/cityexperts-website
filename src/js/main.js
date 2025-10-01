@@ -9,6 +9,27 @@ import { initializePerformanceMonitoring } from './performance.js';
 import { initializeStateManager } from './state-manager.js';
 import { autoBindState } from './state-hooks.js';
 
+// Cloudinary: safely add a transform without breaking the URL
+function clWithTransform(url, transform) {
+  // Accept only Cloudinary upload URLs
+  const m = url.match(/^https:\/\/res\.cloudinary\.com\/([^/]+)\/image\/upload\/([^?]+)(\?.*)?$/i);
+  if (!m) return url; // not Cloudinary → return as-is (we already validate elsewhere)
+  const cloudName = m[1];
+  let tail = m[2]; // may include version + folders + public_id.ext
+  const q = m[3] || '';
+
+  // If the tail already starts with transforms (e.g., c_fill,w_1200/...), keep only the final public_id part
+  // We do that by dropping the FIRST path segment if it contains commas (typical transform segment)
+  const parts = tail.split('/');
+  if (parts[0] && parts[0].includes(',')) {
+    parts.shift();
+    tail = parts.join('/');
+  }
+
+  // Prepend our transform, preserve version/public_id
+  return `https://res.cloudinary.com/${cloudName}/image/upload/${transform}/${tail}${q}`;
+}
+
 // Initialize everything when DOM is loaded
 document.addEventListener('DOMContentLoaded', async () => {
   try {
@@ -491,55 +512,50 @@ async function loadFeaturedProjects(carouselRoot) {
 }
 
 function createProjectCard(project, lang) {
-  const content = project.i18n[lang] || project.i18n.en;
-  
-  // Only use Cloudinary images - no local fallbacks
-  const heroImage = project.media?.heroWide?.url || project.media?.hero?.url;
-  if (!heroImage || !heroImage.includes('res.cloudinary.com')) {
-    // Skip projects without valid Cloudinary heroWide images
+  const content = project.i18n?.[lang] || project.i18n?.en || { title: project.id, excerpt: '' };
+
+  // Pick the best available Cloudinary image (heroWide → hero → thumb)
+  const raw = project.media?.heroWide?.url || project.media?.hero?.url || project.media?.thumb?.url || '';
+  if (!/^https:\/\/res\.cloudinary\.com\//i.test(raw)) {
+    // Skip non-cloudinary items (keeps Cloudinary-only contract)
     return '';
   }
-  
-  const altText = project.media?.heroWide?.alt?.[lang] || project.media?.hero?.alt?.[lang] || content.title;
-  
-  // Generate Cloudinary URLs with proper transformations for wide cards
-  const baseCloudinaryUrl = heroImage.split('/upload/')[0] + '/upload/';
-  const publicId = heroImage.split('/upload/')[1].split('?')[0];
-  
-  const cloudinaryTransforms = {
-    small: baseCloudinaryUrl + 'c_fill,w_768,h_432,q_auto,f_auto/',
-    medium: baseCloudinaryUrl + 'c_fill,w_1024,h_576,q_auto,f_auto/', 
-    large: baseCloudinaryUrl + 'c_fill,w_1280,h_720,q_auto,f_auto/',
-    xlarge: baseCloudinaryUrl + 'c_fill,w_1600,h_900,q_auto,f_auto/'
-  };
-  
-  return '<article class="project-card project-card--wide w-full relative group bg-white rounded-2xl overflow-hidden shadow-lg hover:shadow-xl transition-all duration-300">' +
-    '<div class="relative aspect-video">' +
-    '<picture>' +
-    '<source media="(min-width: 1280px)" srcset="' + cloudinaryTransforms.xlarge + publicId + '">' +
-    '<source media="(min-width: 1024px)" srcset="' + cloudinaryTransforms.large + publicId + '">' +
-    '<source media="(min-width: 768px)" srcset="' + cloudinaryTransforms.medium + publicId + '">' +
-    '<img src="' + cloudinaryTransforms.small + publicId + '" ' +
-    'srcset="' + cloudinaryTransforms.small + publicId + ' 768w, ' + cloudinaryTransforms.medium + publicId + ' 1024w, ' + cloudinaryTransforms.large + publicId + ' 1280w, ' + cloudinaryTransforms.xlarge + publicId + ' 1600w" ' +
-    'sizes="(min-width: 1200px) 400px, (min-width: 768px) 300px, 100vw" ' +
-    'loading="lazy" decoding="async" alt="' + altText + '" width="1280" height="720" ' +
-    'class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700">' +
-    '</picture>' +
-    '<div class="absolute inset-0 bg-gradient-to-t from-deep-charcoal/80 via-transparent to-transparent"></div>' +
-    '</div>' +
-    '<div class="absolute bottom-0 left-0 right-0 p-6 text-white">' +
-    '<div class="flex items-center gap-3 mb-3">' +
-    '<span class="px-3 py-1 bg-oasis-teal rounded-full text-sm font-medium capitalize">' + project.category + '</span>' +
-    '<span class="px-3 py-1 bg-brand-orange text-pure-white rounded-full text-sm font-medium">' + project.city + '</span>' +
-    '</div>' +
-    '<h3 class="text-xl md:text-2xl font-playfair font-semibold mb-2 leading-tight">' + content.title + '</h3>' +
-    '<p class="text-white/90 mb-4 text-sm md:text-base line-clamp-2">' + (content.excerpt || content.description.substring(0, 120) + '...') + '</p>' +
-    '<a class="inline-flex items-center gap-2 bg-white/10 hover:bg-white/20 backdrop-blur-sm text-white px-4 py-2 rounded-lg text-sm font-medium transition-all duration-300" href="/projects.html#' + project.id + '" aria-label="Learn more about ' + content.title + '">' +
-    'Learn More' +
-    '<svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">' +
-    '<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"></path>' +
-    '</svg>' +
-    '</a>' +
-    '</div>' +
-    '</article>';
+
+  const altText = project.media?.heroWide?.alt?.[lang]
+               || project.media?.hero?.alt?.[lang]
+               || project.media?.thumb?.alt?.[lang]
+               || content.title;
+
+  // Build responsive sizes WITHOUT breaking the original URL
+  const img400  = clWithTransform(raw, 'c_fill,w_400,h_225,q_auto,f_auto');
+  const img768  = clWithTransform(raw, 'c_fill,w_768,h_432,q_auto,f_auto');
+  const img1200 = clWithTransform(raw, 'c_fill,w_1200,h_675,q_auto,f_auto');
+  const img1600 = clWithTransform(raw, 'c_fill,w_1600,h_900,q_auto,f_auto');
+
+  return `
+  <article class="project-card w-full relative group bg-white rounded-2xl overflow-hidden shadow-lg hover:shadow-xl transition-shadow duration-300">
+    <div class="relative">
+      <picture>
+        <source media="(min-width: 1280px)" srcset="${img1600}">
+        <source media="(min-width: 1024px)" srcset="${img1200}">
+        <source media="(min-width: 768px)"  srcset="${img768}">
+        <img src="${img400}"
+             srcset="${img400} 400w, ${img768} 768w, ${img1200} 1200w, ${img1600} 1600w"
+             sizes="(min-width:1280px) 33vw, (min-width:768px) 33vw, 100vw"
+             loading="lazy" decoding="async" alt="${altText}"
+             width="1600" height="900"
+             class="w-full h-96 md:h-[500px] object-cover group-hover:scale-105 transition-transform duration-700">
+      </picture>
+      <div class="absolute inset-0 bg-gradient-to-t from-deep-charcoal/80 via-transparent to-transparent"></div>
+    </div>
+    <div class="absolute bottom-8 left-8 right-8 text-white">
+      <div class="flex items-center space-x-4 mb-4">
+        <span class="px-3 py-1 bg-oasis-teal rounded-full text-sm capitalize">${project.category || ''}</span>
+        <span class="px-3 py-1 bg-brand-orange text-pure-white rounded-full text-sm">${project.city || ''}</span>
+      </div>
+      <h3 class="text-2xl md:text-3xl font-playfair font-medium mb-2">${content.title}</h3>
+      <p class="text-white/90 mb-4 max-w-2xl">${content.excerpt || ''}</p>
+      <a class="btn btn-secondary" href="/projects.html#${project.id}" aria-label="Learn more about ${content.title}">Learn More</a>
+    </div>
+  </article>`;
 }

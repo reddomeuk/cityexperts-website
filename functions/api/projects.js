@@ -26,19 +26,33 @@ export async function onRequestGet({ request, env }) {
     let projects = [];
     try {
       // Try multiple possible paths for Cloudflare Pages
-      let file = path.join(process.cwd(), "data", "projects.json");
       let data;
+      const possiblePaths = [
+        path.join(process.cwd(), "data", "projects.json"),
+        "./data/projects.json",
+        "data/projects.json",
+        path.resolve("data/projects.json"),
+        path.resolve("./data/projects.json")
+      ];
       
-      try {
-        data = await fs.readFile(file, "utf8");
-      } catch (firstError) {
-        // Try alternative path
-        file = "./data/projects.json";
-        data = await fs.readFile(file, "utf8");
+      let loadedFrom = null;
+      for (const filePath of possiblePaths) {
+        try {
+          data = await fs.readFile(filePath, "utf8");
+          loadedFrom = filePath;
+          break;
+        } catch (pathError) {
+          console.log(`[DEBUG] Failed to load from ${filePath}:`, pathError.message);
+          continue;
+        }
+      }
+      
+      if (!data) {
+        throw new Error("Could not find projects.json in any expected location");
       }
       
       projects = JSON.parse(data);
-      console.log(`[DEBUG] Loaded ${projects.length} projects from ${file}`);
+      console.log(`[DEBUG] Loaded ${projects.length} projects from ${loadedFrom}`);
     } catch (err) {
       console.log('[DEBUG] No projects.json found:', err.message);
       const response = new Response(JSON.stringify({
