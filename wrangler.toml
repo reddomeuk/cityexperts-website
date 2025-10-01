@@ -5,11 +5,11 @@ compatibility_flags = ["nodejs_compat"]
 # Pages configuration - minimal and clean
 pages_build_output_dir = "dist"
 
-# D1 Database Configuration
-[[d1_databases]]
-binding = "DB"
-database_name = "city-experts-db"
-database_id = "your-database-id-here" # Get this from: npx wrangler d1 create city-experts-db
+# D1 Database Configuration (disabled until database is created)
+# [[d1_databases]]
+# binding = "DB"
+# database_name = "city-experts-db"
+# database_id = "your-database-id-here" # Get this from: npx wrangler d1 create city-experts-db
 
 # Environment variables
 [vars]
