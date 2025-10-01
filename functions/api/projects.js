@@ -25,34 +25,43 @@ export async function onRequestGet({ request, env }) {
     // Load projects from JSON
     let projects = [];
     try {
-      // Try multiple possible paths for Cloudflare Pages
+      // For Cloudflare Pages, try to import the JSON directly as a module
       let data;
-      const possiblePaths = [
-        path.join(process.cwd(), "data", "projects.json"),
-        "./data/projects.json",
-        "data/projects.json",
-        path.resolve("data/projects.json"),
-        path.resolve("./data/projects.json")
-      ];
-      
-      let loadedFrom = null;
-      for (const filePath of possiblePaths) {
-        try {
-          data = await fs.readFile(filePath, "utf8");
-          loadedFrom = filePath;
-          break;
-        } catch (pathError) {
-          console.log(`[DEBUG] Failed to load from ${filePath}:`, pathError.message);
-          continue;
+      try {
+        // Try dynamic import first (for Cloudflare Pages)
+        const projectsModule = await import('../../data/projects.json', { assert: { type: 'json' } });
+        projects = projectsModule.default || projectsModule;
+        console.log(`[DEBUG] Loaded ${projects.length} projects via dynamic import`);
+      } catch (importError) {
+        console.log(`[DEBUG] Dynamic import failed: ${importError.message}, trying file system...`);
+        
+        // Fallback to file system approach
+        const possiblePaths = [
+          path.join(process.cwd(), "data", "projects.json"),
+          "./data/projects.json",
+          "data/projects.json",
+          path.resolve("data/projects.json"),
+          path.resolve("./data/projects.json")
+        ];
+        
+        let loadedFrom = null;
+        for (const filePath of possiblePaths) {
+          try {
+            data = await fs.readFile(filePath, "utf8");
+            projects = JSON.parse(data);
+            loadedFrom = filePath;
+            console.log(`[DEBUG] Loaded ${projects.length} projects from ${loadedFrom}`);
+            break;
+          } catch (pathError) {
+            console.log(`[DEBUG] Failed to load from ${filePath}:`, pathError.message);
+            continue;
+          }
+        }
+        
+        if (!projects.length && !data) {
+          throw new Error("Could not find projects.json in any expected location");
         }
       }
-      
-      if (!data) {
-        throw new Error("Could not find projects.json in any expected location");
-      }
-      
-      projects = JSON.parse(data);
-      console.log(`[DEBUG] Loaded ${projects.length} projects from ${loadedFrom}`);
     } catch (err) {
       console.log('[DEBUG] No projects.json found:', err.message);
       const response = new Response(JSON.stringify({
