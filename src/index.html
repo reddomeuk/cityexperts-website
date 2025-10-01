@@ -12,14 +12,14 @@
   <meta property="og:url" content="https://cityexperts.ae/">
   <meta property="og:title" content="City Experts - Engineering Excellence. Interior Elegance">
   <meta property="og:description" content="20+ years delivering landmark commercial and residential projects across the UAE with 650+ specialists.">
-  <meta property="og:image" content="/assets/images/city-experts-og.jpg">
+  <meta property="og:image" content="https://res.cloudinary.com/dmawj7tmu/image/upload/v1759252860/cityexperts/meta/cityexperts/meta/city-experts-og.webp">
   
   <!-- Twitter -->
   <meta property="twitter:card" content="summary_large_image">
   <meta property="twitter:url" content="https://cityexperts.ae/">
   <meta property="twitter:title" content="City Experts - Engineering Excellence. Interior Elegance">
   <meta property="twitter:description" content="20+ years delivering landmark commercial and residential projects across the UAE with 650+ specialists.">
-  <meta property="twitter:image" content="/assets/images/city-experts-og.jpg">
+  <meta property="twitter:image" content="https://res.cloudinary.com/dmawj7tmu/image/upload/v1759252860/cityexperts/meta/cityexperts/meta/city-experts-og.webp">
   
   <!-- Structured Data -->
   <script type="application/ld+json">
@@ -29,7 +29,7 @@
     "name": "City Experts",
     "alternateName": "City Experts Construction & Interior Design",
     "url": "https://cityexperts.ae",
-    "logo": "/assets/images/city-experts-logo.svg",
+    "logo": "https://res.cloudinary.com/dmawj7tmu/image/upload/v1759252857/cityexperts/logos/cityexperts/logos/city-experts-logo.svg",
     "description": "UAE-based construction and interior design company with 20+ years of experience delivering multi-million-dollar projects.",
     "foundingDate": "2003",
     "numberOfEmployees": "650+",
@@ -62,82 +62,85 @@
   <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
   
   <!-- Preload critical resources -->
-  <link rel="preload" href="/assets/images/hero-dubai-skyline.webp" as="image">
+  <link rel="preload" href="https://res.cloudinary.com/dmawj7tmu/image/upload/c_fill,w_1920,h_1080,q_auto,f_auto/v1759252864/cityexperts/hero/cityexperts/hero/hero-dubai-skyline.webp" as="image">
   
   <!-- Skip link for accessibility -->
   <a href="#main-content" class="skip-link sr-only focus:not-sr-only focus:absolute focus:top-4 focus:left-4 bg-oasis-teal text-white px-4 py-2 rounded-md z-50">Skip to main content</a>
 </head>
 
 <body class="antialiased">
-  <!-- Navigation -->
-  <nav id="main-nav" class="fixed top-0 w-full z-40 transition-all duration-300 bg-transparent">
+  <!-- Header / Navigation -->
+  <nav id="site-header" class="fixed top-0 inset-x-0 z-40 bg-transparent transition-colors">
     <div class="container-custom">
-      <div class="flex items-center justify-between h-20">
+      <div class="flex h-20 items-center justify-between">
         <!-- Logo -->
-        <div class="flex items-center">
-          <a href="/" class="flex items-center space-x-3" aria-label="City Experts Home">
-            <img src="/assets/images/city-experts-logo.svg" alt="City Experts" class="h-10 w-auto">
-            <span class="font-playfair text-xl font-semibold text-deep-charcoal">City Experts</span>
-          </a>
-        </div>
-        
-        <!-- Desktop Navigation -->
-        <div class="hidden lg:flex items-center space-x-8">
-          <a href="/" class="nav-link active" data-translate="nav.home">Home</a>
-          <a href="/about.html" class="nav-link" data-translate="nav.about">About</a>
-          <a href="/projects.html" class="nav-link" data-translate="nav.projects">Projects</a>
-          <a href="/contact.html" class="nav-link" data-translate="nav.contact">Contact</a>
-        </div>
-        
-        <!-- Language Toggle & CTA -->
-        <div class="hidden lg:flex items-center space-x-4">
-          <button id="language-toggle" class="flex items-center space-x-2 text-sm text-deep-charcoal hover:text-oasis-teal transition-colors" aria-label="Switch Language">
-            <span id="current-language">EN</span>
-            <span class="text-warm-stone">|</span>
-            <span>AR</span>
-          </button>
-          
+        <a href="/" class="flex items-center gap-3" aria-label="City Experts Home">
+          <img src="https://res.cloudinary.com/dmawj7tmu/image/upload/v1759252857/cityexperts/logos/cityexperts/logos/city-experts-logo.svg" alt="City Experts" class="h-10 w-auto">
+          <span class="font-playfair text-xl font-semibold text-deep-charcoal">City Experts</span>
+        </a>
+
+        <!-- Desktop nav -->
+        <ul class="hidden lg:flex items-center gap-8">
+          <li><a href="/"              class="nav-link" data-translate="nav.home">Home</a></li>
+          <li><a href="/about.html"    class="nav-link" data-translate="nav.about">About</a></li>
+          <li><a href="/projects.html" class="nav-link" data-translate="nav.projects">Projects</a></li>
+          <li><a href="/services.html" class="nav-link" data-translate="nav.services">Services</a></li>
+          <li><a href="/contact.html"  class="nav-link" data-translate="nav.contact">Contact</a></li>
+        </ul>
+
+        <!-- Right side (lang + CTA) -->
+        <div class="hidden lg:flex items-center gap-4">
+          <button id="lang-toggle" class="text-sm text-deep-charcoal hover:text-oasis-teal transition-colors"
+                  aria-label="Switch language">EN | AR</button>
           <a href="/contact.html" class="btn btn-primary" data-translate="nav.request-proposal">Request a Proposal</a>
         </div>
-        
-        <!-- Mobile Menu Button -->
-        <button id="mobile-menu-btn" class="lg:hidden p-2 text-deep-charcoal hover:text-oasis-teal transition-colors" aria-label="Open Menu" aria-expanded="false">
-          <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path>
+
+        <!-- Mobile menu button -->
+        <button id="mobile-menu-btn"
+                class="lg:hidden p-2 text-deep-charcoal hover:text-oasis-teal"
+                aria-label="Open menu" aria-expanded="false" aria-controls="mobile-drawer">
+          <svg class="w-6 h-6" viewBox="0 0 24 24" fill="none" stroke="currentColor">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                  d="M4 6h16M4 12h16M4 18h16"/>
           </svg>
         </button>
       </div>
     </div>
-    
-    <!-- Mobile Menu -->
-    <div id="mobile-menu" class="lg:hidden fixed inset-0 z-50 transform translate-x-full transition-transform duration-300 ease-in-out">
-      <div class="absolute inset-0 bg-deep-charcoal/80 backdrop-blur-sm"></div>
-      <div class="relative h-full w-80 max-w-sm bg-white shadow-strong">
-        <div class="flex items-center justify-between p-6 border-b border-warm-stone/20">
-          <img src="/assets/images/city-experts-logo.svg" alt="City Experts" class="h-8 w-auto">
-          <button id="mobile-menu-close" class="p-2 text-deep-charcoal hover:text-oasis-teal transition-colors" aria-label="Close Menu">
-            <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"></path>
+
+    <!-- Mobile drawer -->
+    <div id="mobile-drawer"
+         class="fixed inset-0 z-50 hidden translate-x-full transition-transform ease-in-out duration-300">
+      <div class="absolute inset-0 bg-deep-charcoal/60 backdrop-blur-sm" data-close-drawer></div>
+      <aside class="relative ml-auto h-full w-80 max-w-[85%] bg-white shadow-strong p-6 flex flex-col">
+        <div class="flex items-center justify-between mb-6">
+          <img src="https://res.cloudinary.com/dmawj7tmu/image/upload/v1759252857/cityexperts/logos/cityexperts/logos/city-experts-logo.svg" alt="City Experts" class="h-8 w-auto">
+          <button class="p-2" aria-label="Close menu" data-close-drawer>
+            <svg class="w-6 h-6" viewBox="0 0 24 24" fill="none" stroke="currentColor">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                    d="M6 18L18 6M6 6l12 12"/>
             </svg>
           </button>
         </div>
-        
-        <nav class="p-6">
+
+        <nav class="flex-1">
           <ul class="space-y-4">
-            <li><a href="/" class="mobile-nav-link active" data-translate="nav.home">Home</a></li>
-            <li><a href="/about.html" class="mobile-nav-link" data-translate="nav.about">About</a></li>
+            <li><a href="/"              class="mobile-nav-link" data-translate="nav.home">Home</a></li>
+            <li><a href="/about.html"    class="mobile-nav-link" data-translate="nav.about">About</a></li>
             <li><a href="/projects.html" class="mobile-nav-link" data-translate="nav.projects">Projects</a></li>
-            <li><a href="/contact.html" class="mobile-nav-link" data-translate="nav.contact">Contact</a></li>
+            <li><a href="/services.html" class="mobile-nav-link" data-translate="nav.services">Services</a></li>
+            <li><a href="/contact.html"  class="mobile-nav-link" data-translate="nav.contact">Contact</a></li>
           </ul>
-          
-          <div class="mt-8 pt-6 border-t border-warm-stone/20">
-            <button id="mobile-language-toggle" class="w-full text-left text-sm text-deep-charcoal hover:text-oasis-teal transition-colors mb-4">
-              Language: <span id="mobile-current-language">English</span>
-            </button>
-            <a href="/contact.html" class="btn btn-primary w-full text-center" data-translate="nav.request-proposal">Request a Proposal</a>
-          </div>
         </nav>
-      </div>
+
+        <div class="mt-6 border-t border-warm-stone/20 pt-6 space-y-4">
+          <button id="mobile-lang-toggle" class="w-full text-left text-sm hover:text-oasis-teal">
+            <span data-translate="nav.language">Language</span>: <span id="mobile-lang-label">English</span>
+          </button>
+          <a href="/contact.html" class="btn btn-primary w-full text-center" data-translate="nav.request-proposal">
+            Request a Proposal
+          </a>
+        </div>
+      </aside>
     </div>
   </nav>
   
@@ -147,12 +150,22 @@
     <section class="relative min-h-screen flex items-center justify-center overflow-hidden">
       <!-- Background Image with Parallax -->
       <div class="absolute inset-0" data-parallax="0.5">
-        <img 
-          src="/assets/images/hero-dubai-skyline.webp"
-          alt="Dubai skyline at dusk showcasing modern architecture"
-          class="w-full h-full object-cover"
-          data-critical
-        >
+        <picture>
+          <source media="(min-width: 1200px)" srcset="https://res.cloudinary.com/dmawj7tmu/image/upload/c_fill,w_1920,h_1080,q_auto,f_auto/v1759252864/cityexperts/hero/cityexperts/hero/hero-dubai-skyline.webp">
+          <source media="(min-width: 768px)" srcset="https://res.cloudinary.com/dmawj7tmu/image/upload/c_fill,w_1200,h_800,q_auto,f_auto/v1759252864/cityexperts/hero/cityexperts/hero/hero-dubai-skyline.webp">
+          <img 
+            src="https://res.cloudinary.com/dmawj7tmu/image/upload/c_fill,w_800,h_600,q_auto,f_auto/v1759252864/cityexperts/hero/cityexperts/hero/hero-dubai-skyline.webp"
+            srcset="https://res.cloudinary.com/dmawj7tmu/image/upload/c_fill,w_800,h_600,q_auto,f_auto/v1759252864/cityexperts/hero/cityexperts/hero/hero-dubai-skyline.webp 800w,
+                    https://res.cloudinary.com/dmawj7tmu/image/upload/c_fill,w_1200,h_800,q_auto,f_auto/v1759252864/cityexperts/hero/cityexperts/hero/hero-dubai-skyline.webp 1200w,
+                    https://res.cloudinary.com/dmawj7tmu/image/upload/c_fill,w_1920,h_1080,q_auto,f_auto/v1759252864/cityexperts/hero/cityexperts/hero/hero-dubai-skyline.webp 1920w"
+            sizes="100vw"
+            alt="Dubai skyline at dusk showcasing modern architecture"
+            width="1920"
+            height="1080"
+            class="w-full h-full object-cover"
+            data-critical
+          >
+        </picture>
         <div class="absolute inset-0 bg-gradient-hero"></div>
       </div>
       
@@ -311,169 +324,13 @@
       <!-- Carousel Track -->
       <div class="carousel-viewport overflow-hidden relative">
         <div class="carousel-track flex transition-transform duration-500 ease-in-out" data-carousel-track>
-          
-          <!-- Slide 1 -->
-          <div class="carousel-slide w-full flex-shrink-0" data-carousel-slide>
-            <div class="cards-column space-y-8 px-4">
-              <!-- Card 1 -->
-              <article class="project-card w-full relative group bg-white rounded-2xl overflow-hidden shadow-lg hover:shadow-xl transition-shadow duration-300">
-                <div class="relative">
-                  <img src="/assets/images/project-1.webp" alt="Emirates Business Tower – commercial exterior" class="w-full h-96 md:h-[500px] object-cover group-hover:scale-105 transition-transform duration-700" loading="lazy" decoding="async">
-                  <div class="absolute inset-0 bg-gradient-to-t from-deep-charcoal/80 via-transparent to-transparent"></div>
-                </div>
-                <div class="absolute bottom-8 left-8 right-8 text-white">
-                  <div class="flex items-center space-x-4 mb-4">
-                    <span class="px-3 py-1 bg-oasis-teal rounded-full text-sm" data-translate="proj.emirates.category">Commercial</span>
-                    <span class="px-3 py-1 bg-brand-orange text-pure-white rounded-full text-sm" data-translate="proj.emirates.city">Dubai</span>
-                  </div>
-                  <h3 class="text-2xl md:text-3xl font-playfair font-medium mb-2" data-translate="proj.emirates.title">Emirates Business Tower</h3>
-                  <p class="text-white/90 mb-4 max-w-2xl" data-translate="proj.emirates.desc">45-story mixed-use development featuring premium offices, retail spaces, and luxury amenities in the heart of Business Bay.</p>
-                  <a class="btn btn-secondary" href="/projects.html#emirates-business-tower" data-translate="common.learnMore" data-translate-attr="aria-label:proj.emirates.learnAria" aria-label="Learn more about Emirates Business Tower">Learn More</a>
-                </div>
-              </article>
-              <!-- Card 2 -->
-              <article class="project-card w-full relative group bg-white rounded-2xl overflow-hidden shadow-lg hover:shadow-xl transition-shadow duration-300">
-                <div class="relative">
-                  <img src="/assets/images/luxury_interior_5.png" alt="Marina Penthouse Collection – luxury interior" class="w-full h-96 md:h-[500px] object-cover group-hover:scale-105 transition-transform duration-700" loading="lazy" decoding="async">
-                  <div class="absolute inset-0 bg-gradient-to-t from-deep-charcoal/80 via-transparent to-transparent"></div>
-                </div>
-                <div class="absolute bottom-8 left-8 right-8 text-white">
-                  <div class="flex items-center space-x-4 mb-4">
-                    <span class="px-3 py-1 bg-oasis-teal rounded-full text-sm" data-translate="proj.marinaPH.category">Interior Design</span>
-                    <span class="px-3 py-1 bg-brand-orange text-pure-white rounded-full text-sm" data-translate="proj.marinaPH.city">Dubai Marina</span>
-                  </div>
-                  <h3 class="text-2xl md:text-3xl font-playfair font-medium mb-2" data-translate="proj.marinaPH.title">Marina Penthouse Collection</h3>
-                  <p class="text-white/90 mb-4 max-w-2xl" data-translate="proj.marinaPH.desc">Sophisticated interior design for luxury penthouses featuring modern aesthetics and premium finishes overlooking Dubai Marina.</p>
-                  <a class="btn btn-secondary" href="/projects.html#marina-penthouse" data-translate="common.learnMore" data-translate-attr="aria-label:proj.marinaPH.learnAria" aria-label="Learn more about Marina Penthouse Collection">Learn More</a>
-                </div>
-              </article>
-              <!-- Card 3 -->
-              <article class="project-card w-full relative group bg-white rounded-2xl overflow-hidden shadow-lg hover:shadow-xl transition-shadow duration-300">
-                <div class="relative">
-                  <img src="/assets/images/luxury_villa_1.png" alt="Botanical Villa Estates – villa exterior" class="w-full h-96 md:h-[500px] object-cover group-hover:scale-105 transition-transform duration-700" loading="lazy" decoding="async">
-                  <div class="absolute inset-0 bg-gradient-to-t from-deep-charcoal/80 via-transparent to-transparent"></div>
-                </div>
-                <div class="absolute bottom-8 left-8 right-8 text-white">
-                  <div class="flex items-center space-x-4 mb-4">
-                    <span class="px-3 py-1 bg-oasis-teal rounded-full text-sm" data-translate="proj.botanical.category">Residential</span>
-                    <span class="px-3 py-1 bg-brand-orange text-pure-white rounded-full text-sm" data-translate="proj.botanical.city">Al Barari</span>
-                  </div>
-                  <h3 class="text-2xl md:text-3xl font-playfair font-medium mb-2" data-translate="proj.botanical.title">Botanical Villa Estates</h3>
-                  <p class="text-white/90 mb-4 max-w-2xl" data-translate="proj.botanical.desc">Exclusive luxury villas surrounded by botanical gardens, featuring sustainable design and world-class architectural excellence.</p>
-                  <a class="btn btn-secondary" href="/projects.html#botanical-villa-estates" data-translate="common.learnMore" data-translate-attr="aria-label:proj.botanical.learnAria" aria-label="Learn more about Botanical Villa Estates">Learn More</a>
-                </div>
-              </article>
+          <!-- Dynamic featured projects will be loaded here -->
+          <div class="col-span-full text-center py-12">
+            <div class="animate-pulse">
+              <div class="w-8 h-8 bg-oasis-teal/20 rounded-full mx-auto mb-4"></div>
+              <p class="text-deep-charcoal/60">Loading featured projects...</p>
             </div>
           </div>
-
-          <!-- Slide 2 -->
-          <div class="carousel-slide w-full flex-shrink-0" data-carousel-slide>
-            <div class="cards-column space-y-8 px-4">
-              <!-- Card 4 -->
-              <article class="project-card w-full relative group bg-white rounded-2xl overflow-hidden shadow-lg hover:shadow-xl transition-shadow duration-300">
-                <div class="relative">
-                  <img src="/assets/images/project-2.webp" alt="City Walk Retail – street-level retail" class="w-full h-96 md:h-[500px] object-cover group-hover:scale-105 transition-transform duration-700" loading="lazy" decoding="async">
-                  <div class="absolute inset-0 bg-gradient-to-t from-deep-charcoal/80 via-transparent to-transparent"></div>
-                </div>
-                <div class="absolute bottom-8 left-8 right-8 text-white">
-                  <div class="flex items-center space-x-4 mb-4">
-                    <span class="px-3 py-1 bg-oasis-teal rounded-full text-sm" data-translate="proj.citywalk.category">Retail</span>
-                    <span class="px-3 py-1 bg-brand-orange text-pure-white rounded-full text-sm" data-translate="proj.citywalk.city">Dubai</span>
-                  </div>
-                  <h3 class="text-2xl md:text-3xl font-playfair font-medium mb-2" data-translate="proj.citywalk.title">City Walk Retail</h3>
-                  <p class="text-white/90 mb-4 max-w-2xl" data-translate="proj.citywalk.desc">Dynamic street-level retail development creating vibrant urban experiences with innovative commercial spaces and pedestrian-friendly design.</p>
-                  <a class="btn btn-secondary" href="/projects.html#city-walk-retail" data-translate="common.learnMore" data-translate-attr="aria-label:proj.citywalk.learnAria" aria-label="Learn more about City Walk Retail">Learn More</a>
-                </div>
-              </article>
-              <!-- Card 5 -->
-              <article class="project-card w-full relative group bg-white rounded-2xl overflow-hidden shadow-lg hover:shadow-xl transition-shadow duration-300">
-                <div class="relative">
-                  <img src="/assets/images/project-3.webp" alt="Harbor Hotel & Residences – hospitality" class="w-full h-96 md:h-[500px] object-cover group-hover:scale-105 transition-transform duration-700" loading="lazy" decoding="async">
-                  <div class="absolute inset-0 bg-gradient-to-t from-deep-charcoal/80 via-transparent to-transparent"></div>
-                </div>
-                <div class="absolute bottom-8 left-8 right-8 text-white">
-                  <div class="flex items-center space-x-4 mb-4">
-                    <span class="px-3 py-1 bg-oasis-teal rounded-full text-sm" data-translate="proj.harborHotel.category">Hospitality</span>
-                    <span class="px-3 py-1 bg-brand-orange text-pure-white rounded-full text-sm" data-translate="proj.harborHotel.city">Dubai Creek</span>
-                  </div>
-                  <h3 class="text-2xl md:text-3xl font-playfair font-medium mb-2" data-translate="proj.harborHotel.title">Harbor Hotel & Residences</h3>
-                  <p class="text-white/90 mb-4 max-w-2xl" data-translate="proj.harborHotel.desc">Luxury mixed-use development combining world-class hospitality with premium residential offerings in the prestigious Dubai Creek area.</p>
-                  <a class="btn btn-secondary" href="/projects.html#harbor-hotel" data-translate="common.learnMore" data-translate-attr="aria-label:proj.harborHotel.learnAria" aria-label="Learn more about Harbor Hotel & Residences">Learn More</a>
-                </div>
-              </article>
-              <!-- Card 6 -->
-              <article class="project-card w-full relative group bg-white rounded-2xl overflow-hidden shadow-lg hover:shadow-xl transition-shadow duration-300">
-                <div class="relative">
-                  <img src="/assets/images/projects/dubai-tower-commercial.webp" alt="Innovation Park – corporate campus" class="w-full h-96 md:h-[500px] object-cover group-hover:scale-105 transition-transform duration-700" loading="lazy" decoding="async">
-                  <div class="absolute inset-0 bg-gradient-to-t from-deep-charcoal/80 via-transparent to-transparent"></div>
-                </div>
-                <div class="absolute bottom-8 left-8 right-8 text-white">
-                  <div class="flex items-center space-x-4 mb-4">
-                    <span class="px-3 py-1 bg-oasis-teal rounded-full text-sm" data-translate="proj.innovation.category">Corporate</span>
-                    <span class="px-3 py-1 bg-brand-orange text-pure-white rounded-full text-sm" data-translate="proj.innovation.city">Dubai South</span>
-                  </div>
-                  <h3 class="text-2xl md:text-3xl font-playfair font-medium mb-2" data-translate="proj.innovation.title">Innovation Park</h3>
-                  <p class="text-white/90 mb-4 max-w-2xl" data-translate="proj.innovation.desc">State-of-the-art corporate campus designed to foster innovation and collaboration in Dubai's emerging business district.</p>
-                  <a class="btn btn-secondary" href="/projects.html#innovation-park" data-translate="common.learnMore" data-translate-attr="aria-label:proj.innovation.learnAria" aria-label="Learn more about Innovation Park">Learn More</a>
-                </div>
-              </article>
-            </div>
-          </div>
-
-          <!-- Slide 3 -->
-          <div class="carousel-slide w-full flex-shrink-0" data-carousel-slide>
-            <div class="cards-column space-y-8 px-4">
-              <!-- Card 7 -->
-              <article class="project-card w-full relative group bg-white rounded-2xl overflow-hidden shadow-lg hover:shadow-xl transition-shadow duration-300">
-                <div class="relative">
-                  <img src="/assets/images/projects/palm-residences.webp" alt="Pearl Residences – residential tower" class="w-full h-96 md:h-[500px] object-cover group-hover:scale-105 transition-transform duration-700" loading="lazy" decoding="async">
-                  <div class="absolute inset-0 bg-gradient-to-t from-deep-charcoal/80 via-transparent to-transparent"></div>
-                </div>
-                <div class="absolute bottom-8 left-8 right-8 text-white">
-                  <div class="flex items-center space-x-4 mb-4">
-                    <span class="px-3 py-1 bg-oasis-teal rounded-full text-sm" data-translate="proj.pearl.category">Residential</span>
-                    <span class="px-3 py-1 bg-brand-orange text-pure-white rounded-full text-sm" data-translate="proj.pearl.city">JBR</span>
-                  </div>
-                  <h3 class="text-2xl md:text-3xl font-playfair font-medium mb-2" data-translate="proj.pearl.title">Pearl Residences</h3>
-                  <p class="text-white/90 mb-4 max-w-2xl" data-translate="proj.pearl.desc">Premium residential tower offering luxury living with stunning marina views and world-class amenities in Jumeirah Beach Residence.</p>
-                  <a class="btn btn-secondary" href="/projects.html#pearl-residences" data-translate="common.learnMore" data-translate-attr="aria-label:proj.pearl.learnAria" aria-label="Learn more about Pearl Residences">Learn More</a>
-                </div>
-              </article>
-              <!-- Card 8 -->
-              <article class="project-card w-full relative group bg-white rounded-2xl overflow-hidden shadow-lg hover:shadow-xl transition-shadow duration-300">
-                <div class="relative">
-                  <img src="/assets/images/projects/executive-offices.webp" alt="Tech District – office interiors" class="w-full h-96 md:h-[500px] object-cover group-hover:scale-105 transition-transform duration-700" loading="lazy" decoding="async">
-                  <div class="absolute inset-0 bg-gradient-to-t from-deep-charcoal/80 via-transparent to-transparent"></div>
-                </div>
-                <div class="absolute bottom-8 left-8 right-8 text-white">
-                  <div class="flex items-center space-x-4 mb-4">
-                    <span class="px-3 py-1 bg-oasis-teal rounded-full text-sm" data-translate="proj.tech.category">Interiors</span>
-                    <span class="px-3 py-1 bg-brand-orange text-pure-white rounded-full text-sm" data-translate="proj.tech.city">Internet City</span>
-                  </div>
-                  <h3 class="text-2xl md:text-3xl font-playfair font-medium mb-2" data-translate="proj.tech.title">Tech District</h3>
-                  <p class="text-white/90 mb-4 max-w-2xl" data-translate="proj.tech.desc">Modern office interior solutions designed for Dubai's leading technology companies, combining functionality with cutting-edge design.</p>
-                  <a class="btn btn-secondary" href="/projects.html#tech-district" data-translate="common.learnMore" data-translate-attr="aria-label:proj.tech.learnAria" aria-label="Learn more about Tech District">Learn More</a>
-                </div>
-              </article>
-              <!-- Card 9 -->
-              <article class="project-card w-full relative group bg-white rounded-2xl overflow-hidden shadow-lg hover:shadow-xl transition-shadow duration-300">
-                <div class="relative">
-                  <img src="/assets/images/projects/marina-mall.webp" alt="Harbor Promenade – mixed-use" class="w-full h-96 md:h-[500px] object-cover group-hover:scale-105 transition-transform duration-700" loading="lazy" decoding="async">
-                  <div class="absolute inset-0 bg-gradient-to-t from-deep-charcoal/80 via-transparent to-transparent"></div>
-                </div>
-                <div class="absolute bottom-8 left-8 right-8 text-white">
-                  <div class="flex items-center space-x-4 mb-4">
-                    <span class="px-3 py-1 bg-oasis-teal rounded-full text-sm" data-translate="proj.promenade.category">Mixed-use</span>
-                    <span class="px-3 py-1 bg-brand-orange text-pure-white rounded-full text-sm" data-translate="proj.promenade.city">Dubai Creek</span>
-                  </div>
-                  <h3 class="text-2xl md:text-3xl font-playfair font-medium mb-2" data-translate="proj.promenade.title">Harbor Promenade</h3>
-                  <p class="text-white/90 mb-4 max-w-2xl" data-translate="proj.promenade.desc">Waterfront mixed-use development blending residential, commercial, and recreational spaces along Dubai's historic creek waterfront.</p>
-                  <a class="btn btn-secondary" href="/projects.html#harbor-promenade" data-translate="common.learnMore" data-translate-attr="aria-label:proj.promenade.learnAria" aria-label="Learn more about Harbor Promenade">Learn More</a>
-                </div>
-              </article>
-            </div>
-          </div>
-
         </div>
       </div>
 
@@ -499,12 +356,12 @@
         <div class="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
           <!-- Content -->
           <div data-animate="fade-up">
-            <h2 class="text-3xl md:text-4xl lg:text-5xl font-playfair font-medium mb-8">Why City Experts?</h2>
+            <h2 class="text-3xl md:text-4xl lg:text-5xl font-playfair font-medium mb-8" data-translate="whyUs.title">Why City Experts?</h2>
             <div class="prose prose-lg max-w-none">
-              <p class="text-deep-charcoal/80 mb-6">
+              <p class="text-deep-charcoal/80 mb-6" data-translate="whyUs.paragraph1">
                 For over two decades, City Experts has been the trusted partner for UAE's most ambitious construction and design projects. Our commitment to excellence, safety, and innovation has earned us recognition as a leader in the industry.
               </p>
-              <p class="text-deep-charcoal/80 mb-8">
+              <p class="text-deep-charcoal/80 mb-8" data-translate="whyUs.paragraph2">
                 From initial concept to final handover, we deliver certainty through transparent processes, world-class expertise, and an unwavering commitment to quality that exceeds expectations.
               </p>
             </div>
@@ -518,8 +375,8 @@
                   </svg>
                 </div>
                 <div>
-                  <h3 class="font-semibold text-deep-charcoal mb-1">On-Time Delivery Guarantee</h3>
-                  <p class="text-deep-charcoal/70">98% of our projects are delivered on schedule with transparent milestone tracking.</p>
+                  <h3 class="font-semibold text-deep-charcoal mb-1" data-translate="whyUs.point1.title">On-Time Delivery Guarantee</h3>
+                  <p class="text-deep-charcoal/70" data-translate="whyUs.point1.description">98% of our projects are delivered on schedule with transparent milestone tracking.</p>
                 </div>
               </div>
 
@@ -530,8 +387,8 @@
                   </svg>
                 </div>
                 <div>
-                  <h3 class="font-semibold text-deep-charcoal mb-1">Transparent Cost Management</h3>
-                  <p class="text-deep-charcoal/70">Clear pricing structure with no hidden costs and regular financial reporting.</p>
+                  <h3 class="font-semibold text-deep-charcoal mb-1" data-translate="whyUs.point2.title">Transparent Cost Management</h3>
+                  <p class="text-deep-charcoal/70" data-translate="whyUs.point2.description">Clear pricing structure with no hidden costs and regular financial reporting.</p>
                 </div>
               </div>
 
@@ -542,8 +399,8 @@
                   </svg>
                 </div>
                 <div>
-                  <h3 class="font-semibold text-deep-charcoal mb-1">Safety-First Culture</h3>
-                  <p class="text-deep-charcoal/70">Zero-compromise approach to worker safety with industry-leading protocols.</p>
+                  <h3 class="font-semibold text-deep-charcoal mb-1" data-translate="whyUs.point3.title">Safety-First Culture</h3>
+                  <p class="text-deep-charcoal/70" data-translate="whyUs.point3.description">Zero-compromise approach to worker safety with industry-leading protocols.</p>
                 </div>
               </div>
 
@@ -554,13 +411,13 @@
                   </svg>
                 </div>
                 <div>
-                  <h3 class="font-semibold text-deep-charcoal mb-1">In-House Design Expertise</h3>
-                  <p class="text-deep-charcoal/70">Integrated design and build capabilities for seamless project delivery.</p>
+                  <h3 class="font-semibold text-deep-charcoal mb-1" data-translate="whyUs.point4.title">In-House Design Expertise</h3>
+                  <p class="text-deep-charcoal/70" data-translate="whyUs.point4.description">Integrated design and build capabilities for seamless project delivery.</p>
                 </div>
               </div>
             </div>
 
-            <a href="/about.html" class="btn btn-dark">Learn More About Us</a>
+            <a href="/about.html" class="btn btn-dark" data-translate="whyUs.learnMore">Learn More About Us</a>
           </div>
 
           <!-- Certifications & Badges -->
@@ -572,8 +429,8 @@
                     <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"></path>
                   </svg>
                 </div>
-                <h3 class="font-semibold text-deep-charcoal mb-2">ISO Certified</h3>
-                <p class="text-sm text-deep-charcoal/70">Quality management systems</p>
+                <h3 class="font-semibold text-deep-charcoal mb-2" data-translate="whyUs.certifications.iso.title">ISO Certified</h3>
+                <p class="text-sm text-deep-charcoal/70" data-translate="whyUs.certifications.iso.description">Quality management systems</p>
               </div>
 
               <div class="text-center p-6 bg-white rounded-xl shadow-soft">
@@ -582,8 +439,8 @@
                     <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 15v2m-6 4h12a2 2 0 002-2v-6a2 2 0 00-2-2H6a2 2 0 00-2 2v6a2 2 0 002 2zm10-10V7a4 4 0 00-8 0v4h8z"></path>
                   </svg>
                 </div>
-                <h3 class="font-semibold text-deep-charcoal mb-2">Safety Certified</h3>
-                <p class="text-sm text-deep-charcoal/70">OHSAS 18001 compliant</p>
+                <h3 class="font-semibold text-deep-charcoal mb-2" data-translate="whyUs.certifications.safety.title">Safety Certified</h3>
+                <p class="text-sm text-deep-charcoal/70" data-translate="whyUs.certifications.safety.description">OHSAS 18001 compliant</p>
               </div>
 
               <div class="text-center p-6 bg-white rounded-xl shadow-soft">
@@ -592,8 +449,8 @@
                     <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 00-6.364 0z"></path>
                   </svg>
                 </div>
-                <h3 class="font-semibold text-deep-charcoal mb-2">Green Building</h3>
-                <p class="text-sm text-deep-charcoal/70">LEED accredited professionals</p>
+                <h3 class="font-semibold text-deep-charcoal mb-2" data-translate="whyUs.certifications.green.title">Green Building</h3>
+                <p class="text-sm text-deep-charcoal/70" data-translate="whyUs.certifications.green.description">LEED accredited professionals</p>
               </div>
 
               <div class="text-center p-6 bg-white rounded-xl shadow-soft">
@@ -602,8 +459,8 @@
                     <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0zm6 3a2 2 0 11-4 0 2 2 0 014 0zM7 10a2 2 0 11-4 0 2 2 0 014 0z"></path>
                   </svg>
                 </div>
-                <h3 class="font-semibold text-deep-charcoal mb-2">Expert Team</h3>
-                <p class="text-sm text-deep-charcoal/70">650+ certified professionals</p>
+                <h3 class="font-semibold text-deep-charcoal mb-2" data-translate="whyUs.certifications.team.title">Expert Team</h3>
+                <p class="text-sm text-deep-charcoal/70" data-translate="whyUs.certifications.team.description">650+ certified professionals</p>
               </div>
             </div>
           </div>
@@ -815,7 +672,7 @@
         <!-- Company Info -->
         <div class="lg:col-span-2">
           <div class="flex items-center space-x-3 mb-6">
-            <img src="/assets/images/city-experts-logo.svg" alt="City Experts" class="h-8 w-auto">
+            <img src="https://res.cloudinary.com/dmawj7tmu/image/upload/v1759252857/cityexperts/logos/cityexperts/logos/city-experts-logo.svg" alt="City Experts" class="h-8 w-auto">
             <span class="font-playfair text-xl font-semibold">City Experts</span>
           </div>
           <p class="text-white/80 mb-6 max-w-md" data-translate="footer.about-text">

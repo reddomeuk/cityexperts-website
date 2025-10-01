@@ -4,7 +4,6 @@ export function initializeAnimations() {
   initializeParallaxEffects();
   initializeHoverEffects();
   
-  console.log('✨ Animations initialized');
 }
 
 // Scroll-based animations using Intersection Observer

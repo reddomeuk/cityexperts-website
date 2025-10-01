@@ -11,7 +11,8 @@ export default defineConfig({
         about: 'src/about.html',
         projects: 'src/projects.html',
         contact: 'src/contact.html',
-        admin: 'src/admin.html'
+        admin: 'src/admin.html',
+        services: 'src/services.html'
       }
     }
   },

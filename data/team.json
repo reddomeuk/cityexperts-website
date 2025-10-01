@@ -1,0 +1,130 @@
+{
+  "team": [
+    {
+      "id": "ahmed-al-mansouri",
+      "order": 1,
+      "status": "active",
+      "i18n": {
+        "en": {
+          "name": "Ahmed Al-Mansouri",
+          "position": "Chief Executive Officer",
+          "bio": "Ahmed founded City Experts with a vision to elevate UAE's construction standards. His strategic leadership has guided the company's growth from startup to industry leader.",
+          "expertise": "20+ years construction leadership"
+        },
+        "ar": {
+          "name": "أحمد المنصوري",
+          "position": "الرئيس التنفيذي",
+          "bio": "أسس أحمد خبراء المدينة برؤية لرفع معايير البناء في دولة الإمارات. قيادته الاستراتيجية وجهت نمو الشركة من شركة ناشئة إلى رائدة في الصناعة.",
+          "expertise": "أكثر من ٢٠ عامًا من القيادة في البناء"
+        }
+      },
+      "media": {
+        "portrait": {
+          "url": "https://res.cloudinary.com/dmawj7tmu/image/upload/v1759252889/cityexperts/team/cityexperts/team/ceo-portrait.webp",
+          "public_id": "cityexperts/team/cityexperts/team/ceo-portrait",
+          "alt": {
+            "en": "Ahmed Al-Mansouri, CEO of City Experts",
+            "ar": "أحمد المنصوري، الرئيس التنفيذي لخبراء المدينة"
+          },
+          "dimensions": {
+            "width": 800,
+            "height": 800
+          }
+        }
+      },
+      "contact": {
+        "email": "ahmed@cityexperts.ae",
+        "linkedin": "https://linkedin.com/in/ahmed-almansouri"
+      },
+      "meta": {
+        "created_at": "2023-01-15T08:00:00Z",
+        "updated_at": "2025-10-01T08:00:00Z",
+        "updated_by": "admin@cityexperts.ae"
+      }
+    },
+    {
+      "id": "sarah-mitchell",
+      "order": 2,
+      "status": "active",
+      "i18n": {
+        "en": {
+          "name": "Sarah Mitchell",
+          "position": "Chief Operating Officer",
+          "bio": "Sarah oversees all operational aspects, ensuring projects are delivered on time, within budget, and to the highest quality standards across all our divisions.",
+          "expertise": "Operations excellence expert"
+        },
+        "ar": {
+          "name": "سارة ميتشل",
+          "position": "مدير العمليات التنفيذي",
+          "bio": "تشرف سارة على جميع الجوانب التشغيلية، وتضمن تسليم المشاريع في الوقت المحدد وضمن الميزانية وبأعلى معايير الجودة عبر جميع أقسامنا.",
+          "expertise": "خبيرة تميز العمليات"
+        }
+      },
+      "media": {
+        "portrait": {
+          "url": "https://res.cloudinary.com/dmawj7tmu/image/upload/v1759252890/cityexperts/team/cityexperts/team/coo-portrait.webp",
+          "public_id": "cityexperts/team/cityexperts/team/coo-portrait",
+          "alt": {
+            "en": "Sarah Mitchell, COO of City Experts",
+            "ar": "سارة ميتشل، مدير العمليات التنفيذي لخبراء المدينة"
+          },
+          "dimensions": {
+            "width": 800,
+            "height": 800
+          }
+        }
+      },
+      "contact": {
+        "email": "sarah@cityexperts.ae",
+        "linkedin": "https://linkedin.com/in/sarah-mitchell"
+      },
+      "meta": {
+        "created_at": "2023-01-15T08:00:00Z",
+        "updated_at": "2025-10-01T08:00:00Z",
+        "updated_by": "admin@cityexperts.ae"
+      }
+    },
+    {
+      "id": "marco-rossi",
+      "order": 3,
+      "status": "active",
+      "i18n": {
+        "en": {
+          "name": "Marco Rossi",
+          "position": "Head of Design",
+          "bio": "Marco brings international design expertise to every project, seamlessly blending functionality with aesthetic excellence in both architecture and interiors.",
+          "expertise": "Award-winning architect"
+        },
+        "ar": {
+          "name": "ماركو روسي",
+          "position": "رئيس قسم التصميم",
+          "bio": "يجلب ماركو خبرة التصميم الدولية لكل مشروع، ويمزج بسلاسة بين الوظائف والتميز الجمالي في كل من الهندسة المعمارية والتصميم الداخلي.",
+          "expertise": "مهندس معماري حائز على جوائز"
+        }
+      },
+      "media": {
+        "portrait": {
+          "url": "https://res.cloudinary.com/dmawj7tmu/image/upload/v1759252891/cityexperts/team/cityexperts/team/design-head-portrait.webp",
+          "public_id": "cityexperts/team/cityexperts/team/design-head-portrait",
+          "alt": {
+            "en": "Marco Rossi, Head of Design at City Experts",
+            "ar": "ماركو روسي، رئيس قسم التصميم في خبراء المدينة"
+          },
+          "dimensions": {
+            "width": 800,
+            "height": 800
+          }
+        }
+      },
+      "contact": {
+        "email": "marco@cityexperts.ae",
+        "linkedin": "https://linkedin.com/in/marco-rossi-architect"
+      },
+      "meta": {
+        "created_at": "2023-01-15T08:00:00Z",
+        "updated_at": "2025-10-01T08:00:00Z",
+        "updated_by": "admin@cityexperts.ae"
+      }
+    }
+  ]
+}

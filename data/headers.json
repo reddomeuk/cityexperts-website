@@ -1,0 +1,106 @@
+{
+  "pages": {
+    "index": {
+      "id": "index",
+      "name": "Homepage",
+      "hasHero": true,
+      "media": {
+        "hero": {
+          "url": "https://res.cloudinary.com/dmawj7tmu/image/upload/v1759252864/cityexperts/hero/cityexperts/hero/hero-dubai-skyline.webp",
+          "public_id": "cityexperts/hero/cityexperts/hero/hero-dubai-skyline",
+          "alt": {
+            "en": "Dubai skyline at dusk - City Experts construction projects",
+            "ar": "أفق دبي عند الغسق - مشاريع البناء من خبراء المدينة"
+          },
+          "dimensions": {
+            "width": 1920,
+            "height": 1080
+          }
+        }
+      },
+      "seo": {
+        "ogImage": "https://res.cloudinary.com/dmawj7tmu/image/upload/v1759252864/cityexperts/hero/cityexperts/hero/hero-dubai-skyline.webp",
+        "twitterImage": "https://res.cloudinary.com/dmawj7tmu/image/upload/v1759252864/cityexperts/hero/cityexperts/hero/hero-dubai-skyline.webp"
+      }
+    },
+    "about": {
+      "id": "about",
+      "name": "About Us",
+      "hasHero": true,
+      "media": {
+        "hero": {
+          "url": "https://res.cloudinary.com/dmawj7tmu/image/upload/v1759252854/cityexperts/hero/cityexperts/hero/about-hero.webp",
+          "public_id": "cityexperts/hero/cityexperts/hero/about-hero",
+          "alt": {
+            "en": "About City Experts - Modern architectural design and construction excellence",
+            "ar": "حول خبراء المدينة - التصميم المعماري الحديث وتميز البناء"
+          },
+          "dimensions": {
+            "width": 1920,
+            "height": 1080
+          }
+        }
+      },
+      "seo": {
+        "ogImage": "https://res.cloudinary.com/dmawj7tmu/image/upload/v1759252854/cityexperts/hero/cityexperts/hero/about-hero.webp",
+        "twitterImage": "https://res.cloudinary.com/dmawj7tmu/image/upload/v1759252854/cityexperts/hero/cityexperts/hero/about-hero.webp"
+      }
+    },
+    "services": {
+      "id": "services",
+      "name": "Services",
+      "hasHero": true,
+      "media": {
+        "hero": {
+          "url": "https://res.cloudinary.com/dmawj7tmu/image/upload/v1759252864/cityexperts/hero/cityexperts/hero/hero-dubai-skyline.webp",
+          "public_id": "cityexperts/hero/cityexperts/hero/hero-dubai-skyline",
+          "alt": {
+            "en": "City Experts services - Construction and interior design solutions",
+            "ar": "خدمات خبراء المدينة - حلول البناء والتصميم الداخلي"
+          },
+          "dimensions": {
+            "width": 1920,
+            "height": 1080
+          }
+        }
+      },
+      "seo": {
+        "ogImage": "https://res.cloudinary.com/dmawj7tmu/image/upload/v1759252864/cityexperts/hero/cityexperts/hero/hero-dubai-skyline.webp",
+        "twitterImage": "https://res.cloudinary.com/dmawj7tmu/image/upload/v1759252864/cityexperts/hero/cityexperts/hero/hero-dubai-skyline.webp"
+      }
+    },
+    "projects": {
+      "id": "projects",
+      "name": "Projects",
+      "hasHero": true,
+      "media": {
+        "hero": {
+          "url": "https://res.cloudinary.com/dmawj7tmu/image/upload/v1759252888/cityexperts/hero/cityexperts/hero/projects-hero.webp",
+          "public_id": "cityexperts/hero/cityexperts/hero/projects-hero",
+          "alt": {
+            "en": "City Experts projects showcase - Premium construction and development",
+            "ar": "عرض مشاريع خبراء المدينة - البناء والتطوير المتميز"
+          },
+          "dimensions": {
+            "width": 1920,
+            "height": 1080
+          }
+        }
+      },
+      "seo": {
+        "ogImage": "https://res.cloudinary.com/dmawj7tmu/image/upload/v1759252888/cityexperts/hero/cityexperts/hero/projects-hero.webp",
+        "twitterImage": "https://res.cloudinary.com/dmawj7tmu/image/upload/v1759252888/cityexperts/hero/cityexperts/hero/projects-hero.webp"
+      }
+    },
+    "contact": {
+      "id": "contact",
+      "name": "Contact Us",
+      "hasHero": false,
+      "media": {},
+      "seo": {
+        "ogImage": "https://res.cloudinary.com/dmawj7tmu/image/upload/v1759252862/cityexperts/hero/cityexperts/hero/contact-hero.webp",
+        "twitterImage": "https://res.cloudinary.com/dmawj7tmu/image/upload/v1759252862/cityexperts/hero/cityexperts/hero/contact-hero.webp"
+      }
+    }
+  }
+}

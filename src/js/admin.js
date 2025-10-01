@@ -24,6 +24,15 @@ function canUpload(){
 function updateBtn(){ 
   if (uploadBtn) uploadBtn.disabled = !canUpload(); 
 }
+
+// Featured project validation
+function validateFeaturedProject(projectData) {
+  if (projectData.featured && (!projectData.media?.heroWide?.url || !projectData.media.heroWide.url.includes('res.cloudinary.com'))) {
+    return { valid: false, error: "Featured projects require a valid heroWide image (1920×1080) hosted on Cloudinary" };
+  }
+  return { valid: true };
+}
+
 const reqsEl = document.getElementById("reqs");
 const fileEl = document.getElementById("file");
 const catEl = document.getElementById("category");

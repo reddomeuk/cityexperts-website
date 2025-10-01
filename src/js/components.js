@@ -1,14 +1,17 @@
-// Interactive components for City Experts website
+// Interactive components for City Experts website - REFACTORED
+// Import new modular components
+import { initializeComponents as initializeNewComponents } from './components/index.js';
+
+// Temporary wrapper to maintain compatibility while we transition
 export function initializeComponents() {
-  initializeCounters();
-  initializeCarousels();
-  initializeTestimonialsCarousel(); // Specialized testimonials carousel
-  initializeModalSystem();
-  initializeForms();
-  initializeFilterSystem();
-  initializei18nUpdates();
   
-  console.log('🎛️ Components initialized');
+  // Initialize new modular components
+  const newComponents = initializeNewComponents();
+  
+  // Keep existing legacy components for now (will be migrated)
+  // These functions are defined as exports later in this file
+  
+  return newComponents;
 }
 
 // Listen for i18n updates to re-translate dynamic content

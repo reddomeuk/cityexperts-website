@@ -1,23 +1,514 @@
 [
   {
-    "id": "marina-tower",
-    "name": "Marina Tower",
-    "hero": { "url": "", "public_id": "", "alt": "" },
-    "thumb": { "url": "", "public_id": "", "alt": "" },
-    "gallery": []
+    "id": "emirates-business-tower",
+    "status": "published",
+    "order": 10,
+    "category": "commercial",
+    "city": "Dubai",
+    "client": "Emirates Development Group",
+    "featured": true,
+    "i18n": {
+      "en": {
+        "title": "Emirates Business Tower",
+        "excerpt": "45-story mixed-use development with premium offices and retail in Business Bay.",
+        "description": "## Project Overview\n\nA landmark mixed-use development featuring premium office spaces, luxury retail outlets, and innovative architectural design. This 45-story tower represents the pinnacle of modern construction in Dubai's Business Bay district.\n\n## Key Features\n\n- 45 floors of premium office and retail space\n- LEED Gold certified sustainable design\n- State-of-the-art MEP systems\n- Premium location in Business Bay\n- Luxury finishes throughout\n\n## Scope of Work\n\n- Structural engineering and design\n- MEP systems integration\n- Façade engineering\n- Interior fit-out coordination\n- Project management and supervision"
+      },
+      "ar": {
+        "title": "برج إميريتس للأعمال",
+        "excerpt": "برج متعدد الاستخدامات من ٤٥ طابقًا يضم مكاتب ومتاجر في الخليج التجاري.",
+        "description": "## نظرة عامة على المشروع\n\nمشروع متعدد الاستخدامات بارز يضم مساحات مكتبية متميزة ومتاجر فاخرة وتصميم معماري مبتكر. يمثل هذا البرج المكون من ٤٥ طابقًا قمة البناء الحديث في منطقة الخليج التجاري بدبي.\n\n## المميزات الرئيسية\n\n- ٤٥ طابقًا من المكاتب والمساحات التجارية المتميزة\n- تصميم مستدام معتمد من ليد الذهبي\n- أنظمة كهروميكانيكية متطورة\n- موقع متميز في الخليج التجاري\n- لمسات نهائية فاخرة في جميع أنحائه\n\n## نطاق العمل\n\n- الهندسة الإنشائية والتصميم\n- تكامل الأنظمة الكهروميكانيكية\n- هندسة الواجهات\n- تنسيق التشطيبات الداخلية\n- إدارة المشاريع والإشراف"
+      }
+    },
+    "media": {
+      "hero": {
+        "url": "https://res.cloudinary.com/dmawj7tmu/image/upload/v1759252878/cityexperts/projects/cityexperts/projects/project-1.webp",
+        "public_id": "cityexperts/projects/cityexperts/projects/project-1",
+        "alt": { 
+          "en": "Emirates Business Tower exterior view at sunset", 
+          "ar": "منظر خارجي لبرج إميريتس للأعمال عند غروب الشمس" 
+        }
+      },
+      "thumb": {
+        "url": "https://res.cloudinary.com/dmawj7tmu/image/upload/v1759252878/cityexperts/projects/cityexperts/projects/project-1.webp",
+        "public_id": "cityexperts/projects/cityexperts/projects/project-1",
+        "alt": { 
+          "en": "Emirates Business Tower thumbnail", 
+          "ar": "صورة مصغرة لبرج إميريتس للأعمال" 
+        }
+      },
+      "gallery": [
+        {
+          "url": "https://res.cloudinary.com/dmawj7tmu/image/upload/v1759252873/cityexperts/gallery/cityexperts/gallery/luxury_interior_1.png",
+          "public_id": "cityexperts/gallery/cityexperts/gallery/luxury_interior_1",
+          "alt": { "en": "Premium lobby interior design", "ar": "تصميم البهو الداخلي المتميز" }
+        },
+        {
+          "url": "https://res.cloudinary.com/dmawj7tmu/image/upload/v1759252874/cityexperts/gallery/cityexperts/gallery/luxury_interior_2.png",
+          "public_id": "cityexperts/gallery/cityexperts/gallery/luxury_interior_2",
+          "alt": { "en": "Modern office floor layout", "ar": "تخطيط طابق المكاتب الحديث" }
+        },
+        {
+          "url": "https://res.cloudinary.com/dmawj7tmu/image/upload/v1759252875/cityexperts/gallery/cityexperts/gallery/luxury_interior_3.png",
+          "public_id": "cityexperts/gallery/cityexperts/gallery/luxury_interior_3",
+          "alt": { "en": "Architectural facade detail", "ar": "تفاصيل الواجهة المعمارية" }
+        }
+      ],
+      "videos": []
+    },
+    "meta": {
+      "last_modified_by": "admin@cityexperts.ae",
+      "updated_at": "2025-09-29T10:00:00Z",
+      "created_at": "2023-01-10T08:00:00Z",
+      "soft_deleted": false
+    }
   },
   {
-    "id": "downtown-plaza",
-    "name": "Downtown Plaza",
-    "hero": { "url": "", "public_id": "", "alt": "" },
-    "thumb": { "url": "", "public_id": "", "alt": "" },
-    "gallery": []
+    "id": "marina-luxury-residences",
+    "status": "published",
+    "order": 20,
+    "category": "residential",
+    "city": "Dubai",
+    "client": "Marina Holdings",
+    "featured": true,
+    "i18n": {
+      "en": {
+        "title": "Marina Luxury Residences",
+        "excerpt": "Premium residential complex with waterfront views and luxury amenities in Dubai Marina.",
+        "description": "## Project Overview\n\nAn exclusive residential development featuring luxury apartments with stunning marina views, world-class amenities, and premium finishes throughout. This project represents the finest in waterfront living.\n\n## Key Features\n\n- 180 luxury residential units\n- Panoramic marina and sea views\n- World-class amenities and facilities\n- Premium location in Dubai Marina\n- Sustainable design features\n\n## Scope of Work\n\n- Complete structural design\n- Luxury interior specifications\n- Landscape and amenity design\n- MEP systems coordination\n- Construction supervision"
+      },
+      "ar": {
+        "title": "مساكن مارينا الفاخرة",
+        "excerpt": "مجمع سكني متميز بإطلالات على الواجهة المائية ووسائل راحة فاخرة في دبي مارينا.",
+        "description": "## نظرة عامة على المشروع\n\nمشروع سكني حصري يضم شقق فاخرة بإطلالات خلابة على المارينا ووسائل راحة عالمية ولمسات نهائية متميزة في جميع أنحائه. يمثل هذا المشروع الأفضل في المعيشة على الواجهة المائية.\n\n## المميزات الرئيسية\n\n- ١٨٠ وحدة سكنية فاخرة\n- إطلالات بانورامية على المارينا والبحر\n- وسائل راحة ومرافق عالمية المستوى\n- موقع متميز في دبي مارينا\n- ميزات التصميم المستدام\n\n## نطاق العمل\n\n- التصميم الإنشائي الكامل\n- مواصفات التشطيبات الفاخرة\n- تصميم المناظر الطبيعية والمرافق\n- تنسيق الأنظمة الكهروميكانيكية\n- الإشراف على البناء"
+      }
+    },
+    "media": {
+      "hero": {
+        "url": "https://res.cloudinary.com/dmawj7tmu/image/upload/v1759252879/cityexperts/projects/cityexperts/projects/project-2.webp",
+        "public_id": "cityexperts/projects/cityexperts/projects/project-2",
+        "alt": { 
+          "en": "Marina Luxury Residences waterfront view", 
+          "ar": "إطلالة مساكن مارينا الفاخرة على الواجهة المائية" 
+        }
+      },
+      "thumb": {
+        "url": "https://res.cloudinary.com/dmawj7tmu/image/upload/v1759252879/cityexperts/projects/cityexperts/projects/project-2.webp",
+        "public_id": "cityexperts/projects/cityexperts/projects/project-2",
+        "alt": { 
+          "en": "Marina Luxury Residences thumbnail", 
+          "ar": "صورة مصغرة لمساكن مارينا الفاخرة" 
+        }
+      },
+      "gallery": [
+        {
+          "url": "https://res.cloudinary.com/dmawj7tmu/image/upload/v1759252875/cityexperts/gallery/cityexperts/gallery/luxury_interior_4.png",
+          "public_id": "cityexperts/gallery/cityexperts/gallery/luxury_interior_4",
+          "alt": { "en": "Building exterior with marina views", "ar": "الواجهة الخارجية مع إطلالات المارينا" }
+        },
+        {
+          "url": "https://res.cloudinary.com/dmawj7tmu/image/upload/v1759252876/cityexperts/gallery/cityexperts/gallery/luxury_interior_5.png",
+          "public_id": "cityexperts/gallery/cityexperts/gallery/luxury_interior_5",
+          "alt": { "en": "Luxury amenities and facilities", "ar": "المرافق والخدمات الفاخرة" }
+        }
+      ],
+      "videos": []
+    },
+    "meta": {
+      "last_modified_by": "admin@cityexperts.ae",
+      "updated_at": "2025-09-29T10:00:00Z",
+      "created_at": "2023-03-15T08:00:00Z",
+      "soft_deleted": false
+    }
   },
   {
-    "id": "waterfront-residences",
-    "name": "Waterfront Residences",
-    "hero": { "url": "", "public_id": "", "alt": "" },
-    "thumb": { "url": "", "public_id": "", "alt": "" },
-    "gallery": []
+    "id": "palm-island-villas",
+    "status": "published",
+    "order": 30,
+    "category": "residential",
+    "city": "Dubai",
+    "client": "Palm Development LLC",
+    "featured": true,
+    "i18n": {
+      "en": {
+        "title": "Palm Island Luxury Villas",
+        "excerpt": "Exclusive collection of luxury villas on Palm Jumeirah with private beaches and premium amenities.",
+        "description": "## Project Overview\n\nAn exclusive collection of luxury villas located on the prestigious Palm Jumeirah, featuring private beach access, world-class amenities, and unparalleled views of the Arabian Gulf.\n\n## Key Features\n\n- 50 luxury villa units\n- Private beach access\n- Premium location on Palm Jumeirah\n- Stunning Gulf views\n- Private pools and gardens\n\n## Scope of Work\n\n- Villa design and construction\n- Landscape architecture\n- Infrastructure development\n- Interior design coordination\n- Quality assurance and project management"
+      },
+      "ar": {
+        "title": "فيلل جزيرة النخلة الفاخرة",
+        "excerpt": "مجموعة حصرية من الفيلل الفاخرة في نخلة جميرا مع شواطئ خاصة ووسائل راحة متميزة.",
+        "description": "## نظرة عامة على المشروع\n\nمجموعة حصرية من الفيلل الفاخرة تقع في نخلة جميرا المرموقة، تتميز بإمكانية الوصول إلى الشاطئ الخاص ووسائل الراحة عالمية المستوى وإطلالات لا مثيل لها على الخليج العربي.\n\n## المميزات الرئيسية\n\n- ٥٠ وحدة فيلا فاخرة\n- إمكانية الوصول إلى الشاطئ الخاص\n- موقع متميز في نخلة جميرا\n- إطلالات خلابة على الخليج\n- مسابح وحدائق خاصة\n\n## نطاق العمل\n\n- تصميم وبناء الفيلل\n- هندسة المناظر الطبيعية\n- تطوير البنية التحتية\n- تنسيق التصميم الداخلي\n- ضمان الجودة وإدارة المشاريع"
+      }
+    },
+    "media": {
+      "hero": {
+        "url": "https://res.cloudinary.com/dmawj7tmu/image/upload/v1759252880/cityexperts/projects/cityexperts/projects/project-3.webp",
+        "public_id": "cityexperts/projects/cityexperts/projects/project-3",
+        "alt": { 
+          "en": "Palm Island luxury villas with beach views", 
+          "ar": "فيلل جزيرة النخلة الفاخرة مع إطلالات الشاطئ" 
+        }
+      },
+      "thumb": {
+        "url": "https://res.cloudinary.com/dmawj7tmu/image/upload/v1759252880/cityexperts/projects/cityexperts/projects/project-3.webp",
+        "public_id": "cityexperts/projects/cityexperts/projects/project-3",
+        "alt": { 
+          "en": "Palm Island villas thumbnail", 
+          "ar": "صورة مصغرة لفيلل جزيرة النخلة" 
+        }
+      },
+      "gallery": [
+        {
+          "url": "https://res.cloudinary.com/dmawj7tmu/image/upload/v1759252876/cityexperts/gallery/cityexperts/gallery/luxury_villa_1.png",
+          "public_id": "cityexperts/gallery/cityexperts/gallery/luxury_villa_1",
+          "alt": { "en": "Luxury villa exterior design", "ar": "التصميم الخارجي للفيلا الفاخرة" }
+        },
+        {
+          "url": "https://res.cloudinary.com/dmawj7tmu/image/upload/v1759252877/cityexperts/gallery/cityexperts/gallery/luxury_villa_2.png",
+          "public_id": "cityexperts/gallery/cityexperts/gallery/luxury_villa_2",
+          "alt": { "en": "Private beach access", "ar": "الوصول إلى الشاطئ الخاص" }
+        }
+      ],
+      "videos": []
+    },
+    "meta": {
+      "last_modified_by": "admin@cityexperts.ae",
+      "updated_at": "2025-09-29T10:00:00Z",
+      "created_at": "2023-05-20T08:00:00Z",
+      "soft_deleted": false
+    }
+  },
+  {
+    "id": "downtown-office-complex",
+    "status": "published",
+    "order": 40,
+    "category": "commercial",
+    "city": "Dubai",
+    "client": "Downtown Developers",
+    "featured": true,
+    "i18n": {
+      "en": {
+        "title": "Downtown Executive Offices",
+        "excerpt": "Modern office complex in Downtown Dubai with premium facilities and sustainable design.",
+        "description": "## Project Overview\n\nA state-of-the-art office complex in the heart of Downtown Dubai, featuring modern workspace solutions, premium facilities, and LEED Gold certification for sustainable design.\n\n## Key Features\n\n- 25-story office tower\n- LEED Gold certified\n- Premium location in Downtown Dubai\n- Modern workspace solutions\n- Advanced MEP systems\n\n## Scope of Work\n\n- Complete structural design\n- MEP systems integration\n- Sustainable design implementation\n- Office fit-out coordination\n- Project management"
+      },
+      "ar": {
+        "title": "مكاتب وسط المدينة التنفيذية",
+        "excerpt": "مجمع مكاتب حديث في وسط مدينة دبي مع مرافق متميزة وتصميم مستدام.",
+        "description": "## نظرة عامة على المشروع\n\nمجمع مكاتب متطور في قلب وسط مدينة دبي، يتميز بحلول مساحات العمل الحديثة والمرافق المتميزة وشهادة ليد الذهبي للتصميم المستدام.\n\n## المميزات الرئيسية\n\n- برج مكاتب من ٢٥ طابقًا\n- معتمد من ليد الذهبي\n- موقع متميز في وسط مدينة دبي\n- حلول مساحات عمل حديثة\n- أنظمة كهروميكانيكية متطورة\n\n## نطاق العمل\n\n- التصميم الإنشائي الكامل\n- تكامل الأنظمة الكهروميكانيكية\n- تنفيذ التصميم المستدام\n- تنسيق تشطيبات المكاتب\n- إدارة المشاريع"
+      }
+    },
+    "media": {
+      "hero": {
+        "url": "https://res.cloudinary.com/dmawj7tmu/image/upload/c_fill,w_1920,h_1080,q_auto,f_auto/v1/cityexperts/hero/downtown-office-complex.webp",
+        "public_id": "cityexperts/hero/downtown-office-complex",
+        "alt": { 
+          "en": "Downtown office complex exterior", 
+          "ar": "الواجهة الخارجية لمجمع مكاتب وسط المدينة" 
+        }
+      },
+      "thumb": {
+        "url": "https://res.cloudinary.com/dmawj7tmu/image/upload/c_fill,w_800,h_600,q_auto,f_auto/v1/cityexperts/thumb/downtown-office-complex.webp",
+        "public_id": "cityexperts/thumb/downtown-office-complex",
+        "alt": { 
+          "en": "Downtown office complex thumbnail", 
+          "ar": "صورة مصغرة لمجمع مكاتب وسط المدينة" 
+        }
+      },
+      "gallery": [
+        {
+          "url": "https://res.cloudinary.com/dmawj7tmu/image/upload/c_fill,w_1600,h_1200,q_auto,f_auto/v1/cityexperts/gallery/downtown-office-complex/interior.webp",
+          "public_id": "cityexperts/gallery/downtown-office-complex/interior",
+          "alt": { "en": "Modern office interior", "ar": "الداخلية الحديثة للمكتب" }
+        }
+      ],
+      "videos": []
+    },
+    "meta": {
+      "last_modified_by": "admin@cityexperts.ae",
+      "updated_at": "2025-09-29T10:00:00Z",
+      "created_at": "2023-07-10T08:00:00Z",
+      "soft_deleted": false
+    }
+  },
+  {
+    "id": "sharjah-cultural-center",
+    "status": "published",
+    "order": 50,
+    "category": "cultural",
+    "city": "Sharjah",
+    "client": "Sharjah Government",
+    "featured": true,
+    "i18n": {
+      "en": {
+        "title": "Sharjah Cultural & Arts Center",
+        "excerpt": "Iconic cultural hub celebrating Emirati heritage with modern architectural excellence in Sharjah.",
+        "description": "## Project Overview\n\nA landmark cultural center that serves as a beacon of Emirati arts and heritage, featuring exhibition halls, performance spaces, and educational facilities with cutting-edge sustainable design.\n\n## Key Features\n\n- 40,000 sqm cultural complex\n- LEED Platinum certification\n- Traditional Islamic architectural elements\n- Modern exhibition and performance spaces\n- Interactive cultural experiences\n\n## Scope of Work\n\n- Architectural design and planning\n- Heritage-inspired interior design\n- Advanced acoustics and lighting systems\n- Sustainable building technologies\n- Cultural space optimization"
+      },
+      "ar": {
+        "title": "مركز الشارقة الثقافي والفنون",
+        "excerpt": "مركز ثقافي مميز يحتفي بالتراث الإماراتي مع التميز المعماري الحديث في الشارقة.",
+        "description": "## نظرة عامة على المشروع\n\nمركز ثقافي بارز يعد منارة للفنون والتراث الإماراتي، يضم قاعات المعارض ومساحات الأداء والمرافق التعليمية مع تصميم مستدام متطور.\n\n## المميزات الرئيسية\n\n- مجمع ثقافي بمساحة ٤٠,٠٠٠ متر مربع\n- شهادة ليد البلاتينية\n- عناصر معمارية إسلامية تقليدية\n- مساحات معارض وأداء حديثة\n- تجارب ثقافية تفاعلية\n\n## نطاق العمل\n\n- التصميم المعماري والتخطيط\n- التصميم الداخلي المستوحى من التراث\n- أنظمة الصوتيات والإضاءة المتطورة\n- تقنيات البناء المستدام\n- تحسين المساحات الثقافية"
+      }
+    },
+    "media": {
+      "hero": {
+        "url": "https://res.cloudinary.com/dmawj7tmu/image/upload/v1759252880/cityexperts/projects/cityexperts/projects/project-5.webp",
+        "public_id": "cityexperts/projects/cityexperts/projects/project-5",
+        "alt": { 
+          "en": "Sharjah Cultural Center exterior with traditional Islamic architecture", 
+          "ar": "الواجهة الخارجية لمركز الشارقة الثقافي بالعمارة الإسلامية التقليدية" 
+        }
+      },
+      "thumb": {
+        "url": "https://res.cloudinary.com/dmawj7tmu/image/upload/v1759252880/cityexperts/projects/cityexperts/projects/project-5.webp",
+        "public_id": "cityexperts/projects/cityexperts/projects/project-5",
+        "alt": { 
+          "en": "Sharjah Cultural Center thumbnail", 
+          "ar": "صورة مصغرة لمركز الشارقة الثقافي" 
+        }
+      },
+      "gallery": [
+        {
+          "url": "https://res.cloudinary.com/dmawj7tmu/image/upload/v1759252873/cityexperts/gallery/cityexperts/gallery/luxury_interior_3.png",
+          "public_id": "cityexperts/gallery/cityexperts/gallery/luxury_interior_3",
+          "alt": { "en": "Cultural exhibition hall interior", "ar": "داخلية قاعة المعارض الثقافية" }
+        }
+      ],
+      "videos": []
+    },
+    "meta": {
+      "last_modified_by": "admin@cityexperts.ae",
+      "updated_at": "2025-09-30T10:00:00Z",
+      "created_at": "2023-08-15T08:00:00Z",
+      "soft_deleted": false
+    }
+  },
+  {
+    "id": "abu-dhabi-luxury-resort",
+    "status": "published",
+    "order": 60,
+    "category": "hospitality",
+    "city": "Abu Dhabi",
+    "client": "Capital Resort Development",
+    "featured": true,
+    "i18n": {
+      "en": {
+        "title": "Abu Dhabi Waterfront Resort",
+        "excerpt": "Ultra-luxury beachfront resort offering world-class hospitality with stunning Arabian Gulf views.",
+        "description": "## Project Overview\n\nAn exclusive luxury resort development featuring private beach access, premium suites, fine dining, and world-class spa facilities with panoramic views of the Arabian Gulf.\n\n## Key Features\n\n- 200 luxury suites and villas\n- Private beach and marina\n- Award-winning spa and wellness center\n- Multiple fine dining restaurants\n- Conference and event facilities\n\n## Scope of Work\n\n- Resort master planning\n- Luxury hospitality interior design\n- Landscape and beach development\n- MEP systems for hospitality\n- Project coordination and management"
+      },
+      "ar": {
+        "title": "منتجع أبوظبي على الواجهة المائية",
+        "excerpt": "منتجع فاخر على الشاطئ يقدم ضيافة عالمية المستوى مع إطلالات خلابة على الخليج العربي.",
+        "description": "## نظرة عامة على المشروع\n\nمشروع منتجع فاخر حصري يتميز بإمكانية الوصول إلى الشاطئ الخاص والأجنحة المتميزة والمطاعم الراقية ومرافق السبا عالمية المستوى مع إطلالات بانورامية على الخليج العربي.\n\n## المميزات الرئيسية\n\n- ٢٠٠ جناح وفيلا فاخرة\n- شاطئ ومارينا خاصة\n- مركز سبا وعافية حائز على جوائز\n- مطاعم راقية متعددة\n- مرافق المؤتمرات والفعاليات\n\n## نطاق العمل\n\n- التخطيط الرئيسي للمنتجع\n- التصميم الداخلي الفاخر للضيافة\n- تطوير المناظر الطبيعية والشاطئ\n- أنظمة كهروميكانيكية للضيافة\n- تنسيق وإدارة المشاريع"
+      }
+    },
+    "media": {
+      "hero": {
+        "url": "https://res.cloudinary.com/dmawj7tmu/image/upload/v1759252881/cityexperts/projects/cityexperts/projects/project-6.webp",
+        "public_id": "cityexperts/projects/cityexperts/projects/project-6",
+        "alt": { 
+          "en": "Abu Dhabi luxury resort with beach and Gulf views", 
+          "ar": "منتجع أبوظبي الفاخر مع الشاطئ وإطلالات الخليج" 
+        }
+      },
+      "thumb": {
+        "url": "https://res.cloudinary.com/dmawj7tmu/image/upload/v1759252881/cityexperts/projects/cityexperts/projects/project-6.webp",
+        "public_id": "cityexperts/projects/cityexperts/projects/project-6",
+        "alt": { 
+          "en": "Abu Dhabi resort thumbnail", 
+          "ar": "صورة مصغرة لمنتجع أبوظبي" 
+        }
+      },
+      "gallery": [
+        {
+          "url": "https://res.cloudinary.com/dmawj7tmu/image/upload/v1759252874/cityexperts/gallery/cityexperts/gallery/luxury_interior_2.png",
+          "public_id": "cityexperts/gallery/cityexperts/gallery/luxury_interior_2",
+          "alt": { "en": "Luxury resort suite interior", "ar": "داخلية الجناح الفاخر في المنتجع" }
+        }
+      ],
+      "videos": []
+    },
+    "meta": {
+      "last_modified_by": "admin@cityexperts.ae",
+      "updated_at": "2025-09-30T10:00:00Z",
+      "created_at": "2023-09-20T08:00:00Z",
+      "soft_deleted": false
+    }
+  },
+  {
+    "id": "burj-khalifa-view-residences",
+    "status": "published",
+    "order": 70,
+    "category": "residential",
+    "city": "Dubai",
+    "client": "Premier Living Development",
+    "featured": true,
+    "i18n": {
+      "en": {
+        "title": "Burj Khalifa View Residences",
+        "excerpt": "Luxury apartments with panoramic views of Burj Khalifa and Downtown Dubai skyline.",
+        "description": "## Project Overview\n\nExclusive residential development featuring premium apartments with unobstructed views of Burj Khalifa, Dubai Fountain, and Downtown Dubai. Each residence combines modern luxury with sophisticated design.\n\n## Key Features\n\n- 120 luxury apartments across 35 floors\n- Panoramic Burj Khalifa and fountain views\n- Premium amenities and concierge service\n- Smart home technology integration\n- Designer interior finishes\n\n## Scope of Work\n\n- Residential architectural design\n- Luxury interior design and fit-out\n- Smart home systems integration\n- Amenities planning and design\n- Construction supervision"
+      },
+      "ar": {
+        "title": "مساكن إطلالة برج خليفة",
+        "excerpt": "شقق فاخرة مع إطلالات بانورامية على برج خليفة وأفق وسط دبي.",
+        "description": "## نظرة عامة على المشروع\n\nمشروع سكني حصري يتميز بشقق متميزة مع إطلالات غير محجوبة على برج خليفة ونافورة دبي ووسط دبي. كل مسكن يجمع بين الفخامة الحديثة والتصميم المتطور.\n\n## المميزات الرئيسية\n\n- ١٢٠ شقة فاخرة عبر ٣٥ طابقًا\n- إطلالات بانورامية على برج خليفة والنافورة\n- مرافق متميزة وخدمة كونسيرج\n- تكامل تقنية المنزل الذكي\n- لمسات نهائية داخلية مصممة\n\n## نطاق العمل\n\n- التصميم المعماري السكني\n- التصميم الداخلي الفاخر والتجهيز\n- تكامل أنظمة المنزل الذكي\n- تخطيط وتصميم المرافق\n- إشراف البناء"
+      }
+    },
+    "media": {
+      "hero": {
+        "url": "https://res.cloudinary.com/dmawj7tmu/image/upload/v1759252878/cityexperts/projects/cityexperts/projects/project-1.webp",
+        "public_id": "cityexperts/projects/cityexperts/projects/project-1",
+        "alt": { 
+          "en": "Luxury residences with Burj Khalifa views", 
+          "ar": "مساكن فاخرة مع إطلالات برج خليفة" 
+        }
+      },
+      "thumb": {
+        "url": "https://res.cloudinary.com/dmawj7tmu/image/upload/v1759252878/cityexperts/projects/cityexperts/projects/project-1.webp",
+        "public_id": "cityexperts/projects/cityexperts/projects/project-1",
+        "alt": { 
+          "en": "Burj Khalifa view residences thumbnail", 
+          "ar": "صورة مصغرة لمساكن إطلالة برج خليفة" 
+        }
+      },
+      "gallery": [
+        {
+          "url": "https://res.cloudinary.com/dmawj7tmu/image/upload/v1759252875/cityexperts/gallery/cityexperts/gallery/luxury_interior_3.png",
+          "public_id": "cityexperts/gallery/cityexperts/gallery/luxury_interior_3",
+          "alt": { "en": "Modern luxury apartment interior", "ar": "داخلية الشقة الفاخرة الحديثة" }
+        },
+        {
+          "url": "https://res.cloudinary.com/dmawj7tmu/image/upload/v1759252876/cityexperts/gallery/cityexperts/gallery/luxury_interior_4.png",
+          "public_id": "cityexperts/gallery/cityexperts/gallery/luxury_interior_4",
+          "alt": { "en": "Premium living room with city views", "ar": "غرفة معيشة متميزة مع إطلالات المدينة" }
+        }
+      ],
+      "videos": []
+    },
+    "meta": {
+      "last_modified_by": "admin@cityexperts.ae",
+      "updated_at": "2025-09-30T10:00:00Z",
+      "created_at": "2023-10-15T08:00:00Z",
+      "soft_deleted": false
+    }
+  },
+  {
+    "id": "dubai-mall-extension",
+    "status": "published", 
+    "order": 80,
+    "category": "commercial",
+    "city": "Dubai",
+    "client": "Emaar Properties",
+    "featured": true,
+    "i18n": {
+      "en": {
+        "title": "Dubai Mall Fashion Avenue Extension",
+        "excerpt": "Premium retail expansion featuring luxury fashion brands and innovative architectural design.",
+        "description": "## Project Overview\n\nA sophisticated retail expansion to Dubai Mall's Fashion Avenue, incorporating premium luxury brand stores with cutting-edge architectural elements and customer experience design.\n\n## Key Features\n\n- 50,000 sqm of premium retail space\n- Luxury brand flagship stores\n- Advanced climate control systems\n- Premium marble and gold finishes\n- Integrated digital experience zones\n\n## Scope of Work\n\n- Retail architectural design\n- Luxury brand store fit-outs\n- Advanced MEP systems\n- Customer experience planning\n- Construction management"
+      },
+      "ar": {
+        "title": "توسعة شارع الموضة في دبي مول",
+        "excerpt": "توسعة تجارية متميزة تتميز بعلامات الأزياء الفاخرة والتصميم المعماري المبتكر.",
+        "description": "## نظرة عامة على المشروع\n\nتوسعة تجارية متطورة لشارع الموضة في دبي مول، تتضمن متاجر العلامات التجارية الفاخرة المتميزة مع عناصر معمارية متطورة وتصميم تجربة العملاء.\n\n## المميزات الرئيسية\n\n- ٥٠,٠٠٠ متر مربع من المساحة التجارية المتميزة\n- متاجر رئيسية للعلامات التجارية الفاخرة\n- أنظمة تحكم متقدمة في المناخ\n- لمسات نهائية من الرخام والذهب المتميز\n- مناطق تجربة رقمية متكاملة\n\n## نطاق العمل\n\n- التصميم المعماري للبيع بالتجزئة\n- تجهيز متاجر العلامات التجارية الفاخرة\n- أنظمة كهروميكانيكية متقدمة\n- تخطيط تجربة العملاء\n- إدارة البناء"
+      }
+    },
+    "media": {
+      "hero": {
+        "url": "https://res.cloudinary.com/dmawj7tmu/image/upload/v1759252879/cityexperts/projects/cityexperts/projects/project-2.webp",
+        "public_id": "cityexperts/projects/cityexperts/projects/project-2",
+        "alt": { 
+          "en": "Dubai Mall Fashion Avenue luxury retail interior", 
+          "ar": "داخلية البيع بالتجزئة الفاخرة لشارع الموضة في دبي مول" 
+        }
+      },
+      "thumb": {
+        "url": "https://res.cloudinary.com/dmawj7tmu/image/upload/v1759252879/cityexperts/projects/cityexperts/projects/project-2.webp",
+        "public_id": "cityexperts/projects/cityexperts/projects/project-2",
+        "alt": { 
+          "en": "Dubai Mall extension thumbnail", 
+          "ar": "صورة مصغرة لتوسعة دبي مول" 
+        }
+      },
+      "gallery": [
+        {
+          "url": "https://res.cloudinary.com/dmawj7tmu/image/upload/v1759252876/cityexperts/gallery/cityexperts/gallery/luxury_interior_4.png",
+          "public_id": "cityexperts/gallery/cityexperts/gallery/luxury_interior_4",
+          "alt": { "en": "Luxury retail store interior design", "ar": "تصميم داخلي لمتجر البيع بالتجزئة الفاخر" }
+        },
+        {
+          "url": "https://res.cloudinary.com/dmawj7tmu/image/upload/v1759252877/cityexperts/gallery/cityexperts/gallery/luxury_interior_5.png",
+          "public_id": "cityexperts/gallery/cityexperts/gallery/luxury_interior_5",
+          "alt": { "en": "Premium shopping experience area", "ar": "منطقة تجربة التسوق المتميزة" }
+        }
+      ],
+      "videos": []
+    },
+    "meta": {
+      "last_modified_by": "admin@cityexperts.ae",
+      "updated_at": "2025-09-30T10:00:00Z",
+      "created_at": "2023-11-10T08:00:00Z",
+      "soft_deleted": false
+    }
+  },
+  {
+    "id": "jbr-beach-hotel",
+    "status": "published",
+    "order": 90,
+    "category": "hospitality",
+    "city": "Dubai",
+    "client": "Marina Resort Group",
+    "featured": true,
+    "i18n": {
+      "en": {
+        "title": "JBR Beachfront Luxury Hotel",
+        "excerpt": "Five-star beachfront hotel with modern amenities and stunning Arabian Gulf views.",
+        "description": "## Project Overview\n\nA premium beachfront hotel development in Jumeirah Beach Residence offering luxury accommodations, world-class dining, and exclusive beach access with panoramic Arabian Gulf views.\n\n## Key Features\n\n- 300 luxury hotel rooms and suites\n- Direct beach access and water sports\n- Multiple fine dining restaurants\n- Rooftop infinity pool and spa\n- Conference and event facilities\n\n## Scope of Work\n\n- Hotel architectural design\n- Luxury hospitality interior design\n- Beachfront development planning\n- Advanced hotel MEP systems\n- Construction management and supervision"
+      },
+      "ar": {
+        "title": "فندق جي بي آر الفاخر على الشاطئ",
+        "excerpt": "فندق خمس نجوم على الشاطئ مع وسائل الراحة الحديثة وإطلالات خلابة على الخليج العربي.",
+        "description": "## نظرة عامة على المشروع\n\nمشروع فندق متميز على الشاطئ في شاطئ جميرا يقدم إقامة فاخرة ومطاعم عالمية المستوى ووصول حصري للشاطئ مع إطلالات بانورامية على الخليج العربي.\n\n## المميزات الرئيسية\n\n- ٣٠٠ غرفة وجناح فندقي فاخر\n- وصول مباشر للشاطئ والرياضات المائية\n- مطاعم راقية متعددة\n- مسبح لا نهائي على السطح ومنتجع صحي\n- مرافق المؤتمرات والفعاليات\n\n## نطاق العمل\n\n- التصميم المعماري للفندق\n- التصميم الداخلي الفاخر للضيافة\n- تخطيط تطوير الواجهة البحرية\n- أنظمة كهروميكانيكية متقدمة للفندق\n- إدارة البناء والإشراف"
+      }
+    },
+    "media": {
+      "hero": {
+        "url": "https://res.cloudinary.com/dmawj7tmu/image/upload/v1759252880/cityexperts/projects/cityexperts/projects/project-3.webp",
+        "public_id": "cityexperts/projects/cityexperts/projects/project-3",
+        "alt": { 
+          "en": "JBR beachfront luxury hotel with Arabian Gulf views", 
+          "ar": "فندق جي بي آر الفاخر على الشاطئ مع إطلالات الخليج العربي" 
+        }
+      },
+      "thumb": {
+        "url": "https://res.cloudinary.com/dmawj7tmu/image/upload/v1759252880/cityexperts/projects/cityexperts/projects/project-3.webp",
+        "public_id": "cityexperts/projects/cityexperts/projects/project-3",
+        "alt": { 
+          "en": "JBR beach hotel thumbnail", 
+          "ar": "صورة مصغرة لفندق شاطئ جي بي آر" 
+        }
+      },
+      "gallery": [
+        {
+          "url": "https://res.cloudinary.com/dmawj7tmu/image/upload/v1759252877/cityexperts/gallery/cityexperts/gallery/luxury_interior_5.png",
+          "public_id": "cityexperts/gallery/cityexperts/gallery/luxury_interior_5",
+          "alt": { "en": "Luxury hotel lobby and reception", "ar": "بهو الفندق الفاخر والاستقبال" }
+        },
+        {
+          "url": "https://res.cloudinary.com/dmawj7tmu/image/upload/v1759252878/cityexperts/gallery/cityexperts/gallery/luxury_interior_6.png",
+          "public_id": "cityexperts/gallery/cityexperts/gallery/luxury_interior_6",
+          "alt": { "en": "Premium hotel suite with ocean view", "ar": "جناح الفندق المتميز مع إطلالة على المحيط" }
+        }
+      ],
+      "videos": []
+    },
+    "meta": {
+      "last_modified_by": "admin@cityexperts.ae",
+      "updated_at": "2025-09-30T10:00:00Z",
+      "created_at": "2023-12-05T08:00:00Z",
+      "soft_deleted": false
+    }
   }
 ]

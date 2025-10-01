@@ -3,7 +3,6 @@ export function initializeLazyLoading() {
   initializeImageLazyLoading();
   initializeContentLazyLoading();
   
-  console.log('📸 Lazy loading initialized');
 }
 
 // Lazy loading for images

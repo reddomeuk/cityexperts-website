@@ -96,13 +96,21 @@ export function initializeLanguageToggle() {
   async function applyLanguage(lang) {
     currentLanguage = lang;
     localStorage.setItem('preferred-language', lang);
+    localStorage.setItem('lang', lang); // Also set for RTL system
     await setLanguage(lang);
     updateLanguageDisplay();
+    
+    // Trigger RTL system update
+    window.dispatchEvent(new CustomEvent('i18n:dir-changed', { detail: { lang, isRTL: lang === 'ar' }}));
   }
   
   // Initialize with current language
-  setLanguage(currentLanguage);
-  updateLanguageDisplay();
+  (async () => {
+    await applyLanguage(currentLanguage);
+    // Initialize RTL state for existing system compatibility
+    document.documentElement.setAttribute('dir', currentLanguage === 'ar' ? 'rtl' : 'ltr');
+    document.documentElement.setAttribute('lang', currentLanguage);
+  })();
   
   // Desktop language toggle (index.html)
   if (languageToggle) {
@@ -137,7 +145,6 @@ export function initializeLanguageToggle() {
     });
   }
   
-  console.log('🌐 Language toggle initialized');
 }
 
 // Export the I18N system for use in other modules

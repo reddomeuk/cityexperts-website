@@ -1,181 +1,93 @@
 // Navigation functionality for City Experts website
-export function initializeNavigation() {
-  const nav = document.querySelector('#main-nav');
-  const mobileMenuBtn = document.querySelector('#mobile-menu-btn');
-  const mobileMenu = document.querySelector('#mobile-menu');
-  const mobileMenuClose = document.querySelector('#mobile-menu-close');
+export function initNavigation({ i18n }) {
+  const header = document.getElementById('site-header');
+  const btn = document.getElementById('mobile-menu-btn');
+  const drawer = document.getElementById('mobile-drawer');
+  const closers = drawer?.querySelectorAll('[data-close-drawer]');
+  const langBtn = document.getElementById('lang-toggle');
+  const mobileLangBtn = document.getElementById('mobile-lang-toggle');
+  const mobileLangLabel = document.getElementById('mobile-lang-label');
+
+  // Sticky on scroll
+  const onScroll = () => {
+    if (!header) return;
+    if (window.scrollY > 10) header.classList.add('is-sticky');
+    else header.classList.remove('is-sticky');
+  };
+  onScroll(); 
+  window.addEventListener('scroll', onScroll, { passive: true });
+
+  // Drawer
+  const open = () => {
+    if (!drawer) return;
+    drawer.classList.remove('hidden');
+    requestAnimationFrame(() => drawer.classList.remove('translate-x-full'));
+    document.body.classList.add('no-scroll');
+    btn?.setAttribute('aria-expanded', 'true');
+  };
   
-  if (!nav) return;
+  const close = () => {
+    if (!drawer) return;
+    drawer.classList.add('translate-x-full');
+    document.body.classList.remove('no-scroll');
+    btn?.setAttribute('aria-expanded', 'false');
+    setTimeout(() => drawer.classList.add('hidden'), 300);
+  };
   
-  // Sticky navigation on scroll
-  let lastScrollY = window.scrollY;
-  let navHeight = nav.offsetHeight;
-  
-  function handleScroll() {
-    const currentScrollY = window.scrollY;
-    
-    // Add/remove background on scroll
-    if (currentScrollY > 100) {
-      nav.classList.add('nav-scrolled');
-    } else {
-      nav.classList.remove('nav-scrolled');
-    }
-    
-    // Hide/show navigation based on scroll direction
-    if (currentScrollY > navHeight && currentScrollY > lastScrollY) {
-      nav.classList.add('nav-hidden');
-    } else {
-      nav.classList.remove('nav-hidden');
-    }
-    
-    lastScrollY = currentScrollY;
-  }
-  
-  // Throttled scroll handler
-  let scrollTimeout;
-  window.addEventListener('scroll', () => {
-    if (scrollTimeout) {
-      clearTimeout(scrollTimeout);
-    }
-    scrollTimeout = setTimeout(handleScroll, 10);
+  btn?.addEventListener('click', open);
+  closers?.forEach(el => el.addEventListener('click', close));
+  document.addEventListener('keydown', e => { 
+    if (e.key === 'Escape' && drawer && !drawer.classList.contains('hidden')) close(); 
   });
-  
-  // Mobile menu functionality
-  if (mobileMenuBtn && mobileMenu) {
-    mobileMenuBtn.addEventListener('click', () => {
-      // Remove translate-x-full to show menu
-      mobileMenu.classList.remove('translate-x-full');
-      mobileMenu.classList.add('translate-x-0');
-      document.body.classList.add('menu-open');
-      mobileMenuBtn.setAttribute('aria-expanded', 'true');
-      
-      // Focus first menu item for accessibility
-      const firstMenuItem = mobileMenu.querySelector('a');
-      if (firstMenuItem) {
-        firstMenuItem.focus();
-      }
-    });
-  }
-  
-  if (mobileMenuClose && mobileMenu) {
-    mobileMenuClose.addEventListener('click', () => {
-      // Add translate-x-full to hide menu
-      mobileMenu.classList.add('translate-x-full');
-      mobileMenu.classList.remove('translate-x-0');
-      document.body.classList.remove('menu-open');
-      mobileMenuBtn.setAttribute('aria-expanded', 'false');
-      
-      // Return focus to menu button
-      if (mobileMenuBtn) {
-        mobileMenuBtn.focus();
-      }
-    });
-  }
-  
-  // Close mobile menu on escape key
-  document.addEventListener('keydown', (e) => {
-    if (e.key === 'Escape' && mobileMenu && !mobileMenu.classList.contains('translate-x-full')) {
-      mobileMenu.classList.add('translate-x-full');
-      mobileMenu.classList.remove('translate-x-0');
-      document.body.classList.remove('menu-open');
-      mobileMenuBtn.setAttribute('aria-expanded', 'false');
-      if (mobileMenuBtn) {
-        mobileMenuBtn.focus();
-      }
-    }
+
+  // Close drawer when navigating
+  drawer?.addEventListener('click', (e) => {
+    const a = e.target.closest('a[href]');
+    if (a) close();
   });
-  
-  // Close mobile menu when clicking outside
-  document.addEventListener('click', (e) => {
-    if (mobileMenu && !mobileMenu.classList.contains('translate-x-full')) {
-      if (!mobileMenu.contains(e.target) && !mobileMenuBtn?.contains(e.target)) {
-        mobileMenu.classList.add('translate-x-full');
-        mobileMenu.classList.remove('translate-x-0');
-        document.body.classList.remove('menu-open');
-        mobileMenuBtn.setAttribute('aria-expanded', 'false');
-      }
+
+  // Active link state
+  const markActive = () => {
+    const path = location.pathname.replace(/\/index\.html$/, '/');
+    document.querySelectorAll('.nav-link, .mobile-nav-link').forEach(a => {
+      const href = a.getAttribute('href');
+      const match = (href === '/' && path === '/') || (href !== '/' && path.includes(href));
+      a.classList.toggle('active', !!match);
+      a.setAttribute('aria-current', match ? 'page' : 'false');
+    });
+  };
+  markActive();
+
+  // Language toggle (integrates with your i18n system)
+  const toggleLang = () => {
+    const current = document.documentElement.getAttribute('lang') || 'en';
+    const next = current === 'en' ? 'ar' : 'en';
+    
+    // If i18n system is available, use it
+    if (i18n && i18n.setLocale) {
+      i18n.setLocale(next);
     }
-  });
+    
+    document.documentElement.setAttribute('lang', next);
+    document.documentElement.setAttribute('dir', next === 'ar' ? 'rtl' : 'ltr');
+    
+    if (mobileLangLabel) {
+      mobileLangLabel.textContent = next === 'ar' ? 'العربية' : 'English';
+    }
+  };
   
-  // Active nav item highlighting
-  function updateActiveNavItem() {
-    const sections = document.querySelectorAll('main section[id]');
-    const navLinks = document.querySelectorAll('.nav-link[href^="#"], .mobile-nav-link[href^="#"]');
-    
-    let currentSection = '';
-    
-    sections.forEach(section => {
-      const sectionTop = section.offsetTop - navHeight - 50;
-      if (window.scrollY >= sectionTop) {
-        currentSection = section.getAttribute('id');
-      }
-    });
-    
-    navLinks.forEach(link => {
-      link.classList.remove('active');
-      if (link.getAttribute('href') === `#${currentSection}`) {
-        link.classList.add('active');
-      }
-    });
+  langBtn?.addEventListener('click', toggleLang);
+  mobileLangBtn?.addEventListener('click', toggleLang);
+
+  // Update label on init
+  const currentLang = document.documentElement.getAttribute('lang') || 'en';
+  if (mobileLangLabel) {
+    mobileLangLabel.textContent = currentLang === 'ar' ? 'العربية' : 'English';
   }
-  
-  // Update active nav item on scroll
-  window.addEventListener('scroll', updateActiveNavItem);
-  updateActiveNavItem(); // Initial call
-  
-  console.log('✅ Navigation initialized');
+
 }
 
-// Dropdown functionality for services menu
-export function initializeDropdowns() {
-  const dropdownTriggers = document.querySelectorAll('[data-dropdown-trigger]');
-  
-  dropdownTriggers.forEach(trigger => {
-    const dropdownId = trigger.getAttribute('data-dropdown-trigger');
-    const dropdown = document.querySelector(`[data-dropdown="${dropdownId}"]`);
-    
-    if (!dropdown) return;
-    
-    let showTimeout, hideTimeout;
-    
-    // Show dropdown on hover/focus
-    const showDropdown = () => {
-      clearTimeout(hideTimeout);
-      showTimeout = setTimeout(() => {
-        dropdown.classList.add('dropdown-visible');
-        trigger.setAttribute('aria-expanded', 'true');
-      }, 100);
-    };
-    
-    // Hide dropdown with delay
-    const hideDropdown = () => {
-      clearTimeout(showTimeout);
-      hideTimeout = setTimeout(() => {
-        dropdown.classList.remove('dropdown-visible');
-        trigger.setAttribute('aria-expanded', 'false');
-      }, 200);
-    };
-    
-    // Mouse events
-    trigger.addEventListener('mouseenter', showDropdown);
-    trigger.addEventListener('mouseleave', hideDropdown);
-    dropdown.addEventListener('mouseenter', () => clearTimeout(hideTimeout));
-    dropdown.addEventListener('mouseleave', hideDropdown);
-    
-    // Keyboard events
-    trigger.addEventListener('focus', showDropdown);
-    trigger.addEventListener('keydown', (e) => {
-      if (e.key === 'Escape') {
-        hideDropdown();
-        trigger.focus();
-      }
-    });
-    
-    // Click outside to close
-    document.addEventListener('click', (e) => {
-      if (!trigger.contains(e.target) && !dropdown.contains(e.target)) {
-        hideDropdown();
-      }
-    });
-  });
+// Legacy initialization function for backwards compatibility
+export function initializeNavigation() {
+  return initNavigation({ i18n: null });
 }

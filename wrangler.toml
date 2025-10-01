@@ -5,7 +5,18 @@ compatibility_flags = ["nodejs_compat"]
 # Pages configuration - minimal and clean
 pages_build_output_dir = "dist"
 
-# Only basic environment variables
+# D1 Database Configuration
+[[d1_databases]]
+binding = "DB"
+database_name = "city-experts-db"
+database_id = "your-database-id-here" # Get this from: npx wrangler d1 create city-experts-db
+
+# Environment variables
 [vars]
 ENVIRONMENT = "development"
 CONTACT_EMAIL = "info@cityexperts.ae"
+CLOUDINARY_CLOUD_NAME = "dmawj7tmu"
+
+# Note: For production, set these as encrypted environment variables in Pages dashboard:
+# CLOUDINARY_API_KEY = "your-api-key"
+# CLOUDINARY_API_SECRET = "your-api-secret"

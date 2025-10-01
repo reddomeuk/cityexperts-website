@@ -13,6 +13,46 @@
     "ctaPrimary": "Request a Proposal",
     "ctaSecondary": "Call Us Now"
   },
+  "whyUs": {
+    "title": "Why City Experts?",
+    "paragraph1": "For over two decades, City Experts has been the trusted partner for UAE's most ambitious construction and design projects. Our commitment to excellence, safety, and innovation has earned us recognition as a leader in the industry.",
+    "paragraph2": "From initial concept to final handover, we deliver certainty through transparent processes, world-class expertise, and an unwavering commitment to quality that exceeds expectations.",
+    "point1": {
+      "title": "On-Time Delivery Guarantee",
+      "description": "98% of our projects are delivered on schedule with transparent milestone tracking."
+    },
+    "point2": {
+      "title": "Transparent Cost Management",
+      "description": "Clear pricing structure with no hidden costs and regular financial reporting."
+    },
+    "point3": {
+      "title": "Safety-First Culture",
+      "description": "Zero-compromise approach to worker safety with industry-leading protocols."
+    },
+    "point4": {
+      "title": "In-House Design Expertise",
+      "description": "Integrated design and build capabilities for seamless project delivery."
+    },
+    "learnMore": "Learn More About Us",
+    "certifications": {
+      "iso": {
+        "title": "ISO Certified",
+        "description": "Quality management systems"
+      },
+      "safety": {
+        "title": "Safety Certified", 
+        "description": "OHSAS 18001 compliant"
+      },
+      "green": {
+        "title": "Green Building",
+        "description": "LEED accredited professionals"
+      },
+      "team": {
+        "title": "Expert Team",
+        "description": "650+ certified professionals"
+      }
+    }
+  },
   "testimonials": {
     "title": "What Our Clients Say",
     "subtitle": "Trusted by leading developers, corporations, and property owners across the UAE.",

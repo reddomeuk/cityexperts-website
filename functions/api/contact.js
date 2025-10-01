@@ -1,297 +1,205 @@
-// /functions/api/contact.js
-// Cloudflare Workers compatible contact form handler
+// /api/contact.js
+import nodemailer from "nodemailer";
+import { contactFormSchema, validateRequest } from "./_schemas.js";
+import DOMPurify from "isomorphic-dompurify";
 
-export async function onRequestPost(context) {
-  const { request, env } = context;
-  
+export async function post(req, res) {
   try {
-    // Parse request body
-    const body = await request.json();
+    const body = await readJson(req);
+    // Basic sanity & honeypot
+    if (!body || body.company_site) return res.status(204).end();
+
+    // Validate input using comprehensive Zod schema
+    const validation = validateRequest(contactFormSchema, body);
+    if (!validation.success) {
+      return res.status(400).json({
+        error: "validation_failed",
+        message: validation.error,
+        details: validation.details
+      });
+    }
+
+    const validatedData = validation.data;
     
-    // Honeypot check
-    if (body.company_site) {
-      return new Response(null, { status: 204 });
-    }
+    // Sanitize all text inputs
+    const sanitizedData = {
+      ...validatedData,
+      name: DOMPurify.sanitize(validatedData.name),
+      company: validatedData.company ? DOMPurify.sanitize(validatedData.company) : undefined,
+      subject: DOMPurify.sanitize(validatedData.subject),
+      message: DOMPurify.sanitize(validatedData.message)
+    };
 
-    const { name, email, phone, company, projectType, budget, city, message, recaptchaToken } = body;
+    const { name, email, phone, company, subject, message, projectType, budget, timeline, preferredContact } = sanitizedData;
 
-    // Basic validation
-    if (!name || !email || !phone || !projectType || !message) {
-      return new Response(
-        JSON.stringify({ error: "missing_required_fields" }),
-        { 
-          status: 400,
-          headers: { "Content-Type": "application/json" }
-        }
-      );
-    }
-
-    // UAE phone validation
-    const uaePhoneRegex = /^\+971\s?(?:[2-9]\d|5[0-9])(?:\s?\d{3}){2,3}$/;
-    if (!uaePhoneRegex.test(phone.trim())) {
-      return new Response(
-        JSON.stringify({ error: "invalid_phone" }),
-        { 
-          status: 400,
-          headers: { "Content-Type": "application/json" }
-        }
-      );
-    }
-
-    // Email validation
-    const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
-    if (!emailRegex.test(email.trim())) {
-      return new Response(
-        JSON.stringify({ error: "invalid_email" }),
-        { 
-          status: 400,
-          headers: { "Content-Type": "application/json" }
-        }
-      );
-    }
-
-    // Optional: Verify reCAPTCHA
-    if (env.RECAPTCHA_SECRET && recaptchaToken) {
-      const recaptchaValid = await verifyRecaptcha(env.RECAPTCHA_SECRET, recaptchaToken);
+    // Optional: validate reCAPTCHA v3
+    if (process.env.RECAPTCHA_SECRET && recaptchaToken) {
+      const recaptchaValid = await verifyRecaptcha(process.env.RECAPTCHA_SECRET, recaptchaToken);
       if (!recaptchaValid) {
-        return new Response(
-          JSON.stringify({ error: "recaptcha_failed" }),
-          { 
-            status: 400,
-            headers: { "Content-Type": "application/json" }
-          }
-        );
+        return res.status(400).json({ error: "recaptcha_failed" });
       }
     }
 
-    // Send email using Cloudflare Email Workers or external service
-    const emailSent = await sendContactEmail(env, {
-      name,
-      email,
-      phone,
-      company: company || "Not specified",
-      projectType,
-      budget: budget || "Not specified",
-      city: city || "Not specified",
-      message
+    // Configure email transporter
+    const transporter = nodemailer.createTransporter({
+      host: process.env.SMTP_HOST || "smtp.gmail.com",
+      port: Number(process.env.SMTP_PORT || 587),
+      secure: false, // true for 465, false for other ports
+      auth: {
+        user: process.env.SMTP_USER,
+        pass: process.env.SMTP_PASS
+      }
     });
 
-    if (!emailSent) {
-      return new Response(
-        JSON.stringify({ error: "email_send_failed" }),
-        { 
-          status: 500,
-          headers: { "Content-Type": "application/json" }
-        }
-      );
+    // Verify transporter configuration
+    if (!process.env.SMTP_USER || !process.env.SMTP_PASS) {
+      return res.status(500).json({ error: "email_configuration_error" });
     }
 
-    // Log to analytics (optional)
-    if (env.ANALYTICS_ENDPOINT) {
-      fetch(env.ANALYTICS_ENDPOINT, {
-        method: 'POST',
-        headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify({
-          event: 'contact_form_submission',
-          projectType,
-          timestamp: new Date().toISOString()
-        })
-      }).catch(console.error); // Fire and forget
-    }
+    const html = `
+      <div style="font-family: Arial, sans-serif; max-width: 600px; margin: 0 auto; padding: 20px;">
+        <div style="background: linear-gradient(135deg, #FF8000, #0F8B8D); padding: 30px; border-radius: 10px 10px 0 0; text-align: center;">
+          <h1 style="color: white; margin: 0; font-size: 28px;">New Contact Request</h1>
+          <p style="color: rgba(255,255,255,0.9); margin: 10px 0 0; font-size: 16px;">City Experts Website</p>
+        </div>
+        
+        <div style="background: white; padding: 30px; border-radius: 0 0 10px 10px; box-shadow: 0 4px 20px rgba(0,0,0,0.1);">
+          <h2 style="color: #111315; margin-top: 0; border-bottom: 2px solid #FF8000; padding-bottom: 10px;">Contact Details</h2>
+          
+          <table style="width: 100%; border-collapse: collapse; margin-bottom: 20px;">
+            <tr style="border-bottom: 1px solid #eee;">
+              <td style="padding: 8px 0; font-weight: bold; color: #555; width: 120px;">Name:</td>
+              <td style="padding: 8px 0; color: #111315;">${escape(name)}</td>
+            </tr>
+            <tr style="border-bottom: 1px solid #eee;">
+              <td style="padding: 8px 0; font-weight: bold; color: #555;">Email:</td>
+              <td style="padding: 8px 0; color: #111315;"><a href="mailto:${escape(email)}" style="color: #0F8B8D;">${escape(email)}</a></td>
+            </tr>
+            <tr style="border-bottom: 1px solid #eee;">
+              <td style="padding: 8px 0; font-weight: bold; color: #555;">Phone:</td>
+              <td style="padding: 8px 0; color: #111315;"><a href="tel:${escape(phone)}" style="color: #0F8B8D;">${escape(phone)}</a></td>
+            </tr>
+            ${company ? `
+            <tr style="border-bottom: 1px solid #eee;">
+              <td style="padding: 8px 0; font-weight: bold; color: #555;">Company:</td>
+              <td style="padding: 8px 0; color: #111315;">${escape(company)}</td>
+            </tr>
+            ` : ''}
+          </table>
 
-    return new Response(
-      JSON.stringify({ 
-        success: true,
-        message: "Thank you for your inquiry. We'll get back to you within 24 hours."
-      }),
-      { 
-        status: 200,
-        headers: { 
-          "Content-Type": "application/json",
-          "Access-Control-Allow-Origin": "*",
-          "Access-Control-Allow-Methods": "POST, OPTIONS",
-          "Access-Control-Allow-Headers": "Content-Type"
-        }
-      }
-    );
+          <h2 style="color: #111315; margin-top: 30px; border-bottom: 2px solid #0F8B8D; padding-bottom: 10px;">Project Information</h2>
+          
+          <table style="width: 100%; border-collapse: collapse; margin-bottom: 20px;">
+            <tr style="border-bottom: 1px solid #eee;">
+              <td style="padding: 8px 0; font-weight: bold; color: #555; width: 120px;">Type:</td>
+              <td style="padding: 8px 0; color: #111315;">${escape(projectType)}</td>
+            </tr>
+            ${budget ? `
+            <tr style="border-bottom: 1px solid #eee;">
+              <td style="padding: 8px 0; font-weight: bold; color: #555;">Budget:</td>
+              <td style="padding: 8px 0; color: #111315;">${escape(budget)} AED</td>
+            </tr>
+            ` : ''}
+            ${city ? `
+            <tr style="border-bottom: 1px solid #eee;">
+              <td style="padding: 8px 0; font-weight: bold; color: #555;">City:</td>
+              <td style="padding: 8px 0; color: #111315;">${escape(city)}</td>
+            </tr>
+            ` : ''}
+          </table>
 
+          <h2 style="color: #111315; margin-top: 30px; border-bottom: 2px solid #FF8000; padding-bottom: 10px;">Project Brief</h2>
+          <div style="background: #f8f9fa; padding: 20px; border-radius: 8px; border-left: 4px solid #FF8000;">
+            <p style="margin: 0; line-height: 1.6; color: #111315; white-space: pre-line;">${escape(message)}</p>
+          </div>
+          
+          <div style="margin-top: 30px; padding: 20px; background: #f0f9ff; border-radius: 8px; border: 1px solid #0F8B8D;">
+            <p style="margin: 0; color: #0F8B8D; font-weight: bold;">📧 Response required within 1 business day</p>
+            <p style="margin: 5px 0 0; color: #555; font-size: 14px;">Submitted on ${new Date().toLocaleString('en-AE', { timeZone: 'Asia/Dubai' })} UAE time</p>
+          </div>
+        </div>
+      </div>
+    `;
+
+    const plainText = `
+New Contact Request - City Experts Website
+
+CONTACT DETAILS:
+Name: ${name}
+Email: ${email}
+Phone: ${phone}
+${company ? `Company: ${company}` : ''}
+
+PROJECT INFORMATION:
+Type: ${projectType}
+${budget ? `Budget: ${budget} AED` : ''}
+${city ? `City: ${city}` : ''}
+
+PROJECT BRIEF:
+${message}
+
+---
+Submitted on ${new Date().toLocaleString('en-AE', { timeZone: 'Asia/Dubai' })} UAE time
+Response required within 1 business day
+    `;
+
+    await transporter.sendMail({
+      from: `"City Experts Website" <${process.env.MAIL_FROM || process.env.SMTP_USER}>`,
+      to: process.env.MAIL_TO || process.env.SMTP_USER,
+      subject: `🏗️ New enquiry: ${projectType} — ${name}`,
+      html,
+      text: plainText,
+      replyTo: email
+    });
+
+    res.status(200).json({ success: true, message: "Message sent successfully" });
+    
   } catch (error) {
-    console.error('Contact form error:', error);
-    return new Response(
-      JSON.stringify({ error: "internal_server_error" }),
-      { 
-        status: 500,
-        headers: { "Content-Type": "application/json" }
-      }
-    );
+    res.status(500).json({ error: "server_error", message: "Failed to send message" });
   }
 }
 
-// Handle CORS preflight requests
-export async function onRequestOptions() {
-  return new Response(null, {
-    status: 200,
-    headers: {
-      "Access-Control-Allow-Origin": "*",
-      "Access-Control-Allow-Methods": "POST, OPTIONS",
-      "Access-Control-Allow-Headers": "Content-Type",
-      "Access-Control-Max-Age": "86400"
-    }
+// ---- Helper Functions ----
+
+function readJson(req) {
+  return new Promise((resolve, reject) => {
+    let data = ""; 
+    req.on("data", (chunk) => data += chunk);
+    req.on("end", () => { 
+      try { 
+        resolve(JSON.parse(data || "{}")); 
+      } catch (e) { 
+        reject(e); 
+      }
+    });
+    req.on("error", reject);
   });
 }
 
-// Email sending function using external service (like EmailJS, SendGrid, or Mailgun)
-async function sendContactEmail(env, data) {
-  try {
-    // Option 1: Using SendGrid API
-    if (env.SENDGRID_API_KEY) {
-      const response = await fetch('https://api.sendgrid.com/v3/mail/send', {
-        method: 'POST',
-        headers: {
-          'Authorization': `Bearer ${env.SENDGRID_API_KEY}`,
-          'Content-Type': 'application/json'
-        },
-        body: JSON.stringify({
-          personalizations: [{
-            to: [{ email: env.CONTACT_EMAIL || 'info@cityexperts.ae' }],
-            subject: `New Contact Form Submission - ${data.projectType}`
-          }],
-          from: { email: env.FROM_EMAIL || 'noreply@cityexperts.ae' },
-          content: [{
-            type: 'text/html',
-            value: generateEmailHTML(data)
-          }]
-        })
-      });
-      return response.ok;
-    }
-    
-    // Option 2: Using Mailgun API
-    if (env.MAILGUN_API_KEY && env.MAILGUN_DOMAIN) {
-      const formData = new FormData();
-      formData.append('from', `City Experts Website <noreply@${env.MAILGUN_DOMAIN}>`);
-      formData.append('to', env.CONTACT_EMAIL || 'info@cityexperts.ae');
-      formData.append('subject', `New Contact Form Submission - ${data.projectType}`);
-      formData.append('html', generateEmailHTML(data));
-
-      const response = await fetch(`https://api.mailgun.net/v3/${env.MAILGUN_DOMAIN}/messages`, {
-        method: 'POST',
-        headers: {
-          'Authorization': `Basic ${btoa(`api:${env.MAILGUN_API_KEY}`)}`
-        },
-        body: formData
-      });
-      return response.ok;
-    }
-
-    // Option 3: Using EmailJS (client-side service, but can be used server-side)
-    if (env.EMAILJS_SERVICE_ID && env.EMAILJS_TEMPLATE_ID && env.EMAILJS_PUBLIC_KEY) {
-      const response = await fetch('https://api.emailjs.com/api/v1.0/email/send', {
-        method: 'POST',
-        headers: {
-          'Content-Type': 'application/json'
-        },
-        body: JSON.stringify({
-          service_id: env.EMAILJS_SERVICE_ID,
-          template_id: env.EMAILJS_TEMPLATE_ID,
-          user_id: env.EMAILJS_PUBLIC_KEY,
-          template_params: data
-        })
-      });
-      return response.ok;
-    }
-
-    console.error('No email service configured');
-    return false;
-  } catch (error) {
-    console.error('Email sending error:', error);
-    return false;
-  }
+function escape(str = "") {
+  return String(str).replace(/[&<>"']/g, (char) => {
+    const entities = {
+      '&': '&amp;',
+      '<': '&lt;',
+      '>': '&gt;',
+      '"': '&quot;',
+      "'": '&#39;'
+    };
+    return entities[char];
+  });
 }
 
-// Generate HTML email content
-function generateEmailHTML(data) {
-  return `
-    <!DOCTYPE html>
-    <html>
-      <head>
-        <meta charset="utf-8">
-        <title>New Contact Form Submission</title>
-        <style>
-          body { font-family: Arial, sans-serif; line-height: 1.6; color: #333; }
-          .container { max-width: 600px; margin: 0 auto; padding: 20px; }
-          .header { background: #FF8000; color: white; padding: 20px; text-align: center; }
-          .content { background: #f9f9f9; padding: 30px; }
-          .field { margin-bottom: 15px; }
-          .label { font-weight: bold; color: #111315; }
-          .value { margin-left: 10px; }
-          .footer { background: #111315; color: white; padding: 15px; text-align: center; font-size: 14px; }
-        </style>
-      </head>
-      <body>
-        <div class="container">
-          <div class="header">
-            <h1>New Contact Form Submission</h1>
-            <p>City Experts Website</p>
-          </div>
-          <div class="content">
-            <div class="field">
-              <span class="label">Name:</span>
-              <span class="value">${data.name}</span>
-            </div>
-            <div class="field">
-              <span class="label">Email:</span>
-              <span class="value">${data.email}</span>
-            </div>
-            <div class="field">
-              <span class="label">Phone:</span>
-              <span class="value">${data.phone}</span>
-            </div>
-            <div class="field">
-              <span class="label">Company:</span>
-              <span class="value">${data.company}</span>
-            </div>
-            <div class="field">
-              <span class="label">Project Type:</span>
-              <span class="value">${data.projectType}</span>
-            </div>
-            <div class="field">
-              <span class="label">Budget:</span>
-              <span class="value">${data.budget}</span>
-            </div>
-            <div class="field">
-              <span class="label">City:</span>
-              <span class="value">${data.city}</span>
-            </div>
-            <div class="field">
-              <span class="label">Message:</span>
-              <div class="value" style="margin-top: 10px; padding: 15px; background: white; border-left: 4px solid #FF8000;">
-                ${data.message.replace(/\n/g, '<br>')}
-              </div>
-            </div>
-          </div>
-          <div class="footer">
-            <p>&copy; ${new Date().getFullYear()} City Experts. All rights reserved.</p>
-            <p>Engineering Excellence. Interior Elegance.</p>
-          </div>
-        </div>
-      </body>
-    </html>
-  `;
-}
-
-// reCAPTCHA verification
 async function verifyRecaptcha(secret, token) {
   try {
-    const response = await fetch('https://www.google.com/recaptcha/api/siteverify', {
-      method: 'POST',
-      headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
-      body: `secret=${secret}&response=${token}`
+    const response = await fetch("https://www.google.com/recaptcha/api/siteverify", {
+      method: "POST",
+      headers: { "Content-Type": "application/x-www-form-urlencoded" },
+      body: new URLSearchParams({ secret, response: token })
     });
-    const data = await response.json();
-    return data.success && data.score > 0.5; // Adjust threshold as needed
+    
+    const result = await response.json();
+    return result.success && (result.score ?? 0) > 0.5;
   } catch (error) {
-    console.error('reCAPTCHA verification error:', error);
     return false;
   }
 }
