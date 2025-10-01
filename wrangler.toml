@@ -15,8 +15,8 @@ pages_build_output_dir = "dist"
 [vars]
 ENVIRONMENT = "development"
 CONTACT_EMAIL = "info@cityexperts.ae"
-CLOUDINARY_CLOUD_NAME = "dmawj7tmu"
 
-# Note: For production, set these as encrypted environment variables in Pages dashboard:
-# CLOUDINARY_API_KEY = "your-api-key"
-# CLOUDINARY_API_SECRET = "your-api-secret"
+# Note: Cloudinary variables are set in Pages dashboard:
+# CLOUDINARY_CLOUD_NAME = "dmawj7tmu" (set in dashboard)
+# CLOUDINARY_API_KEY = "your-api-key" (encrypted in dashboard)
+# CLOUDINARY_API_SECRET = "your-api-secret" (encrypted in dashboard)
