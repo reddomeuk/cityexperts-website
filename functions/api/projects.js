@@ -14,12 +14,13 @@ function addDebugHeaders(response, env) {
 export async function onRequestGet({ request, env }) {
   try {
     const url = new URL(request.url);
-    const status = url.searchParams.get('status') || 'published';
+    const status = url.searchParams.get('status') || 'all';
     const featured = url.searchParams.get('featured');
-    const limit = Math.min(parseInt(url.searchParams.get('limit') || '50'), 100);
+    const spotlight = url.searchParams.get('spotlight');
+    const limit = parseInt(url.searchParams.get('limit') || '50');
     const offset = parseInt(url.searchParams.get('offset') || '0');
 
-    console.log(`[DEBUG] Projects GET: status=${status}, featured=${featured}, limit=${limit}`);
+    console.log(`[DEBUG] Projects GET: status=${status}, featured=${featured}, spotlight=${spotlight}, limit=${limit}`);
 
     // Load projects from JSON
     let projects = [];
@@ -59,6 +60,11 @@ export async function onRequestGet({ request, env }) {
         }
         return p;
       });
+    }
+    
+    if (spotlight === 'true') {
+      filteredProjects = filteredProjects.filter(p => p.spotlight === true);
+      console.log(`[DEBUG] Spotlight filter: ${filteredProjects.length} projects`);
     }
     
     // Apply pagination

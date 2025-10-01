@@ -7,6 +7,11 @@
     "city": "Dubai",
     "client": "Emirates Development Group",
     "featured": true,
+    "spotlight": true,
+    "floors": 45,
+    "units": 200,
+    "timeline": 36,
+    "completion": "2024",
     "i18n": {
       "en": {
         "title": "Emirates Business Tower",
