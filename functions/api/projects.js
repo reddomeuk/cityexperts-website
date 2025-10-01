@@ -25,12 +25,22 @@ export async function onRequestGet({ request, env }) {
     // Load projects from JSON
     let projects = [];
     try {
-      const file = path.join(process.cwd(), "data", "projects.json");
-      const data = await fs.readFile(file, "utf8");
+      // Try multiple possible paths for Cloudflare Pages
+      let file = path.join(process.cwd(), "data", "projects.json");
+      let data;
+      
+      try {
+        data = await fs.readFile(file, "utf8");
+      } catch (firstError) {
+        // Try alternative path
+        file = "./data/projects.json";
+        data = await fs.readFile(file, "utf8");
+      }
+      
       projects = JSON.parse(data);
-      console.log(`[DEBUG] Loaded ${projects.length} projects`);
+      console.log(`[DEBUG] Loaded ${projects.length} projects from ${file}`);
     } catch (err) {
-      console.log('[DEBUG] No projects.json found');
+      console.log('[DEBUG] No projects.json found:', err.message);
       const response = new Response(JSON.stringify({
         success: true,
         data: [],
