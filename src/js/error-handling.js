@@ -124,47 +124,56 @@ export class Logger {
   setupPerformanceMonitoring() {
     // Monitor long tasks
     if ('PerformanceObserver' in window) {
-      try {
-        const longTaskObserver = new PerformanceObserver((list) => {
-          for (const entry of list.getEntries()) {
-            if (entry.duration > 50) { // Long task threshold
-              this.warn('Long Task Detected', {
-                duration: Math.round(entry.duration),
-                startTime: Math.round(entry.startTime),
-                name: entry.name,
-                timestamp: new Date().toISOString()
-              });
+      // Check if 'longtask' entry type is supported
+      if (PerformanceObserver.supportedEntryTypes?.includes('longtask')) {
+        try {
+          const longTaskObserver = new PerformanceObserver((list) => {
+            for (const entry of list.getEntries()) {
+              if (entry.duration > 50) { // Long task threshold
+                this.warn('Long Task Detected', {
+                  duration: Math.round(entry.duration),
+                  startTime: Math.round(entry.startTime),
+                  name: entry.name,
+                  timestamp: new Date().toISOString()
+                });
+              }
             }
-          }
-        });
-        
-        longTaskObserver.observe({ entryTypes: ['longtask'] });
-      } catch (error) {
-        this.debug('PerformanceObserver not supported for longtask');
+          });
+          
+          longTaskObserver.observe({ entryTypes: ['longtask'] });
+        } catch (error) {
+          this.debug('Failed to setup longtask observer:', error);
+        }
+      } else {
+        this.debug('longtask entry type not supported in this browser');
       }
       
-      // Monitor layout shifts
-      try {
-        const clsObserver = new PerformanceObserver((list) => {
-          for (const entry of list.getEntries()) {
-            if (entry.value > 0.1) { // CLS threshold
-              this.warn('Layout Shift Detected', {
-                value: entry.value,
-                hadRecentInput: entry.hadRecentInput,
-                timestamp: new Date().toISOString(),
-                sources: entry.sources?.map(s => ({
-                  node: s.node?.tagName,
-                  currentRect: s.currentRect,
-                  previousRect: s.previousRect
-                }))
-              });
+      // Check if 'layout-shift' entry type is supported
+      if (PerformanceObserver.supportedEntryTypes?.includes('layout-shift')) {
+        try {
+          const clsObserver = new PerformanceObserver((list) => {
+            for (const entry of list.getEntries()) {
+              if (entry.value > 0.1) { // CLS threshold
+                this.warn('Layout Shift Detected', {
+                  value: entry.value,
+                  hadRecentInput: entry.hadRecentInput,
+                  timestamp: new Date().toISOString(),
+                  sources: entry.sources?.map(s => ({
+                    node: s.node?.tagName,
+                    currentRect: s.currentRect,
+                    previousRect: s.previousRect
+                  }))
+                });
+              }
             }
-          }
-        });
-        
-        clsObserver.observe({ entryTypes: ['layout-shift'] });
-      } catch (error) {
-        this.debug('PerformanceObserver not supported for layout-shift');
+          });
+          
+          clsObserver.observe({ entryTypes: ['layout-shift'] });
+        } catch (error) {
+          this.debug('Failed to setup layout-shift observer:', error);
+        }
+      } else {
+        this.debug('layout-shift entry type not supported in this browser');
       }
     }
   }

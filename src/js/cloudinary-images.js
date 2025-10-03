@@ -3,20 +3,20 @@
 
 export const CLOUDINARY_IMAGES = {
   "/assets/images/about-hero.webp": {
-    "original": "https://res.cloudinary.com/dmawj7tmu/image/upload/v1759252854/cityexperts/hero/cityexperts/hero/about-hero.webp",
-    "optimized": "https://res.cloudinary.com/dmawj7tmu/image/upload/f_auto,q_auto/v1759252854/cityexperts/hero/cityexperts/hero/about-hero",
-    "hero": "https://res.cloudinary.com/dmawj7tmu/image/upload/w_1920,h_1080,c_fill,f_auto,q_auto/v1759252854/cityexperts/hero/cityexperts/hero/about-hero",
-    "thumb": "https://res.cloudinary.com/dmawj7tmu/image/upload/w_800,h_600,c_fill,f_auto,q_auto/v1759252854/cityexperts/hero/cityexperts/hero/about-hero",
-    "small": "https://res.cloudinary.com/dmawj7tmu/image/upload/w_400,h_300,c_fill,f_auto,q_auto/v1759252854/cityexperts/hero/cityexperts/hero/about-hero",
-    "publicId": "v1759252854/cityexperts/hero/cityexperts/hero/about-hero"
+    "original": "https://res.cloudinary.com/dmawj7tmu/image/upload/v1759252854/cityexperts/hero/about-hero.webp",
+    "optimized": "https://res.cloudinary.com/dmawj7tmu/image/upload/f_auto,q_auto/v1759252854/cityexperts/hero/about-hero",
+    "hero": "https://res.cloudinary.com/dmawj7tmu/image/upload/w_1920,h_1080,c_fill,f_auto,q_auto/v1759252854/cityexperts/hero/about-hero",
+    "thumb": "https://res.cloudinary.com/dmawj7tmu/image/upload/w_800,h_600,c_fill,f_auto,q_auto/v1759252854/cityexperts/hero/about-hero",
+    "small": "https://res.cloudinary.com/dmawj7tmu/image/upload/w_400,h_300,c_fill,f_auto,q_auto/v1759252854/cityexperts/hero/about-hero",
+    "publicId": "v1759252854/cityexperts/hero/about-hero"
   },
   "public/assets/images/about-hero.webp": {
-    "original": "https://res.cloudinary.com/dmawj7tmu/image/upload/v1759252854/cityexperts/hero/cityexperts/hero/about-hero.webp",
-    "optimized": "https://res.cloudinary.com/dmawj7tmu/image/upload/f_auto,q_auto/v1759252854/cityexperts/hero/cityexperts/hero/about-hero",
-    "hero": "https://res.cloudinary.com/dmawj7tmu/image/upload/w_1920,h_1080,c_fill,f_auto,q_auto/v1759252854/cityexperts/hero/cityexperts/hero/about-hero",
-    "thumb": "https://res.cloudinary.com/dmawj7tmu/image/upload/w_800,h_600,c_fill,f_auto,q_auto/v1759252854/cityexperts/hero/cityexperts/hero/about-hero",
-    "small": "https://res.cloudinary.com/dmawj7tmu/image/upload/w_400,h_300,c_fill,f_auto,q_auto/v1759252854/cityexperts/hero/cityexperts/hero/about-hero",
-    "publicId": "v1759252854/cityexperts/hero/cityexperts/hero/about-hero"
+    "original": "https://res.cloudinary.com/dmawj7tmu/image/upload/v1759252854/cityexperts/hero/about-hero.webp",
+    "optimized": "https://res.cloudinary.com/dmawj7tmu/image/upload/f_auto,q_auto/v1759252854/cityexperts/hero/about-hero",
+    "hero": "https://res.cloudinary.com/dmawj7tmu/image/upload/w_1920,h_1080,c_fill,f_auto,q_auto/v1759252854/cityexperts/hero/about-hero",
+    "thumb": "https://res.cloudinary.com/dmawj7tmu/image/upload/w_800,h_600,c_fill,f_auto,q_auto/v1759252854/cityexperts/hero/about-hero",
+    "small": "https://res.cloudinary.com/dmawj7tmu/image/upload/w_400,h_300,c_fill,f_auto,q_auto/v1759252854/cityexperts/hero/about-hero",
+    "publicId": "v1759252854/cityexperts/hero/about-hero"
   },
   "/assets/images/capabilities-showcase.webp": {
     "original": "https://res.cloudinary.com/dmawj7tmu/image/upload/v1759252855/cityexperts/general/cityexperts/general/capabilities-showcase.webp",
@@ -99,20 +99,20 @@ export const CLOUDINARY_IMAGES = {
     "publicId": "v1759252861/cityexperts/general/cityexperts/general/company-story"
   },
   "/assets/images/contact-hero.webp": {
-    "original": "https://res.cloudinary.com/dmawj7tmu/image/upload/v1759252862/cityexperts/hero/cityexperts/hero/contact-hero.webp",
-    "optimized": "https://res.cloudinary.com/dmawj7tmu/image/upload/f_auto,q_auto/v1759252862/cityexperts/hero/cityexperts/hero/contact-hero",
-    "hero": "https://res.cloudinary.com/dmawj7tmu/image/upload/w_1920,h_1080,c_fill,f_auto,q_auto/v1759252862/cityexperts/hero/cityexperts/hero/contact-hero",
-    "thumb": "https://res.cloudinary.com/dmawj7tmu/image/upload/w_800,h_600,c_fill,f_auto,q_auto/v1759252862/cityexperts/hero/cityexperts/hero/contact-hero",
-    "small": "https://res.cloudinary.com/dmawj7tmu/image/upload/w_400,h_300,c_fill,f_auto,q_auto/v1759252862/cityexperts/hero/cityexperts/hero/contact-hero",
-    "publicId": "v1759252862/cityexperts/hero/cityexperts/hero/contact-hero"
+    "original": "https://res.cloudinary.com/dmawj7tmu/image/upload/v1759252862/cityexperts/hero/contact-hero.webp",
+    "optimized": "https://res.cloudinary.com/dmawj7tmu/image/upload/f_auto,q_auto/v1759252862/cityexperts/hero/contact-hero",
+    "hero": "https://res.cloudinary.com/dmawj7tmu/image/upload/w_1920,h_1080,c_fill,f_auto,q_auto/v1759252862/cityexperts/hero/contact-hero",
+    "thumb": "https://res.cloudinary.com/dmawj7tmu/image/upload/w_800,h_600,c_fill,f_auto,q_auto/v1759252862/cityexperts/hero/contact-hero",
+    "small": "https://res.cloudinary.com/dmawj7tmu/image/upload/w_400,h_300,c_fill,f_auto,q_auto/v1759252862/cityexperts/hero/contact-hero",
+    "publicId": "v1759252862/cityexperts/hero/contact-hero"
   },
   "public/assets/images/contact-hero.webp": {
-    "original": "https://res.cloudinary.com/dmawj7tmu/image/upload/v1759252862/cityexperts/hero/cityexperts/hero/contact-hero.webp",
-    "optimized": "https://res.cloudinary.com/dmawj7tmu/image/upload/f_auto,q_auto/v1759252862/cityexperts/hero/cityexperts/hero/contact-hero",
-    "hero": "https://res.cloudinary.com/dmawj7tmu/image/upload/w_1920,h_1080,c_fill,f_auto,q_auto/v1759252862/cityexperts/hero/cityexperts/hero/contact-hero",
-    "thumb": "https://res.cloudinary.com/dmawj7tmu/image/upload/w_800,h_600,c_fill,f_auto,q_auto/v1759252862/cityexperts/hero/cityexperts/hero/contact-hero",
-    "small": "https://res.cloudinary.com/dmawj7tmu/image/upload/w_400,h_300,c_fill,f_auto,q_auto/v1759252862/cityexperts/hero/cityexperts/hero/contact-hero",
-    "publicId": "v1759252862/cityexperts/hero/cityexperts/hero/contact-hero"
+    "original": "https://res.cloudinary.com/dmawj7tmu/image/upload/v1759252862/cityexperts/hero/contact-hero.webp",
+    "optimized": "https://res.cloudinary.com/dmawj7tmu/image/upload/f_auto,q_auto/v1759252862/cityexperts/hero/contact-hero",
+    "hero": "https://res.cloudinary.com/dmawj7tmu/image/upload/w_1920,h_1080,c_fill,f_auto,q_auto/v1759252862/cityexperts/hero/contact-hero",
+    "thumb": "https://res.cloudinary.com/dmawj7tmu/image/upload/w_800,h_600,c_fill,f_auto,q_auto/v1759252862/cityexperts/hero/contact-hero",
+    "small": "https://res.cloudinary.com/dmawj7tmu/image/upload/w_400,h_300,c_fill,f_auto,q_auto/v1759252862/cityexperts/hero/contact-hero",
+    "publicId": "v1759252862/cityexperts/hero/contact-hero"
   },
   "/assets/images/dubai_skyline_dusk.png": {
     "original": "https://res.cloudinary.com/dmawj7tmu/image/upload/v1759252863/cityexperts/general/cityexperts/general/dubai_skyline_dusk.png",
@@ -131,20 +131,20 @@ export const CLOUDINARY_IMAGES = {
     "publicId": "v1759252863/cityexperts/general/cityexperts/general/dubai_skyline_dusk"
   },
   "/assets/images/hero-dubai-skyline.webp": {
-    "original": "https://res.cloudinary.com/dmawj7tmu/image/upload/v1759252864/cityexperts/hero/cityexperts/hero/hero-dubai-skyline.webp",
-    "optimized": "https://res.cloudinary.com/dmawj7tmu/image/upload/f_auto,q_auto/v1759252864/cityexperts/hero/cityexperts/hero/hero-dubai-skyline",
-    "hero": "https://res.cloudinary.com/dmawj7tmu/image/upload/w_1920,h_1080,c_fill,f_auto,q_auto/v1759252864/cityexperts/hero/cityexperts/hero/hero-dubai-skyline",
-    "thumb": "https://res.cloudinary.com/dmawj7tmu/image/upload/w_800,h_600,c_fill,f_auto,q_auto/v1759252864/cityexperts/hero/cityexperts/hero/hero-dubai-skyline",
-    "small": "https://res.cloudinary.com/dmawj7tmu/image/upload/w_400,h_300,c_fill,f_auto,q_auto/v1759252864/cityexperts/hero/cityexperts/hero/hero-dubai-skyline",
-    "publicId": "v1759252864/cityexperts/hero/cityexperts/hero/hero-dubai-skyline"
+    "original": "https://res.cloudinary.com/dmawj7tmu/image/upload/v1759252864/cityexperts/hero/hero-dubai-skyline.webp",
+    "optimized": "https://res.cloudinary.com/dmawj7tmu/image/upload/f_auto,q_auto/v1759252864/cityexperts/hero/hero-dubai-skyline",
+    "hero": "https://res.cloudinary.com/dmawj7tmu/image/upload/w_1920,h_1080,c_fill,f_auto,q_auto/v1759252864/cityexperts/hero/hero-dubai-skyline",
+    "thumb": "https://res.cloudinary.com/dmawj7tmu/image/upload/w_800,h_600,c_fill,f_auto,q_auto/v1759252864/cityexperts/hero/hero-dubai-skyline",
+    "small": "https://res.cloudinary.com/dmawj7tmu/image/upload/w_400,h_300,c_fill,f_auto,q_auto/v1759252864/cityexperts/hero/hero-dubai-skyline",
+    "publicId": "v1759252864/cityexperts/hero/hero-dubai-skyline"
   },
   "public/assets/images/hero-dubai-skyline.webp": {
-    "original": "https://res.cloudinary.com/dmawj7tmu/image/upload/v1759252864/cityexperts/hero/cityexperts/hero/hero-dubai-skyline.webp",
-    "optimized": "https://res.cloudinary.com/dmawj7tmu/image/upload/f_auto,q_auto/v1759252864/cityexperts/hero/cityexperts/hero/hero-dubai-skyline",
-    "hero": "https://res.cloudinary.com/dmawj7tmu/image/upload/w_1920,h_1080,c_fill,f_auto,q_auto/v1759252864/cityexperts/hero/cityexperts/hero/hero-dubai-skyline",
-    "thumb": "https://res.cloudinary.com/dmawj7tmu/image/upload/w_800,h_600,c_fill,f_auto,q_auto/v1759252864/cityexperts/hero/cityexperts/hero/hero-dubai-skyline",
-    "small": "https://res.cloudinary.com/dmawj7tmu/image/upload/w_400,h_300,c_fill,f_auto,q_auto/v1759252864/cityexperts/hero/cityexperts/hero/hero-dubai-skyline",
-    "publicId": "v1759252864/cityexperts/hero/cityexperts/hero/hero-dubai-skyline"
+    "original": "https://res.cloudinary.com/dmawj7tmu/image/upload/v1759252864/cityexperts/hero/hero-dubai-skyline.webp",
+    "optimized": "https://res.cloudinary.com/dmawj7tmu/image/upload/f_auto,q_auto/v1759252864/cityexperts/hero/hero-dubai-skyline",
+    "hero": "https://res.cloudinary.com/dmawj7tmu/image/upload/w_1920,h_1080,c_fill,f_auto,q_auto/v1759252864/cityexperts/hero/hero-dubai-skyline",
+    "thumb": "https://res.cloudinary.com/dmawj7tmu/image/upload/w_800,h_600,c_fill,f_auto,q_auto/v1759252864/cityexperts/hero/hero-dubai-skyline",
+    "small": "https://res.cloudinary.com/dmawj7tmu/image/upload/w_400,h_300,c_fill,f_auto,q_auto/v1759252864/cityexperts/hero/hero-dubai-skyline",
+    "publicId": "v1759252864/cityexperts/hero/hero-dubai-skyline"
   },
   "/assets/images/logo.png": {
     "original": "https://res.cloudinary.com/dmawj7tmu/image/upload/v1759252866/cityexperts/logos/cityexperts/logos/logo.png",
@@ -291,180 +291,180 @@ export const CLOUDINARY_IMAGES = {
     "publicId": "v1759252877/cityexperts/gallery/cityexperts/gallery/luxury_villa_2"
   },
   "/assets/images/project-1.webp": {
-    "original": "https://res.cloudinary.com/dmawj7tmu/image/upload/v1759252878/cityexperts/projects/cityexperts/projects/project-1.webp",
-    "optimized": "https://res.cloudinary.com/dmawj7tmu/image/upload/f_auto,q_auto/v1759252878/cityexperts/projects/cityexperts/projects/project-1",
-    "hero": "https://res.cloudinary.com/dmawj7tmu/image/upload/w_1920,h_1080,c_fill,f_auto,q_auto/v1759252878/cityexperts/projects/cityexperts/projects/project-1",
-    "thumb": "https://res.cloudinary.com/dmawj7tmu/image/upload/w_800,h_600,c_fill,f_auto,q_auto/v1759252878/cityexperts/projects/cityexperts/projects/project-1",
-    "small": "https://res.cloudinary.com/dmawj7tmu/image/upload/w_400,h_300,c_fill,f_auto,q_auto/v1759252878/cityexperts/projects/cityexperts/projects/project-1",
-    "publicId": "v1759252878/cityexperts/projects/cityexperts/projects/project-1"
+    "original": "https://res.cloudinary.com/dmawj7tmu/image/upload/v1759252878/cityexperts/projects/project-1.webp",
+    "optimized": "https://res.cloudinary.com/dmawj7tmu/image/upload/f_auto,q_auto/v1759252878/cityexperts/projects/project-1",
+    "hero": "https://res.cloudinary.com/dmawj7tmu/image/upload/w_1920,h_1080,c_fill,f_auto,q_auto/v1759252878/cityexperts/projects/project-1",
+    "thumb": "https://res.cloudinary.com/dmawj7tmu/image/upload/w_800,h_600,c_fill,f_auto,q_auto/v1759252878/cityexperts/projects/project-1",
+    "small": "https://res.cloudinary.com/dmawj7tmu/image/upload/w_400,h_300,c_fill,f_auto,q_auto/v1759252878/cityexperts/projects/project-1",
+    "publicId": "v1759252878/cityexperts/projects/project-1"
   },
   "public/assets/images/project-1.webp": {
-    "original": "https://res.cloudinary.com/dmawj7tmu/image/upload/v1759252878/cityexperts/projects/cityexperts/projects/project-1.webp",
-    "optimized": "https://res.cloudinary.com/dmawj7tmu/image/upload/f_auto,q_auto/v1759252878/cityexperts/projects/cityexperts/projects/project-1",
-    "hero": "https://res.cloudinary.com/dmawj7tmu/image/upload/w_1920,h_1080,c_fill,f_auto,q_auto/v1759252878/cityexperts/projects/cityexperts/projects/project-1",
-    "thumb": "https://res.cloudinary.com/dmawj7tmu/image/upload/w_800,h_600,c_fill,f_auto,q_auto/v1759252878/cityexperts/projects/cityexperts/projects/project-1",
-    "small": "https://res.cloudinary.com/dmawj7tmu/image/upload/w_400,h_300,c_fill,f_auto,q_auto/v1759252878/cityexperts/projects/cityexperts/projects/project-1",
-    "publicId": "v1759252878/cityexperts/projects/cityexperts/projects/project-1"
+    "original": "https://res.cloudinary.com/dmawj7tmu/image/upload/v1759252878/cityexperts/projects/project-1.webp",
+    "optimized": "https://res.cloudinary.com/dmawj7tmu/image/upload/f_auto,q_auto/v1759252878/cityexperts/projects/project-1",
+    "hero": "https://res.cloudinary.com/dmawj7tmu/image/upload/w_1920,h_1080,c_fill,f_auto,q_auto/v1759252878/cityexperts/projects/project-1",
+    "thumb": "https://res.cloudinary.com/dmawj7tmu/image/upload/w_800,h_600,c_fill,f_auto,q_auto/v1759252878/cityexperts/projects/project-1",
+    "small": "https://res.cloudinary.com/dmawj7tmu/image/upload/w_400,h_300,c_fill,f_auto,q_auto/v1759252878/cityexperts/projects/project-1",
+    "publicId": "v1759252878/cityexperts/projects/project-1"
   },
   "/assets/images/project-2.webp": {
-    "original": "https://res.cloudinary.com/dmawj7tmu/image/upload/v1759252879/cityexperts/projects/cityexperts/projects/project-2.webp",
-    "optimized": "https://res.cloudinary.com/dmawj7tmu/image/upload/f_auto,q_auto/v1759252879/cityexperts/projects/cityexperts/projects/project-2",
-    "hero": "https://res.cloudinary.com/dmawj7tmu/image/upload/w_1920,h_1080,c_fill,f_auto,q_auto/v1759252879/cityexperts/projects/cityexperts/projects/project-2",
-    "thumb": "https://res.cloudinary.com/dmawj7tmu/image/upload/w_800,h_600,c_fill,f_auto,q_auto/v1759252879/cityexperts/projects/cityexperts/projects/project-2",
-    "small": "https://res.cloudinary.com/dmawj7tmu/image/upload/w_400,h_300,c_fill,f_auto,q_auto/v1759252879/cityexperts/projects/cityexperts/projects/project-2",
-    "publicId": "v1759252879/cityexperts/projects/cityexperts/projects/project-2"
+    "original": "https://res.cloudinary.com/dmawj7tmu/image/upload/v1759252879/cityexperts/projects/project-2.webp",
+    "optimized": "https://res.cloudinary.com/dmawj7tmu/image/upload/f_auto,q_auto/v1759252879/cityexperts/projects/project-2",
+    "hero": "https://res.cloudinary.com/dmawj7tmu/image/upload/w_1920,h_1080,c_fill,f_auto,q_auto/v1759252879/cityexperts/projects/project-2",
+    "thumb": "https://res.cloudinary.com/dmawj7tmu/image/upload/w_800,h_600,c_fill,f_auto,q_auto/v1759252879/cityexperts/projects/project-2",
+    "small": "https://res.cloudinary.com/dmawj7tmu/image/upload/w_400,h_300,c_fill,f_auto,q_auto/v1759252879/cityexperts/projects/project-2",
+    "publicId": "v1759252879/cityexperts/projects/project-2"
   },
   "public/assets/images/project-2.webp": {
-    "original": "https://res.cloudinary.com/dmawj7tmu/image/upload/v1759252879/cityexperts/projects/cityexperts/projects/project-2.webp",
-    "optimized": "https://res.cloudinary.com/dmawj7tmu/image/upload/f_auto,q_auto/v1759252879/cityexperts/projects/cityexperts/projects/project-2",
-    "hero": "https://res.cloudinary.com/dmawj7tmu/image/upload/w_1920,h_1080,c_fill,f_auto,q_auto/v1759252879/cityexperts/projects/cityexperts/projects/project-2",
-    "thumb": "https://res.cloudinary.com/dmawj7tmu/image/upload/w_800,h_600,c_fill,f_auto,q_auto/v1759252879/cityexperts/projects/cityexperts/projects/project-2",
-    "small": "https://res.cloudinary.com/dmawj7tmu/image/upload/w_400,h_300,c_fill,f_auto,q_auto/v1759252879/cityexperts/projects/cityexperts/projects/project-2",
-    "publicId": "v1759252879/cityexperts/projects/cityexperts/projects/project-2"
+    "original": "https://res.cloudinary.com/dmawj7tmu/image/upload/v1759252879/cityexperts/projects/project-2.webp",
+    "optimized": "https://res.cloudinary.com/dmawj7tmu/image/upload/f_auto,q_auto/v1759252879/cityexperts/projects/project-2",
+    "hero": "https://res.cloudinary.com/dmawj7tmu/image/upload/w_1920,h_1080,c_fill,f_auto,q_auto/v1759252879/cityexperts/projects/project-2",
+    "thumb": "https://res.cloudinary.com/dmawj7tmu/image/upload/w_800,h_600,c_fill,f_auto,q_auto/v1759252879/cityexperts/projects/project-2",
+    "small": "https://res.cloudinary.com/dmawj7tmu/image/upload/w_400,h_300,c_fill,f_auto,q_auto/v1759252879/cityexperts/projects/project-2",
+    "publicId": "v1759252879/cityexperts/projects/project-2"
   },
   "/assets/images/project-3.webp": {
-    "original": "https://res.cloudinary.com/dmawj7tmu/image/upload/v1759252880/cityexperts/projects/cityexperts/projects/project-3.webp",
-    "optimized": "https://res.cloudinary.com/dmawj7tmu/image/upload/f_auto,q_auto/v1759252880/cityexperts/projects/cityexperts/projects/project-3",
-    "hero": "https://res.cloudinary.com/dmawj7tmu/image/upload/w_1920,h_1080,c_fill,f_auto,q_auto/v1759252880/cityexperts/projects/cityexperts/projects/project-3",
-    "thumb": "https://res.cloudinary.com/dmawj7tmu/image/upload/w_800,h_600,c_fill,f_auto,q_auto/v1759252880/cityexperts/projects/cityexperts/projects/project-3",
-    "small": "https://res.cloudinary.com/dmawj7tmu/image/upload/w_400,h_300,c_fill,f_auto,q_auto/v1759252880/cityexperts/projects/cityexperts/projects/project-3",
-    "publicId": "v1759252880/cityexperts/projects/cityexperts/projects/project-3"
+    "original": "https://res.cloudinary.com/dmawj7tmu/image/upload/v1759252880/cityexperts/projects/project-3.webp",
+    "optimized": "https://res.cloudinary.com/dmawj7tmu/image/upload/f_auto,q_auto/v1759252880/cityexperts/projects/project-3",
+    "hero": "https://res.cloudinary.com/dmawj7tmu/image/upload/w_1920,h_1080,c_fill,f_auto,q_auto/v1759252880/cityexperts/projects/project-3",
+    "thumb": "https://res.cloudinary.com/dmawj7tmu/image/upload/w_800,h_600,c_fill,f_auto,q_auto/v1759252880/cityexperts/projects/project-3",
+    "small": "https://res.cloudinary.com/dmawj7tmu/image/upload/w_400,h_300,c_fill,f_auto,q_auto/v1759252880/cityexperts/projects/project-3",
+    "publicId": "v1759252880/cityexperts/projects/project-3"
   },
   "public/assets/images/project-3.webp": {
-    "original": "https://res.cloudinary.com/dmawj7tmu/image/upload/v1759252880/cityexperts/projects/cityexperts/projects/project-3.webp",
-    "optimized": "https://res.cloudinary.com/dmawj7tmu/image/upload/f_auto,q_auto/v1759252880/cityexperts/projects/cityexperts/projects/project-3",
-    "hero": "https://res.cloudinary.com/dmawj7tmu/image/upload/w_1920,h_1080,c_fill,f_auto,q_auto/v1759252880/cityexperts/projects/cityexperts/projects/project-3",
-    "thumb": "https://res.cloudinary.com/dmawj7tmu/image/upload/w_800,h_600,c_fill,f_auto,q_auto/v1759252880/cityexperts/projects/cityexperts/projects/project-3",
-    "small": "https://res.cloudinary.com/dmawj7tmu/image/upload/w_400,h_300,c_fill,f_auto,q_auto/v1759252880/cityexperts/projects/cityexperts/projects/project-3",
-    "publicId": "v1759252880/cityexperts/projects/cityexperts/projects/project-3"
+    "original": "https://res.cloudinary.com/dmawj7tmu/image/upload/v1759252880/cityexperts/projects/project-3.webp",
+    "optimized": "https://res.cloudinary.com/dmawj7tmu/image/upload/f_auto,q_auto/v1759252880/cityexperts/projects/project-3",
+    "hero": "https://res.cloudinary.com/dmawj7tmu/image/upload/w_1920,h_1080,c_fill,f_auto,q_auto/v1759252880/cityexperts/projects/project-3",
+    "thumb": "https://res.cloudinary.com/dmawj7tmu/image/upload/w_800,h_600,c_fill,f_auto,q_auto/v1759252880/cityexperts/projects/project-3",
+    "small": "https://res.cloudinary.com/dmawj7tmu/image/upload/w_400,h_300,c_fill,f_auto,q_auto/v1759252880/cityexperts/projects/project-3",
+    "publicId": "v1759252880/cityexperts/projects/project-3"
   },
   "/assets/images/projects/arabian-gardens.webp": {
-    "original": "https://res.cloudinary.com/dmawj7tmu/image/upload/v1759252882/cityexperts/projects/cityexperts/projects/arabian-gardens.webp",
-    "optimized": "https://res.cloudinary.com/dmawj7tmu/image/upload/f_auto,q_auto/v1759252882/cityexperts/projects/cityexperts/projects/arabian-gardens",
-    "hero": "https://res.cloudinary.com/dmawj7tmu/image/upload/w_1920,h_1080,c_fill,f_auto,q_auto/v1759252882/cityexperts/projects/cityexperts/projects/arabian-gardens",
-    "thumb": "https://res.cloudinary.com/dmawj7tmu/image/upload/w_800,h_600,c_fill,f_auto,q_auto/v1759252882/cityexperts/projects/cityexperts/projects/arabian-gardens",
-    "small": "https://res.cloudinary.com/dmawj7tmu/image/upload/w_400,h_300,c_fill,f_auto,q_auto/v1759252882/cityexperts/projects/cityexperts/projects/arabian-gardens",
-    "publicId": "v1759252882/cityexperts/projects/cityexperts/projects/arabian-gardens"
+    "original": "https://res.cloudinary.com/dmawj7tmu/image/upload/v1759252882/cityexperts/projects/arabian-gardens.webp",
+    "optimized": "https://res.cloudinary.com/dmawj7tmu/image/upload/f_auto,q_auto/v1759252882/cityexperts/projects/arabian-gardens",
+    "hero": "https://res.cloudinary.com/dmawj7tmu/image/upload/w_1920,h_1080,c_fill,f_auto,q_auto/v1759252882/cityexperts/projects/arabian-gardens",
+    "thumb": "https://res.cloudinary.com/dmawj7tmu/image/upload/w_800,h_600,c_fill,f_auto,q_auto/v1759252882/cityexperts/projects/arabian-gardens",
+    "small": "https://res.cloudinary.com/dmawj7tmu/image/upload/w_400,h_300,c_fill,f_auto,q_auto/v1759252882/cityexperts/projects/arabian-gardens",
+    "publicId": "v1759252882/cityexperts/projects/arabian-gardens"
   },
   "public/assets/images/projects/arabian-gardens.webp": {
-    "original": "https://res.cloudinary.com/dmawj7tmu/image/upload/v1759252882/cityexperts/projects/cityexperts/projects/arabian-gardens.webp",
-    "optimized": "https://res.cloudinary.com/dmawj7tmu/image/upload/f_auto,q_auto/v1759252882/cityexperts/projects/cityexperts/projects/arabian-gardens",
-    "hero": "https://res.cloudinary.com/dmawj7tmu/image/upload/w_1920,h_1080,c_fill,f_auto,q_auto/v1759252882/cityexperts/projects/cityexperts/projects/arabian-gardens",
-    "thumb": "https://res.cloudinary.com/dmawj7tmu/image/upload/w_800,h_600,c_fill,f_auto,q_auto/v1759252882/cityexperts/projects/cityexperts/projects/arabian-gardens",
-    "small": "https://res.cloudinary.com/dmawj7tmu/image/upload/w_400,h_300,c_fill,f_auto,q_auto/v1759252882/cityexperts/projects/cityexperts/projects/arabian-gardens",
-    "publicId": "v1759252882/cityexperts/projects/cityexperts/projects/arabian-gardens"
+    "original": "https://res.cloudinary.com/dmawj7tmu/image/upload/v1759252882/cityexperts/projects/arabian-gardens.webp",
+    "optimized": "https://res.cloudinary.com/dmawj7tmu/image/upload/f_auto,q_auto/v1759252882/cityexperts/projects/arabian-gardens",
+    "hero": "https://res.cloudinary.com/dmawj7tmu/image/upload/w_1920,h_1080,c_fill,f_auto,q_auto/v1759252882/cityexperts/projects/arabian-gardens",
+    "thumb": "https://res.cloudinary.com/dmawj7tmu/image/upload/w_800,h_600,c_fill,f_auto,q_auto/v1759252882/cityexperts/projects/arabian-gardens",
+    "small": "https://res.cloudinary.com/dmawj7tmu/image/upload/w_400,h_300,c_fill,f_auto,q_auto/v1759252882/cityexperts/projects/arabian-gardens",
+    "publicId": "v1759252882/cityexperts/projects/arabian-gardens"
   },
   "/assets/images/projects/burj-al-noor-featured.webp": {
-    "original": "https://res.cloudinary.com/dmawj7tmu/image/upload/v1759252883/cityexperts/projects/cityexperts/projects/burj-al-noor-featured.webp",
-    "optimized": "https://res.cloudinary.com/dmawj7tmu/image/upload/f_auto,q_auto/v1759252883/cityexperts/projects/cityexperts/projects/burj-al-noor-featured",
-    "hero": "https://res.cloudinary.com/dmawj7tmu/image/upload/w_1920,h_1080,c_fill,f_auto,q_auto/v1759252883/cityexperts/projects/cityexperts/projects/burj-al-noor-featured",
-    "thumb": "https://res.cloudinary.com/dmawj7tmu/image/upload/w_800,h_600,c_fill,f_auto,q_auto/v1759252883/cityexperts/projects/cityexperts/projects/burj-al-noor-featured",
-    "small": "https://res.cloudinary.com/dmawj7tmu/image/upload/w_400,h_300,c_fill,f_auto,q_auto/v1759252883/cityexperts/projects/cityexperts/projects/burj-al-noor-featured",
-    "publicId": "v1759252883/cityexperts/projects/cityexperts/projects/burj-al-noor-featured"
+    "original": "https://res.cloudinary.com/dmawj7tmu/image/upload/v1759252883/cityexperts/projects/burj-al-noor-featured.webp",
+    "optimized": "https://res.cloudinary.com/dmawj7tmu/image/upload/f_auto,q_auto/v1759252883/cityexperts/projects/burj-al-noor-featured",
+    "hero": "https://res.cloudinary.com/dmawj7tmu/image/upload/w_1920,h_1080,c_fill,f_auto,q_auto/v1759252883/cityexperts/projects/burj-al-noor-featured",
+    "thumb": "https://res.cloudinary.com/dmawj7tmu/image/upload/w_800,h_600,c_fill,f_auto,q_auto/v1759252883/cityexperts/projects/burj-al-noor-featured",
+    "small": "https://res.cloudinary.com/dmawj7tmu/image/upload/w_400,h_300,c_fill,f_auto,q_auto/v1759252883/cityexperts/projects/burj-al-noor-featured",
+    "publicId": "v1759252883/cityexperts/projects/burj-al-noor-featured"
   },
   "public/assets/images/projects/burj-al-noor-featured.webp": {
-    "original": "https://res.cloudinary.com/dmawj7tmu/image/upload/v1759252883/cityexperts/projects/cityexperts/projects/burj-al-noor-featured.webp",
-    "optimized": "https://res.cloudinary.com/dmawj7tmu/image/upload/f_auto,q_auto/v1759252883/cityexperts/projects/cityexperts/projects/burj-al-noor-featured",
-    "hero": "https://res.cloudinary.com/dmawj7tmu/image/upload/w_1920,h_1080,c_fill,f_auto,q_auto/v1759252883/cityexperts/projects/cityexperts/projects/burj-al-noor-featured",
-    "thumb": "https://res.cloudinary.com/dmawj7tmu/image/upload/w_800,h_600,c_fill,f_auto,q_auto/v1759252883/cityexperts/projects/cityexperts/projects/burj-al-noor-featured",
-    "small": "https://res.cloudinary.com/dmawj7tmu/image/upload/w_400,h_300,c_fill,f_auto,q_auto/v1759252883/cityexperts/projects/cityexperts/projects/burj-al-noor-featured",
-    "publicId": "v1759252883/cityexperts/projects/cityexperts/projects/burj-al-noor-featured"
+    "original": "https://res.cloudinary.com/dmawj7tmu/image/upload/v1759252883/cityexperts/projects/burj-al-noor-featured.webp",
+    "optimized": "https://res.cloudinary.com/dmawj7tmu/image/upload/f_auto,q_auto/v1759252883/cityexperts/projects/burj-al-noor-featured",
+    "hero": "https://res.cloudinary.com/dmawj7tmu/image/upload/w_1920,h_1080,c_fill,f_auto,q_auto/v1759252883/cityexperts/projects/burj-al-noor-featured",
+    "thumb": "https://res.cloudinary.com/dmawj7tmu/image/upload/w_800,h_600,c_fill,f_auto,q_auto/v1759252883/cityexperts/projects/burj-al-noor-featured",
+    "small": "https://res.cloudinary.com/dmawj7tmu/image/upload/w_400,h_300,c_fill,f_auto,q_auto/v1759252883/cityexperts/projects/burj-al-noor-featured",
+    "publicId": "v1759252883/cityexperts/projects/burj-al-noor-featured"
   },
   "/assets/images/projects/downtown-plaza.webp": {
-    "original": "https://res.cloudinary.com/dmawj7tmu/image/upload/v1759252883/cityexperts/projects/cityexperts/projects/downtown-plaza.webp",
-    "optimized": "https://res.cloudinary.com/dmawj7tmu/image/upload/f_auto,q_auto/v1759252883/cityexperts/projects/cityexperts/projects/downtown-plaza",
-    "hero": "https://res.cloudinary.com/dmawj7tmu/image/upload/w_1920,h_1080,c_fill,f_auto,q_auto/v1759252883/cityexperts/projects/cityexperts/projects/downtown-plaza",
-    "thumb": "https://res.cloudinary.com/dmawj7tmu/image/upload/w_800,h_600,c_fill,f_auto,q_auto/v1759252883/cityexperts/projects/cityexperts/projects/downtown-plaza",
-    "small": "https://res.cloudinary.com/dmawj7tmu/image/upload/w_400,h_300,c_fill,f_auto,q_auto/v1759252883/cityexperts/projects/cityexperts/projects/downtown-plaza",
-    "publicId": "v1759252883/cityexperts/projects/cityexperts/projects/downtown-plaza"
+    "original": "https://res.cloudinary.com/dmawj7tmu/image/upload/v1759252883/cityexperts/projects/downtown-plaza.webp",
+    "optimized": "https://res.cloudinary.com/dmawj7tmu/image/upload/f_auto,q_auto/v1759252883/cityexperts/projects/downtown-plaza",
+    "hero": "https://res.cloudinary.com/dmawj7tmu/image/upload/w_1920,h_1080,c_fill,f_auto,q_auto/v1759252883/cityexperts/projects/downtown-plaza",
+    "thumb": "https://res.cloudinary.com/dmawj7tmu/image/upload/w_800,h_600,c_fill,f_auto,q_auto/v1759252883/cityexperts/projects/downtown-plaza",
+    "small": "https://res.cloudinary.com/dmawj7tmu/image/upload/w_400,h_300,c_fill,f_auto,q_auto/v1759252883/cityexperts/projects/downtown-plaza",
+    "publicId": "v1759252883/cityexperts/projects/downtown-plaza"
   },
   "public/assets/images/projects/downtown-plaza.webp": {
-    "original": "https://res.cloudinary.com/dmawj7tmu/image/upload/v1759252883/cityexperts/projects/cityexperts/projects/downtown-plaza.webp",
-    "optimized": "https://res.cloudinary.com/dmawj7tmu/image/upload/f_auto,q_auto/v1759252883/cityexperts/projects/cityexperts/projects/downtown-plaza",
-    "hero": "https://res.cloudinary.com/dmawj7tmu/image/upload/w_1920,h_1080,c_fill,f_auto,q_auto/v1759252883/cityexperts/projects/cityexperts/projects/downtown-plaza",
-    "thumb": "https://res.cloudinary.com/dmawj7tmu/image/upload/w_800,h_600,c_fill,f_auto,q_auto/v1759252883/cityexperts/projects/cityexperts/projects/downtown-plaza",
-    "small": "https://res.cloudinary.com/dmawj7tmu/image/upload/w_400,h_300,c_fill,f_auto,q_auto/v1759252883/cityexperts/projects/cityexperts/projects/downtown-plaza",
-    "publicId": "v1759252883/cityexperts/projects/cityexperts/projects/downtown-plaza"
+    "original": "https://res.cloudinary.com/dmawj7tmu/image/upload/v1759252883/cityexperts/projects/downtown-plaza.webp",
+    "optimized": "https://res.cloudinary.com/dmawj7tmu/image/upload/f_auto,q_auto/v1759252883/cityexperts/projects/downtown-plaza",
+    "hero": "https://res.cloudinary.com/dmawj7tmu/image/upload/w_1920,h_1080,c_fill,f_auto,q_auto/v1759252883/cityexperts/projects/downtown-plaza",
+    "thumb": "https://res.cloudinary.com/dmawj7tmu/image/upload/w_800,h_600,c_fill,f_auto,q_auto/v1759252883/cityexperts/projects/downtown-plaza",
+    "small": "https://res.cloudinary.com/dmawj7tmu/image/upload/w_400,h_300,c_fill,f_auto,q_auto/v1759252883/cityexperts/projects/downtown-plaza",
+    "publicId": "v1759252883/cityexperts/projects/downtown-plaza"
   },
   "/assets/images/projects/dubai-tower-commercial.webp": {
-    "original": "https://res.cloudinary.com/dmawj7tmu/image/upload/v1759252884/cityexperts/projects/cityexperts/projects/dubai-tower-commercial.webp",
-    "optimized": "https://res.cloudinary.com/dmawj7tmu/image/upload/f_auto,q_auto/v1759252884/cityexperts/projects/cityexperts/projects/dubai-tower-commercial",
-    "hero": "https://res.cloudinary.com/dmawj7tmu/image/upload/w_1920,h_1080,c_fill,f_auto,q_auto/v1759252884/cityexperts/projects/cityexperts/projects/dubai-tower-commercial",
-    "thumb": "https://res.cloudinary.com/dmawj7tmu/image/upload/w_800,h_600,c_fill,f_auto,q_auto/v1759252884/cityexperts/projects/cityexperts/projects/dubai-tower-commercial",
-    "small": "https://res.cloudinary.com/dmawj7tmu/image/upload/w_400,h_300,c_fill,f_auto,q_auto/v1759252884/cityexperts/projects/cityexperts/projects/dubai-tower-commercial",
-    "publicId": "v1759252884/cityexperts/projects/cityexperts/projects/dubai-tower-commercial"
+    "original": "https://res.cloudinary.com/dmawj7tmu/image/upload/v1759252884/cityexperts/projects/dubai-tower-commercial.webp",
+    "optimized": "https://res.cloudinary.com/dmawj7tmu/image/upload/f_auto,q_auto/v1759252884/cityexperts/projects/dubai-tower-commercial",
+    "hero": "https://res.cloudinary.com/dmawj7tmu/image/upload/w_1920,h_1080,c_fill,f_auto,q_auto/v1759252884/cityexperts/projects/dubai-tower-commercial",
+    "thumb": "https://res.cloudinary.com/dmawj7tmu/image/upload/w_800,h_600,c_fill,f_auto,q_auto/v1759252884/cityexperts/projects/dubai-tower-commercial",
+    "small": "https://res.cloudinary.com/dmawj7tmu/image/upload/w_400,h_300,c_fill,f_auto,q_auto/v1759252884/cityexperts/projects/dubai-tower-commercial",
+    "publicId": "v1759252884/cityexperts/projects/dubai-tower-commercial"
   },
   "public/assets/images/projects/dubai-tower-commercial.webp": {
-    "original": "https://res.cloudinary.com/dmawj7tmu/image/upload/v1759252884/cityexperts/projects/cityexperts/projects/dubai-tower-commercial.webp",
-    "optimized": "https://res.cloudinary.com/dmawj7tmu/image/upload/f_auto,q_auto/v1759252884/cityexperts/projects/cityexperts/projects/dubai-tower-commercial",
-    "hero": "https://res.cloudinary.com/dmawj7tmu/image/upload/w_1920,h_1080,c_fill,f_auto,q_auto/v1759252884/cityexperts/projects/cityexperts/projects/dubai-tower-commercial",
-    "thumb": "https://res.cloudinary.com/dmawj7tmu/image/upload/w_800,h_600,c_fill,f_auto,q_auto/v1759252884/cityexperts/projects/cityexperts/projects/dubai-tower-commercial",
-    "small": "https://res.cloudinary.com/dmawj7tmu/image/upload/w_400,h_300,c_fill,f_auto,q_auto/v1759252884/cityexperts/projects/cityexperts/projects/dubai-tower-commercial",
-    "publicId": "v1759252884/cityexperts/projects/cityexperts/projects/dubai-tower-commercial"
+    "original": "https://res.cloudinary.com/dmawj7tmu/image/upload/v1759252884/cityexperts/projects/dubai-tower-commercial.webp",
+    "optimized": "https://res.cloudinary.com/dmawj7tmu/image/upload/f_auto,q_auto/v1759252884/cityexperts/projects/dubai-tower-commercial",
+    "hero": "https://res.cloudinary.com/dmawj7tmu/image/upload/w_1920,h_1080,c_fill,f_auto,q_auto/v1759252884/cityexperts/projects/dubai-tower-commercial",
+    "thumb": "https://res.cloudinary.com/dmawj7tmu/image/upload/w_800,h_600,c_fill,f_auto,q_auto/v1759252884/cityexperts/projects/dubai-tower-commercial",
+    "small": "https://res.cloudinary.com/dmawj7tmu/image/upload/w_400,h_300,c_fill,f_auto,q_auto/v1759252884/cityexperts/projects/dubai-tower-commercial",
+    "publicId": "v1759252884/cityexperts/projects/dubai-tower-commercial"
   },
   "/assets/images/projects/executive-offices.webp": {
-    "original": "https://res.cloudinary.com/dmawj7tmu/image/upload/v1759252885/cityexperts/projects/cityexperts/projects/executive-offices.webp",
-    "optimized": "https://res.cloudinary.com/dmawj7tmu/image/upload/f_auto,q_auto/v1759252885/cityexperts/projects/cityexperts/projects/executive-offices",
-    "hero": "https://res.cloudinary.com/dmawj7tmu/image/upload/w_1920,h_1080,c_fill,f_auto,q_auto/v1759252885/cityexperts/projects/cityexperts/projects/executive-offices",
-    "thumb": "https://res.cloudinary.com/dmawj7tmu/image/upload/w_800,h_600,c_fill,f_auto,q_auto/v1759252885/cityexperts/projects/cityexperts/projects/executive-offices",
-    "small": "https://res.cloudinary.com/dmawj7tmu/image/upload/w_400,h_300,c_fill,f_auto,q_auto/v1759252885/cityexperts/projects/cityexperts/projects/executive-offices",
-    "publicId": "v1759252885/cityexperts/projects/cityexperts/projects/executive-offices"
+    "original": "https://res.cloudinary.com/dmawj7tmu/image/upload/v1759252885/cityexperts/projects/executive-offices.webp",
+    "optimized": "https://res.cloudinary.com/dmawj7tmu/image/upload/f_auto,q_auto/v1759252885/cityexperts/projects/executive-offices",
+    "hero": "https://res.cloudinary.com/dmawj7tmu/image/upload/w_1920,h_1080,c_fill,f_auto,q_auto/v1759252885/cityexperts/projects/executive-offices",
+    "thumb": "https://res.cloudinary.com/dmawj7tmu/image/upload/w_800,h_600,c_fill,f_auto,q_auto/v1759252885/cityexperts/projects/executive-offices",
+    "small": "https://res.cloudinary.com/dmawj7tmu/image/upload/w_400,h_300,c_fill,f_auto,q_auto/v1759252885/cityexperts/projects/executive-offices",
+    "publicId": "v1759252885/cityexperts/projects/executive-offices"
   },
   "public/assets/images/projects/executive-offices.webp": {
-    "original": "https://res.cloudinary.com/dmawj7tmu/image/upload/v1759252885/cityexperts/projects/cityexperts/projects/executive-offices.webp",
-    "optimized": "https://res.cloudinary.com/dmawj7tmu/image/upload/f_auto,q_auto/v1759252885/cityexperts/projects/cityexperts/projects/executive-offices",
-    "hero": "https://res.cloudinary.com/dmawj7tmu/image/upload/w_1920,h_1080,c_fill,f_auto,q_auto/v1759252885/cityexperts/projects/cityexperts/projects/executive-offices",
-    "thumb": "https://res.cloudinary.com/dmawj7tmu/image/upload/w_800,h_600,c_fill,f_auto,q_auto/v1759252885/cityexperts/projects/cityexperts/projects/executive-offices",
-    "small": "https://res.cloudinary.com/dmawj7tmu/image/upload/w_400,h_300,c_fill,f_auto,q_auto/v1759252885/cityexperts/projects/cityexperts/projects/executive-offices",
-    "publicId": "v1759252885/cityexperts/projects/cityexperts/projects/executive-offices"
+    "original": "https://res.cloudinary.com/dmawj7tmu/image/upload/v1759252885/cityexperts/projects/executive-offices.webp",
+    "optimized": "https://res.cloudinary.com/dmawj7tmu/image/upload/f_auto,q_auto/v1759252885/cityexperts/projects/executive-offices",
+    "hero": "https://res.cloudinary.com/dmawj7tmu/image/upload/w_1920,h_1080,c_fill,f_auto,q_auto/v1759252885/cityexperts/projects/executive-offices",
+    "thumb": "https://res.cloudinary.com/dmawj7tmu/image/upload/w_800,h_600,c_fill,f_auto,q_auto/v1759252885/cityexperts/projects/executive-offices",
+    "small": "https://res.cloudinary.com/dmawj7tmu/image/upload/w_400,h_300,c_fill,f_auto,q_auto/v1759252885/cityexperts/projects/executive-offices",
+    "publicId": "v1759252885/cityexperts/projects/executive-offices"
   },
   "/assets/images/projects/marina-mall.webp": {
-    "original": "https://res.cloudinary.com/dmawj7tmu/image/upload/v1759252886/cityexperts/projects/cityexperts/projects/marina-mall.webp",
-    "optimized": "https://res.cloudinary.com/dmawj7tmu/image/upload/f_auto,q_auto/v1759252886/cityexperts/projects/cityexperts/projects/marina-mall",
-    "hero": "https://res.cloudinary.com/dmawj7tmu/image/upload/w_1920,h_1080,c_fill,f_auto,q_auto/v1759252886/cityexperts/projects/cityexperts/projects/marina-mall",
-    "thumb": "https://res.cloudinary.com/dmawj7tmu/image/upload/w_800,h_600,c_fill,f_auto,q_auto/v1759252886/cityexperts/projects/cityexperts/projects/marina-mall",
-    "small": "https://res.cloudinary.com/dmawj7tmu/image/upload/w_400,h_300,c_fill,f_auto,q_auto/v1759252886/cityexperts/projects/cityexperts/projects/marina-mall",
-    "publicId": "v1759252886/cityexperts/projects/cityexperts/projects/marina-mall"
+    "original": "https://res.cloudinary.com/dmawj7tmu/image/upload/v1759252886/cityexperts/projects/marina-mall.webp",
+    "optimized": "https://res.cloudinary.com/dmawj7tmu/image/upload/f_auto,q_auto/v1759252886/cityexperts/projects/marina-mall",
+    "hero": "https://res.cloudinary.com/dmawj7tmu/image/upload/w_1920,h_1080,c_fill,f_auto,q_auto/v1759252886/cityexperts/projects/marina-mall",
+    "thumb": "https://res.cloudinary.com/dmawj7tmu/image/upload/w_800,h_600,c_fill,f_auto,q_auto/v1759252886/cityexperts/projects/marina-mall",
+    "small": "https://res.cloudinary.com/dmawj7tmu/image/upload/w_400,h_300,c_fill,f_auto,q_auto/v1759252886/cityexperts/projects/marina-mall",
+    "publicId": "v1759252886/cityexperts/projects/marina-mall"
   },
   "public/assets/images/projects/marina-mall.webp": {
-    "original": "https://res.cloudinary.com/dmawj7tmu/image/upload/v1759252886/cityexperts/projects/cityexperts/projects/marina-mall.webp",
-    "optimized": "https://res.cloudinary.com/dmawj7tmu/image/upload/f_auto,q_auto/v1759252886/cityexperts/projects/cityexperts/projects/marina-mall",
-    "hero": "https://res.cloudinary.com/dmawj7tmu/image/upload/w_1920,h_1080,c_fill,f_auto,q_auto/v1759252886/cityexperts/projects/cityexperts/projects/marina-mall",
-    "thumb": "https://res.cloudinary.com/dmawj7tmu/image/upload/w_800,h_600,c_fill,f_auto,q_auto/v1759252886/cityexperts/projects/cityexperts/projects/marina-mall",
-    "small": "https://res.cloudinary.com/dmawj7tmu/image/upload/w_400,h_300,c_fill,f_auto,q_auto/v1759252886/cityexperts/projects/cityexperts/projects/marina-mall",
-    "publicId": "v1759252886/cityexperts/projects/cityexperts/projects/marina-mall"
+    "original": "https://res.cloudinary.com/dmawj7tmu/image/upload/v1759252886/cityexperts/projects/marina-mall.webp",
+    "optimized": "https://res.cloudinary.com/dmawj7tmu/image/upload/f_auto,q_auto/v1759252886/cityexperts/projects/marina-mall",
+    "hero": "https://res.cloudinary.com/dmawj7tmu/image/upload/w_1920,h_1080,c_fill,f_auto,q_auto/v1759252886/cityexperts/projects/marina-mall",
+    "thumb": "https://res.cloudinary.com/dmawj7tmu/image/upload/w_800,h_600,c_fill,f_auto,q_auto/v1759252886/cityexperts/projects/marina-mall",
+    "small": "https://res.cloudinary.com/dmawj7tmu/image/upload/w_400,h_300,c_fill,f_auto,q_auto/v1759252886/cityexperts/projects/marina-mall",
+    "publicId": "v1759252886/cityexperts/projects/marina-mall"
   },
   "/assets/images/projects/palm-residences.webp": {
-    "original": "https://res.cloudinary.com/dmawj7tmu/image/upload/v1759252887/cityexperts/projects/cityexperts/projects/palm-residences.webp",
-    "optimized": "https://res.cloudinary.com/dmawj7tmu/image/upload/f_auto,q_auto/v1759252887/cityexperts/projects/cityexperts/projects/palm-residences",
-    "hero": "https://res.cloudinary.com/dmawj7tmu/image/upload/w_1920,h_1080,c_fill,f_auto,q_auto/v1759252887/cityexperts/projects/cityexperts/projects/palm-residences",
-    "thumb": "https://res.cloudinary.com/dmawj7tmu/image/upload/w_800,h_600,c_fill,f_auto,q_auto/v1759252887/cityexperts/projects/cityexperts/projects/palm-residences",
-    "small": "https://res.cloudinary.com/dmawj7tmu/image/upload/w_400,h_300,c_fill,f_auto,q_auto/v1759252887/cityexperts/projects/cityexperts/projects/palm-residences",
-    "publicId": "v1759252887/cityexperts/projects/cityexperts/projects/palm-residences"
+    "original": "https://res.cloudinary.com/dmawj7tmu/image/upload/v1759252887/cityexperts/projects/palm-residences.webp",
+    "optimized": "https://res.cloudinary.com/dmawj7tmu/image/upload/f_auto,q_auto/v1759252887/cityexperts/projects/palm-residences",
+    "hero": "https://res.cloudinary.com/dmawj7tmu/image/upload/w_1920,h_1080,c_fill,f_auto,q_auto/v1759252887/cityexperts/projects/palm-residences",
+    "thumb": "https://res.cloudinary.com/dmawj7tmu/image/upload/w_800,h_600,c_fill,f_auto,q_auto/v1759252887/cityexperts/projects/palm-residences",
+    "small": "https://res.cloudinary.com/dmawj7tmu/image/upload/w_400,h_300,c_fill,f_auto,q_auto/v1759252887/cityexperts/projects/palm-residences",
+    "publicId": "v1759252887/cityexperts/projects/palm-residences"
   },
   "public/assets/images/projects/palm-residences.webp": {
-    "original": "https://res.cloudinary.com/dmawj7tmu/image/upload/v1759252887/cityexperts/projects/cityexperts/projects/palm-residences.webp",
-    "optimized": "https://res.cloudinary.com/dmawj7tmu/image/upload/f_auto,q_auto/v1759252887/cityexperts/projects/cityexperts/projects/palm-residences",
-    "hero": "https://res.cloudinary.com/dmawj7tmu/image/upload/w_1920,h_1080,c_fill,f_auto,q_auto/v1759252887/cityexperts/projects/cityexperts/projects/palm-residences",
-    "thumb": "https://res.cloudinary.com/dmawj7tmu/image/upload/w_800,h_600,c_fill,f_auto,q_auto/v1759252887/cityexperts/projects/cityexperts/projects/palm-residences",
-    "small": "https://res.cloudinary.com/dmawj7tmu/image/upload/w_400,h_300,c_fill,f_auto,q_auto/v1759252887/cityexperts/projects/cityexperts/projects/palm-residences",
-    "publicId": "v1759252887/cityexperts/projects/cityexperts/projects/palm-residences"
+    "original": "https://res.cloudinary.com/dmawj7tmu/image/upload/v1759252887/cityexperts/projects/palm-residences.webp",
+    "optimized": "https://res.cloudinary.com/dmawj7tmu/image/upload/f_auto,q_auto/v1759252887/cityexperts/projects/palm-residences",
+    "hero": "https://res.cloudinary.com/dmawj7tmu/image/upload/w_1920,h_1080,c_fill,f_auto,q_auto/v1759252887/cityexperts/projects/palm-residences",
+    "thumb": "https://res.cloudinary.com/dmawj7tmu/image/upload/w_800,h_600,c_fill,f_auto,q_auto/v1759252887/cityexperts/projects/palm-residences",
+    "small": "https://res.cloudinary.com/dmawj7tmu/image/upload/w_400,h_300,c_fill,f_auto,q_auto/v1759252887/cityexperts/projects/palm-residences",
+    "publicId": "v1759252887/cityexperts/projects/palm-residences"
   },
   "/assets/images/projects-hero.webp": {
-    "original": "https://res.cloudinary.com/dmawj7tmu/image/upload/v1759252888/cityexperts/hero/cityexperts/hero/projects-hero.webp",
-    "optimized": "https://res.cloudinary.com/dmawj7tmu/image/upload/f_auto,q_auto/v1759252888/cityexperts/hero/cityexperts/hero/projects-hero",
-    "hero": "https://res.cloudinary.com/dmawj7tmu/image/upload/w_1920,h_1080,c_fill,f_auto,q_auto/v1759252888/cityexperts/hero/cityexperts/hero/projects-hero",
-    "thumb": "https://res.cloudinary.com/dmawj7tmu/image/upload/w_800,h_600,c_fill,f_auto,q_auto/v1759252888/cityexperts/hero/cityexperts/hero/projects-hero",
-    "small": "https://res.cloudinary.com/dmawj7tmu/image/upload/w_400,h_300,c_fill,f_auto,q_auto/v1759252888/cityexperts/hero/cityexperts/hero/projects-hero",
-    "publicId": "v1759252888/cityexperts/hero/cityexperts/hero/projects-hero"
+    "original": "https://res.cloudinary.com/dmawj7tmu/image/upload/v1759252888/cityexperts/hero/projects-hero.webp",
+    "optimized": "https://res.cloudinary.com/dmawj7tmu/image/upload/f_auto,q_auto/v1759252888/cityexperts/hero/projects-hero",
+    "hero": "https://res.cloudinary.com/dmawj7tmu/image/upload/w_1920,h_1080,c_fill,f_auto,q_auto/v1759252888/cityexperts/hero/projects-hero",
+    "thumb": "https://res.cloudinary.com/dmawj7tmu/image/upload/w_800,h_600,c_fill,f_auto,q_auto/v1759252888/cityexperts/hero/projects-hero",
+    "small": "https://res.cloudinary.com/dmawj7tmu/image/upload/w_400,h_300,c_fill,f_auto,q_auto/v1759252888/cityexperts/hero/projects-hero",
+    "publicId": "v1759252888/cityexperts/hero/projects-hero"
   },
   "public/assets/images/projects-hero.webp": {
-    "original": "https://res.cloudinary.com/dmawj7tmu/image/upload/v1759252888/cityexperts/hero/cityexperts/hero/projects-hero.webp",
-    "optimized": "https://res.cloudinary.com/dmawj7tmu/image/upload/f_auto,q_auto/v1759252888/cityexperts/hero/cityexperts/hero/projects-hero",
-    "hero": "https://res.cloudinary.com/dmawj7tmu/image/upload/w_1920,h_1080,c_fill,f_auto,q_auto/v1759252888/cityexperts/hero/cityexperts/hero/projects-hero",
-    "thumb": "https://res.cloudinary.com/dmawj7tmu/image/upload/w_800,h_600,c_fill,f_auto,q_auto/v1759252888/cityexperts/hero/cityexperts/hero/projects-hero",
-    "small": "https://res.cloudinary.com/dmawj7tmu/image/upload/w_400,h_300,c_fill,f_auto,q_auto/v1759252888/cityexperts/hero/cityexperts/hero/projects-hero",
-    "publicId": "v1759252888/cityexperts/hero/cityexperts/hero/projects-hero"
+    "original": "https://res.cloudinary.com/dmawj7tmu/image/upload/v1759252888/cityexperts/hero/projects-hero.webp",
+    "optimized": "https://res.cloudinary.com/dmawj7tmu/image/upload/f_auto,q_auto/v1759252888/cityexperts/hero/projects-hero",
+    "hero": "https://res.cloudinary.com/dmawj7tmu/image/upload/w_1920,h_1080,c_fill,f_auto,q_auto/v1759252888/cityexperts/hero/projects-hero",
+    "thumb": "https://res.cloudinary.com/dmawj7tmu/image/upload/w_800,h_600,c_fill,f_auto,q_auto/v1759252888/cityexperts/hero/projects-hero",
+    "small": "https://res.cloudinary.com/dmawj7tmu/image/upload/w_400,h_300,c_fill,f_auto,q_auto/v1759252888/cityexperts/hero/projects-hero",
+    "publicId": "v1759252888/cityexperts/hero/projects-hero"
   },
   "/assets/images/team/ceo-portrait.webp": {
     "original": "https://res.cloudinary.com/dmawj7tmu/image/upload/v1759252889/cityexperts/team/cityexperts/team/ceo-portrait.webp",
