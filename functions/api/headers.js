@@ -13,41 +13,26 @@ function addDebugHeaders(response, env) {
 export async function onRequestGet({ request, env }) {
   try {
     const url = new URL(request.url);
-    const page = url.searchParams.get('page');
-
+    const page = url.searchParams.get('page') || 'index';
+    
     console.log(`[DEBUG] Headers GET: page=${page}`);
-
-    // Load headers from JSON
+    
+    // Load headers from JSON using dynamic import
     let headers = {};
     try {
-      const file = path.join(process.cwd(), "data", "headers.json");
-      const data = await fs.readFile(file, "utf8");
-      headers = JSON.parse(data);
-      console.log(`[DEBUG] Loaded headers for ${Object.keys(headers.pages || {}).length} pages`);
-    } catch (err) {
-      console.log('[DEBUG] No headers.json found');
-      const response = new Response(JSON.stringify({
-        success: true,
-        data: {}
-      }), {
-        status: 200,
-        headers: { "Content-Type": "application/json" }
-      });
-      return addDebugHeaders(response, env);
+      const headersModule = await import('../../data/headers.json', { assert: { type: 'json' } });
+      headers = headersModule.default || headersModule;
+      console.log(`[DEBUG] Loaded headers via dynamic import`);
+    } catch (importError) {
+      console.log(`[DEBUG] Headers import failed: ${importError.message}`);
+      headers = {};
     }
     
-    let result = headers.pages || {};
-    
-    // If specific page requested, return just that page
-    if (page && result[page]) {
-      result = result[page];
-    }
-    
-    console.log(`[DEBUG] Returning headers data`);
+    const pageHeader = headers[page] || null;
     
     const response = new Response(JSON.stringify({
       success: true,
-      data: result
+      data: pageHeader
     }), {
       status: 200,
       headers: { "Content-Type": "application/json" }
