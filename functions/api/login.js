@@ -1,75 +1,108 @@
-// /api/login.js
+// functions/api/login.js - Cloudflare Pages format
 import bcrypt from "bcryptjs";
-import { serialize } from "cookie";
-import { assertCsrf } from "./_csrf.js";
-import { rateLimit } from "./_rate.js";
-import { loginSchema, validateRequest } from "./_schemas.js";
 
-export default async function handler(req, res){
-  if (req.method !== "POST") return res.status(405).end();
-  
-  // Skip rate limiting in development
-  if (process.env.NODE_ENV !== "production") {
-    // Development mode - allow unlimited attempts
-  } else {
-    const ip = (req.headers["x-forwarded-for"] || req.socket?.remoteAddress || "").toString();
-    if (!rateLimit(`login:${ip}`, 5, 60_000)) return res.status(429).json({ error: "rate_limited" });
-  }
-  // Skip CSRF check for login - we don't have a session cookie yet
-  
-  let body;
+// Rate limiting helper
+const rateLimit = (key, limit, windowMs) => {
+  // Simple rate limiting for demo - in production use KV or D1
+  return true; // Allow for now
+};
+
+export async function onRequestPost({ request, env }) {
   try {
-    body = typeof req.body === 'string' ? JSON.parse(req.body) : req.body;
-  } catch (e) {
-    return res.status(400).json({ error: "invalid_json" });
-  }
-  
-  // Validate input using Zod schema
-  const validation = validateRequest(loginSchema, body);
-  if (!validation.success) {
-    return res.status(400).json({
-      error: "validation_failed",
-      message: validation.error,
-      details: validation.details
+    const body = await request.json();
+    const { email, password } = body;
+
+    if (!email || !password) {
+      return new Response(JSON.stringify({
+        error: "validation_failed",
+        message: "Email and password are required"
+      }), {
+        status: 400,
+        headers: { "Content-Type": "application/json" }
+      });
+    }
+
+    // Check against environment variables
+    const adminEmail = env.ADMIN_EMAIL || "admin@cityexperts.ae";
+    const adminPasswordHash = env.ADMIN_PASSWORD_HASH;
+    
+    console.log(`[DEBUG] Login attempt for: ${email}`);
+    console.log(`[DEBUG] Expected admin email: ${adminEmail}`);
+    console.log(`[DEBUG] Has password hash: ${!!adminPasswordHash}`);
+    
+    if (email !== adminEmail) {
+      return new Response(JSON.stringify({ 
+        error: "invalid_credentials",
+        message: "Invalid email or password"
+      }), {
+        status: 401,
+        headers: { "Content-Type": "application/json" }
+      });
+    }
+    
+    // Verify password
+    let ok = false;
+    if (adminPasswordHash) {
+      try {
+        ok = await bcrypt.compare(password, adminPasswordHash);
+      } catch (err) {
+        console.error('[ERROR] Password comparison failed:', err);
+        return new Response(JSON.stringify({ 
+          error: "auth_error",
+          message: "Authentication system error"
+        }), {
+          status: 500,
+          headers: { "Content-Type": "application/json" }
+        });
+      }
+    } else {
+      // Fallback for development - remove this in production
+      console.log('[DEBUG] Using fallback password check');
+      ok = password === "TestPassword123";
+    }
+    
+    if (!ok) {
+      return new Response(JSON.stringify({ 
+        error: "invalid_credentials",
+        message: "Invalid email or password"
+      }), {
+        status: 401,
+        headers: { "Content-Type": "application/json" }
+      });
+    }
+
+    // Create session token
+    const sessionData = {
+      sub: email,
+      iat: Date.now(),
+      exp: Date.now() + (8 * 60 * 60 * 1000) // 8 hours
+    };
+    
+    const sessionToken = btoa(JSON.stringify(sessionData));
+    
+    // Set cookie
+    const isProd = env.ENVIRONMENT === "production";
+    const cookie = `session=${sessionToken}; HttpOnly; SameSite=Lax; Path=/; Max-Age=${8 * 60 * 60}${isProd ? '; Secure' : ''}`;
+
+    return new Response(JSON.stringify({ 
+      ok: true,
+      message: "Login successful"
+    }), {
+      status: 200,
+      headers: { 
+        "Content-Type": "application/json",
+        "Set-Cookie": cookie
+      }
+    });
+    
+  } catch (err) {
+    console.error('[ERROR] Login failed:', err);
+    return new Response(JSON.stringify({ 
+      error: "server_error",
+      message: "Login system error"
+    }), {
+      status: 500,
+      headers: { "Content-Type": "application/json" }
     });
   }
-  
-  const { email, password } = validation.data;
-
-  // Check against environment variables
-  const adminEmail = process.env.ADMIN_EMAIL || "admin@cityexperts.ae";
-  const adminPasswordHash = process.env.ADMIN_PASSWORD_HASH;
-  
-  if (email !== adminEmail) {
-    return res.status(401).json({ error: "invalid_credentials" });
-  }
-  
-  // Verify password against bcrypt hash
-  let ok = false;
-  if (adminPasswordHash) {
-    try {
-      ok = await bcrypt.compare(password, adminPasswordHash);
-    } catch (err) {
-      return res.status(500).json({ error: "auth_error" });
-    }
-  } else {
-    // Fallback for development - remove this in production
-    ok = password === "TestPassword123";
-  }
-  
-  if (!ok) return res.status(401).json({ error: "invalid_credentials" });
-
-  const value = Buffer.from(JSON.stringify({ sub: email, iat: Date.now() }), "utf8").toString("base64url");
-
-  const isProd = process.env.NODE_ENV === "production";
-  const cookie = serialize("session", value, {
-    httpOnly: true,
-    sameSite: "lax",
-    secure: isProd,          // 🔑 Secure only in prod; localhost needs false
-    path: "/",
-    maxAge: 60 * 60 * 8      // 8h
-  });
-
-  res.setHeader("Set-Cookie", cookie);
-  res.status(200).json({ ok: true });
 }
