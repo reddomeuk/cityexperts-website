@@ -85,7 +85,7 @@ npm run deploy:cf
 
 - **Address**: V28V+JR2 - 2 طريق شاحنات الفاية - سيح شعيب - near Round About 1 - Saih Shuaib 2, Dubai, UAE
 - **Phone**: 600 500508 (+971555581631)
-- **Email**: enquiry@cityexpertsdubai.com
+- **Email**: enquiry@cityexpertdubai.com
 - **WhatsApp**: https://wa.me/971555581631
 - **Instagram**: https://www.instagram.com/cityexpertsgroup
 

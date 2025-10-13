@@ -441,7 +441,8 @@
      ======================================== */
 
   /* Footer logo container */
-  footer .flex.items-center.space-x-3 {
+  footer .flex.items-center.space-x-3,
+  footer .footer-logo-container {
     display: flex;
     align-items: center;
     gap: 0.75rem;
@@ -449,7 +450,8 @@
   }
 
   /* Footer logo image styling */
-  footer img[alt="City Experts"] {
+  footer img[alt="City Experts"],
+  footer img[alt="City Expert"] {
     width: 140px;
     height: auto;
     max-height: 40px;
@@ -475,7 +477,8 @@
 
   /* Footer responsive adjustments */
   @media (min-width: 640px) {
-    footer img[alt="City Experts"] {
+    footer img[alt="City Experts"],
+    footer img[alt="City Expert"] {
       width: 160px;
       max-height: 44px;
     }
@@ -486,24 +489,28 @@
   }
 
   @media (min-width: 768px) {
-    footer img[alt="City Experts"] {
+    footer img[alt="City Experts"],
+    footer img[alt="City Expert"] {
       width: 180px;
       max-height: 48px;
     }
     
-    footer .flex.items-center.space-x-3 {
+    footer .flex.items-center.space-x-3,
+    footer .footer-logo-container {
       gap: 1rem;
     }
   }
 
   /* Footer brand hover effect */
-  footer .flex.items-center.space-x-3:hover img {
+  footer .flex.items-center.space-x-3:hover img,
+  footer .footer-logo-container:hover img {
     filter: brightness(1.2) contrast(1.2);
     transform: translateY(-1px);
   }
 
-  footer .flex.items-center.space-x-3:hover .font-playfair {
-    color: var(--oasis-teal);
+  footer .flex.items-center.space-x-3:hover .font-playfair,
+  footer .footer-logo-container:hover .font-playfair {
+    color: var(--color-oasis-teal);
   }
   
   .no-scroll {
@@ -537,9 +544,9 @@
     }
   }
   
-  /* Ensure mobile menu button is visible */
+  /* Mobile menu button visibility */
   #mobile-menu-btn {
-    display: flex;
+    display: flex !important;
     align-items: center;
     justify-content: center;
     padding: 0.5rem;
@@ -547,6 +554,23 @@
   
   @media (min-width: 1024px) {
     #mobile-menu-btn {
+      display: none !important;
+    }
+    
+    /* Ensure desktop nav is visible on large screens */
+    #site-header ul {
+      display: flex !important;
+    }
+  }
+  
+  /* Ensure desktop nav is hidden on mobile */
+  @media (max-width: 1023px) {
+    #site-header ul {
+      display: none !important;
+    }
+    
+    /* Hide desktop right side elements on mobile */
+    #site-header .hidden.lg\\:flex {
       display: none !important;
     }
   }
