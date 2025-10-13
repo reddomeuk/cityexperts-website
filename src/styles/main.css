@@ -310,6 +310,202 @@
     backdrop-filter: saturate(1.2) blur(6px);
   }
   
+  /* ========================================
+     HEADER & LOGO ALIGNMENT OPTIMIZATION
+     ======================================== */
+
+  /* Header logo container */
+  .header-logo img,
+  header a[aria-label*="City Experts"] img {
+    display: block;
+    height: 40px;
+    width: auto;
+    object-fit: contain;
+  }
+  
+  .footer-logo img,
+  footer a img[alt*="City Experts"] {
+    height: 50px;
+    width: auto;
+    filter: brightness(1.1);
+  }
+
+  .header-logo:hover {
+    transform: translateY(-1px);
+  }
+
+  /* Logo image optimization */
+  .header-logo img {
+    width: 160px;
+    height: auto;
+    max-height: 48px;
+    display: block;
+    object-fit: contain;
+    object-position: left center;
+    margin: 0;
+    padding: 0;
+    transition: all 300ms ease-out;
+    filter: drop-shadow(0 1px 3px rgba(0, 0, 0, 0.1));
+  }
+
+  /* Responsive logo sizing */
+  @media (min-width: 640px) {
+    .header-logo img {
+      width: 180px;
+      max-height: 52px;
+    }
+  }
+
+  @media (min-width: 768px) {
+    .header-logo img {
+      width: 200px;
+      max-height: 56px;
+    }
+    
+    .header-logo {
+      gap: 1rem;
+    }
+  }
+
+  @media (min-width: 1024px) {
+    .header-logo img {
+      width: 220px;
+      max-height: 60px;
+    }
+  }
+
+  /* Brand name typography */
+  .header-logo span {
+    font-family: 'Playfair Display', serif;
+    font-size: clamp(1.125rem, 2.5vw, 1.5rem);
+    font-weight: 600;
+    color: var(--deep-charcoal);
+    line-height: 1.2;
+    letter-spacing: -0.01em;
+    white-space: nowrap;
+    transition: color 300ms ease-out;
+  }
+
+  .header-logo:hover span {
+    color: var(--oasis-teal);
+  }
+
+  /* Header height and positioning */
+  #site-header {
+    height: 80px;
+    display: flex;
+    align-items: center;
+    position: sticky;
+    top: 0;
+    z-index: 50;
+    background: rgba(255, 255, 255, 0.95);
+    backdrop-filter: blur(8px);
+    border-bottom: 1px solid rgba(0, 0, 0, 0.05);
+    transition: all 300ms ease-out;
+  }
+
+  #site-header .container {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    height: 100%;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 1.5rem;
+  }
+
+  /* Mobile header adjustments */
+  @media (max-width: 639px) {
+    #site-header {
+      height: 70px;
+    }
+    
+    .header-logo {
+      gap: 0.5rem;
+    }
+    
+    .header-logo span {
+      font-size: 1rem;
+    }
+  }
+
+  /* Sticky header enhanced styles */
+  #site-header.is-sticky {
+    background: rgba(255, 255, 255, 0.98);
+    backdrop-filter: saturate(1.2) blur(12px);
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
+  }
+
+  /* ========================================
+     FOOTER LOGO ALIGNMENT OPTIMIZATION
+     ======================================== */
+
+  /* Footer logo container */
+  footer .flex.items-center.space-x-3 {
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+    margin-bottom: 1.5rem;
+  }
+
+  /* Footer logo image styling */
+  footer img[alt="City Experts"] {
+    width: 140px;
+    height: auto;
+    max-height: 40px;
+    display: block;
+    object-fit: contain;
+    object-position: left center;
+    margin: 0;
+    padding: 0;
+    filter: brightness(1.1) contrast(1.1);
+    transition: all 300ms ease-out;
+  }
+
+  /* Footer brand name typography */
+  footer .font-playfair {
+    font-family: 'Playfair Display', serif;
+    font-size: 1.25rem;
+    font-weight: 600;
+    color: white;
+    line-height: 1.2;
+    letter-spacing: -0.01em;
+    white-space: nowrap;
+  }
+
+  /* Footer responsive adjustments */
+  @media (min-width: 640px) {
+    footer img[alt="City Experts"] {
+      width: 160px;
+      max-height: 44px;
+    }
+    
+    footer .font-playfair {
+      font-size: 1.375rem;
+    }
+  }
+
+  @media (min-width: 768px) {
+    footer img[alt="City Experts"] {
+      width: 180px;
+      max-height: 48px;
+    }
+    
+    footer .flex.items-center.space-x-3 {
+      gap: 1rem;
+    }
+  }
+
+  /* Footer brand hover effect */
+  footer .flex.items-center.space-x-3:hover img {
+    filter: brightness(1.2) contrast(1.2);
+    transform: translateY(-1px);
+  }
+
+  footer .flex.items-center.space-x-3:hover .font-playfair {
+    color: var(--oasis-teal);
+  }
+  
   .no-scroll {
     overflow: hidden;
   }
@@ -817,9 +1013,140 @@
   font-size: 12px; font-weight: 600;
 }
 
-/* Responsive hero typography parity with Home */
-.hero-title { font-size: clamp(32px, 4vw, 56px); line-height: 1.1; letter-spacing: -0.02em; }
-.hero-sub   { font-size: clamp(16px, 2vw, 20px); line-height: 1.55; opacity: .9; }
+/* ========================================
+   HERO SECTION OPTIMIZATION & TRANSITIONS
+   ======================================== */
+
+/* Hero container base styles */
+.hero-container {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  min-height: 700px;
+  overflow: hidden;
+  background-color: #f3f4f6;
+}
+
+/* Hero image optimization */
+.hero-image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center center;
+  display: block;
+  transition: opacity 1000ms ease-out, transform 1000ms ease-out;
+  transform: scale(1.02);
+  z-index: 1;
+  position: relative;
+}
+
+.hero-image.loaded {
+  transform: scale(1);
+}
+
+/* Hero loading states */
+.hero-placeholder {
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(90deg, #f0f0f0 25%, #e0e0e0 50%, #f0f0f0 75%);
+  background-size: 200% 100%;
+  animation: loading-shimmer 2s infinite;
+}
+
+@keyframes loading-shimmer {
+  0% { background-position: -200% 0; }
+  100% { background-position: 200% 0; }
+}
+
+/* Hero fallback state */
+.hero-fallback {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: linear-gradient(135deg, #e5e7eb 0%, #d1d5db 100%);
+  color: #6b7280;
+  text-align: center;
+  font-family: system-ui, sans-serif;
+}
+
+/* Hero content overlay positioning */
+.hero-content {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  padding: 3rem 2rem 2rem;
+  background: linear-gradient(transparent, rgba(0, 0, 0, 0.7));
+  color: white;
+}
+
+/* Hero typography optimization */
+.hero-title { 
+  font-size: clamp(32px, 4vw, 56px); 
+  line-height: 1.1; 
+  letter-spacing: -0.02em;
+  font-weight: 700;
+  margin-bottom: 1rem;
+  text-shadow: 0 2px 8px rgba(0, 0, 0, 0.5);
+}
+
+.hero-sub { 
+  font-size: clamp(16px, 2vw, 20px); 
+  line-height: 1.55; 
+  opacity: 0.95;
+  font-weight: 400;
+  max-width: 600px;
+  text-shadow: 0 1px 4px rgba(0, 0, 0, 0.3);
+}
+
+/* Hero responsive adjustments */
+@media (max-width: 768px) {
+  .hero-container {
+    height: 600px;
+  }
+  
+  .hero-content {
+    padding: 2rem 1.5rem 1.5rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .hero-container {
+    height: 500px;
+  }
+  
+  .hero-content {
+    padding: 1.5rem 1rem 1rem;
+  }
+}
+
+/* Hero scroll indicator enhancement */
+.hero-scroll-indicator {
+  position: absolute;
+  bottom: 2rem;
+  left: 50%;
+  transform: translateX(-50%);
+  color: white;
+  animation: bounce 2s infinite;
+  opacity: 0.8;
+  z-index: 10;
+}
+
+@keyframes bounce {
+  0%, 20%, 50%, 80%, 100% { transform: translateX(-50%) translateY(0); }
+  40% { transform: translateX(-50%) translateY(-10px); }
+  60% { transform: translateX(-50%) translateY(-5px); }
+}
+
+/* Performance optimizations */
+.hero-loaded .hero-image {
+  will-change: auto;
+}
+
+.hero-container:hover .hero-image {
+  transform: scale(1.05);
+  transition: transform 8s ease-out;
+}
 
 /* Enhanced Image Aspect Ratios & Cloudinary Integration */
 .ratio-1x1 { position: relative; width: 100%; padding-top: 100%; }
@@ -841,7 +1168,7 @@
   transition: transform 0.3s ease;
 }
 
-/* Cloudinary responsive image classes */
+/* Image display classes */
 .img-responsive {
   width: 100%;
   height: auto;
@@ -898,6 +1225,58 @@
 
 .img-overlay:hover::after {
   opacity: 1;
+}
+
+/* Timeline styles for About page milestones */
+.timeline {
+  position: relative;
+}
+
+.timeline::before {
+  content: "";
+  position: absolute;
+  left: 50%;
+  top: 0;
+  bottom: 0;
+  width: 4px;
+  background: linear-gradient(to bottom, var(--color-oasis-teal), var(--color-brand-orange));
+  transform: translateX(-50%);
+  z-index: 1;
+}
+
+.timeline-item {
+  position: relative;
+  z-index: 2;
+}
+
+.timeline-item::before {
+  content: "";
+  position: absolute;
+  left: 50%;
+  top: 2rem;
+  width: 16px;
+  height: 16px;
+  background: var(--color-oasis-teal);
+  border: 4px solid white;
+  border-radius: 50%;
+  transform: translateX(-50%);
+  z-index: 3;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+}
+
+.timeline-item:nth-child(even)::before {
+  background: var(--color-brand-orange);
+}
+
+/* Responsive timeline adjustments */
+@media (max-width: 768px) {
+  .timeline::before {
+    left: 2rem;
+  }
+  
+  .timeline-item::before {
+    left: 2rem;
+  }
 }
 
 /* Testimonials Carousel Styles */
@@ -1114,4 +1493,229 @@ html.canary-loaded::before{
 .authed #projectsPageView,
 .authed #projectsView {
   display: block;
+}
+
+/* ========================================
+   HERO SECTION FIX - Remove Grey Bands
+   ======================================== */
+.hero img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
+  display: block;
+}
+
+.hero {
+  position: relative;
+  overflow: hidden;
+  min-height: 100vh;
+  background-color: transparent !important;
+}
+
+.hero::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(to bottom, rgba(0,0,0,0.35), transparent 60%);
+  z-index: 1;
+}
+
+/* Ensure hero containers have proper coverage */
+.hero-container {
+  position: relative;
+  overflow: hidden;
+}
+
+.hero-container img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
+  display: block;
+}
+
+/* ========================================
+   STANDARDIZED CTA BUTTONS
+   ======================================== */
+a.btn, a.cta {
+  display: inline-block;
+  text-align: center;
+  padding: 1rem 2.5rem;
+  font-weight: 600;
+  border-radius: 1rem;
+  transition: all 0.3s ease;
+  text-decoration: none;
+}
+
+a.btn:hover, a.cta:hover {
+  opacity: 0.9;
+  transform: translateY(-1px);
+}
+
+/* Primary CTA Consistency */
+a.btn-primary, 
+.btn-primary {
+  background-color: var(--color-brand-orange);
+  color: white;
+  font-size: 1.125rem;
+  font-weight: 600;
+  padding: 1rem 2.5rem;
+  border-radius: 0.75rem;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  transition: all 0.3s ease;
+}
+
+a.btn-primary:hover,
+.btn-primary:hover {
+  background-color: var(--color-oasis-teal);
+  transform: translateY(-2px);
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
+}
+
+/* Large button variant */
+a.btn-large,
+.btn-large {
+  font-size: 1.25rem;
+  padding: 1.25rem 3rem;
+}
+
+@media (min-width: 768px) {
+  a.btn-large,
+  .btn-large {
+    font-size: 1.375rem;
+    padding: 1.5rem 3.5rem;
+  }
+}
+
+/* ========================================
+   ENHANCED HERO SECTION - FULL COVERAGE
+   ======================================== */
+.hero {
+  position: relative;
+  min-height: 100vh; /* Full screen hero */
+  overflow: hidden;
+  background-color: transparent !important;
+}
+
+.hero img,
+.hero-image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
+  display: block;
+}
+
+.hero > .overlay {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(to bottom, rgba(0, 0, 0, 0.4), transparent 60%);
+  z-index: 1;
+}
+
+/* Hero container positioning */
+.hero-container {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+}
+
+/* Ensure no gaps between sections */
+section + section {
+  margin-top: 0;
+  padding-top: 0;
+}
+
+/* Mobile optimization for hero images */
+@media (max-width: 768px) {
+  .hero img,
+  .hero-image {
+    object-position: center top;
+  }
+  
+  .hero {
+    min-height: 90vh; /* Slightly smaller on mobile for better UX */
+  }
+}
+
+/* Ensure hero content stays on top */
+.hero .relative {
+  z-index: 10;
+}
+
+/* ========================================
+   HEADER & FOOTER LOGO ALIGNMENT FIX
+   ======================================== */
+header img, footer img {
+  object-fit: contain;
+  display: inline-block;
+  vertical-align: middle;
+}
+
+footer img {
+  filter: brightness(1.2) contrast(1.1);
+  mix-blend-mode: lighten;
+}
+
+header .flex, footer .flex {
+  align-items: center;
+  justify-content: center;
+}
+
+/* Enhanced logo transparency and shadows */
+header img {
+  filter: drop-shadow(0 2px 4px rgba(0, 0, 0, 0.1));
+}
+
+footer img {
+  filter: brightness(1.2) contrast(1.1) drop-shadow(0 1px 2px rgba(255, 255, 255, 0.2));
+  mix-blend-mode: lighten;
+}
+
+/* Logo text alignment */
+header span, footer h3 {
+  letter-spacing: 0.025em;
+}
+
+/* ========================================
+   ENHANCED LOGO STYLING - NO WHITE BACKGROUND
+   ======================================== */
+
+/* Remove white background and make logos crisp */
+.logo-clean {
+  background: transparent !important;
+  mix-blend-mode: darken;
+  image-rendering: -webkit-optimize-contrast;
+  image-rendering: crisp-edges;
+  filter: contrast(1.2) saturate(1.1);
+}
+
+/* Header logo specific styling */
+.logo-header {
+  background: transparent !important;
+  mix-blend-mode: normal;
+  image-rendering: -webkit-optimize-contrast;
+  image-rendering: crisp-edges;
+  filter: drop-shadow(0 1px 2px rgba(0, 0, 0, 0.1));
+}
+
+/* Footer logo - simple approach for dark background */
+.logo-footer {
+  background: transparent !important;
+  mix-blend-mode: normal;
+  filter: brightness(1.1) contrast(1.1);
+  image-rendering: -webkit-optimize-contrast;
+  image-rendering: crisp-edges;
+}
+
+/* Mobile menu logo */
+.logo-mobile {
+  background: transparent !important;
+  mix-blend-mode: normal;
+  image-rendering: -webkit-optimize-contrast;
+  image-rendering: crisp-edges;
+  filter: drop-shadow(0 1px 2px rgba(0, 0, 0, 0.1));
 }

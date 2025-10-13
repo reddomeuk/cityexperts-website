@@ -1,0 +1,29 @@
+{
+  "home": [
+    "hero-dubai-skyline.webp"
+  ],
+  "about": [
+    "Camp Project.png"
+  ],
+  "logo": [
+    "logo.png"
+  ],
+  "team": [
+    "Sibi (Managing Director).png",
+    "Sundar (Chairman).png",
+    "ceo-portrait.webp",
+    "coo-portrait.webp",
+    "design-head-portrait.webp"
+  ],
+  "projects": {
+    "commercial": [
+      "commericial-project02"
+    ],
+    "interior": [
+      "project1"
+    ],
+    "villa": [
+      "villa-project01"
+    ]
+  }
+}

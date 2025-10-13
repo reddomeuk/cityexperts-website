@@ -159,3 +159,40 @@ build/
 
 # Image optimization reports
 IMAGE_OPTIMIZATION_REPORT.md
+
+# Development and staging files
+upload-batch/
+debug-*.html
+test-*.html
+test-*.js
+*-backup.*
+*-old.*
+*-temp.*
+*.tmp
+
+# Large asset directories (use Cloudinary instead)
+src/assets/
+raw-images/
+unoptimized/
+
+# Wrangler development
+.wrangler/
+
+# Environment files
+.env*
+!.env.example
+
+# Admin and development tools
+admin-*.html
+debug/
+temp/
+staging/
+
+# Database files
+*.db
+*.sqlite
+*.sql.backup
+
+# Cloudflare specific
+wrangler.toml.backup
+.pages.yml.backup

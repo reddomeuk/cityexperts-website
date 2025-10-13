@@ -12,13 +12,13 @@
   <meta property="og:description" content="Discover our 20+ year journey in UAE construction, our leadership team, and our commitment to delivering landmark projects.">
   <meta property="og:type" content="website">
   <meta property="og:url" content="https://cityexperts.ae/about">
-  <meta property="og:image" content="https://res.cloudinary.com/dmawj7tmu/image/upload/v1759252854/cityexperts/hero/cityexperts/hero/about-hero.webp">
+  <meta property="og:image" content="/assets/images/about-hero.webp">
   
   <!-- Twitter Card -->
   <meta name="twitter:card" content="summary_large_image">
   <meta name="twitter:title" content="About City Experts - Construction Excellence">
   <meta name="twitter:description" content="20+ years delivering landmark projects across UAE with 650+ construction specialists.">
-  <meta name="twitter:image" content="https://res.cloudinary.com/dmawj7tmu/image/upload/v1759252854/cityexperts/hero/cityexperts/hero/about-hero.webp">
+  <meta name="twitter:image" content="/assets/images/about-hero.webp">
   
   <!-- JSON-LD Structured Data -->
   <script type="application/ld+json">
@@ -35,7 +35,25 @@
       "areaServed": {
         "@type": "Country",
         "name": "United Arab Emirates"
-      }
+      },
+      "address": {
+        "@type": "PostalAddress",
+        "streetAddress": "V28V+JR2 - 2 طريق شاحنات الفاية - سيح شعيب - near Round About 1 - Saih Shuaib 2",
+        "addressLocality": "Dubai",
+        "addressCountry": "AE"
+      },
+      "contactPoint": {
+        "@type": "ContactPoint",
+        "telephone": "+971555581631",
+        "contactType": "customer service",
+        "areaServed": "AE",
+        "availableLanguage": ["en", "ar"]
+      },
+      "email": "enquiry@cityexpertsdubai.com",
+      "sameAs": [
+        "https://www.instagram.com/cityexpertsgroup?igsh=MTRjMTA3ZzAzdzhnMA==",
+        "https://wa.me/971555581631"
+      ]
     }
   }
   </script>
@@ -47,7 +65,7 @@
   <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
   
   <!-- Preload critical resources -->
-  <link rel="preload" href="https://res.cloudinary.com/dmawj7tmu/image/upload/c_fill,w_1920,h_1080,q_auto,f_auto/v1759252854/cityexperts/hero/cityexperts/hero/about-hero.webp" as="image">
+  <link rel="preload" href="/assets/images/about-hero.webp" as="image">
   
   <!-- Skip link for accessibility -->
   <a href="#main-content" class="skip-link sr-only focus:not-sr-only focus:absolute focus:top-4 focus:left-4 bg-oasis-teal text-white px-4 py-2 rounded-md z-50">Skip to main content</a>
@@ -216,15 +234,36 @@
       display: grid;
       grid-template-columns: repeat(1, minmax(0, 1fr));
       gap: 2rem;
+      max-width: 800px;
+      margin: 0 auto;
     }
     @media (min-width: 768px) {
       .leadership-grid {
         grid-template-columns: repeat(2, minmax(0, 1fr));
       }
     }
-    @media (min-width: 1024px) {
-      .leadership-grid {
-        grid-template-columns: repeat(3, minmax(0, 1fr));
+
+    /* Timeline Alternating Layout */
+    @media (min-width: 768px) {
+      .timeline {
+        position: relative;
+      }
+      .timeline-item {
+        position: relative;
+        min-height: 140px;
+        margin-bottom: 4rem;
+      }
+      .timeline-content-left {
+        position: absolute;
+        left: 0;
+        right: 55%;
+        text-align: right;
+      }
+      .timeline-content-right {
+        position: absolute;
+        left: 55%;
+        right: 0;
+        text-align: left;
       }
     }
   </style>
@@ -234,11 +273,19 @@
   <!-- Header / Navigation -->
   <nav id="site-header" class="fixed top-0 inset-x-0 z-40 bg-transparent transition-colors">
     <div class="container-custom">
-      <div class="flex h-20 items-center justify-between">
+      <div class="flex h-20 items-center">
         <!-- Logo -->
-        <a href="/" class="flex items-center gap-3" aria-label="City Experts Home">
-          <img src="https://res.cloudinary.com/dmawj7tmu/image/upload/v1759252857/cityexperts/logos/cityexperts/logos/city-experts-logo.svg" alt="City Experts" class="h-10 w-auto">
-          <span class="font-playfair text-xl font-semibold text-deep-charcoal">City Experts</span>
+        <a href="/" class="flex items-center gap-3 mr-12" aria-label="City Experts Home">
+          <img
+            src="/assets/images/logo/logo.png"
+            alt="City Experts"
+            width="120" height="32"
+            class="block h-10 w-auto object-contain logo-header"
+            decoding="async"
+          />
+          <span class="font-playfair text-xl font-semibold text-deep-charcoal leading-none tracking-wide">
+            City Experts
+          </span>
         </a>
 
         <!-- Desktop nav -->
@@ -250,8 +297,26 @@
           <li><a href="/contact.html"  class="nav-link" data-translate="nav.contact">Contact</a></li>
         </ul>
 
-        <!-- Right side (lang + CTA) -->
+        <!-- Right side (contact icons, lang + CTA) -->
         <div class="hidden lg:flex items-center gap-4">
+          <!-- Contact Icons -->
+          <div class="flex items-center gap-3 mr-2">
+            <a href="https://wa.me/971555581631" target="_blank" rel="noopener noreferrer" 
+               class="p-2 text-deep-charcoal hover:text-brand-orange transition-colors" 
+               aria-label="Chat with us on WhatsApp">
+              <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24">
+                <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893A11.821 11.821 0 0020.885 3.488"/>
+              </svg>
+            </a>
+            <a href="mailto:enquiry@cityexpertsdubai.com" 
+               class="p-2 text-deep-charcoal hover:text-brand-orange transition-colors" 
+               aria-label="Send us an email">
+              <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 8l7.89 4.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"/>
+              </svg>
+            </a>
+          </div>
+          
           <button id="lang-toggle" class="text-sm text-deep-charcoal hover:text-oasis-teal transition-colors"
                   aria-label="Switch language">EN | AR</button>
           <a href="/contact.html" class="btn btn-primary" data-translate="nav.request-proposal">Request a Proposal</a>
@@ -275,7 +340,13 @@
       <div class="absolute inset-0 bg-deep-charcoal/60 backdrop-blur-sm" data-close-drawer></div>
       <aside class="relative ml-auto h-full w-80 max-w-[85%] bg-white shadow-strong p-6 flex flex-col">
         <div class="flex items-center justify-between mb-6">
-          <img src="https://res.cloudinary.com/dmawj7tmu/image/upload/v1759252857/cityexperts/logos/cityexperts/logos/city-experts-logo.svg" alt="City Experts" class="h-8 w-auto">
+          <img
+            src="/assets/images/logo/logo.png"
+            alt="City Experts"
+            width="96" height="26"
+            class="block h-8 w-auto object-contain logo-mobile"
+            decoding="async"
+          />
           <button class="p-2" aria-label="Close menu" data-close-drawer>
             <svg class="w-6 h-6" viewBox="0 0 24 24" fill="none" stroke="currentColor">
               <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
@@ -309,26 +380,14 @@
   <!-- Main Content -->
   <main id="main-content">
     <!-- Hero Section -->
-    <section class="relative min-h-screen flex items-center justify-center overflow-hidden">
+    <section class="relative hero min-h-screen flex items-center justify-center overflow-hidden">
       <!-- Background Image with Parallax -->
       <div class="absolute inset-0" data-parallax="0.5">
-        <picture>
-          <source media="(min-width: 1200px)" srcset="https://res.cloudinary.com/dmawj7tmu/image/upload/c_fill,w_1920,h_1080,q_auto,f_auto/v1759252854/cityexperts/hero/cityexperts/hero/about-hero.webp">
-          <source media="(min-width: 768px)" srcset="https://res.cloudinary.com/dmawj7tmu/image/upload/c_fill,w_1200,h_800,q_auto,f_auto/v1759252854/cityexperts/hero/cityexperts/hero/about-hero.webp">
-          <img 
-            src="https://res.cloudinary.com/dmawj7tmu/image/upload/c_fill,w_800,h_600,q_auto,f_auto/v1759252854/cityexperts/hero/cityexperts/hero/about-hero.webp"
-            srcset="https://res.cloudinary.com/dmawj7tmu/image/upload/c_fill,w_800,h_600,q_auto,f_auto/v1759252854/cityexperts/hero/cityexperts/hero/about-hero.webp 800w,
-                    https://res.cloudinary.com/dmawj7tmu/image/upload/c_fill,w_1200,h_800,q_auto,f_auto/v1759252854/cityexperts/hero/cityexperts/hero/about-hero.webp 1200w,
-                    https://res.cloudinary.com/dmawj7tmu/image/upload/c_fill,w_1920,h_1080,q_auto,f_auto/v1759252854/cityexperts/hero/cityexperts/hero/about-hero.webp 1920w"
-            sizes="100vw"
-            alt="City Experts team working on construction project"
-            width="1920"
-            height="1080"
-            class="w-full h-full object-cover"
-            data-critical
-          >
-        </picture>
-        <div class="absolute inset-0 bg-gradient-hero"></div>
+        <!-- Hero image container for hero-loader.js -->
+        <div id="hero-about" class="hero-container absolute inset-0 w-full h-full">
+          <!-- This will be populated by hero-loader.js -->
+        </div>
+        <div class="absolute inset-0 bg-gradient-to-b from-black/40 via-transparent to-transparent"></div>
       </div>
       
       <!-- Hero Content -->
@@ -419,8 +478,8 @@
           
           <div class="relative" data-animate="fade-up" data-animate-delay="200">
             <img 
-              src="https://res.cloudinary.com/dmawj7tmu/image/upload/v1759252861/cityexperts/general/cityexperts/general/company-story.webp" loading="lazy" decoding="async" 
-              alt="City Experts construction team working on landmark project"
+              src="/assets/images/about/city-expert-office.webp" loading="lazy" decoding="async" 
+              alt="City Experts office and workplace culture"
               class="w-full h-auto rounded-2xl shadow-strong"
               loading="lazy"
             >
@@ -549,9 +608,59 @@
           </p>
         </div>
         
-        <!-- Dynamic team grid (populated by team.js) -->
+        <!-- Leadership Team Grid -->
         <div class="leadership-grid justify-items-center">
-          <!-- Team members will be dynamically loaded here -->
+          <!-- Mr. Sundar - Chairman -->
+          <div class="leadership-card card card-hover p-0 overflow-hidden group w-full max-w-sm" data-animate="fade-up" data-animate-delay="100">
+            <div class="relative overflow-hidden">
+              <img 
+                src="/assets/images/team/Sundar (Chairman).png"
+                alt="Mr. Sundar - Chairman"
+                width="400"
+                height="400"
+                class="w-full h-96 object-cover object-[center_top] group-hover:scale-105 transition-transform duration-500"
+                loading="lazy"
+                decoding="async"
+              >
+              <div class="absolute inset-0 bg-gradient-to-t from-deep-charcoal/80 via-transparent to-transparent"></div>
+              <div class="absolute bottom-0 left-0 right-0 p-6 text-white">
+                <h3 class="text-xl font-semibold mb-1">Mr. Sundar</h3>
+                <p class="text-brand-orange font-medium mb-2">Chairman</p>
+                <p class="text-sm text-white/80">Strategic Leadership & Vision</p>
+              </div>
+            </div>
+            <div class="p-6">
+              <p class="text-deep-charcoal/70 leading-relaxed">
+                As a company which involves dynamism and credibility, City Expert Group involves in various activities such as Interior Décor, MEP works, Construction, Advertising, Fire Alarm & Fire Fighting Works, Fire Equipment Trading, Security Control, Facility Management, Landscaping, etc. Our prime motive is to ensure optimum satisfaction for our clients and upholding their trust on us. City Expert Group has begun the journey from the year 2003 with a focus to become the outstanding service provided in the field of Construction, Electromechanical, Turnkey Fitout, Fire, ELV System, Facilities Management etc. As pioneers in initiating various types of core services, we are proud to keep our promises to our esteemed clients. Through these many years, we had clearly stated our benchmark on expanding our services in the electronic low voltage systems like fire, security and advertising field. We are proud to see our company's growth into an amazing environment for more than 250 employees which include highly talented professional designers, engineers, technicians and skilled workers. Our agreements with various firms as well as precious client support had boosted our name in the industry. Our optimism and hard work had always been rewarded. We are passionate about our field of operation and looking forward to guaranteeing the words given to our clients.
+              </p>
+            </div>
+          </div>
+
+          <!-- Mr. Sibi - Managing Director -->
+          <div class="leadership-card card card-hover p-0 overflow-hidden group w-full max-w-sm" data-animate="fade-up" data-animate-delay="200">
+            <div class="relative overflow-hidden">
+              <img 
+                src="/assets/images/team/Sibi (Managing Director).png"
+                alt="Mr. Sibi - Managing Director"
+                width="400"
+                height="400"
+                class="w-full h-96 object-cover object-[center_top] group-hover:scale-105 transition-transform duration-500"
+                loading="lazy"
+                decoding="async"
+              >
+              <div class="absolute inset-0 bg-gradient-to-t from-deep-charcoal/80 via-transparent to-transparent"></div>
+              <div class="absolute bottom-0 left-0 right-0 p-6 text-white">
+                <h3 class="text-xl font-semibold mb-1">Mr. Sibi</h3>
+                <p class="text-brand-orange font-medium mb-2">Managing Director</p>
+                <p class="text-sm text-white/80">Operations & Client Relations</p>
+              </div>
+            </div>
+            <div class="p-6">
+              <p class="text-deep-charcoal/70 leading-relaxed">
+                I would like to take this opportunity to thank our valued customers, whose continued patronage and support for going ahead in our business. Words may fall short, if I sum up the gratitude in mere words. Trusting in us for our services had always made us stronger and finer. As a company which has key concerns over electrical, mechanical and civil services, we are keen on addressing the need of our customers through efficient, credible, budget-oriented and time bound criteria. Our products and services ensure the best quality as well as durability. The technical experts in City expert group never fail to allocate their time in the projects allotted to them. We have been ranked as one of the best in services without compromising in client interaction. We believe that technology is the key to succeed in the present era. Be it a small industrial set up or a larger firm, City expert, Dubai meets up the requirements of their clients. We are experts in figuring out the real need, working on the project plan and resulting in a wonderful output. Our strength and power are our dedicated employees who meet their passion in city expert group. Sustainable relations with clients, employees, and experts always brings victory with colours. I therefore, seek continued support from our valued customers, teamwork of our employees and gratitude to our well-wishers who have contributed to the growth of the company.
+              </p>
+            </div>
+          </div>
         </div>
       </div>
     </section>
@@ -641,7 +750,7 @@
           
           <div class="relative" data-animate="fade-up" data-animate-delay="200">
             <img 
-              src="https://res.cloudinary.com/dmawj7tmu/image/upload/v1759252855/cityexperts/general/cityexperts/general/capabilities-showcase.webp" loading="lazy" decoding="async" 
+              src="/assets/images/capabilities-showcase.webp" loading="lazy" decoding="async" 
               alt="City Experts construction capabilities showcase"
               class="w-full h-auto rounded-2xl shadow-strong"
               loading="lazy"
@@ -675,9 +784,9 @@
           <div class="timeline-line-mobile absolute left-8 top-0 w-1 h-full bg-brand-orange/20 md:hidden"></div>
           
           <div class="space-y-12 md:space-y-16">
-            <!-- 2003 - Founded -->
-            <div class="timeline-item" data-animate="fade-up" data-animate-delay="100">
-              <div class="w-full md:w-1/2 pl-16 md:pl-0 md:pr-8 md:text-right">
+            <!-- 2003 - Founded (LEFT SIDE) -->
+            <div class="timeline-item relative" data-animate="fade-up" data-animate-delay="100">
+              <div class="timeline-content-left pl-16 md:pl-0">
                 <div class="bg-white p-6 rounded-2xl shadow-medium">
                   <div class="text-2xl font-bold text-brand-orange mb-2">2003</div>
                   <h3 class="text-xl font-semibold mb-3">Company Founded</h3>
@@ -686,15 +795,12 @@
                   </p>
                 </div>
               </div>
-              <div class="absolute left-8 md:left-1/2 transform md:-translate-x-1/2 w-4 h-4 bg-brand-orange rounded-full border-4 border-white"></div>
-              <div class="hidden md:block w-1/2 pl-8"></div>
+              <div class="absolute left-8 md:left-1/2 transform md:-translate-x-1/2 w-4 h-4 bg-brand-orange rounded-full border-4 border-white z-10 top-6"></div>
             </div>
             
-            <!-- 2007 - First Major Project -->
-            <div class="timeline-item" data-animate="fade-up" data-animate-delay="200">
-              <div class="hidden md:block w-1/2 pr-8"></div>
-              <div class="absolute left-8 md:left-1/2 transform md:-translate-x-1/2 w-4 h-4 bg-brand-orange rounded-full border-4 border-white"></div>
-              <div class="w-full md:w-1/2 pl-16 md:pl-8">
+            <!-- 2007 - First Major Project (RIGHT SIDE) -->
+            <div class="timeline-item relative" data-animate="fade-up" data-animate-delay="200">
+              <div class="timeline-content-right pl-16 md:pl-0">
                 <div class="bg-white p-6 rounded-2xl shadow-medium">
                   <div class="text-2xl font-bold text-brand-orange mb-2">2007</div>
                   <h3 class="text-xl font-semibold mb-3">First Major Commercial Project</h3>
@@ -703,11 +809,12 @@
                   </p>
                 </div>
               </div>
+              <div class="absolute left-8 md:left-1/2 transform md:-translate-x-1/2 w-4 h-4 bg-brand-orange rounded-full border-4 border-white z-10 top-6"></div>
             </div>
             
-            <!-- 2012 - Team Expansion -->
-            <div class="timeline-item" data-animate="fade-up" data-animate-delay="300">
-              <div class="w-full md:w-1/2 pl-16 md:pl-0 md:pr-8 md:text-right">
+            <!-- 2012 - Team Expansion (LEFT SIDE) -->
+            <div class="timeline-item relative" data-animate="fade-up" data-animate-delay="300">
+              <div class="timeline-content-left pl-16 md:pl-0">
                 <div class="bg-white p-6 rounded-2xl shadow-medium">
                   <div class="text-2xl font-bold text-brand-orange mb-2">2012</div>
                   <h3 class="text-xl font-semibold mb-3">Major Team Expansion</h3>
@@ -716,15 +823,12 @@
                   </p>
                 </div>
               </div>
-              <div class="absolute left-8 md:left-1/2 transform md:-translate-x-1/2 w-4 h-4 bg-brand-orange rounded-full border-4 border-white"></div>
-              <div class="hidden md:block w-1/2 pl-8"></div>
+              <div class="absolute left-8 md:left-1/2 transform md:-translate-x-1/2 w-4 h-4 bg-brand-orange rounded-full border-4 border-white z-10 top-6"></div>
             </div>
             
-            <!-- 2018 - Award Recognition -->
-            <div class="timeline-item" data-animate="fade-up" data-animate-delay="400">
-              <div class="hidden md:block w-1/2 pr-8"></div>
-              <div class="absolute left-8 md:left-1/2 transform md:-translate-x-1/2 w-4 h-4 bg-brand-orange rounded-full border-4 border-white"></div>
-              <div class="w-full md:w-1/2 pl-16 md:pl-8">
+            <!-- 2018 - Award Recognition (RIGHT SIDE) -->
+            <div class="timeline-item relative" data-animate="fade-up" data-animate-delay="400">
+              <div class="timeline-content-right pl-16 md:pl-0">
                 <div class="bg-white p-6 rounded-2xl shadow-medium">
                   <div class="text-2xl font-bold text-brand-orange mb-2">2018</div>
                   <h3 class="text-xl font-semibold mb-3">Industry Recognition</h3>
@@ -733,11 +837,12 @@
                   </p>
                 </div>
               </div>
+              <div class="absolute left-8 md:left-1/2 transform md:-translate-x-1/2 w-4 h-4 bg-brand-orange rounded-full border-4 border-white z-10 top-6"></div>
             </div>
             
-            <!-- 2023 - Current -->
-            <div class="timeline-item" data-animate="fade-up" data-animate-delay="500">
-              <div class="w-full md:w-1/2 pl-16 md:pl-0 md:pr-8 md:text-right">
+            <!-- 2023 - Current (LEFT SIDE) -->
+            <div class="timeline-item relative" data-animate="fade-up" data-animate-delay="500">
+              <div class="timeline-content-left pl-16 md:pl-0">
                 <div class="bg-white p-6 rounded-2xl shadow-medium">
                   <div class="text-2xl font-bold text-brand-orange mb-2">2023</div>
                   <h3 class="text-xl font-semibold mb-3">650+ Team Members</h3>
@@ -746,8 +851,7 @@
                   </p>
                 </div>
               </div>
-              <div class="absolute left-8 md:left-1/2 transform md:-translate-x-1/2 w-4 h-4 bg-brand-orange rounded-full border-4 border-white"></div>
-              <div class="hidden md:block w-1/2 pl-8"></div>
+              <div class="absolute left-8 md:left-1/2 transform md:-translate-x-1/2 w-4 h-4 bg-brand-orange rounded-full border-4 border-white z-10 top-6"></div>
             </div>
           </div>
         </div>
@@ -783,9 +887,15 @@
       <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 mb-12">
         <!-- Company Info -->
         <div class="lg:col-span-2">
-          <div class="flex items-center space-x-3 mb-6">
-            <img src="https://res.cloudinary.com/dmawj7tmu/image/upload/v1759252857/cityexperts/logos/cityexperts/logos/city-experts-logo.svg" alt="City Experts" class="h-8 w-auto">
-            <span class="font-playfair text-xl font-semibold">City Experts</span>
+          <div class="flex items-center gap-3">
+            <img
+              src="/assets/images/logo/logo.png"
+              alt="City Experts"
+              width="112" height="30"
+              class="block h-8 w-auto object-contain logo-footer"
+              decoding="async"
+            />
+            <span class="font-playfair text-lg font-semibold text-white leading-none">City Experts</span>
           </div>
           <p class="text-white/80 mb-6 max-w-md" data-translate="footer.about-text">
             City Experts is a UAE-born construction and interiors company delivering complex commercial landmarks and elegant residential spaces.
@@ -833,18 +943,44 @@
           <div>
             <h4 class="font-semibold mb-2" data-translate="footer.address-title">Address</h4>
             <p class="text-white/80" data-translate="footer.address">
-              Business Bay, Dubai<br>
-              United Arab Emirates
+              V28V+JR2 - 2 طريق شاحنات الفاية - سيح شعيب<br>
+              near Round About 1 - Saih Shuaib 2<br>
+              Dubai - United Arab Emirates
             </p>
           </div>
           <div>
             <h4 class="font-semibold mb-2" data-translate="footer.phone-title">Phone</h4>
-            <a href="tel:+97141234567" class="text-white/80 hover:text-brand-orange transition-colors">+971 4 123 4567</a>
+            <a href="tel:+971555581631" class="text-white/80 hover:text-brand-orange transition-colors">600 500508</a>
           </div>
           <div>
             <h4 class="font-semibold mb-2" data-translate="footer.email-title">Email</h4>
-            <a href="mailto:info@cityexperts.ae" class="text-white/80 hover:text-brand-orange transition-colors">info@cityexperts.ae</a>
+            <a href="mailto:enquiry@cityexpertsdubai.com" class="text-white/80 hover:text-brand-orange transition-colors">enquiry@cityexpertsdubai.com</a>
           </div>
+        </div>
+
+        <!-- Social Links -->
+        <div class="flex justify-center space-x-6 mt-8">
+          <a href="https://wa.me/971555581631" target="_blank" rel="noopener noreferrer" 
+             class="text-white/80 hover:text-brand-orange transition-colors" 
+             aria-label="Chat with us on WhatsApp">
+            <svg class="w-6 h-6" fill="currentColor" viewBox="0 0 24 24">
+              <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893A11.821 11.821 0 0020.885 3.488"/>
+            </svg>
+          </a>
+          <a href="mailto:enquiry@cityexpertsdubai.com" 
+             class="text-white/80 hover:text-brand-orange transition-colors" 
+             aria-label="Send us an email">
+            <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 8l7.89 4.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"/>
+            </svg>
+          </a>
+          <a href="https://www.instagram.com/cityexpertsgroup?igsh=MTRjMTA3ZzAzdzhnMA==" target="_blank" rel="noopener noreferrer"
+             class="text-white/80 hover:text-brand-orange transition-colors" 
+             aria-label="Follow us on Instagram">
+            <svg class="w-6 h-6" fill="currentColor" viewBox="0 0 24 24">
+              <path d="M12.017 0C5.396 0 .029 5.367.029 11.987c0 6.62 5.367 11.987 11.988 11.987 6.62 0 11.987-5.367 11.987-11.987C24.014 5.367 18.637.001 12.017.001zM8.449 16.988c-1.297 0-2.448-.49-3.328-1.297C4.243 14.794 3.8 13.643 3.8 12.346c0-1.297.443-2.448 1.321-3.328.88-.88 2.031-1.321 3.328-1.321 1.297 0 2.448.441 3.328 1.321.88.88 1.321 2.031 1.321 3.328 0 1.297-.441 2.448-1.321 3.328-.88.807-2.031 1.314-3.328 1.314zm7.718-10.8c-.318 0-.586-.268-.586-.586s.268-.586.586-.586.586.268.586.586-.268.586-.586.586zM16.988 12.346c0 2.759-2.252 5.011-5.011 5.011s-5.011-2.252-5.011-5.011 2.252-5.011 5.011-5.011 5.011 2.252 5.011 5.011z"/>
+            </svg>
+          </a>
         </div>
       </div>
       
@@ -858,7 +994,32 @@
   </footer>
 
   <!-- Load JavaScript -->
-  <script type="module" src="/js/team.js"></script>
   <script type="module" src="/js/main.js"></script>
+  <script type="module" src="/js/hero-loader.js"></script>
+  
+  <!-- Initialize local image loading -->
+  <script type="module">
+    // Simple image loading - images are already set in HTML with proper src attributes
+    document.addEventListener('DOMContentLoaded', () => {
+      console.log('🖼️ Local image system ready');
+      
+      // Ensure hero image is visible
+      const heroImage = document.querySelector('#hero-section img');
+      if (heroImage) {
+        heroImage.style.opacity = '1';
+        console.log('✅ About hero image visible');
+      }
+      
+      // Ensure logos are visible
+      const logos = document.querySelectorAll('img[alt*="logo"], img[alt*="Logo"]');
+      logos.forEach(logo => {
+        if (logo.src && !logo.complete) {
+          logo.onload = () => console.log('✅ Logo loaded:', logo.src);
+        }
+      });
+      
+      console.log('🎉 About page image system initialized');
+    });
+  </script>
 </body>
 </html>

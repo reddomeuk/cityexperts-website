@@ -7,6 +7,7 @@
   <meta name="robots" content="noindex, nofollow">
   <script>document.documentElement.classList.add('auth-pending');</script>
   <script type="module" src="/js/main.js"></script>
+  <script type="module" src="/js/hero-loader.js"></script>
   <style>
     /* Hide dashboard by default until session confirmed */
     .auth-pending #dashView { display: none !important; }
@@ -235,8 +236,8 @@
   <nav id="site-header" class="fixed top-0 inset-x-0 z-40 bg-white border-b border-gray-200">
     <div class="container-custom">
       <div class="flex h-16 items-center justify-between">
-        <a href="/" class="flex items-center gap-3" aria-label="City Experts Home">
-          <img src="https://res.cloudinary.com/dmawj7tmu/image/upload/v1759252857/cityexperts/logos/cityexperts/logos/city-experts-logo.svg" alt="City Experts" class="h-8 w-auto">
+        <a href="/" class="header-logo flex items-center gap-3" aria-label="City Experts Home">
+          <img src="/assets/images/city-experts-logo.svg" alt="City Experts" class="h-8 w-auto">
           <span class="font-playfair text-lg font-semibold text-deep-charcoal">City Experts Admin</span>
         </a>
         <div class="authed">
@@ -297,7 +298,7 @@
           <div class="simple-grid">
             <div class="simple-item">
               <div id="homeHeaderPreview">
-                <img src="https://res.cloudinary.com/dmawj7tmu/image/upload/v1759252864/cityexperts/hero/hero-dubai-skyline.webp" alt="Home page header">
+                <img src="/assets/images/hero-dubai-skyline.webp" alt="Home page header">
               </div>
               <h3 style="margin: 8px 0 4px; font-weight: 600;">Home Page</h3>
               <div style="display: flex; gap: 8px; justify-content: center; margin-top: 8px;">
@@ -308,7 +309,7 @@
             
             <div class="simple-item">
               <div id="aboutHeaderPreview">
-                <img src="https://res.cloudinary.com/dmawj7tmu/image/upload/v1759252854/cityexperts/hero/about-hero.webp" alt="About page header">
+                <img src="/assets/images/about-hero.webp" alt="About page header">
               </div>
               <h3 style="margin: 8px 0 4px; font-weight: 600;">About Page</h3>
               <div style="display: flex; gap: 8px; justify-content: center; margin-top: 8px;">
@@ -319,7 +320,7 @@
             
             <div class="simple-item">
               <div id="servicesHeaderPreview">
-                <img src="https://res.cloudinary.com/dmawj7tmu/image/upload/v1759252864/cityexperts/hero/hero-dubai-skyline.webp" alt="Services page header">
+                <img src="/assets/images/hero-dubai-skyline.webp" alt="Services page header">
               </div>
               <h3 style="margin: 8px 0 4px; font-weight: 600;">Services Page</h3>
               <div style="display: flex; gap: 8px; justify-content: center; margin-top: 8px;">
@@ -330,7 +331,7 @@
             
             <div class="simple-item">
               <div id="projectsHeaderPreview">
-                <img src="https://res.cloudinary.com/dmawj7tmu/image/upload/v1759252888/cityexperts/hero/projects-hero.webp" alt="Projects page header">
+                <img src="/assets/images/projects-hero.webp" alt="Projects page header">
               </div>
               <h3 style="margin: 8px 0 4px; font-weight: 600;">Projects Page</h3>
               <div style="display: flex; gap: 8px; justify-content: center; margin-top: 8px;">

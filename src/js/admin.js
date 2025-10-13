@@ -25,10 +25,10 @@ function updateBtn(){
   if (uploadBtn) uploadBtn.disabled = !canUpload(); 
 }
 
-// Featured project validation
+// Featured project validation - updated for local images
 function validateFeaturedProject(projectData) {
-  if (projectData.featured && (!projectData.media?.heroWide?.url || !projectData.media.heroWide.url.includes('res.cloudinary.com'))) {
-    return { valid: false, error: "Featured projects require a valid heroWide image (1920×1080) hosted on Cloudinary" };
+  if (projectData.featured && (!projectData.media?.heroWide?.url)) {
+    return { valid: false, error: "Featured projects require a valid heroWide image (1920×1080)" };
   }
   return { valid: true };
 }
@@ -122,49 +122,73 @@ fileEl?.addEventListener("change", ()=>{
   img.src = URL.createObjectURL(file);
 });
 
-// Upload
+// Local Image Upload - Note: Requires local upload API implementation
 document.getElementById("uploadForm")?.addEventListener("submit", async (e)=>{
   e.preventDefault();
   const status = document.getElementById("uploadStatus");
-  const cat = catEl.value; const file = fileEl.files?.[0];
-  if (!cat || !file){ status.textContent="Choose a category and file."; return; }
-  status.textContent="Uploading…";
-  const fd = new FormData();
-  fd.append("category", cat);
-  fd.append("projectId", projectEl.value || "");
-  fd.append("file", file);
+  const cat = catEl.value; 
+  const file = fileEl.files?.[0];
   
+  if (!cat || !file){ 
+    status.textContent="Choose a category and file."; 
+    return; 
+  }
+  
+  // For local-only system, show instructions for manual upload
+  status.textContent = "Local Image Upload Instructions:";
+  status.style.color = "#0F8B8D";
+  
+  const category = cat.toLowerCase();
+  const projectId = projectEl.value || "default";
+  const fileName = file.name.toLowerCase().replace(/\s+/g, '-');
+  
+  const suggestedPath = `/assets/images/${category}/${projectId}/${fileName}`;
+  
+  preview.innerHTML = `
+    <div class="p-4 bg-blue-50 border border-blue-200 rounded-lg">
+      <h4 class="font-semibold text-blue-900 mb-2">Manual Upload Required</h4>
+      <p class="text-blue-800 mb-3">Since we're using local images, please manually place your image at:</p>
+      <code class="block p-2 bg-blue-100 text-blue-900 rounded text-sm">${suggestedPath}</code>
+      <div class="mt-3 text-sm text-blue-700">
+        <p><strong>Steps:</strong></p>
+        <ol class="list-decimal list-inside space-y-1">
+          <li>Copy your image file to: <code>public${suggestedPath}</code></li>
+          <li>Restart the development server if needed</li>
+          <li>The image will be available at: <code>${suggestedPath}</code></li>
+        </ol>
+      </div>
+    </div>
+  `;
+  
+  console.log(`📁 Suggested local path: public${suggestedPath}`);
+  console.log(`🖼️ File details:`, {
+    name: file.name,
+    size: `${(file.size / 1024).toFixed(1)}KB`,
+    type: file.type,
+    category: category,
+    projectId: projectId
+  });
+  
+  /* 
+  // TODO: Implement local upload API if needed
+  // This would require a server-side endpoint to save files to public/assets/images/
   try {
-    const res = await fetch("/api/upload",{ 
+    const fd = new FormData();
+    fd.append("category", cat);
+    fd.append("projectId", projectEl.value || "");
+    fd.append("file", file);
+    
+    const res = await fetch("/api/upload-local", { 
       method:"POST", 
       headers:{ "x-csrf-token": csrf },
       body: fd, 
       credentials:"include" 
     });
+    
     const j = await res.json().catch(()=>null);
     if (res.ok && j?.url){
       status.textContent = `Uploaded ✓ → ${j.url}`;
       status.style.color = "#0F8B8D";
-      
-      // Show delete option
-      if (j?.public_id){
-        preview.insertAdjacentHTML("beforeend",
-          `<div class="hero-sub" style="margin-top:8px">
-             <code>${j.public_id}</code>
-             <button class="btn-secondary" data-pid="${j.public_id}" id="delBtn">Delete</button>
-           </div>`
-        );
-        document.getElementById("delBtn")?.addEventListener("click", async ()=>{
-          const pid = document.getElementById("delBtn").dataset.pid;
-          const r = await fetch("/api/delete",{ 
-            method:"POST", 
-            headers:{ "Content-Type":"application/json", "x-csrf-token": csrf }, 
-            body: JSON.stringify({ public_id: pid }),
-            credentials:"include"
-          });
-          preview.insertAdjacentHTML("beforeend", `<p class="hero-sub">${r.ok ? "Deleted ✓" : "Delete failed"}</p>`);
-        });
-      }
     } else {
       status.textContent = `Failed: ${j?.error || res.statusText}`;
       status.style.color = "#DC2626";
@@ -174,4 +198,5 @@ document.getElementById("uploadForm")?.addEventListener("submit", async (e)=>{
     status.textContent = "Upload failed - check connection";
     status.style.color = "#DC2626";
   }
+  */
 });

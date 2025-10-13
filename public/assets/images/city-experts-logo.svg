@@ -1,8 +1,0 @@
-<!-- This file contains placeholder SVG images for development -->
-<!-- Replace with actual optimized images in production -->
-
-<!-- City Experts Logo -->
-<svg width="200" height="60" viewBox="0 0 200 60" xmlns="http://www.w3.org/2000/svg">
-  <rect width="200" height="60" fill="#111315" rx="8"/>
-  <text x="100" y="35" text-anchor="middle" fill="#CBB79B" font-family="serif" font-size="18" font-weight="600">City Experts</text>
-</svg>

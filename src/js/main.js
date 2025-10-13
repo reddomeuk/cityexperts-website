@@ -8,27 +8,7 @@ import { initializeErrorHandling } from './error-handling.js';
 import { initializePerformanceMonitoring } from './performance.js';
 import { initializeStateManager } from './state-manager.js';
 import { autoBindState } from './state-hooks.js';
-
-// Cloudinary: safely add a transform without breaking the URL
-function clWithTransform(url, transform) {
-  // Accept only Cloudinary upload URLs
-  const m = url.match(/^https:\/\/res\.cloudinary\.com\/([^/]+)\/image\/upload\/([^?]+)(\?.*)?$/i);
-  if (!m) return url; // not Cloudinary → return as-is (we already validate elsewhere)
-  const cloudName = m[1];
-  let tail = m[2]; // may include version + folders + public_id.ext
-  const q = m[3] || '';
-
-  // If the tail already starts with transforms (e.g., c_fill,w_1200/...), keep only the final public_id part
-  // We do that by dropping the FIRST path segment if it contains commas (typical transform segment)
-  const parts = tail.split('/');
-  if (parts[0] && parts[0].includes(',')) {
-    parts.shift();
-    tail = parts.join('/');
-  }
-
-  // Prepend our transform, preserve version/public_id
-  return `https://res.cloudinary.com/${cloudName}/image/upload/${transform}/${tail}${q}`;
-}
+import { loadHeroImage, loadLogo, initializeCriticalImages, ImagePaths } from './utils/image-loader.js';
 
 // Initialize everything when DOM is loaded
 document.addEventListener('DOMContentLoaded', async () => {
@@ -60,6 +40,12 @@ document.addEventListener('DOMContentLoaded', async () => {
     
     // Initialize language/direction first
     const bootLang = initLanguageFromStorage();
+    
+    // Initialize critical images early for performance
+    initializeCriticalImages();
+    
+    // Initialize hero images based on current page
+    initializeHeroImages();
     
     // Update state with initial language
     stateManager.dispatch({
@@ -514,38 +500,27 @@ async function loadFeaturedProjects(carouselRoot) {
 function createProjectCard(project, lang) {
   const content = project.i18n?.[lang] || project.i18n?.en || { title: project.id, excerpt: '' };
 
-  // Pick the best available Cloudinary image (heroWide → hero → thumb)
-  const raw = project.media?.heroWide?.url || project.media?.hero?.url || project.media?.thumb?.url || '';
-  if (!/^https:\/\/res\.cloudinary\.com\//i.test(raw)) {
-    // Skip non-cloudinary items (keeps Cloudinary-only contract)
+  const imageName = project.media?.heroWide?.url || project.media?.hero?.url || project.media?.thumb?.url || '';
+  if (!imageName) {
+    // Skip projects without images
     return '';
   }
+
+  // Convert to local path - assume images are in public/assets/images/
+  const imagePath = imageName.startsWith('/assets/') ? imageName : `/assets/images/${imageName}`;
 
   const altText = project.media?.heroWide?.alt?.[lang]
                || project.media?.hero?.alt?.[lang]
                || project.media?.thumb?.alt?.[lang]
                || content.title;
 
-  // Build responsive sizes WITHOUT breaking the original URL
-  const img400  = clWithTransform(raw, 'c_fill,w_400,h_225,q_auto,f_auto');
-  const img768  = clWithTransform(raw, 'c_fill,w_768,h_432,q_auto,f_auto');
-  const img1200 = clWithTransform(raw, 'c_fill,w_1200,h_675,q_auto,f_auto');
-  const img1600 = clWithTransform(raw, 'c_fill,w_1600,h_900,q_auto,f_auto');
-
   return `
   <article class="project-card w-full relative group bg-white rounded-2xl overflow-hidden shadow-lg hover:shadow-xl transition-shadow duration-300">
     <div class="relative">
-      <picture>
-        <source media="(min-width: 1280px)" srcset="${img1600}">
-        <source media="(min-width: 1024px)" srcset="${img1200}">
-        <source media="(min-width: 768px)"  srcset="${img768}">
-        <img src="${img400}"
-             srcset="${img400} 400w, ${img768} 768w, ${img1200} 1200w, ${img1600} 1600w"
-             sizes="(min-width:1280px) 33vw, (min-width:768px) 33vw, 100vw"
-             loading="lazy" decoding="async" alt="${altText}"
-             width="1600" height="900"
-             class="w-full h-96 md:h-[500px] object-cover group-hover:scale-105 transition-transform duration-700">
-      </picture>
+      <img src="${imagePath}"
+           loading="lazy" decoding="async" alt="${altText}"
+           width="1600" height="900"
+           class="w-full h-96 md:h-[500px] object-cover group-hover:scale-105 transition-transform duration-700">
       <div class="absolute inset-0 bg-gradient-to-t from-deep-charcoal/80 via-transparent to-transparent"></div>
     </div>
     <div class="absolute bottom-8 left-8 right-8 text-white">
@@ -558,4 +533,92 @@ function createProjectCard(project, lang) {
       <a class="btn btn-secondary" href="/projects.html#${project.id}" aria-label="Learn more about ${content.title}">Learn More</a>
     </div>
   </article>`;
+}
+
+/**
+ * Set hero image with direct asset reference and fallback
+ * @param {string} selector - CSS selector for hero container
+ * @param {string} fileName - Image filename relative to /assets/images/
+ */
+function setHeroImage(selector, fileName) {
+  const el = document.querySelector(selector);
+  if (!el) return;
+
+  const img = document.createElement("img");
+  img.src = `/assets/images/${fileName}`;
+  img.alt = "Hero Image";
+  img.className = "w-full h-[700px] object-cover";
+  img.loading = "lazy";
+  img.onerror = () => {
+    img.src = "/assets/images/placeholder.webp";
+  };
+
+  // Clear container and add image
+  el.innerHTML = '';
+  el.appendChild(img);
+}
+
+/**
+ * Initialize hero images based on current page
+ */
+function initializeHeroImages() {
+  const currentPage = window.location.pathname;
+  
+  // Set hero images based on page
+  if (currentPage === '/' || currentPage.includes('index')) {
+    setHeroImage("#hero-image-container", "home/hero-dubai-skyline.webp");
+    setHeroImage("[data-hero-image]", "home/hero-dubai-skyline.webp");
+    setHeroImage("#hero-section img", "home/hero-dubai-skyline.webp");
+  } else if (currentPage.includes('about')) {
+    setHeroImage("#hero-image-container", "about/about-hero.webp");
+    setHeroImage("[data-hero-image]", "about/about-hero.webp");
+    setHeroImage("#hero-section img", "about/about-hero.webp");
+  } else if (currentPage.includes('projects')) {
+    setHeroImage("#hero-image-container", "projects/projects-hero.webp");
+    setHeroImage("[data-hero-image]", "projects/projects-hero.webp");
+    setHeroImage("#hero-section img", "projects/projects-hero.webp");
+  } else if (currentPage.includes('services')) {
+    setHeroImage("#hero-image-container", "services/services-hero.webp");
+    setHeroImage("[data-hero-image]", "services/services-hero.webp");
+    setHeroImage("#hero-section img", "services/services-hero.webp");
+  } else if (currentPage.includes('contact')) {
+    setHeroImage("#hero-image-container", "contact/contact-hero.webp");
+    setHeroImage("[data-hero-image]", "contact/contact-hero.webp");
+    setHeroImage("#hero-section img", "contact/contact-hero.webp");
+  } else {
+    // Default fallback
+    setHeroImage("#hero-image-container", "home/hero-dubai-skyline.webp");
+    setHeroImage("[data-hero-image]", "home/hero-dubai-skyline.webp");
+    setHeroImage("#hero-section img", "home/hero-dubai-skyline.webp");
+  }
+  
+  // Initialize logos
+  initializeLogos();
+}
+
+/**
+ * Initialize logo images across the page
+ */
+function initializeLogos() {
+  const logoSelectors = [
+    '#main-logo',
+    '#mobile-logo', 
+    '#footer-logo',
+    '[data-logo]',
+    'img[alt*="logo"]',
+    'img[alt*="Logo"]'
+  ];
+  
+  logoSelectors.forEach(selector => {
+    const logos = document.querySelectorAll(selector);
+    logos.forEach(logo => {
+      const logoImg = loadLogo(logo.alt || "CityExperts Logo", logo.className);
+      logo.src = logoImg.src;
+      logo.onerror = () => {
+        logo.src = ImagePaths.logo; // Direct fallback
+      };
+    });
+  });
+  
+  console.log(`✅ Logos initialized across page`);
 }

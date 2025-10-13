@@ -1,26 +1,7 @@
 // Projects Page JavaScript
 // Handle project loading from API and filtering
 
-// Cloudinary: safely add a transform without breaking the URL
-function clWithTransform(url, transform) {
-  // Accept only Cloudinary upload URLs
-  const m = url.match(/^https:\/\/res\.cloudinary\.com\/([^/]+)\/image\/upload\/([^?]+)(\?.*)?$/i);
-  if (!m) return url; // not Cloudinary → return as-is (we already validate elsewhere)
-  const cloudName = m[1];
-  let tail = m[2]; // may include version + folders + public_id.ext
-  const q = m[3] || '';
-
-  // If the tail already starts with transforms (e.g., c_fill,w_1200/...), keep only the final public_id part
-  // We do that by dropping the FIRST path segment if it contains commas (typical transform segment)
-  const parts = tail.split('/');
-  if (parts[0] && parts[0].includes(',')) {
-    parts.shift();
-    tail = parts.join('/');
-  }
-
-  // Prepend our transform, preserve version/public_id
-  return `https://res.cloudinary.com/${cloudName}/image/upload/${transform}/${tail}${q}`;
-}
+import { loadProjectImage, loadLocalImage } from './utils/image-loader.js';
 
 class ProjectsRenderer {
   constructor() {
@@ -156,49 +137,72 @@ class ProjectsRenderer {
     const content = project.i18n?.[lang] || project.i18n?.en || {};
     const media = project.media || {};
     
-    // Only use Cloudinary URLs - skip projects without proper images
-    let heroImage, heroAlt;
-    if (media.heroWide?.url && media.heroWide.url.includes('res.cloudinary.com')) {
-      heroImage = media.heroWide.url;
+    // Use local images with smart fallback system
+    let imagePath, heroAlt;
+    
+    // Try to get image from project media
+    if (media.heroWide?.url) {
+      imagePath = media.heroWide.url;
       heroAlt = media.heroWide.alt?.[lang] || media.heroWide.alt?.en || content.title;
-    } else if (media.hero?.url && media.hero.url.includes('res.cloudinary.com')) {
-      heroImage = media.hero.url;
+    } else if (media.hero?.url) {
+      imagePath = media.hero.url;
       heroAlt = media.hero.alt?.[lang] || media.hero.alt?.en || content.title;
-    } else if (media.thumb?.url && media.thumb.url.includes('res.cloudinary.com')) {
-      heroImage = media.thumb.url;
+    } else if (media.thumb?.url) {
+      imagePath = media.thumb.url;
       heroAlt = media.thumb.alt?.[lang] || media.thumb.alt?.en || content.title;
     } else {
-      // Skip projects without valid Cloudinary images
-      return '';
+      // Use project-based path structure
+      const category = project.category?.toLowerCase() || 'general';
+      const slug = project.slug || project.id;
+      imagePath = `/assets/images/projects/${category}/${slug}/hero.webp`;
+      heroAlt = content.title || 'Project Image';
     }
 
-    // Generate safe Cloudinary transformations using clWithTransform helper
-    const imgSmall = clWithTransform(heroImage, 'c_fill,w_400,h_300,q_auto,f_auto');
-    const imgMedium = clWithTransform(heroImage, 'c_fill,w_600,h_400,q_auto,f_auto');
-    const imgLarge = clWithTransform(heroImage, 'c_fill,w_800,h_600,q_auto,f_auto');
+    // Ensure local path format
+    if (!imagePath.startsWith('/assets/')) {
+      imagePath = `/assets/images/${imagePath}`;
+    }
 
-    return '<article class="project-card group" data-category="' + project.category + '" data-aos="fade-up" data-aos-delay="' + (index * 100) + '">' +
-      '<div class="relative overflow-hidden rounded-xl bg-white shadow-lg hover:shadow-xl transition-shadow duration-300">' +
-      '<div class="relative aspect-[4/3] overflow-hidden">' +
-      '<picture>' +
-      '<source media="(min-width: 768px)" srcset="' + imgLarge + '">' +
-      '<source media="(min-width: 480px)" srcset="' + imgMedium + '">' +
-      '<img src="' + imgSmall + '" ' +
-      'srcset="' + imgSmall + ' 400w, ' + imgMedium + ' 600w, ' + imgLarge + ' 800w" ' +
-      'sizes="(min-width: 1024px) 350px, (min-width: 768px) 300px, 400px" ' +
-      'alt="' + this.escapeHtml(heroAlt) + '" ' +
-      'width="800" height="600" ' +
-      'loading="lazy" decoding="async" ' +
-      'class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105">' +
-      '</picture>' +
-      '<div class="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>' +
-      '<div class="absolute top-4 left-4">' +
-      '<span class="inline-flex items-center px-3 py-1 rounded-full text-sm font-medium ' + this.getCategoryClass(project.category) + '">' +
-      this.formatCategory(project.category) +
-      '</span>' +
-      '</div>' +
-      (project.featured ? '<div class="absolute top-4 right-4"><span class="inline-flex items-center px-2 py-1 bg-brand-orange text-white rounded-full text-xs font-medium">Featured</span></div>' : '') +
-      '</div>' +
+    // Create the project card HTML
+    const cardHtml = `
+    <article class="project-card group" data-category="${project.category}" data-aos="fade-up" data-aos-delay="${index * 100}">
+      <div class="relative overflow-hidden rounded-xl bg-white shadow-lg hover:shadow-xl transition-shadow duration-300">
+        <div class="relative aspect-[4/3] overflow-hidden">
+          <img src="${imagePath}" 
+               alt="${this.escapeHtml(heroAlt)}" 
+               width="800" height="600" 
+               loading="lazy" decoding="async" 
+               class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
+               onerror="this.src='/assets/images/placeholder.webp'">
+          <div class="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+          <div class="absolute top-4 left-4">
+            <span class="inline-flex items-center px-3 py-1 rounded-full text-sm font-medium ${this.getCategoryClass(project.category)}">
+              ${this.formatCategory(project.category)}
+            </span>
+          </div>
+          ${project.featured ? '<div class="absolute top-4 right-4"><span class="inline-flex items-center px-2 py-1 bg-brand-orange text-white rounded-full text-xs font-medium">Featured</span></div>' : ''}
+        </div>
+        <div class="p-6">
+          <div class="mb-3">
+            <h3 class="text-xl font-semibold text-deep-charcoal mb-2 group-hover:text-oasis-teal transition-colors">
+              ${this.escapeHtml(content.title || 'Untitled Project')}
+            </h3>
+            <p class="text-sm text-deep-charcoal/60 mb-1">${this.escapeHtml(project.city || '')}</p>
+          </div>
+          <p class="text-deep-charcoal/70 mb-4 line-clamp-3">
+            ${this.escapeHtml(content.excerpt || content.description || '')}
+          </p>
+          <a href="/projects/${project.id}" class="inline-flex items-center text-sm font-medium text-oasis-teal hover:text-brand-orange transition-colors">
+            View Project
+            <svg class="ml-2 w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3"></path>
+            </svg>
+          </a>
+        </div>
+      </div>
+    </article>`;
+
+    return cardHtml;
       '<div class="p-6">' +
       '<div class="mb-3">' +
       '<h3 class="text-xl font-semibold text-deep-charcoal mb-2 group-hover:text-oasis-teal transition-colors">' +

@@ -26,36 +26,45 @@
     },
     "media": {
       "hero": {
-        "url": "https://res.cloudinary.com/dmawj7tmu/image/upload/v1759252878/cityexperts/projects/project-1.webp",
+        "url": "/assets/images/project-1.webp",
         "public_id": "cityexperts/projects/project-1",
-        "alt": { 
-          "en": "Emirates Business Tower exterior view at sunset", 
-          "ar": "منظر خارجي لبرج إميريتس للأعمال عند غروب الشمس" 
+        "alt": {
+          "en": "Emirates Business Tower exterior view at sunset",
+          "ar": "منظر خارجي لبرج إميريتس للأعمال عند غروب الشمس"
         }
       },
       "thumb": {
-        "url": "https://res.cloudinary.com/dmawj7tmu/image/upload/v1759252878/cityexperts/projects/project-1.webp",
+        "url": "/assets/images/project-1.webp",
         "public_id": "cityexperts/projects/project-1",
-        "alt": { 
-          "en": "Emirates Business Tower thumbnail", 
-          "ar": "صورة مصغرة لبرج إميريتس للأعمال" 
+        "alt": {
+          "en": "Emirates Business Tower thumbnail",
+          "ar": "صورة مصغرة لبرج إميريتس للأعمال"
         }
       },
       "gallery": [
         {
-          "url": "https://res.cloudinary.com/dmawj7tmu/image/upload/v1759252873/cityexperts/gallery/cityexperts/gallery/luxury_interior_1.png",
+          "url": "/assets/images/luxury_interior_1.png",
           "public_id": "cityexperts/gallery/cityexperts/gallery/luxury_interior_1",
-          "alt": { "en": "Premium lobby interior design", "ar": "تصميم البهو الداخلي المتميز" }
+          "alt": {
+            "en": "Premium lobby interior design",
+            "ar": "تصميم البهو الداخلي المتميز"
+          }
         },
         {
-          "url": "https://res.cloudinary.com/dmawj7tmu/image/upload/v1759252874/cityexperts/gallery/cityexperts/gallery/luxury_interior_2.png",
+          "url": "/assets/images/luxury_interior_2.png",
           "public_id": "cityexperts/gallery/cityexperts/gallery/luxury_interior_2",
-          "alt": { "en": "Modern office floor layout", "ar": "تخطيط طابق المكاتب الحديث" }
+          "alt": {
+            "en": "Modern office floor layout",
+            "ar": "تخطيط طابق المكاتب الحديث"
+          }
         },
         {
-          "url": "https://res.cloudinary.com/dmawj7tmu/image/upload/v1759252875/cityexperts/gallery/cityexperts/gallery/luxury_interior_3.png",
+          "url": "/assets/images/luxury_interior_3.png",
           "public_id": "cityexperts/gallery/cityexperts/gallery/luxury_interior_3",
-          "alt": { "en": "Architectural facade detail", "ar": "تفاصيل الواجهة المعمارية" }
+          "alt": {
+            "en": "Architectural facade detail",
+            "ar": "تفاصيل الواجهة المعمارية"
+          }
         }
       ],
       "videos": []
@@ -89,31 +98,37 @@
     },
     "media": {
       "hero": {
-        "url": "https://res.cloudinary.com/dmawj7tmu/image/upload/v1759252879/cityexperts/projects/project-2.webp",
+        "url": "/assets/images/project-2.webp",
         "public_id": "cityexperts/projects/project-2",
-        "alt": { 
-          "en": "Marina Luxury Residences waterfront view", 
-          "ar": "إطلالة مساكن مارينا الفاخرة على الواجهة المائية" 
+        "alt": {
+          "en": "Marina Luxury Residences waterfront view",
+          "ar": "إطلالة مساكن مارينا الفاخرة على الواجهة المائية"
         }
       },
       "thumb": {
-        "url": "https://res.cloudinary.com/dmawj7tmu/image/upload/v1759252879/cityexperts/projects/project-2.webp",
+        "url": "/assets/images/project-2.webp",
         "public_id": "cityexperts/projects/project-2",
-        "alt": { 
-          "en": "Marina Luxury Residences thumbnail", 
-          "ar": "صورة مصغرة لمساكن مارينا الفاخرة" 
+        "alt": {
+          "en": "Marina Luxury Residences thumbnail",
+          "ar": "صورة مصغرة لمساكن مارينا الفاخرة"
         }
       },
       "gallery": [
         {
-          "url": "https://res.cloudinary.com/dmawj7tmu/image/upload/v1759252875/cityexperts/gallery/cityexperts/gallery/luxury_interior_4.png",
+          "url": "/assets/images/luxury_interior_4.png",
           "public_id": "cityexperts/gallery/cityexperts/gallery/luxury_interior_4",
-          "alt": { "en": "Building exterior with marina views", "ar": "الواجهة الخارجية مع إطلالات المارينا" }
+          "alt": {
+            "en": "Building exterior with marina views",
+            "ar": "الواجهة الخارجية مع إطلالات المارينا"
+          }
         },
         {
-          "url": "https://res.cloudinary.com/dmawj7tmu/image/upload/v1759252876/cityexperts/gallery/cityexperts/gallery/luxury_interior_5.png",
+          "url": "/assets/images/luxury_interior_5.png",
           "public_id": "cityexperts/gallery/cityexperts/gallery/luxury_interior_5",
-          "alt": { "en": "Luxury amenities and facilities", "ar": "المرافق والخدمات الفاخرة" }
+          "alt": {
+            "en": "Luxury amenities and facilities",
+            "ar": "المرافق والخدمات الفاخرة"
+          }
         }
       ],
       "videos": []
@@ -147,31 +162,37 @@
     },
     "media": {
       "hero": {
-        "url": "https://res.cloudinary.com/dmawj7tmu/image/upload/v1759252880/cityexperts/projects/project-3.webp",
+        "url": "/assets/images/project-3.webp",
         "public_id": "cityexperts/projects/project-3",
-        "alt": { 
-          "en": "Palm Island luxury villas with beach views", 
-          "ar": "فيلل جزيرة النخلة الفاخرة مع إطلالات الشاطئ" 
+        "alt": {
+          "en": "Palm Island luxury villas with beach views",
+          "ar": "فيلل جزيرة النخلة الفاخرة مع إطلالات الشاطئ"
         }
       },
       "thumb": {
-        "url": "https://res.cloudinary.com/dmawj7tmu/image/upload/v1759252880/cityexperts/projects/project-3.webp",
+        "url": "/assets/images/project-3.webp",
         "public_id": "cityexperts/projects/project-3",
-        "alt": { 
-          "en": "Palm Island villas thumbnail", 
-          "ar": "صورة مصغرة لفيلل جزيرة النخلة" 
+        "alt": {
+          "en": "Palm Island villas thumbnail",
+          "ar": "صورة مصغرة لفيلل جزيرة النخلة"
         }
       },
       "gallery": [
         {
-          "url": "https://res.cloudinary.com/dmawj7tmu/image/upload/v1759252876/cityexperts/gallery/cityexperts/gallery/luxury_villa_1.png",
+          "url": "/assets/images/luxury_villa_1.png",
           "public_id": "cityexperts/gallery/cityexperts/gallery/luxury_villa_1",
-          "alt": { "en": "Luxury villa exterior design", "ar": "التصميم الخارجي للفيلا الفاخرة" }
+          "alt": {
+            "en": "Luxury villa exterior design",
+            "ar": "التصميم الخارجي للفيلا الفاخرة"
+          }
         },
         {
-          "url": "https://res.cloudinary.com/dmawj7tmu/image/upload/v1759252877/cityexperts/gallery/cityexperts/gallery/luxury_villa_2.png",
+          "url": "/assets/images/luxury_villa_2.png",
           "public_id": "cityexperts/gallery/cityexperts/gallery/luxury_villa_2",
-          "alt": { "en": "Private beach access", "ar": "الوصول إلى الشاطئ الخاص" }
+          "alt": {
+            "en": "Private beach access",
+            "ar": "الوصول إلى الشاطئ الخاص"
+          }
         }
       ],
       "videos": []
@@ -207,24 +228,27 @@
       "hero": {
         "url": "https://res.cloudinary.com/dmawj7tmu/image/upload/c_fill,w_1920,h_1080,q_auto,f_auto/v1/cityexperts/hero/downtown-office-complex.webp",
         "public_id": "cityexperts/hero/downtown-office-complex",
-        "alt": { 
-          "en": "Downtown office complex exterior", 
-          "ar": "الواجهة الخارجية لمجمع مكاتب وسط المدينة" 
+        "alt": {
+          "en": "Downtown office complex exterior",
+          "ar": "الواجهة الخارجية لمجمع مكاتب وسط المدينة"
         }
       },
       "thumb": {
         "url": "https://res.cloudinary.com/dmawj7tmu/image/upload/c_fill,w_800,h_600,q_auto,f_auto/v1/cityexperts/thumb/downtown-office-complex.webp",
         "public_id": "cityexperts/thumb/downtown-office-complex",
-        "alt": { 
-          "en": "Downtown office complex thumbnail", 
-          "ar": "صورة مصغرة لمجمع مكاتب وسط المدينة" 
+        "alt": {
+          "en": "Downtown office complex thumbnail",
+          "ar": "صورة مصغرة لمجمع مكاتب وسط المدينة"
         }
       },
       "gallery": [
         {
           "url": "https://res.cloudinary.com/dmawj7tmu/image/upload/c_fill,w_1600,h_1200,q_auto,f_auto/v1/cityexperts/gallery/downtown-office-complex/interior.webp",
           "public_id": "cityexperts/gallery/downtown-office-complex/interior",
-          "alt": { "en": "Modern office interior", "ar": "الداخلية الحديثة للمكتب" }
+          "alt": {
+            "en": "Modern office interior",
+            "ar": "الداخلية الحديثة للمكتب"
+          }
         }
       ],
       "videos": []
@@ -258,26 +282,29 @@
     },
     "media": {
       "hero": {
-        "url": "https://res.cloudinary.com/dmawj7tmu/image/upload/v1759252880/cityexperts/projects/project-5.webp",
+        "url": "/assets/images/project-5.webp",
         "public_id": "cityexperts/projects/project-5",
-        "alt": { 
-          "en": "Sharjah Cultural Center exterior with traditional Islamic architecture", 
-          "ar": "الواجهة الخارجية لمركز الشارقة الثقافي بالعمارة الإسلامية التقليدية" 
+        "alt": {
+          "en": "Sharjah Cultural Center exterior with traditional Islamic architecture",
+          "ar": "الواجهة الخارجية لمركز الشارقة الثقافي بالعمارة الإسلامية التقليدية"
         }
       },
       "thumb": {
-        "url": "https://res.cloudinary.com/dmawj7tmu/image/upload/v1759252880/cityexperts/projects/project-5.webp",
+        "url": "/assets/images/project-5.webp",
         "public_id": "cityexperts/projects/project-5",
-        "alt": { 
-          "en": "Sharjah Cultural Center thumbnail", 
-          "ar": "صورة مصغرة لمركز الشارقة الثقافي" 
+        "alt": {
+          "en": "Sharjah Cultural Center thumbnail",
+          "ar": "صورة مصغرة لمركز الشارقة الثقافي"
         }
       },
       "gallery": [
         {
-          "url": "https://res.cloudinary.com/dmawj7tmu/image/upload/v1759252873/cityexperts/gallery/cityexperts/gallery/luxury_interior_3.png",
+          "url": "/assets/images/luxury_interior_3.png",
           "public_id": "cityexperts/gallery/cityexperts/gallery/luxury_interior_3",
-          "alt": { "en": "Cultural exhibition hall interior", "ar": "داخلية قاعة المعارض الثقافية" }
+          "alt": {
+            "en": "Cultural exhibition hall interior",
+            "ar": "داخلية قاعة المعارض الثقافية"
+          }
         }
       ],
       "videos": []
@@ -311,26 +338,29 @@
     },
     "media": {
       "hero": {
-        "url": "https://res.cloudinary.com/dmawj7tmu/image/upload/v1759252881/cityexperts/projects/project-6.webp",
+        "url": "/assets/images/project-6.webp",
         "public_id": "cityexperts/projects/project-6",
-        "alt": { 
-          "en": "Abu Dhabi luxury resort with beach and Gulf views", 
-          "ar": "منتجع أبوظبي الفاخر مع الشاطئ وإطلالات الخليج" 
+        "alt": {
+          "en": "Abu Dhabi luxury resort with beach and Gulf views",
+          "ar": "منتجع أبوظبي الفاخر مع الشاطئ وإطلالات الخليج"
         }
       },
       "thumb": {
-        "url": "https://res.cloudinary.com/dmawj7tmu/image/upload/v1759252881/cityexperts/projects/project-6.webp",
+        "url": "/assets/images/project-6.webp",
         "public_id": "cityexperts/projects/project-6",
-        "alt": { 
-          "en": "Abu Dhabi resort thumbnail", 
-          "ar": "صورة مصغرة لمنتجع أبوظبي" 
+        "alt": {
+          "en": "Abu Dhabi resort thumbnail",
+          "ar": "صورة مصغرة لمنتجع أبوظبي"
         }
       },
       "gallery": [
         {
-          "url": "https://res.cloudinary.com/dmawj7tmu/image/upload/v1759252874/cityexperts/gallery/cityexperts/gallery/luxury_interior_2.png",
+          "url": "/assets/images/luxury_interior_2.png",
           "public_id": "cityexperts/gallery/cityexperts/gallery/luxury_interior_2",
-          "alt": { "en": "Luxury resort suite interior", "ar": "داخلية الجناح الفاخر في المنتجع" }
+          "alt": {
+            "en": "Luxury resort suite interior",
+            "ar": "داخلية الجناح الفاخر في المنتجع"
+          }
         }
       ],
       "videos": []
@@ -364,31 +394,37 @@
     },
     "media": {
       "hero": {
-        "url": "https://res.cloudinary.com/dmawj7tmu/image/upload/v1759252878/cityexperts/projects/project-1.webp",
+        "url": "/assets/images/project-1.webp",
         "public_id": "cityexperts/projects/project-1",
-        "alt": { 
-          "en": "Luxury residences with Burj Khalifa views", 
-          "ar": "مساكن فاخرة مع إطلالات برج خليفة" 
+        "alt": {
+          "en": "Luxury residences with Burj Khalifa views",
+          "ar": "مساكن فاخرة مع إطلالات برج خليفة"
         }
       },
       "thumb": {
-        "url": "https://res.cloudinary.com/dmawj7tmu/image/upload/v1759252878/cityexperts/projects/project-1.webp",
+        "url": "/assets/images/project-1.webp",
         "public_id": "cityexperts/projects/project-1",
-        "alt": { 
-          "en": "Burj Khalifa view residences thumbnail", 
-          "ar": "صورة مصغرة لمساكن إطلالة برج خليفة" 
+        "alt": {
+          "en": "Burj Khalifa view residences thumbnail",
+          "ar": "صورة مصغرة لمساكن إطلالة برج خليفة"
         }
       },
       "gallery": [
         {
-          "url": "https://res.cloudinary.com/dmawj7tmu/image/upload/v1759252875/cityexperts/gallery/cityexperts/gallery/luxury_interior_3.png",
+          "url": "/assets/images/luxury_interior_3.png",
           "public_id": "cityexperts/gallery/cityexperts/gallery/luxury_interior_3",
-          "alt": { "en": "Modern luxury apartment interior", "ar": "داخلية الشقة الفاخرة الحديثة" }
+          "alt": {
+            "en": "Modern luxury apartment interior",
+            "ar": "داخلية الشقة الفاخرة الحديثة"
+          }
         },
         {
-          "url": "https://res.cloudinary.com/dmawj7tmu/image/upload/v1759252876/cityexperts/gallery/cityexperts/gallery/luxury_interior_4.png",
+          "url": "/assets/images/luxury_interior_4.png",
           "public_id": "cityexperts/gallery/cityexperts/gallery/luxury_interior_4",
-          "alt": { "en": "Premium living room with city views", "ar": "غرفة معيشة متميزة مع إطلالات المدينة" }
+          "alt": {
+            "en": "Premium living room with city views",
+            "ar": "غرفة معيشة متميزة مع إطلالات المدينة"
+          }
         }
       ],
       "videos": []
@@ -402,7 +438,7 @@
   },
   {
     "id": "dubai-mall-extension",
-    "status": "published", 
+    "status": "published",
     "order": 80,
     "category": "commercial",
     "city": "Dubai",
@@ -422,31 +458,37 @@
     },
     "media": {
       "hero": {
-        "url": "https://res.cloudinary.com/dmawj7tmu/image/upload/v1759252879/cityexperts/projects/project-2.webp",
+        "url": "/assets/images/project-2.webp",
         "public_id": "cityexperts/projects/project-2",
-        "alt": { 
-          "en": "Dubai Mall Fashion Avenue luxury retail interior", 
-          "ar": "داخلية البيع بالتجزئة الفاخرة لشارع الموضة في دبي مول" 
+        "alt": {
+          "en": "Dubai Mall Fashion Avenue luxury retail interior",
+          "ar": "داخلية البيع بالتجزئة الفاخرة لشارع الموضة في دبي مول"
         }
       },
       "thumb": {
-        "url": "https://res.cloudinary.com/dmawj7tmu/image/upload/v1759252879/cityexperts/projects/project-2.webp",
+        "url": "/assets/images/project-2.webp",
         "public_id": "cityexperts/projects/project-2",
-        "alt": { 
-          "en": "Dubai Mall extension thumbnail", 
-          "ar": "صورة مصغرة لتوسعة دبي مول" 
+        "alt": {
+          "en": "Dubai Mall extension thumbnail",
+          "ar": "صورة مصغرة لتوسعة دبي مول"
         }
       },
       "gallery": [
         {
-          "url": "https://res.cloudinary.com/dmawj7tmu/image/upload/v1759252876/cityexperts/gallery/cityexperts/gallery/luxury_interior_4.png",
+          "url": "/assets/images/luxury_interior_4.png",
           "public_id": "cityexperts/gallery/cityexperts/gallery/luxury_interior_4",
-          "alt": { "en": "Luxury retail store interior design", "ar": "تصميم داخلي لمتجر البيع بالتجزئة الفاخر" }
+          "alt": {
+            "en": "Luxury retail store interior design",
+            "ar": "تصميم داخلي لمتجر البيع بالتجزئة الفاخر"
+          }
         },
         {
-          "url": "https://res.cloudinary.com/dmawj7tmu/image/upload/v1759252877/cityexperts/gallery/cityexperts/gallery/luxury_interior_5.png",
+          "url": "/assets/images/luxury_interior_5.png",
           "public_id": "cityexperts/gallery/cityexperts/gallery/luxury_interior_5",
-          "alt": { "en": "Premium shopping experience area", "ar": "منطقة تجربة التسوق المتميزة" }
+          "alt": {
+            "en": "Premium shopping experience area",
+            "ar": "منطقة تجربة التسوق المتميزة"
+          }
         }
       ],
       "videos": []
@@ -480,31 +522,37 @@
     },
     "media": {
       "hero": {
-        "url": "https://res.cloudinary.com/dmawj7tmu/image/upload/v1759252880/cityexperts/projects/project-3.webp",
+        "url": "/assets/images/project-3.webp",
         "public_id": "cityexperts/projects/project-3",
-        "alt": { 
-          "en": "JBR beachfront luxury hotel with Arabian Gulf views", 
-          "ar": "فندق جي بي آر الفاخر على الشاطئ مع إطلالات الخليج العربي" 
+        "alt": {
+          "en": "JBR beachfront luxury hotel with Arabian Gulf views",
+          "ar": "فندق جي بي آر الفاخر على الشاطئ مع إطلالات الخليج العربي"
         }
       },
       "thumb": {
-        "url": "https://res.cloudinary.com/dmawj7tmu/image/upload/v1759252880/cityexperts/projects/project-3.webp",
+        "url": "/assets/images/project-3.webp",
         "public_id": "cityexperts/projects/project-3",
-        "alt": { 
-          "en": "JBR beach hotel thumbnail", 
-          "ar": "صورة مصغرة لفندق شاطئ جي بي آر" 
+        "alt": {
+          "en": "JBR beach hotel thumbnail",
+          "ar": "صورة مصغرة لفندق شاطئ جي بي آر"
         }
       },
       "gallery": [
         {
-          "url": "https://res.cloudinary.com/dmawj7tmu/image/upload/v1759252877/cityexperts/gallery/cityexperts/gallery/luxury_interior_5.png",
+          "url": "/assets/images/luxury_interior_5.png",
           "public_id": "cityexperts/gallery/cityexperts/gallery/luxury_interior_5",
-          "alt": { "en": "Luxury hotel lobby and reception", "ar": "بهو الفندق الفاخر والاستقبال" }
+          "alt": {
+            "en": "Luxury hotel lobby and reception",
+            "ar": "بهو الفندق الفاخر والاستقبال"
+          }
         },
         {
           "url": "https://res.cloudinary.com/dmawj7tmu/image/upload/v1759252878/cityexperts/gallery/cityexperts/gallery/luxury_interior_6.png",
           "public_id": "cityexperts/gallery/cityexperts/gallery/luxury_interior_6",
-          "alt": { "en": "Premium hotel suite with ocean view", "ar": "جناح الفندق المتميز مع إطلالة على المحيط" }
+          "alt": {
+            "en": "Premium hotel suite with ocean view",
+            "ar": "جناح الفندق المتميز مع إطلالة على المحيط"
+          }
         }
       ],
       "videos": []

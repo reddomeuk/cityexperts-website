@@ -14,7 +14,7 @@ pages_build_output_dir = "dist"
 # Environment variables
 [vars]
 ENVIRONMENT = "development"
-CONTACT_EMAIL = "info@cityexperts.ae"
+CONTACT_EMAIL = "enquiry@cityexpertsdubai.com"
 
 # Note: Cloudinary variables are set in Pages dashboard:
 # CLOUDINARY_CLOUD_NAME = "dmawj7tmu" (set in dashboard)

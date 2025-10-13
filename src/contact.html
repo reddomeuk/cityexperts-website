@@ -12,13 +12,13 @@
   <meta property="og:description" content="Get in touch with UAE's premier construction company. Tell us about your project and our team will get back within one business day.">
   <meta property="og:type" content="website">
   <meta property="og:url" content="https://cityexperts.ae/contact">
-  <meta property="og:image" content="https://res.cloudinary.com/dmawj7tmu/image/upload/v1759252862/cityexperts/hero/cityexperts/hero/contact-hero.webp">
+  <meta property="og:image" content="/assets/images/contact/contact-hero.webp">
   
   <!-- Twitter Card -->
   <meta name="twitter:card" content="summary_large_image">
   <meta name="twitter:title" content="Contact City Experts - Construction Projects">
   <meta name="twitter:description" content="Start your construction project today. Our team responds within one business day.">
-  <meta name="twitter:image" content="https://res.cloudinary.com/dmawj7tmu/image/upload/v1759252862/cityexperts/hero/cityexperts/hero/contact-hero.webp">
+  <meta name="twitter:image" content="/assets/images/contact/contact-hero.webp">
   
   <!-- JSON-LD Structured Data -->
   <script type="application/ld+json">
@@ -30,13 +30,24 @@
     "mainEntity": {
       "@type": "ConstructionCompany",
       "name": "City Experts",
+      "address": {
+        "@type": "PostalAddress",
+        "streetAddress": "V28V+JR2 - 2 طريق شاحنات الفاية - سيح شعيب - near Round About 1 - Saih Shuaib 2",
+        "addressLocality": "Dubai",
+        "addressCountry": "AE"
+      },
       "contactPoint": {
         "@type": "ContactPoint",
-        "telephone": "+971-4-123-4567",
+        "telephone": "+971555581631",
         "contactType": "sales",
         "areaServed": "AE",
         "availableLanguage": ["en", "ar"]
-      }
+      },
+      "email": "enquiry@cityexpertsdubai.com",
+      "sameAs": [
+        "https://www.instagram.com/cityexpertsgroup?igsh=MTRjMTA3ZzAzdzhnMA==",
+        "https://wa.me/971555581631"
+      ]
     }
   }
   </script>
@@ -48,7 +59,7 @@
   <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
   
   <!-- Preload critical resources -->
-  <link rel="preload" href="https://res.cloudinary.com/dmawj7tmu/image/upload/v1759252862/cityexperts/hero/cityexperts/hero/contact-hero.webp" as="image">
+  <link rel="preload" href="/assets/images/contact/contact-hero.webp" as="image">
   
   <!-- reCAPTCHA v3 (uncomment when site key is available) -->
   <!-- <script src="https://www.google.com/recaptcha/api.js?render=YOUR_SITE_KEY_HERE"></script> -->
@@ -202,11 +213,19 @@
   <!-- Header / Navigation -->
   <nav id="site-header" class="fixed top-0 inset-x-0 z-40 bg-transparent transition-colors">
     <div class="container-custom">
-      <div class="flex h-20 items-center justify-between">
+      <div class="flex h-20 items-center">
         <!-- Logo -->
-        <a href="/" class="flex items-center gap-3" aria-label="City Experts Home">
-          <img src="https://res.cloudinary.com/dmawj7tmu/image/upload/v1759252857/cityexperts/logos/cityexperts/logos/city-experts-logo.svg" alt="City Experts" class="h-10 w-auto">
-          <span class="font-playfair text-xl font-semibold text-deep-charcoal">City Experts</span>
+        <a href="/" class="flex items-center gap-3 mr-12" aria-label="City Experts Home">
+          <img
+            src="/assets/images/logo/logo.png"
+            alt="City Experts"
+            width="120" height="32"
+            class="block h-10 w-auto object-contain logo-header"
+            decoding="async"
+          />
+          <span class="font-playfair text-xl font-semibold text-deep-charcoal leading-none tracking-wide">
+            City Experts
+          </span>
         </a>
 
         <!-- Desktop nav -->
@@ -218,8 +237,26 @@
           <li><a href="/contact.html"  class="nav-link" data-translate="nav.contact">Contact</a></li>
         </ul>
 
-        <!-- Right side (lang + CTA) -->
+        <!-- Right side (contact icons, lang + CTA) -->
         <div class="hidden lg:flex items-center gap-4">
+          <!-- Contact Icons -->
+          <div class="flex items-center gap-3 mr-2">
+            <a href="https://wa.me/971555581631" target="_blank" rel="noopener noreferrer" 
+               class="p-2 text-deep-charcoal hover:text-brand-orange transition-colors" 
+               aria-label="Chat with us on WhatsApp">
+              <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24">
+                <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893A11.821 11.821 0 0020.885 3.488"/>
+              </svg>
+            </a>
+            <a href="mailto:enquiry@cityexpertsdubai.com" 
+               class="p-2 text-deep-charcoal hover:text-brand-orange transition-colors" 
+               aria-label="Send us an email">
+              <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 8l7.89 4.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"/>
+              </svg>
+            </a>
+          </div>
+          
           <button id="lang-toggle" class="text-sm text-deep-charcoal hover:text-oasis-teal transition-colors"
                   aria-label="Switch language">EN | AR</button>
           <a href="/contact.html" class="btn btn-primary" data-translate="nav.request-proposal">Request a Proposal</a>
@@ -243,7 +280,16 @@
       <div class="absolute inset-0 bg-deep-charcoal/60 backdrop-blur-sm" data-close-drawer></div>
       <aside class="relative ml-auto h-full w-80 max-w-[85%] bg-white shadow-strong p-6 flex flex-col">
         <div class="flex items-center justify-between mb-6">
-          <img src="https://res.cloudinary.com/dmawj7tmu/image/upload/v1759252857/cityexperts/logos/cityexperts/logos/city-experts-logo.svg" alt="City Experts" class="h-8 w-auto">
+          <picture>
+            <img
+              src="/assets/images/logo/logo.png"
+              alt="City Experts"
+              width="96" height="26"
+              class="block h-8 w-auto object-contain logo-mobile"
+              
+              decoding="async"
+            />
+          
           <button class="p-2" aria-label="Close menu" data-close-drawer>
             <svg class="w-6 h-6" viewBox="0 0 24 24" fill="none" stroke="currentColor">
               <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
@@ -349,15 +395,104 @@
 
         <div style="display:flex;gap:12px;align-items:center;margin-top:20px">
           <button id="submitBtn" class="btn-primary" type="submit" disabled>Send Request</button>
-          <a class="btn-secondary" href="https://wa.me/97141234567" target="_blank" rel="noopener">WhatsApp</a>
+          <a class="btn-secondary" href="https://wa.me/971555581631" target="_blank" rel="noopener noreferrer">Contact us via WhatsApp</a>
           <span id="formStatus" class="hero-sub" aria-live="polite"></span>
         </div>
       </form>
+
+      <!-- Contact Information Section -->
+      <div class="mt-16 grid grid-cols-1 md:grid-cols-3 gap-8 max-w-4xl mx-auto">
+        <div class="text-center">
+          <h3 class="text-xl font-semibold mb-4 text-deep-charcoal">📍 Our Location</h3>
+          <p class="text-deep-charcoal/70 text-sm">
+            V28V+JR2 - 2 طريق شاحنات الفاية - سيح شعيب<br>
+            near Round About 1 - Saih Shuaib 2<br>
+            Dubai - United Arab Emirates
+          </p>
+        </div>
+        <div class="text-center">
+          <h3 class="text-xl font-semibold mb-4 text-deep-charcoal">📞 Phone & WhatsApp</h3>
+          <p class="mb-2">
+            <a href="tel:+971555581631" class="text-oasis-teal hover:text-oasis-teal/80 transition-colors">
+              600 500508
+            </a>
+          </p>
+          <p>
+            <a href="https://wa.me/971555581631" target="_blank" rel="noopener noreferrer" 
+               class="text-oasis-teal hover:text-oasis-teal/80 transition-colors">
+              Chat with us on WhatsApp
+            </a>
+          </p>
+        </div>
+        <div class="text-center">
+          <h3 class="text-xl font-semibold mb-4 text-deep-charcoal">📧 Email & Social</h3>
+          <p class="mb-2">
+            <a href="mailto:enquiry@cityexpertsdubai.com" class="text-oasis-teal hover:text-oasis-teal/80 transition-colors">
+              Send us an email
+            </a>
+          </p>
+          <p>
+            <a href="https://www.instagram.com/cityexpertsgroup?igsh=MTRjMTA3ZzAzdzhnMA==" target="_blank" rel="noopener noreferrer"
+               class="text-oasis-teal hover:text-oasis-teal/80 transition-colors">
+              Follow us on Instagram
+            </a>
+          </p>
+        </div>
+      </div>
     </section>
   </main>
 
-  <!-- Footer would go here (similar to other pages) -->
+  <!-- Footer -->
+  <footer class="bg-deep-charcoal text-white py-16">
+    <div class="container-custom">
+      <!-- Company Info -->
+      <div class="mb-12">
+        <div class="flex items-center gap-3 mb-6">
+          <img
+            src="/assets/images/logo/logo.png"
+            alt="City Experts"
+            width="112" height="30"
+            class="block h-8 w-auto object-contain logo-mobile"
+            decoding="async"
+          />
+        
+        <span class="font-playfair text-lg font-semibold text-white leading-none">City Experts</span>
+      </div>
+      <p class="text-white/70 mb-4">Engineering Excellence. Interior Elegance.</p>
+      <p class="text-white/50 text-sm">© 2024 City Experts. All rights reserved.</p>
+    </div>
+  </footer>
 
+  <!-- Load JavaScript -->
   <script type="module" src="/js/main.js"></script>
+  <script type="module" src="/js/hero-loader.js"></script>
+  
+  <!-- Initialize local image loading -->
+  <script type="module">
+    // Simple image loading - images are already set in HTML with proper src attributes
+    document.addEventListener('DOMContentLoaded', () => {
+      console.log('🖼️ Local image system ready');
+      
+      // Ensure hero image is visible
+      const heroImage = document.querySelector('#hero-section img');
+      if (heroImage) {
+        heroImage.style.opacity = '1';
+        console.log('✅ Contact hero image visible');
+      }
+      
+      // Ensure logos are visible
+      const logos = document.querySelectorAll('img[alt*="logo"], img[alt*="Logo"]');
+      logos.forEach(logo => {
+        if (logo.src && !logo.complete) {
+          logo.onload = () => console.log('✅ Logo loaded:', logo.src);
+        }
+      });
+      
+      console.log('🎉 Contact page image system initialized');
+    });
+  </script>
+          }
+        }
+  </script>
 </body>
 </html>

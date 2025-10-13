@@ -20,7 +20,7 @@
       },
       "media": {
         "portrait": {
-          "url": "https://res.cloudinary.com/dmawj7tmu/image/upload/v1759252889/cityexperts/team/cityexperts/team/ceo-portrait.webp",
+          "url": "/assets/images/team/ceo-portrait.webp",
           "public_id": "cityexperts/team/cityexperts/team/ceo-portrait",
           "alt": {
             "en": "Ahmed Al-Mansouri, CEO of City Experts",
@@ -62,7 +62,7 @@
       },
       "media": {
         "portrait": {
-          "url": "https://res.cloudinary.com/dmawj7tmu/image/upload/v1759252890/cityexperts/team/cityexperts/team/coo-portrait.webp",
+          "url": "/assets/images/team/coo-portrait.webp",
           "public_id": "cityexperts/team/cityexperts/team/coo-portrait",
           "alt": {
             "en": "Sarah Mitchell, COO of City Experts",
@@ -104,7 +104,7 @@
       },
       "media": {
         "portrait": {
-          "url": "https://res.cloudinary.com/dmawj7tmu/image/upload/v1759252891/cityexperts/team/cityexperts/team/design-head-portrait.webp",
+          "url": "/assets/images/team/design-head-portrait.webp",
           "public_id": "cityexperts/team/cityexperts/team/design-head-portrait",
           "alt": {
             "en": "Marco Rossi, Head of Design at City Experts",
