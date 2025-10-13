@@ -743,13 +743,25 @@
           </div>
           
           <div class="relative" data-animate="fade-up" data-animate-delay="200">
-            <img 
-              src="/assets/images/capabilities-showcase.webp" loading="lazy" decoding="async" 
-              alt="City Expert construction capabilities showcase"
-              class="w-full h-auto rounded-2xl shadow-strong"
-              loading="lazy"
+            <video 
+              class="w-full h-auto rounded-2xl shadow-strong video-capabilities" 
+              data-lazy
+              autoplay 
+              muted 
+              loop 
+              playsinline 
+              preload="none"
+              poster="../public/assets/images/about/capabilities-poster.webp"
+              aria-label="City Expert capabilities showcase video"
+              onloadstart="this.style.backgroundColor='#f3f4f6'"
+              oncanplay="this.style.backgroundColor='transparent'"
             >
-            <div class="absolute inset-0 bg-gradient-to-t from-deep-charcoal/40 via-transparent to-transparent rounded-2xl"></div>
+              <source data-src="../public/assets/videos/city-expert-capabilities-optimized.mp4" type="video/mp4">
+              <source data-src="../public/assets/images/about/City Expert construction capabilities showcase.mp4" type="video/mp4">
+              <img src="../public/assets/images/about/capabilities-poster.webp" alt="City Expert construction capabilities showcase" class="w-full h-auto rounded-2xl shadow-strong" style="display: block;">
+              Your browser does not support the video tag.
+            </video>
+            <div class="absolute inset-0 bg-gradient-to-t from-deep-charcoal/50 via-transparent to-transparent rounded-2xl pointer-events-none"></div>
           </div>
         </div>
       </div>

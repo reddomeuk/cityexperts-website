@@ -70,6 +70,10 @@ document.addEventListener('DOMContentLoaded', async () => {
     
     initializeFeaturedCarousel();
     
+    // Initialize video optimization
+    initializeVideoOptimization();
+    optimizeVideoPlayback();
+    
     const initEnd = performance.now();
     
     // Dispatch component load event for performance monitoring
@@ -621,4 +625,193 @@ function initializeLogos() {
   });
   
   console.log(`✅ Logos initialized across page`);
+}
+
+// ---------- VIDEO OPTIMIZATION AND LAZY LOADING ----------
+/**
+ * Initialize video optimization and lazy loading functionality
+ */
+function initializeVideoOptimization() {
+  const videos = document.querySelectorAll('video[data-lazy]');
+  
+  if (videos.length === 0) return;
+  
+  console.log(`🎥 Initializing video optimization for ${videos.length} videos`);
+  
+  // Intersection Observer for lazy loading
+  const videoObserver = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        const video = entry.target;
+        loadVideo(video);
+        videoObserver.unobserve(video);
+      }
+    });
+  }, {
+    rootMargin: '50px 0px',
+    threshold: 0.1
+  });
+  
+  // Observe all lazy videos
+  videos.forEach(video => {
+    videoObserver.observe(video);
+    
+    // Add loading state
+    video.classList.add('video-loading');
+    
+    // Error handling
+    video.addEventListener('error', handleVideoError);
+    
+    // Loading complete
+    video.addEventListener('loadeddata', () => {
+      video.classList.remove('video-loading');
+      video.classList.add('video-loaded');
+    });
+  });
+}
+
+/**
+ * Load video sources and start playback
+ * @param {HTMLVideoElement} video - Video element to load
+ */
+function loadVideo(video) {
+  const sources = video.querySelectorAll('source[data-src]');
+  
+  sources.forEach(source => {
+    source.src = source.dataset.src;
+    source.removeAttribute('data-src');
+  });
+  
+  // Set video src if data-src exists
+  if (video.dataset.src) {
+    video.src = video.dataset.src;
+    video.removeAttribute('data-src');
+  }
+  
+  // Load the video
+  video.load();
+  
+  // Auto-play if specified (muted videos only)
+  if (video.hasAttribute('autoplay') && video.muted) {
+    video.play().catch(error => {
+      console.warn('Video autoplay failed:', error);
+    });
+  }
+}
+
+/**
+ * Handle video loading errors with fallbacks
+ * @param {Event} event - Error event
+ */
+function handleVideoError(event) {
+  const video = event.target;
+  console.warn('Video loading failed:', video.src);
+  
+  // Try fallback poster image if available
+  if (video.poster) {
+    const img = document.createElement('img');
+    img.src = video.poster;
+    img.alt = video.getAttribute('aria-label') || 'Video thumbnail';
+    img.className = 'w-full h-full object-cover';
+    
+    // Replace video with poster image
+    video.parentNode.replaceChild(img, video);
+  }
+}
+
+/**
+ * Optimize video playback based on connection and device
+ */
+function optimizeVideoPlayback() {
+  const videos = document.querySelectorAll('video');
+  
+  // Check for reduced motion preference
+  const prefersReducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+  
+  // Check for data saver or slow connection
+  const connection = navigator.connection || navigator.mozConnection || navigator.webkitConnection;
+  const isSlowConnection = connection && (
+    connection.effectiveType === 'slow-2g' || 
+    connection.effectiveType === '2g' ||
+    connection.saveData
+  );
+  
+  videos.forEach(video => {
+    // Disable autoplay on slow connections or reduced motion
+    if (isSlowConnection || prefersReducedMotion) {
+      video.removeAttribute('autoplay');
+      video.preload = 'none';
+    }
+    
+    // Add play/pause controls for accessibility
+    if (!video.hasAttribute('controls')) {
+      addVideoControls(video);
+    }
+  });
+}
+
+/**
+ * Add custom play/pause controls for accessibility
+ * @param {HTMLVideoElement} video - Video element
+ */
+function addVideoControls(video) {
+  const wrapper = document.createElement('div');
+  wrapper.className = 'relative';
+  
+  const button = document.createElement('button');
+  button.className = 'absolute inset-0 z-10 flex items-center justify-center bg-black/30 opacity-0 hover:opacity-100 transition-opacity duration-200';
+  button.setAttribute('aria-label', 'Play/Pause video');
+  button.innerHTML = `
+    <svg class="w-16 h-16 text-white" fill="currentColor" viewBox="0 0 24 24">
+      <path d="M8 5v14l11-7z"/>
+    </svg>
+  `;
+  
+  let isPlaying = false;
+  
+  button.addEventListener('click', () => {
+    if (isPlaying) {
+      video.pause();
+      button.innerHTML = `
+        <svg class="w-16 h-16 text-white" fill="currentColor" viewBox="0 0 24 24">
+          <path d="M8 5v14l11-7z"/>
+        </svg>
+      `;
+      button.setAttribute('aria-label', 'Play video');
+    } else {
+      video.play();
+      button.innerHTML = `
+        <svg class="w-16 h-16 text-white" fill="currentColor" viewBox="0 0 24 24">
+          <path d="M6 19h4V5H6v14zm8-14v14h4V5h-4z"/>
+        </svg>
+      `;
+      button.setAttribute('aria-label', 'Pause video');
+    }
+    isPlaying = !isPlaying;
+  });
+  
+  video.addEventListener('play', () => {
+    isPlaying = true;
+    button.innerHTML = `
+      <svg class="w-16 h-16 text-white" fill="currentColor" viewBox="0 0 24 24">
+        <path d="M6 19h4V5H6v14zm8-14v14h4V5h-4z"/>
+      </svg>
+    `;
+    button.setAttribute('aria-label', 'Pause video');
+  });
+  
+  video.addEventListener('pause', () => {
+    isPlaying = false;
+    button.innerHTML = `
+      <svg class="w-16 h-16 text-white" fill="currentColor" viewBox="0 0 24 24">
+        <path d="M8 5v14l11-7z"/>
+      </svg>
+    `;
+    button.setAttribute('aria-label', 'Play video');
+  });
+  
+  // Wrap video and add button
+  video.parentNode.insertBefore(wrapper, video);
+  wrapper.appendChild(video);
+  wrapper.appendChild(button);
 }
