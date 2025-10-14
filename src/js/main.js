@@ -432,17 +432,44 @@ if (form) {
 // Featured Projects Loading
 async function loadFeaturedProjects(carouselRoot) {
   try {
-    // Load exactly 6 featured projects from API
+    // Load featured projects - check localStorage first, then JSON data
     let projects = [];
     
     try {
-      const response = await fetch('/api/projects?featured=true&status=published&limit=6&sort=order');
-      if (response.ok) {
-        const data = await response.json();
-        projects = data.data || [];
+      // First try to load from localStorage (admin changes)
+      const savedProjects = localStorage.getItem('cityexperts_projects');
+      let data;
+      
+      if (savedProjects) {
+        data = JSON.parse(savedProjects);
+        console.log('Loading featured projects from localStorage (admin changes)');
       } else {
-        throw new Error('API Error: ' + response.status);
+        // Fall back to original JSON file
+        const response = await fetch('/data/projects.json');
+        if (response.ok) {
+          data = await response.json();
+          console.log('Loading featured projects from JSON file');
+        } else {
+          throw new Error('Failed to load projects: ' + response.status);
+        }
       }
+      
+      // Filter for featured projects that are published
+      projects = data.filter(project => 
+        project.featured === true && 
+        (project.status === 'published' || project.status === undefined) // undefined for legacy projects
+      )
+      .sort((a, b) => (a.order || 0) - (b.order || 0))
+      .slice(0, 6); // Limit to 6 projects
+      
+      console.log(`Found ${projects.length} featured projects:`, projects.map(p => ({
+        id: p.id,
+        title: p.i18n?.en?.title,
+        featured: p.featured,
+        status: p.status,
+        hasImages: !!(p.media?.hero || p.media?.gallery?.[0] || p.media?.thumb)
+      })));
+      
     } catch (apiError) {
       console.error('Failed to load featured projects:', apiError);
       const track = carouselRoot.querySelector("[data-carousel-track]");
@@ -504,19 +531,34 @@ async function loadFeaturedProjects(carouselRoot) {
 function createProjectCard(project, lang) {
   const content = project.i18n?.[lang] || project.i18n?.en || { title: project.id, excerpt: '' };
 
-  const imageName = project.media?.heroWide?.url || project.media?.hero?.url || project.media?.thumb?.url || '';
-  if (!imageName) {
-    // Skip projects without images
-    return '';
+  // Handle different image sources (admin uploads vs original images)
+  let imagePath = '';
+  let altText = content.title;
+  
+  if (project.media?.hero?.url) {
+    imagePath = project.media.hero.url;
+    altText = project.media.hero.alt || content.title;
+  } else if (project.media?.gallery?.[0]?.url) {
+    imagePath = project.media.gallery[0].url;
+    altText = project.media.gallery[0].alt || content.title;
+  } else if (project.media?.thumb?.url) {
+    imagePath = project.media.thumb.url;
+    altText = project.media.thumb.alt || content.title;
+  } else if (project.media?.heroWide?.url) {
+    imagePath = project.media.heroWide.url;
+    altText = project.media.heroWide.alt?.[lang] || content.title;
   }
 
-  // Convert to local path - assume images are in public/assets/images/
-  const imagePath = imageName.startsWith('/assets/') ? imageName : `/assets/images/${imageName}`;
-
-  const altText = project.media?.heroWide?.alt?.[lang]
-               || project.media?.hero?.alt?.[lang]
-               || project.media?.thumb?.alt?.[lang]
-               || content.title;
+  // If no image found, use placeholder instead of skipping the project
+  if (!imagePath) {
+    imagePath = '/assets/images/placeholder.jpg';
+    altText = content.title;
+  }
+  
+  // Convert relative paths to absolute paths for legacy projects
+  if (imagePath && !imagePath.startsWith('http') && !imagePath.startsWith('data:') && !imagePath.startsWith('/')) {
+    imagePath = `/assets/images/${imagePath}`;
+  }
 
   return `
   <article class="project-card w-full relative group bg-white rounded-2xl overflow-hidden shadow-lg hover:shadow-xl transition-shadow duration-300">
@@ -529,11 +571,11 @@ function createProjectCard(project, lang) {
     </div>
     <div class="absolute bottom-8 left-8 right-8 text-white">
       <div class="flex items-center space-x-4 mb-4">
-        <span class="px-3 py-1 bg-oasis-teal rounded-full text-sm capitalize">${project.category || ''}</span>
-        <span class="px-3 py-1 bg-brand-orange text-pure-white rounded-full text-sm">${project.city || ''}</span>
+        <span class="px-3 py-1 bg-oasis-teal rounded-full text-sm capitalize">${project.category || 'General'}</span>
+        <span class="px-3 py-1 bg-brand-orange text-pure-white rounded-full text-sm">${project.city || 'Dubai'}</span>
       </div>
       <h3 class="text-2xl md:text-3xl font-playfair font-medium mb-2">${content.title}</h3>
-      <p class="text-white/90 mb-4 max-w-2xl">${content.excerpt || ''}</p>
+      <p class="text-white/90 mb-4 max-w-2xl">${content.excerpt || 'Featured project showcasing our expertise and attention to detail.'}</p>
       <a class="btn btn-secondary" href="/projects.html#${project.id}" aria-label="Learn more about ${content.title}">Learn More</a>
     </div>
   </article>`;

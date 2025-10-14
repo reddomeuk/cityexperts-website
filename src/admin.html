@@ -8,6 +8,7 @@
   <script>document.documentElement.classList.add('auth-pending');</script>
   <script type="module" src="/js/main.js"></script>
   <script type="module" src="/js/hero-loader.js"></script>
+  <script defer src="/js/admin.js"></script>
   <style>
     /* Hide dashboard by default until session confirmed */
     .auth-pending #dashView { display: none !important; }
@@ -240,9 +241,15 @@
           <img src="/assets/images/city-experts-logo.svg" alt="City Experts" class="h-8 w-auto">
           <span class="font-playfair text-lg font-semibold text-deep-charcoal">City Experts Admin</span>
         </a>
-        <div class="authed">
-          <a href="/" class="btn btn-secondary text-sm" style="margin-right: 12px;">View Site</a>
-          <button id="logoutBtn" class="btn btn-secondary text-sm">Log out</button>
+        <div class="authed flex items-center gap-4">
+          <nav class="flex items-center gap-4">
+            <a href="admin.html" class="text-sm text-blue-600 hover:text-blue-800 font-medium">📊 Dashboard</a>
+            <a href="user-management.html" class="text-sm text-blue-600 hover:text-blue-800 font-medium">👥 Users</a>
+          </nav>
+          <div class="flex items-center gap-2">
+            <a href="/" class="btn btn-secondary text-sm">View Site</a>
+            <button id="logoutBtn" class="btn btn-secondary text-sm">Log out</button>
+          </div>
         </div>
       </div>
     </div>
@@ -275,7 +282,30 @@
         
         <!-- Welcome Box -->
         <div class="help-box">
-          <p style="margin: 0;"><strong>👋 Welcome to City Experts Admin!</strong> Manage your projects, featured content, and page headers all in one place. The logo is protected and cannot be changed to maintain brand consistency.</p>
+          <p style="margin: 0;"><strong>👋 Welcome to City Experts Admin!</strong> Manage your projects and featured content. Focus on core project management functionality.</p>
+        </div>
+
+        <!-- Quick Stats -->
+        <div class="admin-section">
+          <h2>📊 Quick Stats</h2>
+          <div class="simple-grid" style="grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));">
+            <div class="simple-item">
+              <div style="font-size: 24px; font-weight: 700; color: #0F8B8D;" id="totalCount">-</div>
+              <div style="color: #6b7280; font-size: 14px;">Total Projects</div>
+            </div>
+            <div class="simple-item">
+              <div style="font-size: 24px; font-weight: 700; color: #059669;" id="publishedCount">-</div>
+              <div style="color: #6b7280; font-size: 14px;">Published</div>
+            </div>
+            <div class="simple-item">
+              <div style="font-size: 24px; font-weight: 700; color: #f59e0b;" id="featuredCount">-</div>
+              <div style="color: #6b7280; font-size: 14px;">Featured</div>
+            </div>
+            <div class="simple-item">
+              <div style="font-size: 24px; font-weight: 700; color: #6b7280;" id="draftCount">-</div>
+              <div style="color: #6b7280; font-size: 14px;">Drafts</div>
+            </div>
+          </div>
         </div>
 
         <!-- Featured Projects -->
