@@ -1,0 +1,373 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>{{PROJECT_TITLE}} - City Expert Project Details | UAE</title>
+  <meta name="description" content="{{PROJECT_DESCRIPTION}}">
+  <meta name="robots" content="index,follow">
+  
+  <!-- Open Graph -->
+  <meta property="og:title" content="{{PROJECT_TITLE}} - City Expert">
+  <meta property="og:description" content="{{PROJECT_DESCRIPTION}}">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://cityexperts.ae/projects/{{PROJECT_ID}}">
+  <meta property="og:image" content="{{PROJECT_HERO_IMAGE}}">
+  
+  <!-- Twitter Card -->
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="{{PROJECT_TITLE}}">
+  <meta name="twitter:description" content="{{PROJECT_DESCRIPTION}}">
+  <meta name="twitter:image" content="{{PROJECT_HERO_IMAGE}}">
+  
+  <!-- JSON-LD Structured Data -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "ConstructionProject",
+    "name": "{{PROJECT_TITLE}}",
+    "description": "{{PROJECT_DESCRIPTION}}",
+    "image": "{{PROJECT_HERO_IMAGE}}",
+    "locationCreated": {
+      "@type": "Place",
+      "addressLocality": "{{PROJECT_CITY}}",
+      "addressCountry": "UAE"
+    },
+    "creator": {
+      "@type": "Organization",
+      "name": "City Expert",
+      "url": "https://cityexperts.ae"
+    },
+    "dateCompleted": "{{PROJECT_COMPLETION}}",
+    "additionalProperty": [
+      {
+        "@type": "PropertyValue",
+        "name": "Project Category",
+        "value": "{{PROJECT_CATEGORY}}"
+      },
+      {
+        "@type": "PropertyValue", 
+        "name": "Area",
+        "value": "{{PROJECT_AREA}}"
+      }
+    ]
+  }
+  </script>
+  
+  <!-- Favicons -->
+  <link rel="icon" type="image/x-icon" href="/favicon.ico">
+  <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+  <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+  
+  <!-- Preload critical resources -->
+  <link rel="preload" href="{{PROJECT_HERO_IMAGE}}" as="image">
+  
+  <!-- Skip link for accessibility -->
+  <a href="#main-content" class="skip-link sr-only focus:not-sr-only focus:absolute focus:top-4 focus:left-4 bg-oasis-teal text-white px-4 py-2 rounded-md z-50">Skip to main content</a>
+  
+  <!-- Stylesheets -->
+  <link rel="stylesheet" href="styles/main.css">
+</head>
+
+<body class="antialiased">
+  <!-- Header / Navigation -->
+  <nav id="site-header" class="fixed top-0 inset-x-0 z-40 bg-white/95 backdrop-blur-sm border-b border-warm-stone/20 transition-colors">
+    <div class="container-custom">
+      <div class="flex h-20 items-center">
+        <!-- Logo -->
+        <a href="../index.html" class="flex items-center gap-3 mr-12" aria-label="City Expert Home">
+          <img
+            src="../assets/images/city-experts-logo.png"
+            alt="City Expert"
+            width="120" height="32"
+            class="block h-10 w-auto object-contain logo-header"
+            decoding="async"
+          />
+        </a>
+
+        <!-- Desktop Navigation -->
+        <nav class="hidden lg:block flex-1">
+          <ul class="flex items-center space-x-8">
+            <li><a href="../index.html" class="nav-link">Home</a></li>
+            <li><a href="about.html" class="nav-link">About</a></li>
+            <li><a href="projects.html" class="nav-link nav-link-active">Projects</a></li>
+            <li><a href="contact.html" class="nav-link">Contact</a></li>
+          </ul>
+        </nav>
+
+        <!-- Desktop CTA -->
+        <div class="hidden lg:flex items-center space-x-6">
+          <button id="lang-toggle" class="text-sm text-deep-charcoal hover:text-oasis-teal transition-colors">
+            <span>Language</span>: <span id="lang-label">English</span>
+          </button>
+          <a href="contact.html" class="btn btn-primary">Get Quote</a>
+        </div>
+
+        <!-- Mobile menu button -->
+        <button class="lg:hidden ml-auto p-2" aria-label="Open menu" data-open-drawer>
+          <svg class="w-6 h-6" viewBox="0 0 24 24" fill="none" stroke="currentColor">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"/>
+          </svg>
+        </button>
+      </div>
+    </div>
+
+    <!-- Mobile drawer -->
+    <div id="mobile-drawer" class="fixed inset-0 z-50 hidden translate-x-full transition-transform ease-in-out duration-300">
+      <div class="absolute inset-0 bg-deep-charcoal/60 backdrop-blur-sm" data-close-drawer></div>
+      <aside class="relative ml-auto h-full w-80 max-w-[85%] bg-white shadow-strong p-6 flex flex-col">
+        <div class="flex items-center justify-between mb-6">
+          <img src="../assets/images/city-experts-logo.png" alt="City Expert" width="96" height="26" class="block h-8 w-auto object-contain" decoding="async" />
+          <button class="p-2" aria-label="Close menu" data-close-drawer>
+            <svg class="w-6 h-6" viewBox="0 0 24 24" fill="none" stroke="currentColor">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"/>
+            </svg>
+          </button>
+        </div>
+
+        <nav class="flex-1">
+          <ul class="space-y-4">
+            <li><a href="../index.html" class="mobile-nav-link">Home</a></li>
+            <li><a href="about.html" class="mobile-nav-link">About</a></li>
+            <li><a href="projects.html" class="mobile-nav-link mobile-nav-link-active">Projects</a></li>
+            <li><a href="contact.html" class="mobile-nav-link">Contact</a></li>
+          </ul>
+        </nav>
+
+        <div class="mt-6 border-t border-warm-stone/20 pt-6 space-y-4">
+          <button id="mobile-lang-toggle" class="w-full text-left text-sm hover:text-oasis-teal">
+            <span>Language</span>: <span id="mobile-lang-label">English</span>
+          </button>
+          <a href="contact.html" class="btn btn-primary w-full text-center">Get Quote</a>
+        </div>
+      </aside>
+    </div>
+  </nav>
+  
+  <!-- Main Content -->
+  <main id="main-content">
+    <!-- Breadcrumb -->
+    <section class="pt-20 pb-8 bg-warm-stone/30">
+      <div class="container-custom">
+        <nav aria-label="Breadcrumb" class="flex items-center space-x-2 text-sm">
+          <a href="../index.html" class="text-deep-charcoal/60 hover:text-oasis-teal">Home</a>
+          <svg class="w-4 h-4 text-deep-charcoal/40" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"></path>
+          </svg>
+          <a href="projects.html" class="text-deep-charcoal/60 hover:text-oasis-teal">Projects</a>
+          <svg class="w-4 h-4 text-deep-charcoal/40" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"></path>
+          </svg>
+          <span class="text-deep-charcoal font-medium" id="project-breadcrumb">Loading...</span>
+        </nav>
+      </div>
+    </section>
+
+    <!-- Project Hero -->
+    <section class="relative bg-warm-stone/30 pb-16">
+      <div class="container-custom">
+        <div class="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
+          <!-- Project Info -->
+          <div data-animate="fade-up">
+            <div class="flex items-center space-x-4 mb-6">
+              <div class="w-12 h-px bg-brand-orange"></div>
+              <span id="project-category" class="text-brand-orange font-medium uppercase tracking-wider">Loading...</span>
+            </div>
+            
+            <h1 id="project-title" class="text-3xl md:text-4xl lg:text-5xl font-playfair font-medium mb-8">
+              Loading Project...
+            </h1>
+            
+            <p id="project-excerpt" class="text-xl text-deep-charcoal/80 mb-8 leading-relaxed">
+              Please wait while we load the project details.
+            </p>
+            
+            <!-- Project Stats Grid -->
+            <div id="project-stats" class="grid grid-cols-2 gap-6 mb-8">
+              <!-- Stats will be populated dynamically -->
+            </div>
+            
+            <!-- Action Buttons -->
+            <div class="flex flex-col sm:flex-row gap-4">
+              <a href="contact.html" class="btn btn-primary">
+                Start Your Project
+              </a>
+              <a href="projects.html" class="btn btn-secondary">
+                View All Projects
+              </a>
+            </div>
+          </div>
+          
+          <!-- Project Hero Image -->
+          <div class="relative" data-animate="fade-up" data-animate-delay="200">
+            <div id="project-hero-container" class="relative">
+              <div class="w-full h-96 bg-gray-200 rounded-2xl shadow-strong animate-pulse"></div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Project Gallery -->
+    <section class="section bg-white">
+      <div class="container-custom">
+        <div class="text-center mb-12" data-animate="fade-up">
+          <h2 class="text-3xl md:text-4xl font-playfair font-medium mb-6">
+            Project Gallery
+          </h2>
+          <p class="text-xl text-deep-charcoal/80 max-w-3xl mx-auto">
+            Explore detailed views and progress of this exceptional project.
+          </p>
+        </div>
+        
+        <div id="project-gallery" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+          <!-- Gallery images will be populated dynamically -->
+          <div class="col-span-full text-center py-12">
+            <div class="animate-pulse">
+              <div class="w-8 h-8 bg-oasis-teal/20 rounded-full mx-auto mb-4"></div>
+              <p class="text-deep-charcoal/60">Loading gallery...</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Project Details -->
+    <section class="section bg-warm-stone/30">
+      <div class="container-custom">
+        <div class="max-w-4xl mx-auto">
+          <div class="text-center mb-12" data-animate="fade-up">
+            <h2 class="text-3xl md:text-4xl font-playfair font-medium mb-6">
+              Project Details
+            </h2>
+          </div>
+          
+          <div id="project-description" class="prose prose-lg max-w-none">
+            <!-- Project description will be populated dynamically -->
+            <div class="animate-pulse">
+              <div class="h-4 bg-gray-200 rounded w-3/4 mb-4"></div>
+              <div class="h-4 bg-gray-200 rounded w-1/2 mb-4"></div>
+              <div class="h-4 bg-gray-200 rounded w-5/6 mb-4"></div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Related Projects -->
+    <section class="section bg-white">
+      <div class="container-custom">
+        <div class="text-center mb-12" data-animate="fade-up">
+          <h2 class="text-3xl md:text-4xl font-playfair font-medium mb-6">
+            Related Projects
+          </h2>
+          <p class="text-xl text-deep-charcoal/80 max-w-3xl mx-auto">
+            Discover more exceptional projects from our portfolio.
+          </p>
+        </div>
+        
+        <div id="related-projects" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+          <!-- Related projects will be populated dynamically -->
+        </div>
+      </div>
+    </section>
+
+    <!-- Call to Action -->
+    <section class="section bg-deep-charcoal text-white">
+      <div class="container-custom text-center">
+        <div class="max-w-4xl mx-auto" data-animate="fade-up">
+          <h2 class="text-3xl md:text-4xl lg:text-5xl font-playfair font-medium mb-6">
+            Ready to Start Your Next Project?
+          </h2>
+          <p class="text-xl text-white/80 mb-8 leading-relaxed">
+            Let City Expert bring your vision to life with the same excellence and attention to detail showcased in this project.
+          </p>
+          <div class="flex flex-col sm:flex-row gap-4 justify-center items-center">
+            <a href="contact.html" class="btn btn-primary btn-large">
+              Start Your Project
+            </a>
+            <a href="projects.html" class="btn btn-secondary btn-large">
+              View All Projects
+            </a>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- Footer -->
+  <footer class="bg-deep-charcoal text-white pt-16 pb-8">
+    <div class="container-custom">
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-12 mb-12">
+        <!-- Company Info -->
+        <div class="space-y-6">
+          <div class="footer-logo-container">
+            <img src="../assets/images/city-experts-logo.png" alt="City Expert" width="120" height="32" class="h-10 w-auto object-contain" decoding="async" />
+          </div>
+          <p class="text-white/80 leading-relaxed">
+            Premier construction and interior design company delivering exceptional projects across the UAE with uncompromising quality and innovation.
+          </p>
+          <div class="flex items-center space-x-4">
+            <a href="https://www.instagram.com/cityexpertsgroup?igsh=MTRjMTA3ZzAzdzhnMA==" target="_blank" rel="noopener noreferrer" class="text-white/60 hover:text-white transition-colors">
+              <svg class="w-6 h-6" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+                <path fill-rule="evenodd" d="M12.017 0C5.396 0 .029 5.367.029 11.987c0 6.621 5.367 11.988 11.988 11.988s11.987-5.367 11.987-11.988C24.004 5.367 18.637.001 12.017.001zM8.449 16.988c-1.297 0-2.448-.611-3.174-1.559-.726-.948-.726-2.559 0-3.507.726-.948 1.877-1.559 3.174-1.559s2.449.611 3.175 1.559c.726.948.726 2.559 0 3.507-.726.948-1.878 1.559-3.175 1.559zm7.718 0c-1.297 0-2.449-.611-3.175-1.559-.726-.948-.726-2.559 0-3.507.726-.948 1.878-1.559 3.175-1.559 1.296 0 2.448.611 3.174 1.559.726.948.726 2.559 0 3.507-.726.948-1.878 1.559-3.174 1.559z" clip-rule="evenodd" />
+              </svg>
+            </a>
+          </div>
+        </div>
+
+        <!-- Quick Links -->
+        <div class="space-y-6">
+          <h3 class="text-lg font-semibold">Quick Links</h3>
+          <nav class="space-y-3">
+            <a href="../index.html" class="block text-white/80 hover:text-white transition-colors">Home</a>
+            <a href="about.html" class="block text-white/80 hover:text-white transition-colors">About Us</a>
+            <a href="projects.html" class="block text-white/80 hover:text-white transition-colors">Projects</a>
+            <a href="contact.html" class="block text-white/80 hover:text-white transition-colors">Contact</a>
+          </nav>
+        </div>
+
+        <!-- Contact Info -->
+        <div class="space-y-6">
+          <h3 class="text-lg font-semibold">Contact Info</h3>
+          <div class="space-y-4">
+            <div class="flex items-start space-x-3">
+              <svg class="w-5 h-5 text-oasis-teal mt-1 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z"></path>
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z"></path>
+              </svg>
+              <p class="text-white/80">V28V+JR2 - 2 طريق شاحنات الفاية - سيح شعيب - near Round About 1 - Saih Shuaib 2, Dubai, UAE</p>
+            </div>
+            <div class="flex items-center space-x-3">
+              <svg class="w-5 h-5 text-oasis-teal flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z"></path>
+              </svg>
+              <a href="tel:+971555581631" class="text-white/80 hover:text-white transition-colors">+971 55 558 1631</a>
+            </div>
+            <div class="flex items-center space-x-3">
+              <svg class="w-5 h-5 text-oasis-teal flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"></path>
+              </svg>
+              <a href="mailto:enquiry@cityexpertdubai.com" class="text-white/80 hover:text-white transition-colors">enquiry@cityexpertdubai.com</a>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Copyright -->
+      <div class="border-t border-white/20 pt-8 text-center">
+        <p class="text-white/60">
+          © 2024 City Expert. All rights reserved. | 
+          <a href="/privacy-policy.html" class="hover:text-white transition-colors">Privacy Policy</a> | 
+          <a href="/terms-of-service.html" class="hover:text-white transition-colors">Terms of Service</a>
+        </p>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Scripts -->
+  <script src="js/main.js" type="module"></script>
+  <script src="js/project-detail.js" type="module"></script>
+</body>
+</html>
