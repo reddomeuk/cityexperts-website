@@ -34,11 +34,28 @@ class ProjectManager {
       const response = await fetch('/data/projects.json');
       
       if (!response.ok) {
-        throw new Error(`HTTP ${response.status}: ${response.statusText}`);
+        console.error(`Failed to fetch projects: ${response.status} ${response.statusText}`);
+        console.error('Response URL:', response.url);
+        
+        // Try to get the response text to see what we actually received
+        const responseText = await response.text();
+        console.error('Response content:', responseText.substring(0, 200));
+        
+        throw new Error(`HTTP ${response.status}: ${response.statusText}. Check if /data/projects.json exists on the server.`);
       }
       
-      this.allProjects = await response.json();
-      console.log('Successfully loaded', this.allProjects.length, 'projects from JSON file');
+      const responseText = await response.text();
+      console.log('Raw response length:', responseText.length);
+      console.log('Response starts with:', responseText.substring(0, 100));
+      
+      try {
+        this.allProjects = JSON.parse(responseText);
+        console.log('Successfully loaded', this.allProjects.length, 'projects from JSON file');
+      } catch (parseError) {
+        console.error('JSON parse error:', parseError);
+        console.error('Response that failed to parse:', responseText.substring(0, 500));
+        throw new Error(`Failed to parse projects JSON: ${parseError.message}`);
+      }
     } catch (error) {
       console.error('Error loading projects:', error);
       throw error;

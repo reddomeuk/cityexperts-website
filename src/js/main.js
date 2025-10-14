@@ -445,12 +445,30 @@ async function loadFeaturedProjects(carouselRoot) {
         console.log('Loading featured projects from localStorage (admin changes)');
       } else {
         // Fall back to original JSON file
+        console.log('Fetching featured projects from /data/projects.json');
         const response = await fetch('/data/projects.json');
-        if (response.ok) {
-          data = await response.json();
+        
+        if (!response.ok) {
+          console.error(`Failed to fetch projects: ${response.status} ${response.statusText}`);
+          console.error('Response URL:', response.url);
+          
+          // Try to get the response text to see what we actually received
+          const responseText = await response.text();
+          console.error('Response content:', responseText.substring(0, 200));
+          
+          throw new Error(`Failed to load projects: HTTP ${response.status} - Check if /data/projects.json exists on the server.`);
+        }
+        
+        const responseText = await response.text();
+        console.log('Raw featured projects response length:', responseText.length);
+        
+        try {
+          data = JSON.parse(responseText);
           console.log('Loading featured projects from JSON file');
-        } else {
-          throw new Error('Failed to load projects: ' + response.status);
+        } catch (parseError) {
+          console.error('JSON parse error for featured projects:', parseError);
+          console.error('Response that failed to parse:', responseText.substring(0, 500));
+          throw new Error(`Failed to parse featured projects JSON: ${parseError.message}`);
         }
       }
       

@@ -1,0 +1,314 @@
+[
+  {
+    "id": "luxury-villa-dubai",
+    "status": "published",
+    "order": 1,
+    "category": "residential",
+    "subcategory": "villa",
+    "city": "Dubai",
+    "client": "Private Client",
+    "featured": true,
+    "spotlight": true,
+    "timeline": 18,
+    "completion": "2024",
+    "area": "850 sqm",
+    "bedrooms": 6,
+    "bathrooms": 8,
+    "i18n": {
+      "en": {
+        "title": "Luxury Villa Dubai",
+        "excerpt": "Stunning 6-bedroom luxury villa showcasing contemporary architecture with traditional Arabian elements.",
+        "description": "## Project Overview\n\nThis magnificent luxury villa represents the perfect fusion of contemporary design and traditional Arabian architecture. Located in one of Dubai's most prestigious neighborhoods, this 6-bedroom, 8-bathroom residence spans 850 square meters of meticulously crafted living space.\n\n## Key Features\n\n- 6 spacious bedrooms with en-suite bathrooms\n- Grand double-height entrance foyer\n- Open-plan living and dining areas\n- Gourmet kitchen with premium appliances\n- Private swimming pool and landscaped gardens\n- Home automation and smart systems\n- Premium marble and stone finishes\n- Custom-designed interiors\n\n## Scope of Work\n\n- Complete construction from foundation to finishing\n- Architectural design and planning\n- Interior design and decoration\n- Landscape design and installation\n- MEP systems integration\n- Swimming pool construction\n- Custom millwork and built-ins"
+      },
+      "ar": {
+        "title": "فيلا فاخرة دبي",
+        "excerpt": "فيلا فاخرة مذهلة من ٦ غرف نوم تعرض العمارة المعاصرة مع العناصر العربية التقليدية.",
+        "description": "## نظرة عامة على المشروع\n\nتمثل هذه الفيلا الفاخرة الرائعة الاندماج المثالي بين التصميم المعاصر والعمارة العربية التقليدية. تقع في أحد أرقى أحياء دبي، وتضم هذه الإقامة المكونة من ٦ غرف نوم و٨ حمامات مساحة معيشة مصممة بعناية فائقة تبلغ ٨٥٠ متر مربع.\n\n## المميزات الرئيسية\n\n- ٦ غرف نوم واسعة مع حمامات خاصة\n- مدخل فخم بارتفاع مضاعف\n- مناطق معيشة وطعام مفتوحة\n- مطبخ للذواقة مع أجهزة متميزة\n- مسبح خاص وحدائق منسقة\n- أتمتة المنزل والأنظمة الذكية\n- تشطيبات رخام وحجر متميزة\n- تصاميم داخلية مخصصة\n\n## نطاق العمل\n\n- البناء الكامل من الأساسات إلى التشطيبات\n- التصميم المعماري والتخطيط\n- التصميم الداخلي والديكور\n- تصميم وتنفيذ المناظر الطبيعية\n- تكامل الأنظمة الكهروميكانيكية\n- إنشاء المسبح\n- الأعمال الخشبية والمدمجة المخصصة"
+      }
+    },
+    "media": {
+      "hero": {
+        "url": "/assets/images/projects/villa/villa-project01/Villa Hero Picture.jpg",
+        "alt": {
+          "en": "Luxury villa exterior with modern architecture and landscaping",
+          "ar": "واجهة فيلا فاخرة مع العمارة الحديثة والمناظر الطبيعية"
+        }
+      },
+      "thumb": {
+        "url": "/assets/images/projects/villa/villa-project01/VILLA2.jpg",
+        "alt": {
+          "en": "Villa thumbnail",
+          "ar": "صورة مصغرة للفيلا"
+        }
+      },
+      "gallery": [
+        {
+          "url": "/assets/images/projects/villa/villa-project01/Villa Hero Picture.jpg",
+          "alt": {
+            "en": "Main villa exterior view",
+            "ar": "المنظر الخارجي الرئيسي للفيلا"
+          }
+        },
+        {
+          "url": "/assets/images/projects/villa/villa-project01/VILLA2.jpg",
+          "alt": {
+            "en": "Villa side view with garden",
+            "ar": "منظر جانبي للفيلا مع الحديقة"
+          }
+        },
+        {
+          "url": "/assets/images/projects/villa/villa-project01/VILLA3.jpg",
+          "alt": {
+            "en": "Villa rear view with pool area",
+            "ar": "المنظر الخلفي للفيلا مع منطقة المسبح"
+          }
+        },
+        {
+          "url": "/assets/images/projects/villa/villa-project01/DSC00287-HDR.jpg",
+          "alt": {
+            "en": "Elegant entrance hallway",
+            "ar": "ممر المدخل الأنيق"
+          }
+        },
+        {
+          "url": "/assets/images/projects/villa/villa-project01/DSC00607-HDR.jpg",
+          "alt": {
+            "en": "Luxurious living room interior",
+            "ar": "داخل غرفة المعيشة الفاخرة"
+          }
+        },
+        {
+          "url": "/assets/images/projects/villa/villa-project01/DSC01218-HDR.jpg",
+          "alt": {
+            "en": "Modern kitchen design",
+            "ar": "تصميم المطبخ الحديث"
+          }
+        },
+        {
+          "url": "/assets/images/projects/villa/villa-project01/DSC02975-HDR.jpg",
+          "alt": {
+            "en": "Master bedroom suite",
+            "ar": "جناح غرفة النوم الرئيسية"
+          }
+        },
+        {
+          "url": "/assets/images/projects/villa/villa-project01/DSC04223-HDR-Enhanced-NR.jpg",
+          "alt": {
+            "en": "Dining room with chandelier",
+            "ar": "غرفة الطعام مع الثريا"
+          }
+        },
+        {
+          "url": "/assets/images/projects/villa/villa-project01/DSC04569-HDR.jpg",
+          "alt": {
+            "en": "Bathroom with marble finishes",
+            "ar": "حمام مع تشطيبات رخامية"
+          }
+        },
+        {
+          "url": "/assets/images/projects/villa/villa-project01/DSC05579-HDR.jpg",
+          "alt": {
+            "en": "Outdoor terrace and pool",
+            "ar": "الشرفة الخارجية والمسبح"
+          }
+        },
+        {
+          "url": "/assets/images/projects/villa/villa-project01/DSC05881-HDR.jpg",
+          "alt": {
+            "en": "Night view of villa exterior",
+            "ar": "منظر ليلي لواجهة الفيلا"
+          }
+        },
+        {
+          "url": "/assets/images/projects/villa/villa-project01/DSC09188-HDR.jpg",
+          "alt": {
+            "en": "Garden and landscape design",
+            "ar": "تصميم الحديقة والمناظر الطبيعية"
+          }
+        }
+      ]
+    }
+  },
+  {
+    "id": "commercial-office-building",
+    "status": "published",
+    "order": 2,
+    "category": "commercial",
+    "subcategory": "office",
+    "city": "Dubai",
+    "client": "Business Group LLC",
+    "featured": true,
+    "spotlight": false,
+    "timeline": 24,
+    "completion": "2024",
+    "area": "1200 sqm",
+    "floors": 4,
+    "units": 32,
+    "i18n": {
+      "en": {
+        "title": "Modern Commercial Office Building",
+        "excerpt": "4-story contemporary office building with premium finishes and modern amenities.",
+        "description": "## Project Overview\n\nA state-of-the-art 4-story commercial office building designed to meet the needs of modern businesses. This 1,200 square meter development features 32 office units with contemporary design, energy-efficient systems, and premium finishes throughout.\n\n## Key Features\n\n- 4 floors of premium office space\n- 32 flexible office units\n- Modern glass facade with energy efficiency\n- High-speed elevator systems\n- Underground parking facility\n- 24/7 security and access control\n- Central air conditioning system\n- Fiber optic internet infrastructure\n- Landscaped entrance and reception area\n\n## Scope of Work\n\n- Complete structural construction\n- MEP systems design and installation\n- Facade engineering and glazing\n- Interior fit-out and finishes\n- Parking facility construction\n- Security systems integration\n- Landscape design and implementation"
+      },
+      "ar": {
+        "title": "مبنى مكاتب تجاري حديث",
+        "excerpt": "مبنى مكاتب معاصر من ٤ طوابق مع تشطيبات متميزة ووسائل راحة حديثة.",
+        "description": "## نظرة عامة على المشروع\n\nمبنى مكاتب تجاري متطور من ٤ طوابق مصمم لتلبية احتياجات الأعمال الحديثة. يضم هذا المشروع الذي تبلغ مساحته ١٢٠٠ متر مربع ٣٢ وحدة مكتبية مع تصميم معاصر وأنظمة موفرة للطاقة وتشطيبات متميزة في جميع أنحائه.\n\n## المميزات الرئيسية\n\n- ٤ طوابق من المساحات المكتبية المتميزة\n- ٣٢ وحدة مكتبية مرنة\n- واجهة زجاجية حديثة موفرة للطاقة\n- أنظمة مصاعد عالية السرعة\n- مرفق مواقف تحت الأرض\n- أمن ونظام دخول ٢٤/٧\n- نظام تكييف مركزي\n- بنية تحتية للإنترنت عالي السرعة\n- منطقة مدخل واستقبال منسقة\n\n## نطاق العمل\n\n- البناء الهيكلي الكامل\n- تصميم وتركيب الأنظمة الكهروميكانيكية\n- هندسة الواجهات والزجاج\n- التشطيبات الداخلية والتجهيزات\n- إنشاء مرفق المواقف\n- تكامل أنظمة الأمن\n- تصميم وتنفيذ المناظر الطبيعية"
+      }
+    },
+    "media": {
+      "hero": {
+        "url": "/assets/images/projects/commercial/commericial-project02/hero.webp",
+        "alt": {
+          "en": "Modern commercial office building exterior",
+          "ar": "واجهة مبنى المكاتب التجاري الحديث"
+        }
+      },
+      "thumb": {
+        "url": "/assets/images/projects/commercial/commericial-project02/IMG-20240415-WA0011.jpg",
+        "alt": {
+          "en": "Office building thumbnail",
+          "ar": "صورة مصغرة لمبنى المكاتب"
+        }
+      },
+      "gallery": [
+        {
+          "url": "/assets/images/projects/commercial/commericial-project02/hero.webp",
+          "alt": {
+            "en": "Main building exterior",
+            "ar": "الواجهة الخارجية الرئيسية للمبنى"
+          }
+        },
+        {
+          "url": "/assets/images/projects/commercial/commericial-project02/IMG-20240415-WA0011.jpg",
+          "alt": {
+            "en": "Building entrance and lobby",
+            "ar": "مدخل المبنى والبهو"
+          }
+        },
+        {
+          "url": "/assets/images/projects/commercial/commericial-project02/IMG-20240415-WA0012.jpg",
+          "alt": {
+            "en": "Office interior layout",
+            "ar": "تخطيط داخلي للمكتب"
+          }
+        },
+        {
+          "url": "/assets/images/projects/commercial/commericial-project02/IMG-20240415-WA0013.jpg",
+          "alt": {
+            "en": "Conference room setup",
+            "ar": "إعداد غرفة الاجتماعات"
+          }
+        },
+        {
+          "url": "/assets/images/projects/commercial/commericial-project02/IMG-20240415-WA0014.jpg",
+          "alt": {
+            "en": "Modern office workspace",
+            "ar": "مساحة عمل مكتبية حديثة"
+          }
+        },
+        {
+          "url": "/assets/images/projects/commercial/commericial-project02/IMG-20240415-WA0015.jpg",
+          "alt": {
+            "en": "Reception area design",
+            "ar": "تصميم منطقة الاستقبال"
+          }
+        },
+        {
+          "url": "/assets/images/projects/commercial/commericial-project02/IMG-20240415-WA0016.jpg",
+          "alt": {
+            "en": "Building facade detail",
+            "ar": "تفاصيل واجهة المبنى"
+          }
+        },
+        {
+          "url": "/assets/images/projects/commercial/commericial-project02/IMG-20240415-WA0018.jpg",
+          "alt": {
+            "en": "Construction progress view",
+            "ar": "منظر تقدم البناء"
+          }
+        }
+      ]
+    }
+  },
+  {
+    "id": "luxury-interior-design",
+    "status": "published",
+    "order": 3,
+    "category": "interior",
+    "subcategory": "residential",
+    "city": "Dubai",
+    "client": "Private Residence",
+    "featured": true,
+    "spotlight": false,
+    "timeline": 6,
+    "completion": "2024",
+    "area": "400 sqm",
+    "rooms": 8,
+    "i18n": {
+      "en": {
+        "title": "Luxury Residential Interior Design",
+        "excerpt": "Sophisticated interior design project featuring contemporary luxury finishes and custom furnishings.",
+        "description": "## Project Overview\n\nA comprehensive interior design transformation of a luxury residential property, featuring sophisticated contemporary design elements, premium materials, and custom-designed furnishings. The 400 square meter space encompasses 8 rooms with cohesive design themes throughout.\n\n## Key Features\n\n- 8 beautifully designed rooms\n- Custom furniture and built-in storage\n- Premium marble and wood finishes\n- Designer lighting fixtures\n- Coordinated color schemes\n- High-end appliances and fixtures\n- Luxury window treatments\n- Artwork and accessory curation\n\n## Scope of Work\n\n- Complete interior design consultation\n- Space planning and layout optimization\n- Custom furniture design and procurement\n- Lighting design and installation\n- Color scheme and material selection\n- Window treatment design and installation\n- Artwork selection and placement\n- Project management and coordination"
+      },
+      "ar": {
+        "title": "تصميم داخلي سكني فاخر",
+        "excerpt": "مشروع تصميم داخلي متطور يتميز بالتشطيبات الفاخرة المعاصرة والأثاث المخصص.",
+        "description": "## نظرة عامة على المشروع\n\nتحول شامل للتصميم الداخلي لعقار سكني فاخر، يتميز بعناصر تصميم معاصرة متطورة ومواد متميزة وأثاث مصمم خصيصاً. تشمل المساحة البالغة ٤٠٠ متر مربع ٨ غرف مع موضوعات تصميم متماسكة في جميع أنحائها.\n\n## المميزات الرئيسية\n\n- ٨ غرف مصممة بشكل جميل\n- أثاث مخصص وتخزين مدمج\n- تشطيبات رخام وخشب متميزة\n- تركيبات إضاءة مصممة\n- أنظمة ألوان منسقة\n- أجهزة وتركيبات راقية\n- معالجات نوافذ فاخرة\n- تنسيق الأعمال الفنية والإكسسوارات\n\n## نطاق العمل\n\n- استشارة تصميم داخلي كاملة\n- تخطيط المساحة وتحسين التخطيط\n- تصميم وشراء أثاث مخصص\n- تصميم وتركيب الإضاءة\n- اختيار نظام الألوان والمواد\n- تصميم وتركيب معالجات النوافذ\n- اختيار ووضع الأعمال الفنية\n- إدارة وتنسيق المشروع"
+      }
+    },
+    "media": {
+      "hero": {
+        "url": "/assets/images/projects/interior/project1/DEN02229.jpg",
+        "alt": {
+          "en": "Elegant living room interior design",
+          "ar": "تصميم داخلي أنيق لغرفة المعيشة"
+        }
+      },
+      "thumb": {
+        "url": "/assets/images/projects/interior/project1/DEN02239.jpg",
+        "alt": {
+          "en": "Interior design thumbnail",
+          "ar": "صورة مصغرة للتصميم الداخلي"
+        }
+      },
+      "gallery": [
+        {
+          "url": "/assets/images/projects/interior/project1/DEN02229.jpg",
+          "alt": {
+            "en": "Main living area with luxury finishes",
+            "ar": "منطقة المعيشة الرئيسية مع التشطيبات الفاخرة"
+          }
+        },
+        {
+          "url": "/assets/images/projects/interior/project1/DEN02239.jpg",
+          "alt": {
+            "en": "Dining room with custom lighting",
+            "ar": "غرفة الطعام مع الإضاءة المخصصة"
+          }
+        },
+        {
+          "url": "/assets/images/projects/interior/project1/DEN02349.jpg",
+          "alt": {
+            "en": "Master bedroom design",
+            "ar": "تصميم غرفة النوم الرئيسية"
+          }
+        },
+        {
+          "url": "/assets/images/projects/interior/project1/DEN02406.jpg",
+          "alt": {
+            "en": "Kitchen with premium appliances",
+            "ar": "مطبخ مع أجهزة متميزة"
+          }
+        },
+        {
+          "url": "/assets/images/projects/interior/project1/DEN02439.jpg",
+          "alt": {
+            "en": "Bathroom with marble details",
+            "ar": "حمام مع تفاصيل رخامية"
+          }
+        }
+      ]
+    }
+  }
+]
