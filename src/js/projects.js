@@ -213,8 +213,13 @@ class ProjectManager {
       const card = e.target.closest('.project-card');
       if (card) {
         const projectId = card.dataset.projectId;
+        console.log('Project card clicked:', { projectId, card });
+        
         if (projectId) {
+          console.log(`Navigating to: project-detail.html?id=${projectId}`);
           window.location.href = `project-detail.html?id=${projectId}`;
+        } else {
+          console.error('No project ID found on card');
         }
       }
     });

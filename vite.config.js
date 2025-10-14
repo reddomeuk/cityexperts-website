@@ -14,7 +14,8 @@ export default defineConfig({
         projects: 'src/projects.html',
         contact: 'src/contact.html',
         admin: 'src/admin.html',
-        services: 'src/services.html'
+        services: 'src/services.html',
+        'project-detail': 'src/project-detail.html'
       }
     }
   },
