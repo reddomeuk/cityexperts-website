@@ -3,6 +3,8 @@
  * Handles loading and displaying individual project details
  */
 
+import { initNavigation } from './navigation.js';
+
 class ProjectDetailManager {
   constructor() {
     this.currentProjectId = null;
@@ -502,6 +504,9 @@ class ProjectDetailManager {
 // Initialize when DOM is loaded
 document.addEventListener('DOMContentLoaded', () => {
   new ProjectDetailManager();
+  
+  // Initialize navigation
+  initNavigation({ i18n: null });
 });
 
 export default ProjectDetailManager;

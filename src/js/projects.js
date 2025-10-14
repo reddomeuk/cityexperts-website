@@ -1,4 +1,6 @@
 // Enhanced Projects Manager
+import { initNavigation } from './navigation.js';
+
 class ProjectManager {
   constructor() {
     this.allProjects = [];
@@ -248,4 +250,7 @@ class ProjectManager {
 // Initialize when DOM loads
 document.addEventListener('DOMContentLoaded', () => {
   new ProjectManager();
+  
+  // Initialize navigation
+  initNavigation({ i18n: null });
 });
