@@ -440,14 +440,26 @@ function manageImages(projectId) {
   
   // Create upload section
   const uploadSection = document.createElement('div');
-  uploadSection.style.cssText = 'background: #f8fafc; border: 2px dashed #cbd5e1; border-radius: 12px; padding: 24px; margin-bottom: 24px; text-align: center;';
+  uploadSection.id = `upload-zone-${projectId}`;
+  uploadSection.style.cssText = `
+    background: #f8fafc; border: 2px dashed #cbd5e1; border-radius: 12px; 
+    padding: 24px; margin-bottom: 24px; text-align: center; 
+    transition: all 0.3s ease; cursor: pointer;
+  `;
   
   const uploadContent = document.createElement('div');
   uploadContent.innerHTML = `
     <div style="margin-bottom: 16px;">
-      <div style="width: 48px; height: 48px; margin: 0 auto 12px; background: #64748b; border-radius: 50%;"></div>
+      <div style="width: 48px; height: 48px; margin: 0 auto 12px; background: #64748b; border-radius: 50%; display: flex; align-items: center; justify-content: center;">
+        <svg width="24" height="24" fill="white" viewBox="0 0 24 24">
+          <path d="M14,2H6A2,2 0 0,0 4,4V20A2,2 0 0,0 6,22H18A2,2 0 0,0 20,20V8L14,2M18,20H6V4H13V9H18V20Z"/>
+        </svg>
+      </div>
       <h4 style="margin: 0 0 8px 0; font-size: 16px; font-weight: 600;">Upload New Images</h4>
-      <p style="margin: 0; color: #64748b; font-size: 14px;">Drag and drop images here, or click to select files</p>
+      <p style="margin: 0; color: #64748b; font-size: 14px;">
+        <span id="upload-text-${projectId}">Drag and drop images here, or click to select files</span>
+        <br><span style="font-size: 12px; color: #9ca3af;">Supported: JPG, PNG, GIF, WebP (Max 10MB each)</span>
+      </p>
     </div>
   `;
   
@@ -458,23 +470,62 @@ function manageImages(projectId) {
   fileInput.style.display = 'none';
   fileInput.id = `imageUpload-${projectId}`;
   
+  const buttonContainer = document.createElement('div');
+  buttonContainer.style.cssText = 'margin-top: 16px;';
+  
   const chooseBtn = document.createElement('button');
-  chooseBtn.style.cssText = 'background: #3b82f6; color: white; border: none; padding: 10px 20px; border-radius: 8px; cursor: pointer; font-weight: 500; margin-right: 12px;';
+  chooseBtn.style.cssText = 'background: #3b82f6; color: white; border: none; padding: 12px 24px; border-radius: 8px; cursor: pointer; font-weight: 500; margin-right: 12px; transition: background 0.2s;';
   chooseBtn.textContent = 'Choose Files';
+  chooseBtn.onmouseover = () => chooseBtn.style.background = '#2563eb';
+  chooseBtn.onmouseout = () => chooseBtn.style.background = '#3b82f6';
   chooseBtn.onclick = () => fileInput.click();
   
   const generateBtn = document.createElement('button');
-  generateBtn.style.cssText = 'background: #059669; color: white; border: none; padding: 10px 20px; border-radius: 8px; cursor: pointer; font-weight: 500;';
+  generateBtn.style.cssText = 'background: #059669; color: white; border: none; padding: 12px 24px; border-radius: 8px; cursor: pointer; font-weight: 500; transition: background 0.2s;';
   generateBtn.textContent = 'Generate Sample Images';
+  generateBtn.onmouseover = () => generateBtn.style.background = '#047857';
+  generateBtn.onmouseout = () => generateBtn.style.background = '#059669';
   generateBtn.onclick = () => simulateImageGeneration(projectId);
   
+  buttonContainer.appendChild(chooseBtn);
+  buttonContainer.appendChild(generateBtn);
   uploadContent.appendChild(fileInput);
-  uploadContent.appendChild(chooseBtn);
-  uploadContent.appendChild(generateBtn);
+  uploadContent.appendChild(buttonContainer);
   uploadSection.appendChild(uploadContent);
   
   // File upload handler
   fileInput.addEventListener('change', (e) => handleImageUpload(e, projectId));
+  
+  // Drag and drop functionality
+  uploadSection.addEventListener('click', () => fileInput.click());
+  
+  uploadSection.addEventListener('dragover', (e) => {
+    e.preventDefault();
+    uploadSection.style.borderColor = '#3b82f6';
+    uploadSection.style.background = '#eff6ff';
+    document.getElementById(`upload-text-${projectId}`).textContent = 'Drop images here to upload';
+  });
+  
+  uploadSection.addEventListener('dragleave', (e) => {
+    e.preventDefault();
+    uploadSection.style.borderColor = '#cbd5e1';
+    uploadSection.style.background = '#f8fafc';
+    document.getElementById(`upload-text-${projectId}`).textContent = 'Drag and drop images here, or click to select files';
+  });
+  
+  uploadSection.addEventListener('drop', (e) => {
+    e.preventDefault();
+    uploadSection.style.borderColor = '#cbd5e1';
+    uploadSection.style.background = '#f8fafc';
+    document.getElementById(`upload-text-${projectId}`).textContent = 'Drag and drop images here, or click to select files';
+    
+    const files = Array.from(e.dataTransfer.files).filter(file => file.type.startsWith('image/'));
+    if (files.length > 0) {
+      // Simulate file input change event
+      const event = { target: { files } };
+      handleImageUpload(event, projectId);
+    }
+  });
   
   // Gallery section
   const gallerySection = document.createElement('div');
@@ -510,15 +561,89 @@ function handleImageUpload(event, projectId) {
   const files = Array.from(event.target.files);
   if (files.length === 0) return;
   
+  // Show upload modal with progress
+  showUploadProgress(files.length);
   processImageFiles(files, projectId);
 }
 
-function processImageFiles(files, projectId) {
-  showNotification(`Processing ${files.length} image(s)...`, 'info');
+function showUploadProgress(totalFiles) {
+  // Create upload progress modal
+  const modal = document.createElement('div');
+  modal.id = 'upload-progress-modal';
+  modal.style.cssText = `
+    position: fixed; top: 0; left: 0; right: 0; bottom: 0; 
+    background: rgba(0,0,0,0.8); z-index: 9999; 
+    display: flex; align-items: center; justify-content: center;
+  `;
   
+  const progressBox = document.createElement('div');
+  progressBox.style.cssText = `
+    background: white; padding: 30px; border-radius: 12px; 
+    min-width: 400px; text-align: center; box-shadow: 0 20px 40px rgba(0,0,0,0.3);
+  `;
+  
+  progressBox.innerHTML = `
+    <div style="margin-bottom: 20px;">
+      <div style="width: 60px; height: 60px; margin: 0 auto 15px; background: #3b82f6; border-radius: 50%; display: flex; align-items: center; justify-content: center;">
+        <svg width="30" height="30" fill="white" viewBox="0 0 24 24">
+          <path d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41z"/>
+        </svg>
+      </div>
+      <h3 style="margin: 0 0 10px 0; color: #1f2937;">Uploading Images</h3>
+      <p style="margin: 0; color: #6b7280;">Processing ${totalFiles} image(s)...</p>
+    </div>
+    
+    <div style="background: #f3f4f6; border-radius: 8px; height: 8px; margin-bottom: 15px; overflow: hidden;">
+      <div id="upload-progress-bar" style="background: #3b82f6; height: 100%; width: 0%; transition: width 0.3s ease;"></div>
+    </div>
+    
+    <div id="upload-status" style="color: #6b7280; font-size: 14px;">
+      Preparing upload...
+    </div>
+  `;
+  
+  modal.appendChild(progressBox);
+  document.body.appendChild(modal);
+}
+
+function updateUploadProgress(current, total, status = '') {
+  const progressBar = document.getElementById('upload-progress-bar');
+  const statusEl = document.getElementById('upload-status');
+  
+  if (progressBar && statusEl) {
+    const percentage = Math.round((current / total) * 100);
+    progressBar.style.width = `${percentage}%`;
+    statusEl.textContent = status || `Processing ${current} of ${total} images...`;
+  }
+}
+
+function hideUploadProgress() {
+  const modal = document.getElementById('upload-progress-modal');
+  if (modal) {
+    modal.remove();
+  }
+}
+
+function processImageFiles(files, projectId) {
   let processedCount = 0;
-  const imagePromises = files.map((file) => {
-    return new Promise((resolve) => {
+  const totalFiles = files.length;
+  
+  updateUploadProgress(0, totalFiles, 'Starting upload...');
+  
+  const imagePromises = files.map((file, index) => {
+    return new Promise((resolve, reject) => {
+      // Validate file type
+      if (!file.type.startsWith('image/')) {
+        reject(new Error(`${file.name} is not a valid image file`));
+        return;
+      }
+      
+      // Validate file size (max 10MB)
+      if (file.size > 10 * 1024 * 1024) {
+        reject(new Error(`${file.name} is too large. Maximum size is 10MB`));
+        return;
+      }
+      
       const reader = new FileReader();
       reader.onload = (e) => {
         const imageData = {
@@ -530,20 +655,73 @@ function processImageFiles(files, projectId) {
         };
         
         processedCount++;
-        resolve(imageData);
+        updateUploadProgress(processedCount, totalFiles, `Processed ${file.name}`);
+        
+        setTimeout(() => resolve(imageData), 200); // Small delay for visual feedback
       };
+      
+      reader.onerror = () => {
+        reject(new Error(`Failed to read ${file.name}`));
+      };
+      
       reader.readAsDataURL(file);
     });
   });
   
   Promise.all(imagePromises).then(images => {
-    addImagesToProject(projectId, images);
-    refreshImageGallery(projectId);
-    showNotification(`Successfully uploaded ${images.length} image(s)!`, 'success');
+    updateUploadProgress(totalFiles, totalFiles, 'Finalizing...');
+    
+    setTimeout(() => {
+      addImagesToProject(projectId, images);
+      refreshImageGallery(projectId);
+      hideUploadProgress();
+      showUploadSuccess(images.length);
+    }, 500);
+    
   }).catch(error => {
     console.error('Error processing images:', error);
-    showNotification('Error processing images. Please try again.', 'error');
+    hideUploadProgress();
+    showNotification(`Error: ${error.message}`, 'error');
   });
+}
+
+function showUploadSuccess(imageCount) {
+  // Create success notification
+  const successModal = document.createElement('div');
+  successModal.style.cssText = `
+    position: fixed; top: 20px; right: 20px; 
+    background: #10b981; color: white; padding: 20px; 
+    border-radius: 12px; z-index: 10000; 
+    box-shadow: 0 10px 30px rgba(16, 185, 129, 0.3);
+    transform: translateX(400px); transition: transform 0.3s ease;
+  `;
+  
+  successModal.innerHTML = `
+    <div style="display: flex; align-items: center; gap: 12px;">
+      <div style="width: 24px; height: 24px; background: rgba(255,255,255,0.2); border-radius: 50%; display: flex; align-items: center; justify-content: center;">
+        <svg width="16" height="16" fill="white" viewBox="0 0 24 24">
+          <path d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41z"/>
+        </svg>
+      </div>
+      <div>
+        <div style="font-weight: 600; margin-bottom: 4px;">Upload Complete!</div>
+        <div style="font-size: 14px; opacity: 0.9;">${imageCount} image(s) uploaded successfully</div>
+      </div>
+    </div>
+  `;
+  
+  document.body.appendChild(successModal);
+  
+  // Animate in
+  setTimeout(() => {
+    successModal.style.transform = 'translateX(0)';
+  }, 100);
+  
+  // Auto remove after 4 seconds
+  setTimeout(() => {
+    successModal.style.transform = 'translateX(400px)';
+    setTimeout(() => successModal.remove(), 300);
+  }, 4000);
 }
 
 function addImagesToProject(projectId, images) {

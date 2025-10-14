@@ -76,17 +76,17 @@
   <!-- Header / Navigation -->
   <nav id="site-header" class="fixed top-0 inset-x-0 z-40 bg-transparent transition-colors">
     <div class="container-custom">
-      <div class="flex h-20 items-center">
+      <div class="flex h-20 items-center justify-between">
         <!-- Logo -->
-        <a href="/" class="flex items-center gap-3 mr-12" aria-label="City Expert Home">
+        <a href="/" class="flex items-center gap-3" aria-label="City Expert Home">
           <img
             src="/assets/images/logo/logo.png"
             alt="City Expert"
             width="120" height="32"
-            class="block h-10 w-auto object-contain logo-header"
+            class="block h-8 md:h-10 w-auto object-contain logo-header"
             decoding="async"
           />
-          <span class="font-playfair text-xl font-semibold text-deep-charcoal leading-none tracking-wide">
+          <span class="font-playfair text-lg md:text-xl font-semibold text-deep-charcoal leading-none tracking-wide">
             City Expert
           </span>
         </a>
@@ -101,7 +101,7 @@
         </ul>
 
         <!-- Right side (contact icons, lang + CTA) -->
-        <div class="hidden lg:flex items-center gap-4 ml-auto">
+        <div class="hidden lg:flex items-center gap-4">
           <!-- Contact Icons -->
           <div class="flex items-center gap-3 mr-2">
             <a href="https://wa.me/971555581631" target="_blank" rel="noopener noreferrer" 
@@ -127,7 +127,7 @@
 
         <!-- Mobile menu button -->
         <button id="mobile-menu-btn"
-                class="lg:hidden p-2 text-deep-charcoal hover:text-oasis-teal"
+                class="lg:hidden p-2 text-deep-charcoal hover:text-oasis-teal ml-auto"
                 aria-label="Open menu" aria-expanded="false" aria-controls="mobile-drawer">
           <svg class="w-6 h-6" viewBox="0 0 24 24" fill="none" stroke="currentColor">
             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
